@@ -1,0 +1,24 @@
+<ion-menu [content]="content" class="sidemenu">
+
+  <ion-toolbar>
+      <ion-title>Side Menu</ion-title>
+<!--
+    <ion-tabs>
+      <ion-tab tabTitle="My Event" [root]="tab1Root" tabIcon="bookmark"></ion-tab>
+      <ion-tab tabTitle="My Seminar" [root]="tab2Root" tabIcon="mail"></ion-tab>
+    </ion-tabs>
+-->
+  </ion-toolbar>
+
+  <ion-content>
+    <ion-list>
+      <button menuClose ion-item *ngFor="let lsm of leftsidemenu" (click)="openPage(lsm)">
+        {{lsm.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

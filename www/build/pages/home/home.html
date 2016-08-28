@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Home</ion-title>
+
+        <button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-buttons end>
+            <button (click)="useraccountPage()">
+                <ion-icon ios="ios-person" md="md-person"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="home">
+    <ion-spinner name="bubbles"></ion-spinner>
+    <ion-slides pager>
+        <ion-slide>
+            <button clear (click)="relaPage()">
+                <img src="img/event/ARAB_HEALTH_2016.jpg" />
+            </button>
+        </ion-slide>
+        <ion-slide>
+            <button clear (click)="relaPage()">
+                <img src="img/event/AUTOMECHANIKA_FRANKFURT_2016.jpg" />
+            </button>
+        </ion-slide>
+        <ion-slide>
+            <button clear (click)="relaPage()">
+                <img src="img/event/HOPITAL_EXPO_2016.jpg" />
+            </button>
+        </ion-slide>
+    </ion-slides>
+    <button clear (click)="relaPage()">
+        <ion-card>
+            <img src="img/event/ARAB_HEALTH_2016.jpg" />
+        </ion-card>
+    </button>
+    <button clear (click)="relaPage()">
+        <ion-card>
+            <img src="img/event/AUTOMECHANIKA_FRANKFURT_2016.jpg" />
+        </ion-card>
+    </button>
+    <button clear (click)="relaPage()">
+        <ion-card>
+            <img src="img/event/HOPITAL_EXPO_2016.jpg" />
+        </ion-card>
+    </button>
+    <button clear (click)="relaPage()">
+        <ion-card>
+            <img src="img/event/MEDICAL_FAIR_INDIA_2016.jpg" />
+        </ion-card>
+    </button>
+    <button clear (click)="relaPage()">
+        <ion-card>
+            <img src="img/event/MEDICAL_FAIR_INDIA_2016.jpg" />
+        </ion-card>
+    </button>
+</ion-content>
