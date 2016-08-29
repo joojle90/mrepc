@@ -10430,7 +10430,8 @@ scroll-content {
 .home ion-slides {
   height: initial; }
   .home ion-slides button {
-    margin: 6px 0.5rem; }
+    margin: 6px 0.5rem;
+    border-radius: 5px; }
 
 .home .card-title {
   position: absolute;
@@ -10449,17 +10450,17 @@ scroll-content {
 
 .home button {
   height: initial;
-  border-radius: 15px;
   padding: 0;
   margin: 0.4rem 0; }
   .home button ion-card {
     width: calc(100% - 10px);
+    border-radius: 5px;
     margin: 0;
     position: relative;
     text-align: center;
     box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.3); }
 
-.allevent .card-title {
+.alltradeshows .card-title {
   position: absolute;
   top: 36%;
   font-size: 2.0em;
@@ -10467,20 +10468,20 @@ scroll-content {
   font-weight: bold;
   color: #fff; }
 
-.allevent .card-subtitle {
+.alltradeshows .card-subtitle {
   font-size: 1.0em;
   position: absolute;
   top: 52%;
   width: 100%;
   color: #fff; }
 
-.allevent button {
+.alltradeshows button {
   height: initial;
-  border-radius: 15px;
   padding: 0;
   margin: 0.4rem 0; }
-  .allevent button ion-card {
+  .alltradeshows button ion-card {
     width: calc(100% - 10px);
+    border-radius: 5px;
     margin: 0;
     position: relative;
     text-align: center;

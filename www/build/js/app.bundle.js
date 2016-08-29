@@ -13,9 +13,9 @@ var core_1 = require('@angular/core');
 var ionic_angular_1 = require('ionic-angular');
 var ionic_native_1 = require('ionic-native');
 var home_1 = require('./pages/home/home');
-var contact_1 = require('./pages/contact/contact');
+var alltradeshows_1 = require('./pages/alltradeshows/alltradeshows');
 var mrepcdata_1 = require('./providers/mrepcdata/mrepcdata');
-var component = [home_1.HomePage, contact_1.ContactPage];
+var component = [home_1.HomePage, alltradeshows_1.AlltradeshowsPage];
 var MyApp = (function () {
     function MyApp(platform, mymenu, mrepcdata) {
         this.platform = platform;
@@ -25,17 +25,17 @@ var MyApp = (function () {
         platform.ready().then(function () {
             ionic_native_1.StatusBar.styleDefault();
         });
-        this.updateleftsidemenu();
+        this.loadleftsidemenu();
     }
-    MyApp.prototype.updateleftsidemenu = function () {
+    MyApp.prototype.loadleftsidemenu = function () {
         var _this = this;
-        return this.mrepcdata.getLeftsidemenu('leftsidemenu').then(function (data) {
+        return this.mrepcdata.getLeftsidemenu().then(function (data) {
             _this.leftsidemenu = data;
         });
     };
-    MyApp.prototype.openPage = function (page) {
-        console.log(page.idmenu - 1);
-        this.nav.setRoot(component[page.idmenu - 1]);
+    MyApp.prototype.openPage = function (pageid) {
+        console.log(pageid);
+        this.nav.setRoot(component[pageid]);
     };
     __decorate([
         core_1.ViewChild(ionic_angular_1.Nav), 
@@ -52,7 +52,7 @@ var MyApp = (function () {
 exports.MyApp = MyApp;
 ionic_angular_1.ionicBootstrap(MyApp, [mrepcdata_1.Mrepcdata], {});
 
-},{"./pages/contact/contact":2,"./pages/home/home":3,"./providers/mrepcdata/mrepcdata":4,"@angular/core":152,"ionic-angular":466,"ionic-native":493}],2:[function(require,module,exports){
+},{"./pages/alltradeshows/alltradeshows":2,"./pages/home/home":3,"./providers/mrepcdata/mrepcdata":4,"@angular/core":152,"ionic-angular":466,"ionic-native":493}],2:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -65,21 +65,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var ionic_angular_1 = require('ionic-angular');
-var ContactPage = (function () {
-    function ContactPage(navCtrl) {
-        this.navCtrl = navCtrl;
-    }
-    ContactPage = __decorate([
-        core_1.Component({
-            templateUrl: 'build/pages/contact/contact.html'
-        }), 
-        __metadata('design:paramtypes', [ionic_angular_1.NavController])
-    ], ContactPage);
-    return ContactPage;
-}());
-exports.ContactPage = ContactPage;
+var mrepcdata_1 = require('../../providers/mrepcdata/mrepcdata');
+/*
+  Generated class for the AlltradeshowsPage page.
 
-},{"@angular/core":152,"ionic-angular":466}],3:[function(require,module,exports){
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+*/
+var AlltradeshowsPage = (function () {
+    function AlltradeshowsPage(navCtrl, mrepcdata) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.mrepcdata = mrepcdata;
+        this.mrepcdata.geteventlist('all', 'all').then(function (data) {
+            _this.eventlist = data;
+        });
+    }
+    AlltradeshowsPage = __decorate([
+        core_1.Component({
+            templateUrl: 'build/pages/alltradeshows/alltradeshows.html',
+        }), 
+        __metadata('design:paramtypes', [ionic_angular_1.NavController, mrepcdata_1.Mrepcdata])
+    ], AlltradeshowsPage);
+    return AlltradeshowsPage;
+}());
+exports.AlltradeshowsPage = AlltradeshowsPage;
+
+},{"../../providers/mrepcdata/mrepcdata":4,"@angular/core":152,"ionic-angular":466}],3:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -142,7 +154,8 @@ var Mrepcdata = (function () {
     function Mrepcdata(http) {
         this.http = http;
         this.http = http;
-        this.getLeftsidemenu(this.apidata);
+        this.startdate = '2016-01-01';
+        this.enddate = '2017-01-01';
     }
     Mrepcdata.prototype.load = function (apidata) {
         var _this = this;
@@ -160,10 +173,17 @@ var Mrepcdata = (function () {
             }
         });
     };
-    Mrepcdata.prototype.getLeftsidemenu = function (apidata) {
-        return this.load(apidata).then(function (data) {
+    Mrepcdata.prototype.getLeftsidemenu = function () {
+        return this.load('leftsidemenu').then(function (data) {
             console.log(data.leftsidemenu.submenu);
             return data.leftsidemenu.submenu;
+        });
+    };
+    Mrepcdata.prototype.geteventlist = function (eventid, statusid) {
+        this.apidata = 'eventfilter?start_date=' + this.startdate + '&end_date=' + this.enddate + '&event_id=' + eventid + '&status_id=' + statusid;
+        return this.load(this.apidata).then(function (data) {
+            console.log(data);
+            return data;
         });
     };
     Mrepcdata = __decorate([

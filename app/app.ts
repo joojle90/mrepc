@@ -4,11 +4,11 @@ import {StatusBar} from 'ionic-native';
 
 import {TabsPage} from './pages/tabs/tabs';
 import {HomePage} from './pages/home/home';
-import {ContactPage} from './pages/contact/contact';
+import {AlltradeshowsPage} from './pages/alltradeshows/alltradeshows';
 import {Mrepcdata} from './providers/mrepcdata/mrepcdata';
 
 
-let component = [HomePage, ContactPage];
+let component = [HomePage, AlltradeshowsPage];
 
 @Component({
     templateUrl: 'build/app.html'
@@ -27,21 +27,21 @@ export class MyApp {
         public mrepcdata: Mrepcdata
     ) {       
         platform.ready().then(() => {
-          StatusBar.styleDefault();
+            StatusBar.styleDefault();
         });
         
-        this.updateleftsidemenu();
+        this.loadleftsidemenu();
     }
      
-    updateleftsidemenu() {
-        return this.mrepcdata.getLeftsidemenu('leftsidemenu').then(data => {
+    loadleftsidemenu() {
+        return this.mrepcdata.getLeftsidemenu().then(data => {
             this.leftsidemenu = data;
         })
     }
 
-    openPage(page) {
-        console.log(page.idmenu-1);
-        this.nav.setRoot(component[page.idmenu-1]);
+    openPage(pageid) {
+        console.log(pageid);
+        this.nav.setRoot(component[pageid]);
     }
 }
 

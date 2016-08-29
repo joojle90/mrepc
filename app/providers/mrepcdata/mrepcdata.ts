@@ -16,10 +16,16 @@ export class Mrepcdata {
 
     data: any;
     apidata: any;
+    startdate: string;
+    enddate: string;
+    eventid: string;
+    statusid: string;
     
     constructor(private http: Http) {
         this.http = http;
-        this.getLeftsidemenu(this.apidata);
+
+        this.startdate = '2016-01-01';
+        this.enddate = '2017-01-01';
     }
 
     load(apidata) {
@@ -38,10 +44,18 @@ export class Mrepcdata {
         });
     }
     
-    getLeftsidemenu(apidata) {
-        return this.load(apidata).then(data => {
+    getLeftsidemenu() {
+        return this.load('leftsidemenu').then(data => {
             console.log(data.leftsidemenu.submenu);
             return data.leftsidemenu.submenu;
+        });
+    }
+
+    geteventlist(eventid, statusid) {
+        this.apidata = 'eventfilter?start_date='+this.startdate+'&end_date='+this.enddate+'&event_id='+eventid+'&status_id='+statusid;
+        return this.load(this.apidata).then(data => {
+            console.log(data);
+            return data;
         });
     }
 
