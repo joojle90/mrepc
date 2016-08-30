@@ -51,7 +51,14 @@ export class Mrepcdata {
         });
     }
 
-    geteventlist(eventid, statusid) {
+    getMastermenu() {
+        return this.load('leftsidemenu').then(data => {
+            console.log(data.mastermenu);
+            return data.mastermenu;
+        });
+    }
+
+    geteventcriteria(eventid, statusid) {
         this.apidata = 'eventfilter?start_date='+this.startdate+'&end_date='+this.enddate+'&event_id='+eventid+'&status_id='+statusid;
         return this.load(this.apidata).then(data => {
             console.log(data);

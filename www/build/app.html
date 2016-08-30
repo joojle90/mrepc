@@ -1,22 +1,25 @@
 <ion-menu [content]="content" class="sidemenu">
 
-  <ion-toolbar>
-      <ion-title>Side Menu</ion-title>
-<!--
+    <ion-toolbar>
+        <ion-title>Side Menu</ion-title>
+        <!--
     <ion-tabs>
       <ion-tab tabTitle="My Event" [root]="tab1Root" tabIcon="bookmark"></ion-tab>
       <ion-tab tabTitle="My Seminar" [root]="tab2Root" tabIcon="mail"></ion-tab>
     </ion-tabs>
 -->
-  </ion-toolbar>
+    </ion-toolbar>
 
-  <ion-content>
-    <ion-list>
-      <button menuClose ion-item *ngFor="let lsm of leftsidemenu; let i = index;" (click)="openPage(i)">
-        {{lsm.title}}
-      </button>
-    </ion-list>
-  </ion-content>
+    <ion-content>
+        <ion-list>
+            <button menuClose ion-item *ngFor="let lsm of leftsidemenu; let i = index;" (click)="openPage(i)">
+                <ion-icon myicon item-left [name]="lsm.icon"></ion-icon>
+                {{lsm.title}}
+                <ion-note item-right [hidden]="note === null">{{lsm.note}}</ion-note>
+                <ion-badge item-right [hidden]="notif === null">{{lsm.notif}}</ion-badge>
+            </button>
+        </ion-list>
+    </ion-content>
 
 </ion-menu>
 

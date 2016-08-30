@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {Mrepcdata} from '../../providers/mrepcdata/mrepcdata';
+import {TradeshowdetailsPage} from '../../pages/tradeshowdetails/tradeshowdetails';
 
 /*
   Generated class for the AlltradeshowsPage page.
@@ -13,15 +14,24 @@ import {Mrepcdata} from '../../providers/mrepcdata/mrepcdata';
 })
 export class AlltradeshowsPage {
 
-    eventlist: any;
+    tradeshowslist: any;
 
     constructor(
         private navCtrl: NavController,
         public mrepcdata: Mrepcdata
     ) {
 
-        this.mrepcdata.geteventlist('all', 'all').then(data => {
-            this.eventlist = data;
+        this.mrepcdata.geteventcriteria('6', '1,4').then(data => {
+            this.tradeshowslist = data;
         })
+    }
+
+    detailsPage(page) {
+        console.log(page);
+        let picture = page.image;
+        this.navCtrl.push(TradeshowdetailsPage, {
+            eventpic: picture,
+            eventdetails: page.eventdetail[0]
+        });
     }
 }

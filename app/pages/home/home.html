@@ -14,47 +14,19 @@
 </ion-header>
 
 <ion-content class="home">
-    <ion-spinner name="bubbles"></ion-spinner>
+<!--    <ion-spinner name="bubbles"></ion-spinner>-->
     <ion-slides pager>
-        <ion-slide>
-            <button clear (click)="relaPage()">
-                <img src="img/event/ARAB_HEALTH_2016.jpg" />
-            </button>
-        </ion-slide>
-        <ion-slide>
-            <button clear (click)="relaPage()">
-                <img src="img/event/AUTOMECHANIKA_FRANKFURT_2016.jpg" />
-            </button>
-        </ion-slide>
-        <ion-slide>
-            <button clear (click)="relaPage()">
-                <img src="img/event/HOPITAL_EXPO_2016.jpg" />
+        <ion-slide *ngFor="let ce of comingsoonevent; let i = index">
+            <button clear (click)="tradeshowspage(comingsoonevent[i])">
+                <img src="img/event/{{ce.image}}" />
             </button>
         </ion-slide>
     </ion-slides>
-    <button clear (click)="relaPage()">
+    <button clear *ngFor="let mm of mastermenu; let i = index" (click)="openmenuPage(i)">
         <ion-card>
-            <img src="img/event/ARAB_HEALTH_2016.jpg" />
-        </ion-card>
-    </button>
-    <button clear (click)="relaPage()">
-        <ion-card>
-            <img src="img/event/AUTOMECHANIKA_FRANKFURT_2016.jpg" />
-        </ion-card>
-    </button>
-    <button clear (click)="relaPage()">
-        <ion-card>
-            <img src="img/event/HOPITAL_EXPO_2016.jpg" />
-        </ion-card>
-    </button>
-    <button clear (click)="relaPage()">
-        <ion-card>
-            <img src="img/event/MEDICAL_FAIR_INDIA_2016.jpg" />
-        </ion-card>
-    </button>
-    <button clear (click)="relaPage()">
-        <ion-card>
-            <img src="img/event/MEDICAL_FAIR_INDIA_2016.jpg" />
+            <img [src]="mm.image" />
+            <p class="card-title">{{mm.featuredmenu}}</p>
+            <p class="card-subtitle">Official organization for the promotion of Malaysian rubber and rubber-based products</p>
         </ion-card>
     </button>
 </ion-content>

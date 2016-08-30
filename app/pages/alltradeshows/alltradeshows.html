@@ -11,9 +11,9 @@
 
 
 <ion-content class="alltradeshows">
-    <button clear (click)="relaPage()">
+    <button clear *ngFor="let tl of tradeshowslist; let i = index" (click)="detailsPage(tradeshowslist[i])">
         <ion-card>
-            <img src="img/event/ARAB_HEALTH_2016.jpg" />
+            <img src="img/event/{{tl.image}}" />
         </ion-card>
     </button>
 </ion-content>

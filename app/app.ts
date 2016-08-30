@@ -2,13 +2,15 @@ import {Component, ViewChild, Type} from '@angular/core';
 import {ionicBootstrap, Platform, MenuController, Nav} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 
+import {Mrepcdata} from './providers/mrepcdata/mrepcdata';
 import {TabsPage} from './pages/tabs/tabs';
 import {HomePage} from './pages/home/home';
+import {MarketplacePage} from './pages/marketplace/marketplace';
 import {AlltradeshowsPage} from './pages/alltradeshows/alltradeshows';
-import {Mrepcdata} from './providers/mrepcdata/mrepcdata';
+import {SeminarPage} from './pages/seminar/seminar';
 
 
-let component = [HomePage, AlltradeshowsPage];
+let component = [HomePage, AlltradeshowsPage, MarketplacePage, SeminarPage];
 
 @Component({
     templateUrl: 'build/app.html'
