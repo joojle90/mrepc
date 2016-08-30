@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, LoadingController } from 'ionic-angular';
 import {Mrepcdata} from '../../providers/mrepcdata/mrepcdata';
 import {TradeshowdetailsPage} from '../../pages/tradeshowdetails/tradeshowdetails';
 
@@ -18,8 +18,11 @@ export class AlltradeshowsPage {
 
     constructor(
         private navCtrl: NavController,
+        private loadingCtrl: LoadingController,
         public mrepcdata: Mrepcdata
     ) {
+
+        this.presentLoadingData();
 
         this.mrepcdata.geteventcriteria('6', '1,4').then(data => {
             this.tradeshowslist = data;
@@ -33,5 +36,19 @@ export class AlltradeshowsPage {
             eventpic: picture,
             eventdetails: page.eventdetail[0]
         });
+    }
+
+    presentLoadingData() {
+        let loading = this.loadingCtrl.create({
+            content: 'Please wait...'
+        });
+
+        loading.present();
+
+        if(this.tradeshowslist !== null){
+            setTimeout(() => {
+                loading.dismiss();
+            }, 2000);
+        }
     }
 }

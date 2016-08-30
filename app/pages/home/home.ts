@@ -23,12 +23,18 @@ export class HomePage {
         public mrepcdata: Mrepcdata
         ) {
 
+        this.presentLoadingData();
+
         this.mrepcdata.getMastermenu().then(data => {
             this.mastermenu = data;
         });
 
         this.mrepcdata.geteventcriteria('6', '1').then(data => {
-            this.comingsoonevent = data.slice(0,5);
+            this.comingsoonevent = data.filter(newdata => {
+                let setdate = new Date (newdata.eventdetail.startdate);
+                return setdate < new Date();
+            });
+            this.comingsoonevent = this.comingsoonevent.slice(0,5);
         })
 
     }
@@ -51,15 +57,17 @@ export class HomePage {
         this.navCtrl.push(UseraccountPage);
     }
     
-    presentLoadingDefault() {
+    presentLoadingData() {
         let loading = this.loadingCtrl.create({
             content: 'Please wait...'
         });
 
         loading.present();
 
-        setTimeout(() => {
-            loading.dismiss();
-        }, 5000);
+        if(this.mastermenu !== null){
+            setTimeout(() => {
+                loading.dismiss();
+            }, 2000);
+        }
     }
 }

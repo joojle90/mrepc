@@ -76,10 +76,12 @@ var tradeshowdetails_1 = require('../../pages/tradeshowdetails/tradeshowdetails'
   Ionic pages and navigation.
 */
 var AlltradeshowsPage = (function () {
-    function AlltradeshowsPage(navCtrl, mrepcdata) {
+    function AlltradeshowsPage(navCtrl, loadingCtrl, mrepcdata) {
         var _this = this;
         this.navCtrl = navCtrl;
+        this.loadingCtrl = loadingCtrl;
         this.mrepcdata = mrepcdata;
+        this.presentLoadingData();
         this.mrepcdata.geteventcriteria('6', '1,4').then(function (data) {
             _this.tradeshowslist = data;
         });
@@ -92,11 +94,22 @@ var AlltradeshowsPage = (function () {
             eventdetails: page.eventdetail[0]
         });
     };
+    AlltradeshowsPage.prototype.presentLoadingData = function () {
+        var loading = this.loadingCtrl.create({
+            content: 'Please wait...'
+        });
+        loading.present();
+        if (this.tradeshowslist !== null) {
+            setTimeout(function () {
+                loading.dismiss();
+            }, 2000);
+        }
+    };
     AlltradeshowsPage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/alltradeshows/alltradeshows.html',
         }), 
-        __metadata('design:paramtypes', [ionic_angular_1.NavController, mrepcdata_1.Mrepcdata])
+        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.LoadingController, mrepcdata_1.Mrepcdata])
     ], AlltradeshowsPage);
     return AlltradeshowsPage;
 }());
@@ -128,11 +141,16 @@ var HomePage = (function () {
         this.navCtrl = navCtrl;
         this.loadingCtrl = loadingCtrl;
         this.mrepcdata = mrepcdata;
+        this.presentLoadingData();
         this.mrepcdata.getMastermenu().then(function (data) {
             _this.mastermenu = data;
         });
         this.mrepcdata.geteventcriteria('6', '1').then(function (data) {
-            _this.comingsoonevent = data.slice(0, 5);
+            _this.comingsoonevent = data.filter(function (newdata) {
+                var setdate = new Date(newdata.eventdetail.startdate);
+                return setdate < new Date();
+            });
+            _this.comingsoonevent = _this.comingsoonevent.slice(0, 5);
         });
     }
     HomePage.prototype.tradeshowspage = function (page) {
@@ -150,14 +168,16 @@ var HomePage = (function () {
         //console.log(pageid);
         this.navCtrl.push(useraccount_1.UseraccountPage);
     };
-    HomePage.prototype.presentLoadingDefault = function () {
+    HomePage.prototype.presentLoadingData = function () {
         var loading = this.loadingCtrl.create({
             content: 'Please wait...'
         });
         loading.present();
-        setTimeout(function () {
-            loading.dismiss();
-        }, 5000);
+        if (this.mastermenu !== null) {
+            setTimeout(function () {
+                loading.dismiss();
+            }, 2000);
+        }
     };
     HomePage = __decorate([
         core_1.Component({
@@ -195,7 +215,7 @@ var MarketplacePage = (function () {
     MarketplacePage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/marketplace/marketplace.html',
-        }),
+        }), 
         __metadata('design:paramtypes', [ionic_angular_1.NavController])
     ], MarketplacePage);
     return MarketplacePage;
@@ -228,7 +248,7 @@ var SeminarPage = (function () {
     SeminarPage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/seminar/seminar.html',
-        }),
+        }), 
         __metadata('design:paramtypes', [ionic_angular_1.NavController])
     ], SeminarPage);
     return SeminarPage;
@@ -261,7 +281,7 @@ var TradeshowdetailsPage = (function () {
     TradeshowdetailsPage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/tradeshowdetails/tradeshowdetails.html',
-        }),
+        }), 
         __metadata('design:paramtypes', [ionic_angular_1.NavController])
     ], TradeshowdetailsPage);
     return TradeshowdetailsPage;
@@ -311,7 +331,7 @@ var UseraccountPage = (function () {
     UseraccountPage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/useraccount/useraccount.html',
-        }),
+        }), 
         __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.AlertController])
     ], UseraccountPage);
     return UseraccountPage;
