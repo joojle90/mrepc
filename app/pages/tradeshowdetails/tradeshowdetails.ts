@@ -8,7 +8,7 @@ import { NavController, NavParams } from 'ionic-angular';
   Ionic pages and navigation.
 */
 
-let monthname = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
+let monthname = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 @Component({
     templateUrl: 'build/pages/tradeshowdetails/tradeshowdetails.html',
@@ -32,7 +32,7 @@ export class TradeshowdetailsPage {
 
     convertdate(date){
         let thedate = date.split("-");
-        let newdate = thedate[2] +" "+ thedate[1] +" "+ thedate[0];
+        let newdate = thedate[2] +" "+ monthname[thedate[1]-1] +" "+ thedate[0];
         return newdate;
     }
 

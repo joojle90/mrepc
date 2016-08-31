@@ -290,7 +290,7 @@ var ionic_angular_1 = require('ionic-angular');
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-var monthname = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
+var monthname = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 var TradeshowdetailsPage = (function () {
     function TradeshowdetailsPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
@@ -302,7 +302,7 @@ var TradeshowdetailsPage = (function () {
     }
     TradeshowdetailsPage.prototype.convertdate = function (date) {
         var thedate = date.split("-");
-        var newdate = thedate[2] + " " + thedate[1] + " " + thedate[0];
+        var newdate = thedate[2] + " " + monthname[thedate[1] - 1] + " " + thedate[0];
         return newdate;
     };
     TradeshowdetailsPage = __decorate([
