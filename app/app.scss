@@ -7,6 +7,11 @@
             padding: 5px 0;
         }
 
+        button {
+            margin: 0;
+            height: 5em;
+        }
+
         ion-segment {
             position: inherit;
             .segment-button {
@@ -60,7 +65,7 @@
 }
 .toolbar-title {
     color: $iconcolor;
-    width: 80%;
+    width: 90%;
     text-transform: capitalize;
 }
 .bar-button-default {

@@ -9,9 +9,13 @@ import {HomePage} from './pages/home/home';
 import {MarketplacePage} from './pages/marketplace/marketplace';
 import {AlltradeshowsPage} from './pages/alltradeshows/alltradeshows';
 import {SeminarPage} from './pages/seminar/seminar';
+import {UserprofilePage} from './pages/userprofile/userprofile';
+import {MytradeshowPage} from './pages/mytradeshow/mytradeshow';
+import {MyseminarPage} from './pages/myseminar/myseminar';
 
 
 let component = [HomePage, AlltradeshowsPage, MarketplacePage, SeminarPage];
+let userpage = [UserprofilePage, MytradeshowPage, MyseminarPage];
 
 @Component({
     templateUrl: 'build/app.html'
@@ -44,9 +48,13 @@ export class MyApp {
     }
 
     openPage(pageid) {
-//        angular.element('#bookmarkbutton').addClass("alllign");
         console.log(pageid);
         this.nav.setRoot(component[pageid]);
+    }
+
+    userPage(pageid) {
+        console.log(pageid);
+        this.nav.setRoot(userpage[pageid]);
     }
 }
 

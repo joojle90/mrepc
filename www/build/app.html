@@ -3,18 +3,20 @@
     <ion-toolbar>
         <!--        <ion-title>Side Menu</ion-title>-->
         <div padding-top padding-bottom text-center>
-            <img src="http://www.gravatar.com/avatar?d=mm&s=140">
+            <button clear menuClose (click)="userPage(0)">
+                <img src="http://www.gravatar.com/avatar?d=mm&s=140">
+            </button>
             <p>Hi, User</p>
         </div>
         <ion-segment id="bookmarkbutton">
-            <ion-segment-button value="new" menuClose>
+            <ion-segment-button value="mytradeshows" menuClose (click)="userPage(1)">
                 <ion-badge>5</ion-badge>
-                <ion-icon name="bookmark"></ion-icon>
-                <ion-label>My Event</ion-label>
+                <ion-icon name="bookmarks"></ion-icon>
+                <ion-label>My Trade Show</ion-label>
             </ion-segment-button>
-            <ion-segment-button value="hot" menuClose>
+            <ion-segment-button value="myseminars" menuClose (click)="userPage(2)">
                 <ion-badge>2</ion-badge>
-                <ion-icon name="list"></ion-icon>
+                <ion-icon name="albums"></ion-icon>
                 <ion-label>My Seminar</ion-label>
             </ion-segment-button>
         </ion-segment>

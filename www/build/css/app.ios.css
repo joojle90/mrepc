@@ -9044,6 +9044,9 @@ body {
   padding: 0; }
   .sidemenu .toolbar div {
     padding: 5px 0; }
+  .sidemenu .toolbar button {
+    margin: 0;
+    height: 5em; }
   .sidemenu .toolbar ion-segment {
     position: inherit; }
     .sidemenu .toolbar ion-segment .segment-button {
@@ -9082,7 +9085,7 @@ body {
 
 .toolbar-title {
   color: #ffffff;
-  width: 80%;
+  width: 90%;
   text-transform: capitalize; }
 
 .bar-button-default {
