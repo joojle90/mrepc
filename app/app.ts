@@ -3,6 +3,7 @@ import {ionicBootstrap, Platform, MenuController, Nav} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 
 import {Mrepcdata} from './providers/mrepcdata/mrepcdata';
+import {Userdata} from './providers/userdata/userdata';
 import {TabsPage} from './pages/tabs/tabs';
 import {HomePage} from './pages/home/home';
 import {MarketplacePage} from './pages/marketplace/marketplace';
@@ -26,7 +27,8 @@ export class MyApp {
     constructor(
         private platform: Platform,
         public mymenu: MenuController,
-        public mrepcdata: Mrepcdata
+        public mrepcdata: Mrepcdata,
+        public userdata: Userdata
     ) {       
         platform.ready().then(() => {
             StatusBar.styleDefault();
@@ -42,10 +44,11 @@ export class MyApp {
     }
 
     openPage(pageid) {
+//        angular.element('#bookmarkbutton').addClass("alllign");
         console.log(pageid);
         this.nav.setRoot(component[pageid]);
     }
 }
 
-ionicBootstrap(MyApp, [Mrepcdata], { });
+ionicBootstrap(MyApp, [Mrepcdata, Userdata], { });
 

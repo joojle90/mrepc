@@ -32,9 +32,14 @@ export class HomePage {
         this.mrepcdata.geteventcriteria('6', '1').then(data => {
             this.comingsoonevent = data.filter(newdata => {
                 let setdate = new Date (newdata.eventdetail.startdate);
-                return setdate < new Date();
+                return setdate > new Date();
             });
             this.comingsoonevent = this.comingsoonevent.slice(0,5);
+            this.comingsoonevent = this.comingsoonevent.sort((a,b) => {
+                let datea = new Date (a.eventdetail.startdate);
+                let dateb = new Date (b.eventdetail.startdate);
+                return datea > dateb;
+            });
         })
 
     }
@@ -43,7 +48,11 @@ export class HomePage {
         let picture = page.image;
         this.navCtrl.push(TradeshowdetailsPage, {
             eventpic: picture,
-            eventdetails: page.eventdetail[0]
+            startdate: page.eventdetail.startdate,
+            enddate: page.eventdetail.enddate,
+            location: page.eventdetail.location,
+            website: page.eventdetail.linkurl,
+            eventdetails: page.eventdetail
         });
     }
 

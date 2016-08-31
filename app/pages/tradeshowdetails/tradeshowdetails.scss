@@ -1,3 +1,30 @@
 .tradeshowdetails {
-
+    ion-card {
+        h1 {
+            padding: 0 0 20px;
+            text-transform: capitalize;
+        }
+        ion-item.item{
+            padding-left: 8px;
+        }
+    }
+    ion-card-content {
+        h5 {
+            line-height: 30px;
+            font-weight: bold;
+        }
+    }
+    ion-row {
+        padding: 5px;
+        ion-col {
+            padding: 0;
+            ion-icon {
+                color: #00b6f1;
+                margin-right: 10px;
+            }
+            a {
+                text-decoration: inherit;
+            }
+        }
+    }
 }

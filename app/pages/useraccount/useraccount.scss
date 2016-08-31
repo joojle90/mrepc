@@ -1,3 +1,17 @@
 .useraccount {
+    ion-grid {
+        padding: 0;
 
+        ion-col {
+            padding: 2px;
+        }
+    }
+
+    .item {
+        padding-left: 0;
+        background-color: inherit;
+    }
+    .item-input ion-label {
+        color: #000;
+    }
 }

@@ -1,13 +1,24 @@
 <ion-menu [content]="content" class="sidemenu">
 
     <ion-toolbar>
-        <ion-title>Side Menu</ion-title>
-        <!--
-    <ion-tabs>
-      <ion-tab tabTitle="My Event" [root]="tab1Root" tabIcon="bookmark"></ion-tab>
-      <ion-tab tabTitle="My Seminar" [root]="tab2Root" tabIcon="mail"></ion-tab>
-    </ion-tabs>
--->
+        <!--        <ion-title>Side Menu</ion-title>-->
+        <div padding-top padding-bottom text-center>
+            <img src="http://www.gravatar.com/avatar?d=mm&s=140">
+            <p>Hi, User</p>
+        </div>
+        <ion-segment id="bookmarkbutton">
+            <ion-segment-button value="new" menuClose>
+                <ion-badge>5</ion-badge>
+                <ion-icon name="bookmark"></ion-icon>
+                <ion-label>My Event</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="hot" menuClose>
+                <ion-badge>2</ion-badge>
+                <ion-icon name="list"></ion-icon>
+                <ion-label>My Seminar</ion-label>
+            </ion-segment-button>
+        </ion-segment>
+
     </ion-toolbar>
 
     <ion-content>

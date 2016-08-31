@@ -7,7 +7,7 @@
 <ion-header>
 
     <ion-navbar>
-        <ion-title>Trade Show Details</ion-title>
+        <ion-title>{{geteventdetails.eventdetails.name}}</ion-title>
         <button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
@@ -16,6 +16,62 @@
 </ion-header>
 
 
-<ion-content padding class="tradeshowdetails">
+<ion-content class="tradeshowdetails">
+    <ion-card>
+        <div>
+          <img src="img/event/{{geteventdetails.eventpic}}">
+        </div>
+        <ion-card-content>
+            <h1 class="card-title">
+                {{geteventdetails.eventdetails.name}}
+            </h1>
 
+            <ion-row>
+                <ion-col width-33>
+                    <ion-icon name="time"></ion-icon>
+                    Start date
+                </ion-col>
+                <ion-col width-67>
+                    <p>{{eventstart}}</p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col width-33>
+                    <ion-icon name="speedometer"></ion-icon>
+                    End date
+                </ion-col>
+                <ion-col width-67>
+                    <p>{{geteventdetails.enddate}}</p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col width-33>
+                    <ion-icon name="map"></ion-icon>
+                    Location
+                </ion-col>
+                <ion-col width-67>
+                    <p>{{geteventdetails.location}}</p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col width-33>
+                    <ion-icon name="globe"></ion-icon>
+                    Website
+                </ion-col>
+                <ion-col width-67>
+                    <a href="{{geteventdetails.website}}" clear primary>More details</a>
+                </ion-col>
+            </ion-row>
+            <br>
+            <h5>
+                Description
+            </h5>
+            <p>{{geteventdetails.eventdetails.description}}</p>
+            <br>
+            <h5>
+                Product
+            </h5>
+            <p>{{geteventdetails.eventdetails.productdetails}}</p>
+        </ion-card-content>
+    </ion-card>
 </ion-content>

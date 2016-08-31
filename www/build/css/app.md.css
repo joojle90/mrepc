@@ -10401,7 +10401,31 @@ body {
   background-color: #fff; }
 
 .sidemenu .toolbar {
-  height: 100px; }
+  height: 300px;
+  padding: 0; }
+  .sidemenu .toolbar div {
+    padding: 5px 0; }
+  .sidemenu .toolbar ion-segment {
+    position: inherit; }
+    .sidemenu .toolbar ion-segment .segment-button {
+      color: #4c4949;
+      height: 7.5rem;
+      line-height: 2.2rem; }
+      .sidemenu .toolbar ion-segment .segment-button ion-badge {
+        display: block;
+        width: 25px;
+        position: absolute;
+        right: 30px;
+        background-color: #f53838; }
+    .sidemenu .toolbar ion-segment .segment-button.activated, .sidemenu .toolbar ion-segment .segment-button.segment-activated {
+      border-color: #0e34dc;
+      color: #fff; }
+    .sidemenu .toolbar ion-segment ion-label {
+      margin: 0; }
+
+.sidemenu ion-toolbar img {
+  max-width: 70px;
+  border-radius: 50%; }
 
 .sidemenu scroll-content {
   background: #ffffff; }
@@ -10418,14 +10442,24 @@ body {
   background: #00b6f1; }
 
 .toolbar-title {
-  color: #ffffff; }
+  color: #ffffff;
+  width: 80%;
+  text-transform: capitalize; }
 
 .bar-button-default {
   color: #ffffff; }
 
 scroll-content {
-  background: url("../../img/misc/layout_bg.jpg");
-  background-size: contain; }
+  background: #b1d4ed;
+  background: -webkit-gradient(left top, right top, color-stop(0%, #b1d4ed), color-stop(100%, #65a1d2));
+  background: -webkit-linear-gradient(left, #b1d4ed 0%, #65a1d2 100%);
+  background: linear-gradient(to right, #b1d4ed 0%, #65a1d2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b1d4ed', endColorstr='#65a1d2', GradientType=1); }
+
+body.ios .segment-button {
+  height: 5.5rem !important; }
+  body.ios .segment-button ion-badge {
+    right: 10px !important; }
 
 .home ion-slides {
   height: initial; }
@@ -10501,3 +10535,36 @@ scroll-content {
     position: relative;
     text-align: center;
     box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.3); }
+
+.tradeshowdetails ion-card h1 {
+  padding: 0 0 20px;
+  text-transform: capitalize; }
+
+.tradeshowdetails ion-card ion-item.item {
+  padding-left: 8px; }
+
+.tradeshowdetails ion-card-content h5 {
+  line-height: 30px;
+  font-weight: bold; }
+
+.tradeshowdetails ion-row {
+  padding: 5px; }
+  .tradeshowdetails ion-row ion-col {
+    padding: 0; }
+    .tradeshowdetails ion-row ion-col ion-icon {
+      color: #00b6f1;
+      margin-right: 10px; }
+    .tradeshowdetails ion-row ion-col a {
+      text-decoration: inherit; }
+
+.useraccount ion-grid {
+  padding: 0; }
+  .useraccount ion-grid ion-col {
+    padding: 2px; }
+
+.useraccount .item {
+  padding-left: 0;
+  background-color: inherit; }
+
+.useraccount .item-input ion-label {
+  color: #000; }

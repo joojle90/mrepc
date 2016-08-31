@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
+import { HomePage } from '../home/home';
+import { Userdata } from '../../providers/userdata/userdata';
 
 /*
   Generated class for the UseraccountPage page.
@@ -11,24 +13,36 @@ import { NavController, AlertController } from 'ionic-angular';
     templateUrl: 'build/pages/useraccount/useraccount.html',
 })
 export class UseraccountPage {
+    login: {username?: string, password?: string} = {};
+    submitted = false;
 
     constructor(
         private navCtrl: NavController,
-        private alertCtrl: AlertController
+        private alertCtrl: AlertController,
+        public userData: Userdata
     ) {
 
     }
 
-    userlogin() {
-        let alert = this.alertCtrl.create({
-          title: 'Login',
-          subTitle: 'You are login now!',
-          buttons: ['OK']
-        });
-        alert.present();
+    userLogin(form) {
+        this.submitted = true;
+
+        if (form.valid) {
+            this.userData.login(this.login.username);
+            this.navCtrl.push(HomePage);
+        }
     }
 
-    usersignup() {
+//    userlogin() {
+//        let alert = this.alertCtrl.create({
+//          title: 'Login',
+//          subTitle: 'You are login now!',
+//          buttons: ['OK']
+//        });
+//        alert.present();
+//    }
+
+    userSignup(form) {
         let alert = this.alertCtrl.create({
           title: 'Successful Sign Up',
           subTitle: 'Thank you for sign up to our application',
