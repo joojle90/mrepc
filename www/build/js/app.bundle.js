@@ -94,7 +94,11 @@ var AlltradeshowsPage = (function () {
         var picture = page.image;
         this.navCtrl.push(tradeshowdetails_1.TradeshowdetailsPage, {
             eventpic: picture,
-            eventdetails: page.eventdetail[0]
+            startdate: page.eventdetail.startdate,
+            enddate: page.eventdetail.enddate,
+            location: page.eventdetail.location,
+            website: page.eventdetail.linkurl,
+            eventdetails: page.eventdetail
         });
     };
     AlltradeshowsPage.prototype.presentLoadingData = function () {

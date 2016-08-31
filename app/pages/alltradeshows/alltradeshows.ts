@@ -34,7 +34,11 @@ export class AlltradeshowsPage {
         let picture = page.image;
         this.navCtrl.push(TradeshowdetailsPage, {
             eventpic: picture,
-            eventdetails: page.eventdetail[0]
+            startdate: page.eventdetail.startdate,
+            enddate: page.eventdetail.enddate,
+            location: page.eventdetail.location,
+            website: page.eventdetail.linkurl,
+            eventdetails: page.eventdetail
         });
     }
 
