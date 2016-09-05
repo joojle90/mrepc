@@ -37,6 +37,7 @@ export class AlltradeshowsPage {
             startdate: page.eventdetail.startdate,
             enddate: page.eventdetail.enddate,
             location: page.eventdetail.location,
+            email: page.eventdetail.email,
             website: page.eventdetail.linkurl,
             eventdetails: page.eventdetail
         });

@@ -34,26 +34,32 @@ export class Mrepcdata {
         }
 
         return new Promise(resolve => {
-            if(apidata === undefined) {
-                console.log('data undefined');
-            } else {
-                this.http.get(serverURL+apidata).subscribe(res => {
-                    resolve(res.json());
-                });
-            }
+            this.http.get(serverURL+apidata).subscribe(
+                result => {
+                    resolve(result.json());
+                },
+                error => {
+                    console.log(error);
+                }
+            );
         });
     }
     
     getLeftsidemenu() {
         return this.load('leftsidemenu').then(data => {
-            console.log(data.leftsidemenu.submenu);
             return data.leftsidemenu.submenu;
+        }, (error) => {
+            console.log(error);
         });
+//            if (this.data) {
+//                return Promise.resolve(data.leftsidemenu.submenu);
+//            } else {
+//                console.log("error");
+//            }
     }
 
     getMastermenu() {
         return this.load('leftsidemenu').then(data => {
-            console.log(data.mastermenu);
             return data.mastermenu;
         });
     }
@@ -61,7 +67,6 @@ export class Mrepcdata {
     geteventcriteria(eventid, statusid) {
         this.apidata = 'eventfilter?start_date='+this.startdate+'&end_date='+this.enddate+'&event_id='+eventid+'&status_id='+statusid;
         return this.load(this.apidata).then(data => {
-            console.log(data);
             return data;
         });
     }

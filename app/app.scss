@@ -1,10 +1,14 @@
 .sidemenu {
     .toolbar {
-        height: 300px;
+        height: 270px;
         padding: 0;
 
         div {
-            padding: 5px 0;
+            padding-top: 0;
+
+            p {
+                margin-bottom: 25px;
+            }
         }
 
         button {
@@ -18,6 +22,7 @@
                 color: #4c4949;
                 height: 7.5rem;
                 line-height: 2.2rem;
+                border-bottom-style: none;
 
                 ion-badge {
                     display: block;
@@ -30,6 +35,7 @@
             .segment-button.activated, .segment-button.segment-activated {
                 border-color: #0e34dc;
                 color: #fff;
+                border-bottom-style: none;
             }
             ion-label {
                 margin: 0;
@@ -38,7 +44,7 @@
     }
     ion-toolbar {
         img {
-            max-width: 70px;
+            max-width: 60px;
             border-radius: 50%;
         }
     }
@@ -85,11 +91,18 @@ scroll-content {
 }
 
 body.ios {
+    div > p {
+        margin-bottom: 15px !important;
+    }
     .segment-button {
         height: 5.5rem !important;
+        border-bottom-style: solid !important;
 
         ion-badge {
             right: 10px !important;
         }
+    }
+    .segment-button.activated, .segment-button.segment-activated {
+        border-bottom-style: solid !important;
     }
 }

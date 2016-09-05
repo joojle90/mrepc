@@ -1,11 +1,4 @@
-<!--
-  Generated template for the SeminarPage page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
     <ion-navbar>
         <ion-title>Seminar</ion-title>
 
@@ -17,6 +10,35 @@
 </ion-header>
 
 
-<ion-content padding class="seminar">
-
+<ion-content class="seminar">
+    <!--
+    <button clear *ngFor="let sl of seminarlist; let i = index" (click)="detailsPage(seminarlist[i])">
+        <ion-card>
+            <img src="img/event/{{sl.image}}" />
+        </ion-card>
+    </button>
+-->
+    <ion-card *ngFor="let sl of seminarlist; let i = index">
+        <div>
+            <img src="img/advance-card-map-madison.png">
+<!--
+            <button fab fab-right fab-top class="fab-btn">
+                <ion-icon name='pin'></ion-icon>
+            </button>
+-->
+        </div>
+        <ion-item>
+            <p>{{sl.eventdetail.startdate}}</p>
+            <h2>{{sl.eventdetail.name}}</h2>
+        </ion-item>
+        <ion-item actions>
+            <span item-left><strong secondary>Location : </strong>{{sl.eventdetail.location}}</span>
+            <button primary clear item-right (click)="seminarShare()">
+                <ion-icon name='share'></ion-icon>
+            </button>
+            <button primary clear item-right (click)="seminarBookmark()">
+                <ion-icon name='albums'></ion-icon>
+            </button>
+        </ion-item>
+    </ion-card>
 </ion-content>

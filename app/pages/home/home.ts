@@ -16,12 +16,20 @@ export class HomePage {
 
     mastermenu: any;
     comingsoonevent: any;
+    homeOptions: any;
+    imageurl: string;
 
     constructor(
         private navCtrl: NavController,
         private loadingCtrl: LoadingController,
         public mrepcdata: Mrepcdata
         ) {
+
+        this.homeOptions = {
+            initialSlide: 0,
+            autoplay: 3000,
+            autoplayDisableOnInteraction: false
+        };
 
         this.presentLoadingData();
 
@@ -40,8 +48,7 @@ export class HomePage {
                 let dateb = new Date (b.eventdetail.startdate);
                 return datea > dateb;
             });
-        })
-
+        });
     }
 
     tradeshowspage(page) {
@@ -51,6 +58,7 @@ export class HomePage {
             startdate: page.eventdetail.startdate,
             enddate: page.eventdetail.enddate,
             location: page.eventdetail.location,
+            email: page.eventdetail.email,
             website: page.eventdetail.linkurl,
             eventdetails: page.eventdetail
         });
@@ -72,11 +80,13 @@ export class HomePage {
         });
 
         loading.present();
+            //console.log(this.mastermenu);
 
         if(this.mastermenu !== null){
             setTimeout(() => {
                 loading.dismiss();
             }, 2000);
+        } else {
         }
     }
 }

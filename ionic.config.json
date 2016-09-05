@@ -1,9 +1,9 @@
 {
   "name": "mrepc",
-  "app_id": "",
+  "app_id": "62fd12c8",
   "v2": true,
   "typescript": true,
-    "proxies": [
+  "proxies": [
     {
       "path": "/mrepc-api/",
       "proxyUrl": "http://techapp.info/mrepc-api/"

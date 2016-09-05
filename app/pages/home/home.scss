@@ -2,11 +2,10 @@
     ion-slides {
         height: initial;
         button {
-            margin: 6px 0.5rem;
             border-radius: 5px;
         }
     }
-    ion-card {
+    ion-card.menubtn {
         img {
             filter: brightness(70%);
         }

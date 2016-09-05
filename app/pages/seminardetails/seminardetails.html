@@ -1,18 +1,81 @@
 <!--
-  Generated template for the SeminardetailsPage page.
+  Generated template for the TradeshowdetailsPage page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>seminardetails</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>{{geteventdetails.eventdetails.name}}</ion-title>
+        <button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="seminardetails">
+    <ion-card>
+        <div>
+          <img src="img/event/{{geteventdetails.eventpic}}">
+        </div>
+        <ion-card-content>
+            <h1 class="card-title">
+                {{geteventdetails.eventdetails.name}}
+            </h1>
 
+            <ion-row>
+                <ion-col width-50>
+                    <ion-icon name="time"></ion-icon>
+                    Start date
+                </ion-col>
+                <ion-col width-50>
+                    <p>{{eventstart}}</p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col width-50>
+                    <ion-icon name="speedometer"></ion-icon>
+                    End date
+                </ion-col>
+                <ion-col width-50>
+                    <p>{{eventend}}</p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col width-50>
+                    <ion-icon name="map"></ion-icon>
+                    Location
+                </ion-col>
+                <ion-col width-50>
+                    <p>{{geteventdetails.location}}</p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col width-50>
+                    <ion-icon name="map"></ion-icon>
+                    Email
+                </ion-col>
+                <ion-col width-50>
+                    <p>{{geteventdetails.email}}</p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col width-50>
+                    <ion-icon name="globe"></ion-icon>
+                    Website
+                </ion-col>
+                <ion-col width-50>
+                    <a href="{{geteventdetails.website}}" clear primary>More details</a>
+                </ion-col>
+            </ion-row>
+            <br>
+            <h5>
+                Description
+            </h5>
+            <p>{{geteventdetails.eventdetails.description}}</p>
+        </ion-card-content>
+    </ion-card>
 </ion-content>

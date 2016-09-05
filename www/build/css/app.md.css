@@ -10401,10 +10401,12 @@ body {
   background-color: #fff; }
 
 .sidemenu .toolbar {
-  height: 300px;
+  height: 270px;
   padding: 0; }
   .sidemenu .toolbar div {
-    padding: 5px 0; }
+    padding-top: 0; }
+    .sidemenu .toolbar div p {
+      margin-bottom: 25px; }
   .sidemenu .toolbar button {
     margin: 0;
     height: 5em; }
@@ -10413,7 +10415,8 @@ body {
     .sidemenu .toolbar ion-segment .segment-button {
       color: #4c4949;
       height: 7.5rem;
-      line-height: 2.2rem; }
+      line-height: 2.2rem;
+      border-bottom-style: none; }
       .sidemenu .toolbar ion-segment .segment-button ion-badge {
         display: block;
         width: 25px;
@@ -10422,12 +10425,13 @@ body {
         background-color: #f53838; }
     .sidemenu .toolbar ion-segment .segment-button.activated, .sidemenu .toolbar ion-segment .segment-button.segment-activated {
       border-color: #0e34dc;
-      color: #fff; }
+      color: #fff;
+      border-bottom-style: none; }
     .sidemenu .toolbar ion-segment ion-label {
       margin: 0; }
 
 .sidemenu ion-toolbar img {
-  max-width: 70px;
+  max-width: 60px;
   border-radius: 50%; }
 
 .sidemenu scroll-content {
@@ -10459,18 +10463,24 @@ scroll-content {
   background: linear-gradient(to right, #b1d4ed 0%, #65a1d2 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b1d4ed', endColorstr='#65a1d2', GradientType=1); }
 
+body.ios div > p {
+  margin-bottom: 15px !important; }
+
 body.ios .segment-button {
-  height: 5.5rem !important; }
+  height: 5.5rem !important;
+  border-bottom-style: solid !important; }
   body.ios .segment-button ion-badge {
     right: 10px !important; }
+
+body.ios .segment-button.activated, body.ios .segment-button.segment-activated {
+  border-bottom-style: solid !important; }
 
 .home ion-slides {
   height: initial; }
   .home ion-slides button {
-    margin: 6px 0.5rem;
     border-radius: 5px; }
 
-.home ion-card img {
+.home ion-card.menubtn img {
   -webkit-filter: brightness(70%);
   filter: brightness(70%); }
 
@@ -10539,6 +10549,34 @@ body.ios .segment-button {
     text-align: center;
     box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.3); }
 
+.seminar ion-card div {
+  position: relative; }
+
+.seminar ion-card p {
+  font-size: 0.7em; }
+
+.seminar button[fab].fab-btn {
+  top: calc(100% - 35px);
+  z-index: 50; }
+
+.seminar ion-item {
+  border-top: 1px outset; }
+  .seminar ion-item span {
+    width: 70%;
+    font-size: 1.2rem;
+    font-weight: normal;
+    text-transform: capitalize; }
+  .seminar ion-item h2 {
+    white-space: normal;
+    width: 80%;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    text-transform: capitalize; }
+  .seminar ion-item .button-inner {
+    margin-right: 10px;
+    margin-left: 5px; }
+
 .tradeshowdetails ion-card h1 {
   padding: 0 0 20px;
   text-transform: capitalize; }
@@ -10558,6 +10596,27 @@ body.ios .segment-button {
       color: #00b6f1;
       margin-right: 10px; }
     .tradeshowdetails ion-row ion-col a {
+      text-decoration: inherit; }
+
+.seminardetails ion-card h1 {
+  padding: 0 0 20px;
+  text-transform: capitalize; }
+
+.seminardetails ion-card ion-item.item {
+  padding-left: 8px; }
+
+.seminardetails ion-card-content h5 {
+  line-height: 30px;
+  font-weight: bold; }
+
+.seminardetails ion-row {
+  padding: 5px; }
+  .seminardetails ion-row ion-col {
+    padding: 0; }
+    .seminardetails ion-row ion-col ion-icon {
+      color: #00b6f1;
+      margin-right: 10px; }
+    .seminardetails ion-row ion-col a {
       text-decoration: inherit; }
 
 .useraccount ion-grid {
