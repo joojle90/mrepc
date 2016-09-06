@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { BuyerPage } from '../../pages/buyer/buyer';
+import { SupplierPage} from '../../pages/supplier/supplier';
 
 /*
   Generated class for the MarketplacePage page.
@@ -8,12 +10,17 @@ import { NavController } from 'ionic-angular';
   Ionic pages and navigation.
 */
 @Component({
-  templateUrl: 'build/pages/marketplace/marketplace.html',
+    templateUrl: 'build/pages/marketplace/marketplace.html',
 })
 export class MarketplacePage {
+    tab1Root: any = BuyerPage;
+    tab2Root: any = SupplierPage;
 
-  constructor(private navCtrl: NavController) {
+    constructor(
+        private navCtrl: NavController
+    ) {
 
-  }
+        this.navCtrl = navCtrl;
+    }
 
 }

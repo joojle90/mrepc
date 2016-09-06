@@ -9188,6 +9188,13 @@ body.ios .segment-button.activated, body.ios .segment-button.segment-activated {
     text-align: center;
     box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.3); }
 
+.marketplace ion-tabbar {
+  background: #00b6f1; }
+  .marketplace ion-tabbar .tab-button {
+    color: #4c4949; }
+  .marketplace ion-tabbar .tab-button[aria-selected=true] {
+    color: #ffffff; }
+
 .seminar ion-card div {
   position: relative; }
 

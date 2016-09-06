@@ -8,7 +8,8 @@ import 'rxjs/add/operator/map';
   See https://angular.io/docs/ts/latest/guide/dependency-injection.html
   for more info on providers and Angular 2 DI.
 */
-let serverURL = 'http://techapp.info/mrepc-api/';
+///http://techapp.info
+let serverURL = '/mrepc-api/';
 let favorites = [];
 
 @Injectable()
@@ -20,6 +21,7 @@ export class Mrepcdata {
     enddate: string;
     eventid: string;
     statusid: string;
+    errormsg: string;
     
     constructor(private http: Http) {
         this.http = http;
@@ -33,13 +35,17 @@ export class Mrepcdata {
             return Promise.resolve(this.data);
         }
 
-        return new Promise(resolve => {
-            this.http.get(serverURL+apidata).subscribe(
+        return new Promise((resolve, reject) => {
+            this.http.get(serverURL+apidata).map(response => response.json())
+            .subscribe(
                 result => {
-                    resolve(result.json());
+                    resolve(result);
                 },
                 error => {
-                    console.log(error);
+                    Promise.reject(new Error("my error msg"))
+                    .catch(error => {
+                        return this.errormsg = "Error404";
+                    });
                 }
             );
         });
@@ -47,15 +53,11 @@ export class Mrepcdata {
     
     getLeftsidemenu() {
         return this.load('leftsidemenu').then(data => {
+            console.log(data);
             return data.leftsidemenu.submenu;
         }, (error) => {
             console.log(error);
         });
-//            if (this.data) {
-//                return Promise.resolve(data.leftsidemenu.submenu);
-//            } else {
-//                console.log("error");
-//            }
     }
 
     getMastermenu() {
