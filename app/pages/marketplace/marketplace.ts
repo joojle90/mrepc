@@ -19,8 +19,6 @@ export class MarketplacePage {
     constructor(
         private navCtrl: NavController
     ) {
-
-        this.navCtrl = navCtrl;
     }
 
 }

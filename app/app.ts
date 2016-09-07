@@ -12,6 +12,7 @@ import {SeminarPage} from './pages/seminar/seminar';
 import {UserprofilePage} from './pages/userprofile/userprofile';
 import {MytradeshowPage} from './pages/mytradeshow/mytradeshow';
 import {MyseminarPage} from './pages/myseminar/myseminar';
+import {AboutPage} from './pages/about/about';
 
 
 let component = [HomePage, AlltradeshowsPage, MarketplacePage, SeminarPage];

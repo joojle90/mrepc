@@ -22,6 +22,7 @@ export class Mrepcdata {
     eventid: string;
     statusid: string;
     errormsg: string;
+    supplierid: string;
     
     constructor(private http: Http) {
         this.http = http;
@@ -53,22 +54,42 @@ export class Mrepcdata {
     
     getLeftsidemenu() {
         return this.load('leftsidemenu').then(data => {
-            console.log(data);
             return data.leftsidemenu.submenu;
-        }, (error) => {
-            console.log(error);
         });
     }
 
     getMastermenu() {
-        return this.load('leftsidemenu').then(data => {
-            return data.mastermenu;
-        });
+        return this.load('leftsidemenu').then(
+            data => {
+                return data.mastermenu;
+            }, error => {
+                console.log("error");
+            });
     }
 
     geteventcriteria(eventid, statusid) {
         this.apidata = 'eventfilter?start_date='+this.startdate+'&end_date='+this.enddate+'&event_id='+eventid+'&status_id='+statusid;
         return this.load(this.apidata).then(data => {
+            return data;
+        });
+    }
+
+    getMarketplaceBuyer() {
+        return this.load('rubberType').then(data => {
+            return data;
+        });
+    }
+
+    getMarketplaceSupplier() {
+        return this.load('marketplaceList').then(data => {
+            return data;
+        });
+    }
+
+    getSupplierDetails(supplierid) {
+        this.apidata = 'marketplaceFilter?mrepc_no='+supplierid;
+        return this.load(this.apidata).then(data => {
+            console.log(data);
             return data;
         });
     }

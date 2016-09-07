@@ -20,7 +20,7 @@
 -->
     <ion-card *ngFor="let sl of seminarlist; let i = index">
         <div>
-            <img src="img/advance-card-map-madison.png">
+            <img src="img/advance-card-map-madison.png" onError="this.src='img/no-image.jpg'">
 <!--
             <button fab fab-right fab-top class="fab-btn">
                 <ion-icon name='pin'></ion-icon>

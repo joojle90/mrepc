@@ -21,16 +21,16 @@ export class AlltradeshowsPage {
         private loadingCtrl: LoadingController,
         public mrepcdata: Mrepcdata
     ) {
-
         this.presentLoadingData();
+    }
 
-        this.mrepcdata.geteventcriteria('6', '1,4').then(data => {
+    loadTradeshow() {
+        return this.mrepcdata.geteventcriteria('6', '1,4').then(data => {
             this.tradeshowslist = data;
         })
     }
 
     detailsPage(page) {
-        console.log(page);
         let picture = page.image;
         this.navCtrl.push(TradeshowdetailsPage, {
             eventpic: picture,
@@ -44,16 +44,13 @@ export class AlltradeshowsPage {
     }
 
     presentLoadingData() {
-        let loading = this.loadingCtrl.create({
-            content: 'Please wait...'
-        });
+        setTimeout(() => {
+            let loader = this.loadingCtrl.create({ content: "Please wait..." });
+            loader.present();
 
-        loading.present();
-
-        if(this.tradeshowslist !== null){
-            setTimeout(() => {
-                loading.dismiss();
-            }, 2000);
-        }
+            this.loadTradeshow().then(() => {
+                loader.dismiss();
+            });
+        }, 0);
     }
 }

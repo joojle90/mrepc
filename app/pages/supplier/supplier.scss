@@ -1,3 +1,17 @@
 .supplier {
-
+    ion-list {
+        margin: 0;
+    }
+    .item {
+        ion-label {
+            h2 {
+                width: 90%;
+                font-weight: 700;
+                white-space: nowrap;
+                text-transform: capitalize;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
 }

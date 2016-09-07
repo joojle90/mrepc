@@ -1,0 +1,74 @@
+<!--
+  Generated template for the SupplierDetailsPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>
+            {{getsupplierdetails.companyData.companyName}}
+        </ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="supplier-details">
+    <ion-card>
+        <img src="img/marketplace/supplier/{{getsupplierdetails.companyData.image}}" onError="this.src='img/no-image.jpg'" />
+
+        <ion-card-content>
+            <h2>
+                {{getsupplierdetails.companyData.companyName}} ({{getsupplierdetails.companyData.companyNo}})
+            </h2>
+            <p>
+                {{getsupplierdetails.companyData.companyDesc}}
+            </p>
+        </ion-card-content>
+        <ion-list>
+            <ion-item>
+                <ion-row>
+                    <ion-col width-25>
+                        Business
+                    </ion-col>
+                    <ion-col width-75>
+                        {{getsupplierdetails.companyData.bussinessType}}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col width-25>
+                        Product
+                    </ion-col>
+                    <ion-col width-75>
+                        {{getsupplierdetails.companyData.productType}}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col width-25>
+                        Address
+                    </ion-col>
+                    <ion-col width-75>
+                        {{getsupplierdetails.companyData.registerAddress}}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col width-25>
+                        Website
+                    </ion-col>
+                    <ion-col width-75>
+                        {{getsupplierdetails.companyData.companyWeb}}
+                    </ion-col>
+                </ion-row>
+            </ion-item>
+        </ion-list>
+        <button ion-item *ngFor="let cp of getsupplierdetails.companyProduct; let i = index">
+            <ion-thumbnail item-left>
+                <img src="img/marketplace/product/{{cp.productImage}}" onError="this.src='img/no-thumbnail.jpg'">
+            </ion-thumbnail>
+            <h3>{{cp.productName}}</h3>
+            <p>{{cp.productDesc}}</p>
+        </button>
+    </ion-card>
+</ion-content>

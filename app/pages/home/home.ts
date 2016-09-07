@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild, ElementRef} from '@angular/core';
 import {NavController, LoadingController} from 'ionic-angular';
 import {Mrepcdata} from '../../providers/mrepcdata/mrepcdata';
 import {TradeshowdetailsPage} from '../../pages/tradeshowdetails/tradeshowdetails';
@@ -13,6 +13,7 @@ let menubutton = [MarketplacePage, AlltradeshowsPage, SeminarPage];
   templateUrl: 'build/pages/home/home.html'
 })
 export class HomePage {
+    @ViewChild('imgtest') imgtest: ElementRef;
 
     mastermenu: any;
     comingsoonevent: any;
@@ -32,12 +33,17 @@ export class HomePage {
         };
 
         this.presentLoadingData();
+    }
 
-        this.mrepcdata.getMastermenu().then(data => {
+    loadHomemenu() {
+        this.loadComingsoonMenu();
+        return this.mrepcdata.getMastermenu().then(data => {
             this.mastermenu = data;
         });
+    }
 
-        this.mrepcdata.geteventcriteria('6', '1').then(data => {
+    loadComingsoonMenu() {
+        return this.mrepcdata.geteventcriteria('6', '1').then(data => {
             this.comingsoonevent = data.filter(newdata => {
                 let setdate = new Date (newdata.eventdetail.startdate);
                 return setdate > new Date();
@@ -49,6 +55,7 @@ export class HomePage {
                 return datea > dateb;
             });
         });
+
     }
 
     tradeshowspage(page) {
@@ -65,28 +72,21 @@ export class HomePage {
     }
 
     openmenuPage(pageid) {
-        //console.log(pageid);
         this.navCtrl.push(menubutton[pageid]);
     }
 
     useraccountPage(pageid) {
-        //console.log(pageid);
         this.navCtrl.push(UseraccountPage);
     }
     
     presentLoadingData() {
-        let loading = this.loadingCtrl.create({
-            content: 'Please wait...'
-        });
+        setTimeout(() => {
+            let loader = this.loadingCtrl.create({ content: "Please wait..." });
+            loader.present();
 
-        loading.present();
-            //console.log(this.mastermenu);
-
-        if(this.mastermenu !== null){
-            setTimeout(() => {
-                loading.dismiss();
-            }, 2000);
-        } else {
-        }
+            this.loadHomemenu().then(() => {
+                loader.dismiss();
+            });
+        }, 0);
     }
 }

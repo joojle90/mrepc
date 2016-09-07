@@ -1,26 +1,21 @@
-<!--
-  Generated template for the SupplierPage page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
+    <ion-navbar>
+        <ion-title>Supplier</ion-title>
 
-  <ion-navbar>
-    <ion-title>supplier</ion-title>
-  </ion-navbar>
-
+        <button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
 </ion-header>
 
-
-<ion-content padding>
-<ion-list>
-  <ion-item>
-    <ion-avatar item-left>
-      <img src="img/avatar-cher.png">
-    </ion-avatar>
-    <h2>Cher</h2>
-    <p>Ugh. As if.</p>
-  </ion-item>
-</ion-list>
+<ion-content class="supplier">
+    <ion-list>
+        <button ion-item *ngFor="let spl of supplierlist; let i = index" (click)="supplierPage(spl.companyID)">
+            <ion-avatar item-left>
+                <img src="img/marketplace/supplier/{{spl.image}}" onError="this.src='img/marketplace/noimage.png'">
+            </ion-avatar>
+            <h2>{{spl.companyName}}</h2>
+            <p>{{spl.companyNo}}</p>
+        </button>
+    </ion-list>
 </ion-content>
