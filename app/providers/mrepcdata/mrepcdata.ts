@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
   for more info on providers and Angular 2 DI.
 */
 ///http://techapp.info
-let serverURL = '/mrepc-api/';
+let serverURL = 'http://techapp.info/mrepc-api/';
 let favorites = [];
 
 @Injectable()
