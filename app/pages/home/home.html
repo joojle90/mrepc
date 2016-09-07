@@ -18,9 +18,14 @@
     <ion-slides pager [options]="homeOptions">
         <ion-slide *ngFor="let ce of comingsoonevent; let i = index;">
             <button clear (click)="tradeshowspage(comingsoonevent[i])">
-                <ion-card>
-                    <img src="img/event/{{ce.image}}" onError="this.src='img/event/DEFAULT.jpg'"/>
-                    <p class="card-title" *ngIf="ce.idlist !== '911'">{{comingsoonevent[i].eventdetail.name}}</p>
+                <ion-card class="eventcoming">
+                    <div>
+                        <img src="img/event/{{ce.image}}" onError="this.src='img/no-image_event.jpg'"/>
+                    </div>
+                    <ion-item>
+                        <h2>{{comingsoonevent[i].eventdetail.name}}</h2>
+                        <p>{{comingsoonevent[i].eventdetail.startdate}}</p>
+                    </ion-item>
                 </ion-card>
             </button>
         </ion-slide>

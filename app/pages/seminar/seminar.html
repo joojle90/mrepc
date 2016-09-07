@@ -11,24 +11,12 @@
 
 
 <ion-content class="seminar">
-    <!--
-    <button clear *ngFor="let sl of seminarlist; let i = index" (click)="detailsPage(seminarlist[i])">
-        <ion-card>
-            <img src="img/event/{{sl.image}}" />
-        </ion-card>
-    </button>
--->
     <ion-card *ngFor="let sl of seminarlist; let i = index">
         <div>
-            <img src="img/advance-card-map-madison.png" onError="this.src='img/no-image.jpg'">
-<!--
-            <button fab fab-right fab-top class="fab-btn">
-                <ion-icon name='pin'></ion-icon>
-            </button>
--->
+            <img src="img/seminar/{{sl.image}}" onError="this.src='img/no-image.jpg'">
         </div>
         <ion-item>
-            <p>{{sl.eventdetail.startdate}}</p>
+            <p><strong primary>Start date : </strong>{{sl.eventdetail.startdate}}</p>
             <h2>{{sl.eventdetail.name}}</h2>
         </ion-item>
         <ion-item actions>

@@ -204,6 +204,7 @@ var alltradeshows_1 = require('../../pages/alltradeshows/alltradeshows');
 var seminar_1 = require('../../pages/seminar/seminar');
 var useraccount_1 = require('../../pages/useraccount/useraccount');
 var menubutton = [marketplace_1.MarketplacePage, alltradeshows_1.AlltradeshowsPage, seminar_1.SeminarPage];
+var monthname = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 var HomePage = (function () {
     function HomePage(navCtrl, loadingCtrl, mrepcdata) {
         this.navCtrl = navCtrl;
@@ -211,7 +212,7 @@ var HomePage = (function () {
         this.mrepcdata = mrepcdata;
         this.homeOptions = {
             initialSlide: 0,
-            autoplay: 3000,
+            //            autoplay: 3000,
             autoplayDisableOnInteraction: false
         };
         this.presentLoadingData();
@@ -222,6 +223,7 @@ var HomePage = (function () {
         return this.mrepcdata.getMastermenu().then(function (data) {
             _this.mastermenu = data;
         });
+        //        this.eventstart = this.convertdate(this.geteventdetails.startdate);
     };
     HomePage.prototype.loadComingsoonMenu = function () {
         var _this = this;
@@ -234,8 +236,19 @@ var HomePage = (function () {
             _this.comingsoonevent = _this.comingsoonevent.sort(function (a, b) {
                 var datea = new Date(a.eventdetail.startdate);
                 var dateb = new Date(b.eventdetail.startdate);
+                console.log(a.eventdetail.startdate);
                 return datea > dateb;
             });
+        });
+    };
+    HomePage.prototype.loadTest = function () {
+        var _this = this;
+        this.mrepcdata.geteventcriteria('6', '1').then(function (data) {
+            _this.comingsooneventData = data.filter(function (newdata) {
+                var setdate = new Date(newdata.eventdetail.startdate);
+                return setdate > new Date();
+            });
+            _this.comingsooneventData = _this.comingsoonevent.slice(0, 5);
         });
     };
     HomePage.prototype.tradeshowspage = function (page) {
@@ -265,6 +278,11 @@ var HomePage = (function () {
                 loader.dismiss();
             });
         }, 0);
+    };
+    HomePage.prototype.convertdate = function (date) {
+        var thedate = date.split("-");
+        var newdate = thedate[2] + " " + monthname[thedate[1] - 1] + " " + thedate[0];
+        return newdate;
     };
     __decorate([
         core_1.ViewChild('imgtest'), 

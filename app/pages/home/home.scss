@@ -50,4 +50,44 @@
             box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.3)
         }
     }
+    .eventcoming {
+        .item {
+            padding: 0 16px;
+
+            ion-label {
+                margin: 13px 0;
+                text-align: center;
+            }
+            .item-inner {
+                padding: 0;
+            }
+        }
+        ion-item {
+            border-top: 1px outset;
+
+            span {
+                width: 70%;
+                font-size: 1.2rem;
+                font-weight: normal;
+                text-transform: capitalize;
+            }
+
+            h2 {
+                color: $themebg;
+                font-weight: 700;
+                font-size: 25px;
+                white-space: normal;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                display: -webkit-box;
+                text-transform: capitalize;
+                overflow: hidden;
+            }
+
+            .button-inner {
+                margin-right: 10px;
+                margin-left: 5px;
+            }
+        }
+    }
 }
