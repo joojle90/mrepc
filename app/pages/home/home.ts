@@ -8,6 +8,7 @@ import {SeminarPage} from '../../pages/seminar/seminar';
 import {UseraccountPage} from '../../pages/useraccount/useraccount';
 
 let menubutton = [MarketplacePage, AlltradeshowsPage, SeminarPage];
+let monthname = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 @Component({
   templateUrl: 'build/pages/home/home.html'
@@ -17,8 +18,10 @@ export class HomePage {
 
     mastermenu: any;
     comingsoonevent: any;
+    comingsooneventData: any;
     homeOptions: any;
     imageurl: string;
+    eventstart: string;
 
     constructor(
         private navCtrl: NavController,
@@ -28,7 +31,7 @@ export class HomePage {
 
         this.homeOptions = {
             initialSlide: 0,
-            autoplay: 3000,
+//            autoplay: 3000,
             autoplayDisableOnInteraction: false
         };
 
@@ -40,6 +43,7 @@ export class HomePage {
         return this.mrepcdata.getMastermenu().then(data => {
             this.mastermenu = data;
         });
+//        this.eventstart = this.convertdate(this.geteventdetails.startdate);
     }
 
     loadComingsoonMenu() {
@@ -52,10 +56,20 @@ export class HomePage {
             this.comingsoonevent = this.comingsoonevent.sort((a,b) => {
                 let datea = new Date (a.eventdetail.startdate);
                 let dateb = new Date (b.eventdetail.startdate);
+                console.log(a.eventdetail.startdate);
                 return datea > dateb;
             });
         });
+    }
 
+    loadTest() {
+        this.mrepcdata.geteventcriteria('6', '1').then(data => {
+            this.comingsooneventData = data.filter(newdata => {
+                let setdate = new Date (newdata.eventdetail.startdate);
+                return setdate > new Date();
+            });
+            this.comingsooneventData = this.comingsoonevent.slice(0,5);
+        });
     }
 
     tradeshowspage(page) {
@@ -88,5 +102,11 @@ export class HomePage {
                 loader.dismiss();
             });
         }, 0);
+    }
+
+    convertdate(date){
+        let thedate = date.split("-");
+        let newdate = thedate[2] +" "+ monthname[thedate[1]-1] +" "+ thedate[0];
+        return newdate;
     }
 }
