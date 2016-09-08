@@ -1,5 +1,6 @@
 {
     "jscodehints.detectedExclusions": [
-        "/Users/Joel/Documents/Mobile/Project Based/Hybrid/MREPC Project/mrepc/platforms/browser/www/build/js/zone.js"
+        "/Users/Joel/Documents/Mobile/Project Based/Hybrid/MREPC Project/mrepc/platforms/browser/www/build/js/zone.js",
+        "/Users/Joel/Documents/Mobile/Project Based/Hybrid/MREPC Project/mrepc/platforms/android/platform_www/cordova-js-src/android/promptbasednativeapi.js"
     ]
 }

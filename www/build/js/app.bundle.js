@@ -869,7 +869,7 @@ require('rxjs/add/operator/map');
   for more info on providers and Angular 2 DI.
 */
 ///http://techapp.info
-var serverURL = '/mrepc-api/';
+var serverURL = 'http://techapp.info/mrepc-api/';
 var favorites = [];
 var Mrepcdata = (function () {
     function Mrepcdata(http) {
