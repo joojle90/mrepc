@@ -10725,31 +10725,49 @@ body.ios .segment-button.activated, body.ios .segment-button.segment-activated {
   font-size: 2.2rem;
   text-transform: capitalize; }
 
+.supplier-details ion-label {
+  line-height: 25px; }
+
 .supplier-details ion-row {
   font-size: 14px; }
   .supplier-details ion-row ion-card {
     margin: 2px 10px; }
     .supplier-details ion-row ion-card ion-item.item {
-      background-color: beige; }
+      background-color: #d8d8d8; }
       .supplier-details ion-row ion-card ion-item.item p {
-        color: #2a6d30; }
+        color: #124698;
+        font-weight: 700; }
   .supplier-details ion-row ion-col {
     white-space: normal; }
     .supplier-details ion-row ion-col a {
       text-decoration: none; }
+  .supplier-details ion-row button {
+    height: inherit; }
+    .supplier-details ion-row button .input-wrapper {
+      -webkit-box-flex: initial;
+      -webkit-flex: initial;
+      -ms-flex: initial;
+      flex: initial;
+      width: 95%; }
+    .supplier-details ion-row button ion-label {
+      white-space: normal; }
+      .supplier-details ion-row button ion-label h3 {
+        font-size: 16px;
+        color: #00b6f1;
+        font-weight: 700;
+        text-transform: capitalize; }
 
-.supplier-details button {
-  height: inherit; }
-  .supplier-details button .input-wrapper {
-    -webkit-box-flex: initial;
-    -webkit-flex: initial;
-    -ms-flex: initial;
-    flex: initial;
-    width: 95%; }
-  .supplier-details button ion-label {
-    white-space: normal; }
-    .supplier-details button ion-label h3 {
-      font-size: 16px;
-      color: #00b6f1;
-      font-weight: 700;
-      text-transform: capitalize; }
+.supplier-details ion-card.itemdetails ion-item h3 {
+  font-size: 20px;
+  white-space: initial;
+  line-height: 30px;
+  font-weight: 700;
+  margin-bottom: 10px; }
+
+.supplier-details ion-card.itemdetails ion-item p {
+  white-space: pre-line;
+  line-height: 20px;
+  margin-bottom: 20px; }
+
+.supplier-details ion-card.itemdetails ion-list .input-wrapper {
+  font-size: small; }

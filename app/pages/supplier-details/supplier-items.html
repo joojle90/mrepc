@@ -14,19 +14,50 @@
 
 
 <ion-content class="supplier-details">
-    <ion-card>
-        <img src="img/marketplace/supplier/{{getsupplierdetails.companyData.image}}" onError="this.src='img/no-image.jpg'" />
-
-        <ion-card-content>
-            <h2>
-                {{getsupplierdetails.companyData.companyName}} ({{getsupplierdetails.companyData.companyNo}})
-            </h2>
-            <p>
-                {{getsupplierdetails.companyData.companyDesc}}
-            </p>
-        </ion-card-content>=
-        <ion-item [hidden]="getsupplieritems.length > 0">
-            <h3>NO DATA ITEM</h3>
+    <ion-card class="itemdetails">
+        <ion-item>
+            <ion-thumbnail item-left>
+                <img src="img/marketplace/product/{{itemdetails.productImage}}" onError="this.src='img/no-thumbnail.jpg'">
+            </ion-thumbnail>
+            <h3>{{itemdetails.productName}}</h3>
+            <span secondary>Product Description : </span>
+            <p>{{itemdetails.productDesc}}</p>
+            <span secondary>Product Specification : </span>
+            <p>{{itemdetails.productSpec}}</p>
         </ion-item>
+
+        <ion-list>
+            <ion-list-header danger>
+                <ion-label danger>Message direct to Supplier :</ion-label>
+            </ion-list-header>
+            <ion-item>
+                <ion-label fixed>From</ion-label>
+                <ion-input type="text" value=""></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label fixed>Message</ion-label>
+                <ion-textarea></ion-textarea>
+            </ion-item>
+            <ion-item>
+                <ion-label fixed>To</ion-label>
+                <ion-label>{{itemdetails.opts.email}}</ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-label fixed>Name</ion-label>
+                <ion-label>{{itemdetails.opts.name}}</ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-label fixed>Designation</ion-label>
+                <ion-label>{{itemdetails.opts.designation}}</ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-label fixed>Phone no</ion-label>
+                <ion-label>{{itemdetails.opts.telp}}</ion-label>
+            </ion-item>
+
+            <div padding>
+                <button block (click)="sendemail()">Send Email</button>
+            </div>
+        </ion-list>
     </ion-card>
 </ion-content>
