@@ -212,7 +212,7 @@ var HomePage = (function () {
         this.mrepcdata = mrepcdata;
         this.homeOptions = {
             initialSlide: 0,
-            //            autoplay: 3000,
+            autoplay: 3000,
             autoplayDisableOnInteraction: false
         };
         this.presentLoadingData();
@@ -233,6 +233,7 @@ var HomePage = (function () {
                 return setdate > new Date();
             });
             _this.comingsoonevent = _this.comingsoonevent.slice(0, 5);
+            console.log(_this.comingsoonevent);
             _this.comingsoonevent = _this.comingsoonevent.sort(function (a, b) {
                 var datea = new Date(a.eventdetail.startdate);
                 var dateb = new Date(b.eventdetail.startdate);
@@ -571,7 +572,15 @@ var SupplierDetailsPage = (function () {
         this.loadingCtrl = loadingCtrl;
         this.navParams = navParams;
         this.getsupplierdetails = this.navParams.data;
+        this.getsupplieritems = this.getsupplierdetails.companyProduct;
+        this.getsupplieritems = this.getsupplierdetails.companyProduct.sort(function (a, b) {
+            return a.productName.localeCompare(b.productName);
+        });
+        console.log(this.getsupplieritems);
     }
+    SupplierDetailsPage.prototype.contactSupplier = function (items) {
+        console.log(items);
+    };
     SupplierDetailsPage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/supplier-details/supplier-details.html',
@@ -581,6 +590,24 @@ var SupplierDetailsPage = (function () {
     return SupplierDetailsPage;
 }());
 exports.SupplierDetailsPage = SupplierDetailsPage;
+var SupplierItemsPage = (function () {
+    function SupplierItemsPage(navCtrl, navParams, viewCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.viewCtrl = viewCtrl;
+    }
+    SupplierItemsPage.prototype.dismiss = function () {
+        this.viewCtrl.dismiss();
+    };
+    SupplierItemsPage = __decorate([
+        core_1.Component({
+            templateUrl: 'build/pages/supplier-items/supplier-items.html',
+        }), 
+        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.NavParams, ionic_angular_1.ViewController])
+    ], SupplierItemsPage);
+    return SupplierItemsPage;
+}());
+exports.SupplierItemsPage = SupplierItemsPage;
 
 },{"@angular/core":164,"ionic-angular":478}],11:[function(require,module,exports){
 "use strict";
@@ -842,7 +869,7 @@ require('rxjs/add/operator/map');
   for more info on providers and Angular 2 DI.
 */
 ///http://techapp.info
-var serverURL = 'http://techapp.info/mrepc-api/';
+var serverURL = '/mrepc-api/';
 var favorites = [];
 var Mrepcdata = (function () {
     function Mrepcdata(http) {
@@ -899,7 +926,6 @@ var Mrepcdata = (function () {
     Mrepcdata.prototype.getSupplierDetails = function (supplierid) {
         this.apidata = 'marketplaceFilter?mrepc_no=' + supplierid;
         return this.load(this.apidata).then(function (data) {
-            console.log(data);
             return data;
         });
     };

@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
   for more info on providers and Angular 2 DI.
 */
 ///http://techapp.info
-let serverURL = 'http://techapp.info/mrepc-api/';
+let serverURL = '/mrepc-api/';
 let favorites = [];
 
 @Injectable()
@@ -89,7 +89,6 @@ export class Mrepcdata {
     getSupplierDetails(supplierid) {
         this.apidata = 'marketplaceFilter?mrepc_no='+supplierid;
         return this.load(this.apidata).then(data => {
-            console.log(data);
             return data;
         });
     }

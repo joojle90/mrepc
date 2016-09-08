@@ -9217,6 +9217,35 @@ body.ios .segment-button.activated, body.ios .segment-button.segment-activated {
     text-align: center;
     box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.3); }
 
+.alltradeshows .allevent .item {
+  padding: 0 16px; }
+  .alltradeshows .allevent .item ion-label {
+    margin: 13px 0;
+    text-align: center; }
+  .alltradeshows .allevent .item .item-inner {
+    padding: 0; }
+
+.alltradeshows .allevent ion-item {
+  border-top: 1px outset; }
+  .alltradeshows .allevent ion-item span {
+    width: 70%;
+    font-size: 1.2rem;
+    font-weight: normal;
+    text-transform: capitalize; }
+  .alltradeshows .allevent ion-item h2 {
+    color: #00b6f1;
+    font-weight: 700;
+    font-size: 25px;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    text-transform: capitalize;
+    overflow: hidden; }
+  .alltradeshows .allevent ion-item .button-inner {
+    margin-right: 10px;
+    margin-left: 5px; }
+
 .marketplace ion-tabbar {
   background: #00b6f1; }
   .marketplace ion-tabbar .tab-button {
@@ -9337,20 +9366,29 @@ body.ios .segment-button.activated, body.ios .segment-button.segment-activated {
 
 .supplier-details ion-row {
   font-size: 14px; }
+  .supplier-details ion-row ion-card {
+    margin: 2px 10px; }
+    .supplier-details ion-row ion-card ion-item.item {
+      background-color: beige; }
+      .supplier-details ion-row ion-card ion-item.item p {
+        color: #2a6d30; }
   .supplier-details ion-row ion-col {
     white-space: normal; }
+    .supplier-details ion-row ion-col a {
+      text-decoration: none; }
 
-.supplier-details button .input-wrapper {
-  -webkit-box-flex: initial;
-  -webkit-flex: initial;
-  -ms-flex: initial;
-  flex: initial;
-  width: 95%; }
-
-.supplier-details button ion-label {
-  white-space: normal; }
-  .supplier-details button ion-label h3 {
-    font-size: 16px;
-    color: #00b6f1;
-    font-weight: 700;
-    text-transform: capitalize; }
+.supplier-details button {
+  height: inherit; }
+  .supplier-details button .input-wrapper {
+    -webkit-box-flex: initial;
+    -webkit-flex: initial;
+    -ms-flex: initial;
+    flex: initial;
+    width: 95%; }
+  .supplier-details button ion-label {
+    white-space: normal; }
+    .supplier-details button ion-label h3 {
+      font-size: 16px;
+      color: #00b6f1;
+      font-weight: 700;
+      text-transform: capitalize; }

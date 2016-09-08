@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Contact Supplier
+        </ion-title>
+        <ion-buttons start>
+            <button (click)="dismiss()">
+                <span primary showWhen="ios">Cancel</span>
+                <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="supplier-details">
+    <ion-card>
+        <img src="img/marketplace/supplier/{{getsupplierdetails.companyData.image}}" onError="this.src='img/no-image.jpg'" />
+
+        <ion-card-content>
+            <h2>
+                {{getsupplierdetails.companyData.companyName}} ({{getsupplierdetails.companyData.companyNo}})
+            </h2>
+            <p>
+                {{getsupplierdetails.companyData.companyDesc}}
+            </p>
+        </ion-card-content>=
+        <ion-item [hidden]="getsupplieritems.length > 0">
+            <h3>NO DATA ITEM</h3>
+        </ion-item>
+    </ion-card>
+</ion-content>

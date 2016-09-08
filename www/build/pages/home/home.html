@@ -24,7 +24,11 @@
                     </div>
                     <ion-item>
                         <h2>{{comingsoonevent[i].eventdetail.name}}</h2>
-                        <p>{{comingsoonevent[i].eventdetail.startdate}}</p>
+                        <p><strong secondary>Start from : </strong>
+                            <span danger>{{comingsoonevent[i].eventdetail.startdate}}</span>
+                            <strong> until </strong>
+                            <span danger>{{comingsoonevent[i].eventdetail.enddate}}</span>
+                        </p>
                     </ion-item>
                 </ion-card>
             </button>

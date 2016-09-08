@@ -12,8 +12,18 @@
 
 <ion-content class="alltradeshows">
     <button clear *ngFor="let tl of tradeshowslist; let i = index" (click)="detailsPage(tradeshowslist[i])">
-        <ion-card>
-            <img src="img/event/{{tl.image}}" onError="this.src='img/no-image.jpg'"/>
+        <ion-card class="allevent">
+            <div>
+                <img src="img/event/{{tl.image}}" onError="this.src='img/no-image.jpg'"/>
+            </div>
+            <ion-item>
+                <h2>{{tradeshowslist[i].eventdetail.name}}</h2>
+                <p><strong secondary>Start from : </strong>
+                    <span danger>{{tradeshowslist[i].eventdetail.startdate}}</span>
+                    <strong> until </strong>
+                    <span danger>{{tradeshowslist[i].eventdetail.enddate}}</span>
+                </p>
+            </ion-item>
         </ion-card>
     </button>
 </ion-content>

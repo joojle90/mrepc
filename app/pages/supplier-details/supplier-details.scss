@@ -6,11 +6,27 @@
     ion-row {
         font-size: 14px;
 
+        ion-card {
+            margin: 2px 10px;
+
+            ion-item.item {
+                background-color: beige;
+
+                p {
+                    color: #2a6d30;
+                }
+            }
+        }
+
         ion-col {
             white-space: normal;
+            a {
+                text-decoration: none;
+            }
         }
     }
     button {
+        height: inherit;
         .input-wrapper {
             flex: initial;
             width: 95%;

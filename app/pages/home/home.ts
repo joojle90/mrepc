@@ -31,7 +31,7 @@ export class HomePage {
 
         this.homeOptions = {
             initialSlide: 0,
-//            autoplay: 3000,
+            autoplay: 3000,
             autoplayDisableOnInteraction: false
         };
 
@@ -53,6 +53,7 @@ export class HomePage {
                 return setdate > new Date();
             });
             this.comingsoonevent = this.comingsoonevent.slice(0,5);
+            console.log(this.comingsoonevent);
             this.comingsoonevent = this.comingsoonevent.sort((a,b) => {
                 let datea = new Date (a.eventdetail.startdate);
                 let dateb = new Date (b.eventdetail.startdate);
