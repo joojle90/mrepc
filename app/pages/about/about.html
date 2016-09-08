@@ -1,11 +1,39 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      About
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title> About MREPC </ion-title>
+
+        <button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
 </ion-header>
 
-<ion-content padding class="about">
-    <img #imgtest src="img/event/ss.png"/>
+<ion-content class="about">
+    <ion-card>
+        <div>
+            <img src="img/misc/mrepc_address.jpg" onError="this.src='img/no-image.jpg'">
+            <button fab fab-right fab-top class="fab-map" (click)="mapshow()">
+                <ion-icon name='pin'></ion-icon>
+            </button>
+        </div>
+        <ion-item>
+            <h2><strong>Malaysian Rubber Export Promotion Council (MREPC)</strong></h2>
+        </ion-item>
+        <ion-item actions>
+            <span item-left><strong secondary>Phone no : </strong>(603) 2780 5888</span>
+        </ion-item>
+        <ion-item actions>
+            <span item-left><strong secondary>Fax no : </strong>(603) 2780 5088</span>
+        </ion-item>
+        <ion-item actions>
+            <span item-left><strong secondary>Email : </strong>info@mrepc.com</span>
+        </ion-item>
+        <ion-item actions>
+            <span item-left><strong secondary>Operating hours : </strong>Monday to Friday: 8.30am - 5.30pm</span>
+        </ion-item>
+        <ion-item actions>
+            <span item-left><strong secondary>Location : </strong>Unit No 36-02, Level 36, Q Sentral 2A Jalan Stesen Sentral 2, KL Sentral 50470 Kuala Lumpur, Malaysia, Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia
+            </span>
+        </ion-item>
+    </ion-card>
 </ion-content>

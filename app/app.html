@@ -6,11 +6,11 @@
             <button clear menuClose (click)="userPage(0)">
                 <img src="http://www.gravatar.com/avatar?d=mm&s=140">
             </button>
-            <p>Hi, Guest</p>
+            <p>Hi, Bob</p>
         </div>
         <ion-segment id="bookmarkbutton">
             <ion-segment-button value="mytradeshows" menuClose (click)="userPage(1)">
-                <ion-badge>5</ion-badge>
+                <ion-badge>3</ion-badge>
                 <ion-icon name="bookmarks"></ion-icon>
                 <ion-label>My Trade Show</ion-label>
             </ion-segment-button>
@@ -28,8 +28,10 @@
             <button menuClose ion-item *ngFor="let lsm of leftsidemenu; let i = index;" (click)="openPage(i)">
                 <ion-icon myicon item-left [name]="lsm.icon"></ion-icon>
                 {{lsm.title}}
+<!--
                 <ion-note item-right [hidden]="note === null">{{lsm.note}}</ion-note>
                 <ion-badge item-right [hidden]="notif === null">{{lsm.notif}}</ion-badge>
+-->
             </button>
         </ion-list>
     </ion-content>

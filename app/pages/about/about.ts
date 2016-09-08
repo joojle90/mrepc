@@ -1,15 +1,23 @@
-import {Component, ViewChild, ElementRef} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { NavController, AlertController } from 'ionic-angular';
 
 @Component({
-  templateUrl: 'build/pages/about/about.html'
+    templateUrl: 'build/pages/about/about.html'
 })
 export class AboutPage {
-    @ViewChild('imgtest') imgtest: ElementRef;
+    constructor(
+        private navCtrl: NavController,
+        private alertCtrl: AlertController
+    ) {
 
-    onPageLoaded() {
-        console.log(this.imgtest);
     }
-  constructor(private navCtrl: NavController) {
-  }
+
+    mapshow() {
+        let alert = this.alertCtrl.create({
+          title: 'Coming Soon',
+          subTitle: 'We will update our Map',
+          buttons: ['OK']
+        });
+        alert.present();
+    }
 }

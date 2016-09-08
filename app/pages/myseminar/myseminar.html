@@ -17,6 +17,42 @@
 </ion-header>
 
 
-<ion-content padding class="myseminar">
+<ion-content class="myseminar">
+    <ion-card>
+        <div>
+            <img src="img/seminar/Briefing_on_Incentives_for_Rubber_Products_Industry_2016.jpg" onError="this.src='img/no-image.jpg'">
+        </div>
+        <ion-item>
+            <p><strong primary>Start date : </strong>2016-07-28</p>
+            <h2>Briefing on Incentives for Rubber Products Industry 2016</h2>
+        </ion-item>
+        <ion-item actions>
+            <span item-left><strong secondary>Location : </strong>MREPC Malaysia</span>
+            <button primary clear item-right (click)="seminarShare()">
+                <ion-icon name='share'></ion-icon>
+            </button>
+            <button primary clear item-right (click)="seminarBookmark()">
+                <ion-icon name='albums'></ion-icon>
+            </button>
+        </ion-item>
+    </ion-card>
+    <ion-card>
+        <div>
+            <img src="img/seminar/Latex_101_-_Class_6_-_Latex_Additives_and_Rubber_Chemicals_2016.jpg" onError="this.src='img/no-image.jpg'">
+        </div>
+        <ion-item>
+            <p><strong primary>Start date : </strong>2016-08-09</p>
+            <h2>Latex Additives and Rubber Chemicals 2016</h2>
+        </ion-item>
+        <ion-item actions>
+            <span item-left><strong secondary>Location : </strong>MREPC Malaysia</span>
+            <button primary clear item-right (click)="seminarShare()">
+                <ion-icon name='share'></ion-icon>
+            </button>
+            <button primary clear item-right (click)="seminarBookmark()">
+                <ion-icon name='albums'></ion-icon>
+            </button>
+        </ion-item>
+    </ion-card>
 
 </ion-content>

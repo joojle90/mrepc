@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
 
 /*
   Generated class for the MytradeshowPage page.
@@ -8,12 +8,24 @@ import { NavController } from 'ionic-angular';
   Ionic pages and navigation.
 */
 @Component({
-  templateUrl: 'build/pages/mytradeshow/mytradeshow.html',
+    templateUrl: 'build/pages/mytradeshow/mytradeshow.html',
 })
 export class MytradeshowPage {
 
-  constructor(private navCtrl: NavController) {
+    constructor(
+        private navCtrl: NavController,
+        private alertCtrl: AlertController
+    ) {
 
-  }
+    }
+
+    tradeshowbtn() {
+        let alert = this.alertCtrl.create({
+          title: 'Message',
+          subTitle: 'Thank you for join our tradeshow',
+          buttons: ['OK']
+        });
+        alert.present();
+    }
 
 }

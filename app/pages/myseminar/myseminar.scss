@@ -1,3 +1,39 @@
 .myseminar {
+    ion-card {
+        div {
+             position: relative;
+        }
+        p {
+            font-size: 0.7em;
+        }
+    }
+    button[fab].fab-btn {
+        top: calc(100% - 35px);
+        z-index: 50;
+    }
+    ion-item {
+        border-top: 1px outset;
+
+        span {
+            width: 70%;
+            font-size: 1.2rem;
+            font-weight: normal;
+            text-transform: capitalize;
+        }
+
+        h2 {
+            white-space: normal;
+            width: 80%;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            display: -webkit-box;
+            text-transform: capitalize;
+        }
+
+        .button-inner {
+            margin-right: 10px;
+            margin-left: 5px;
+        }
+    }
 
 }

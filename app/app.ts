@@ -12,10 +12,11 @@ import {SeminarPage} from './pages/seminar/seminar';
 import {UserprofilePage} from './pages/userprofile/userprofile';
 import {MytradeshowPage} from './pages/mytradeshow/mytradeshow';
 import {MyseminarPage} from './pages/myseminar/myseminar';
+import {TutorialPage} from './pages/tutorial/tutorial';
 import {AboutPage} from './pages/about/about';
 
 
-let component = [HomePage, AlltradeshowsPage, MarketplacePage, SeminarPage];
+let component = [HomePage, AlltradeshowsPage, MarketplacePage, SeminarPage, TutorialPage, AboutPage];
 let userpage = [UserprofilePage, MytradeshowPage, MyseminarPage];
 
 @Component({

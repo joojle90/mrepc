@@ -11,6 +11,50 @@
 </ion-header>
 
 
-<ion-content padding class="mytradeshow">
-
+<ion-content class="mytradeshow">
+    <button clear (click)="tradeshowbtn()">
+        <ion-card class="allevent">
+            <div>
+                <img src="img/event/KIMES_2016_2016.jpg" onError="this.src='img/no-image.jpg'"/>
+            </div>
+            <ion-item>
+                <h2>KIMES 2016</h2>
+                <p><strong secondary>Start from : </strong>
+                    <span danger>2016-03-17</span>
+                    <strong> until </strong>
+                    <span danger>2016-03-20</span>
+                </p>
+            </ion-item>
+        </ion-card>
+    </button>
+    <button clear (click)="tradeshowbtn()">
+        <ion-card class="allevent">
+            <div>
+                <img src="img/event/EXPOMED_2016.jpg" onError="this.src='img/no-image.jpg'"/>
+            </div>
+            <ion-item>
+                <h2>EXPOMED 2016</h2>
+                <p><strong secondary>Start from : </strong>
+                    <span danger>2016-06-08</span>
+                    <strong> until </strong>
+                    <span danger>2016-06-10</span>
+                </p>
+            </ion-item>
+        </ion-card>
+    </button>
+    <button clear (click)="tradeshowbtn()">
+        <ion-card class="allevent">
+            <div>
+                <img src="img/event/FIME__2016.jpg" onError="this.src='img/no-image.jpg'"/>
+            </div>
+            <ion-item>
+                <h2>FIME 2016</h2>
+                <p><strong secondary>Start from : </strong>
+                    <span danger>2016-08-02</span>
+                    <strong> until </strong>
+                    <span danger>2016-08-04</span>
+                </p>
+            </ion-item>
+        </ion-card>
+    </button>
 </ion-content>

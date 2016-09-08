@@ -10124,6 +10124,33 @@ body.ios .segment-button {
 body.ios .segment-button.activated, body.ios .segment-button.segment-activated {
   border-bottom-style: solid !important; }
 
+.about ion-card div {
+  position: relative; }
+
+.about ion-card p {
+  font-size: 0.7em; }
+
+.about button[fab].fab-map {
+  top: calc(100% - 35px);
+  z-index: 50; }
+
+.about ion-item {
+  border-top: 1px outset; }
+  .about ion-item span {
+    font-size: 1.2rem;
+    font-weight: normal;
+    text-transform: capitalize; }
+  .about ion-item h2 {
+    white-space: normal;
+    width: 80%;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    text-transform: capitalize; }
+  .about ion-item .button-inner {
+    margin-right: 10px;
+    margin-left: 5px; }
+
 .home ion-slides {
   height: initial; }
   .home ion-slides button {
@@ -10345,6 +10372,90 @@ body.ios .segment-button.activated, body.ios .segment-button.segment-activated {
 .useraccount .item-input ion-label {
   color: #000; }
 
+.mytradeshow .card-title {
+  position: absolute;
+  top: 36%;
+  font-size: 2.0em;
+  width: 100%;
+  font-weight: bold;
+  color: #fff; }
+
+.mytradeshow .card-subtitle {
+  font-size: 1.0em;
+  position: absolute;
+  top: 52%;
+  width: 100%;
+  color: #fff; }
+
+.mytradeshow button {
+  height: initial;
+  padding: 0;
+  margin: 0.4rem 0; }
+  .mytradeshow button ion-card {
+    width: calc(100% - 10px);
+    border-radius: 5px;
+    margin: 0;
+    position: relative;
+    text-align: center;
+    box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.3); }
+
+.mytradeshow .allevent .item {
+  padding: 0 16px; }
+  .mytradeshow .allevent .item ion-label {
+    margin: 13px 0;
+    text-align: center; }
+  .mytradeshow .allevent .item .item-inner {
+    padding: 0; }
+
+.mytradeshow .allevent ion-item {
+  border-top: 1px outset; }
+  .mytradeshow .allevent ion-item span {
+    width: 70%;
+    font-size: 1.2rem;
+    font-weight: normal;
+    text-transform: capitalize; }
+  .mytradeshow .allevent ion-item h2 {
+    color: #00b6f1;
+    font-weight: 700;
+    font-size: 25px;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    text-transform: capitalize;
+    overflow: hidden; }
+  .mytradeshow .allevent ion-item .button-inner {
+    margin-right: 10px;
+    margin-left: 5px; }
+
+.myseminar ion-card div {
+  position: relative; }
+
+.myseminar ion-card p {
+  font-size: 0.7em; }
+
+.myseminar button[fab].fab-btn {
+  top: calc(100% - 35px);
+  z-index: 50; }
+
+.myseminar ion-item {
+  border-top: 1px outset; }
+  .myseminar ion-item span {
+    width: 70%;
+    font-size: 1.2rem;
+    font-weight: normal;
+    text-transform: capitalize; }
+  .myseminar ion-item h2 {
+    white-space: normal;
+    width: 80%;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    text-transform: capitalize; }
+  .myseminar ion-item .button-inner {
+    margin-right: 10px;
+    margin-left: 5px; }
+
 .buyer scroll-content {
   margin: 9vh 0; }
 
@@ -10420,3 +10531,27 @@ body.ios .segment-button.activated, body.ios .segment-button.segment-activated {
 
 .supplier-details ion-card.itemdetails ion-list .input-wrapper {
   font-size: small; }
+
+.tutorial .toolbar-background {
+  background: #fff;
+  border-color: transparent; }
+
+.tutorial .slide-zoom {
+  height: 100%; }
+
+.tutorial .slide-title {
+  margin-top: 2.8rem; }
+
+.tutorial .slide-image {
+  margin: 18px 0; }
+
+.tutorial b {
+  font-weight: 500; }
+
+.tutorial p {
+  padding: 0 40px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #60646B; }
+  .tutorial p b {
+    color: #000000; }
