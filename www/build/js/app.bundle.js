@@ -567,10 +567,11 @@ var ionic_angular_1 = require('ionic-angular');
   Ionic pages and navigation.
 */
 var SupplierDetailsPage = (function () {
-    function SupplierDetailsPage(navCtrl, loadingCtrl, navParams) {
+    function SupplierDetailsPage(navCtrl, loadingCtrl, navParams, modalCtrl) {
         this.navCtrl = navCtrl;
         this.loadingCtrl = loadingCtrl;
         this.navParams = navParams;
+        this.modalCtrl = modalCtrl;
         this.getsupplierdetails = this.navParams.data;
         this.getsupplieritems = this.getsupplierdetails.companyProduct;
         this.getsupplieritems = this.getsupplierdetails.companyProduct.sort(function (a, b) {
@@ -579,31 +580,44 @@ var SupplierDetailsPage = (function () {
         console.log(this.getsupplieritems);
     }
     SupplierDetailsPage.prototype.contactSupplier = function (items) {
-        console.log(items);
+        var modal = this.modalCtrl.create(SupplierItemsPage, items, this.getsupplierdetails.companyPerson);
+        modal.present();
     };
     SupplierDetailsPage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/supplier-details/supplier-details.html',
         }), 
-        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.LoadingController, ionic_angular_1.NavParams])
+        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.LoadingController, ionic_angular_1.NavParams, ionic_angular_1.ModalController])
     ], SupplierDetailsPage);
     return SupplierDetailsPage;
 }());
 exports.SupplierDetailsPage = SupplierDetailsPage;
 var SupplierItemsPage = (function () {
-    function SupplierItemsPage(navCtrl, navParams, viewCtrl) {
+    function SupplierItemsPage(navCtrl, navParams, alertCtrl, viewCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.alertCtrl = alertCtrl;
         this.viewCtrl = viewCtrl;
+        this.contactSupplier = this.navParams.data.companyPerson;
+        this.itemdetails = this.navParams.data;
+        console.log(this.navParams.data);
     }
     SupplierItemsPage.prototype.dismiss = function () {
         this.viewCtrl.dismiss();
     };
+    SupplierItemsPage.prototype.sendemail = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Successful Email',
+            subTitle: 'Your email has been sent',
+            buttons: ['OK']
+        });
+        alert.present();
+    };
     SupplierItemsPage = __decorate([
         core_1.Component({
-            templateUrl: 'build/pages/supplier-items/supplier-items.html',
+            templateUrl: 'build/pages/supplier-details/supplier-items.html',
         }), 
-        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.NavParams, ionic_angular_1.ViewController])
+        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.NavParams, ionic_angular_1.AlertController, ionic_angular_1.ViewController])
     ], SupplierItemsPage);
     return SupplierItemsPage;
 }());

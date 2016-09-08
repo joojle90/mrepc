@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController, ModalController, ViewController } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, AlertController, ModalController, ViewController } from 'ionic-angular';
 
 /*
   Generated class for the SupplierDetailsPage page.
@@ -17,7 +17,8 @@ export class SupplierDetailsPage {
     constructor(
         private navCtrl: NavController,
         private loadingCtrl: LoadingController,
-        private navParams: NavParams
+        private navParams: NavParams,
+        public modalCtrl: ModalController
     ) {
         this.getsupplierdetails = this.navParams.data;
         this.getsupplieritems = this.getsupplierdetails.companyProduct;
@@ -29,26 +30,41 @@ export class SupplierDetailsPage {
     }
 
     contactSupplier(items) {
-        console.log(items);
+        let modal = this.modalCtrl.create(SupplierItemsPage, items, this.getsupplierdetails.companyPerson);
+        modal.present();
     }
 
 }
 
 @Component({
-    templateUrl: 'build/pages/supplier-items/supplier-items.html',
+    templateUrl: 'build/pages/supplier-details/supplier-items.html',
 })
 export class SupplierItemsPage {
+    contactSupplier: any;
+    itemdetails: any;
 
     constructor(
         private navCtrl: NavController,
         private navParams: NavParams,
+        private alertCtrl: AlertController,
         public viewCtrl: ViewController
     ) {
-
+        this.contactSupplier = this.navParams.data.companyPerson;
+        this.itemdetails = this.navParams.data;
+        console.log(this.navParams.data);
     }
 
     dismiss() {
         this.viewCtrl.dismiss();
+    }
+
+    sendemail() {
+        let alert = this.alertCtrl.create({
+          title: 'Successful Email',
+          subTitle: 'Your email has been sent',
+          buttons: ['OK']
+        });
+        alert.present();
     }
 
 }

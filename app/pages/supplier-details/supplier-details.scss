@@ -3,6 +3,9 @@
         font-size: 2.2rem;
         text-transform: capitalize;
     }
+    ion-label {
+        line-height: 25px;
+    }
     ion-row {
         font-size: 14px;
 
@@ -10,10 +13,11 @@
             margin: 2px 10px;
 
             ion-item.item {
-                background-color: beige;
+                background-color: #d8d8d8;
 
                 p {
-                    color: #2a6d30;
+                    color: #124698;
+                    font-weight: 700;
                 }
             }
         }
@@ -24,21 +28,43 @@
                 text-decoration: none;
             }
         }
-    }
-    button {
-        height: inherit;
-        .input-wrapper {
-            flex: initial;
-            width: 95%;
-        }
-        ion-label {
-            white-space: normal;
+        button {
+            height: inherit;
+            .input-wrapper {
+                flex: initial;
+                width: 95%;
+            }
+            ion-label {
+                white-space: normal;
 
+                h3 {
+                    font-size: 16px;
+                    color: $themebg;
+                    font-weight: 700;
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
+    ion-card.itemdetails {
+        ion-item {
             h3 {
-                font-size: 16px;
-                color: $themebg;
+                font-size: 20px;
+                white-space: initial;
+                line-height: 30px;
                 font-weight: 700;
-                text-transform: capitalize;
+                margin-bottom: 10px;
+            }
+
+            p {
+                white-space: pre-line;
+                line-height: 20px;
+                margin-bottom: 20px;
+            }
+        }
+        ion-list {
+            .input-wrapper {
+                font-size: small;
             }
         }
     }
