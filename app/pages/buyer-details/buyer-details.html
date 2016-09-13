@@ -6,13 +6,24 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>buyerDetails</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            {{getbuyerdetails.buyerCategory}}
+        </ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content class="buyer-details">
+    <ion-list>
+        <button ion-item *ngFor="let byd of getbuyerdetails.buyerData; let i = index" (click)="buyerPage(byl.rubbertype, byl.rubbername)">
+            <ion-avatar item-left>
+                <img src="img/marketplace/buyeritems/buyer_{{byd.rubbertype}}.png" onError="this.src='img/marketplace/noimage.png'">
+            </ion-avatar>
+            <h2>{{byd.category}}</h2>
+            <p>{{byd.categorybm}}</p>
+            <ion-badge item-right [hidden]="byd.itemList.length == 0">{{byd.itemList.length}}</ion-badge>
+        </button>
+    </ion-list>
 </ion-content>

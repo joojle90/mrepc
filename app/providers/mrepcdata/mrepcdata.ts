@@ -23,12 +23,13 @@ export class Mrepcdata {
     statusid: string;
     errormsg: string;
     supplierid: string;
+    buyerid: string;
     
     constructor(private http: Http) {
         this.http = http;
 
         this.startdate = '2016-01-01';
-        this.enddate = '2017-01-01';
+        this.enddate = '2016-09-20';
     }
 
     load(apidata) {
@@ -88,6 +89,13 @@ export class Mrepcdata {
 
     getSupplierDetails(supplierid) {
         this.apidata = 'marketplaceFilter?mrepc_no='+supplierid;
+        return this.load(this.apidata).then(data => {
+            return data;
+        });
+    }
+
+    getBuyerDetails(buyerid) {
+        this.apidata = 'categoryRubberType?rubbertype='+buyerid;
         return this.load(this.apidata).then(data => {
             return data;
         });
