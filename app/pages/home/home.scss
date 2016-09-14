@@ -78,10 +78,11 @@
                 font-size: 25px;
                 white-space: normal;
                 -webkit-box-orient: vertical;
-                -webkit-line-clamp: 2;
+                -webkit-line-clamp: 1;
                 display: -webkit-box;
                 text-transform: capitalize;
                 overflow: hidden;
+                text-overflow: ellipsis;
             }
 
             .button-inner {

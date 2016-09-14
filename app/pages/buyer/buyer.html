@@ -10,10 +10,10 @@
 
 <ion-content class="buyer">
     <ion-list>
-        <button ion-item *ngFor="let byl of buyerlist; let i = index" (click)="buyerPage(byl.rubbertype)">
-            <ion-avatar item-left>
-                <img src="img/marketplace/supplier/{{byl.image}}" onError="this.src='img/marketplace/noimage.png'">
-            </ion-avatar>
+        <button ion-item *ngFor="let byl of buyerlist; let i = index" (click)="buyerPage(byl.rubbertype, byl.rubbername)">
+            <ion-thumbnail item-left>
+                <img src="img/marketplace/buyer/image_{{byl.rubbertype}}.png" onError="this.src='img/marketplace/noimage.png'">
+            </ion-thumbnail>
             <h2>{{byl.rubbername}}</h2>
             <p>{{byl.rubberinbm}}</p>
         </button>

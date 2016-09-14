@@ -28,25 +28,16 @@
 
             <ion-row>
                 <ion-col width-50>
-                    <ion-icon name="time"></ion-icon>
-                    Start date
+                    <ion-icon name="watch"></ion-icon>
+                    Event start
                 </ion-col>
                 <ion-col width-50>
-                    <p>{{eventstart}}</p>
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col width-50>
-                    <ion-icon name="speedometer"></ion-icon>
-                    End date
-                </ion-col>
-                <ion-col width-50>
-                    <p>{{eventend}}</p>
+                    <p class="eventdate">{{eventstart}} <strong style="color: #333">until</strong> {{eventend}}</p>
                 </ion-col>
             </ion-row>
             <ion-row>
                 <ion-col width-50>
-                    <ion-icon name="map"></ion-icon>
+                    <ion-icon name="pin"></ion-icon>
                     Location
                 </ion-col>
                 <ion-col width-50>

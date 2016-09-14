@@ -26,15 +26,17 @@ export class SupplierPage {
 
     loadSupplier() {
         return this.mrepcdata.getMarketplaceSupplier().then(data => {
-            this.supplierlist = data;
+            this.supplierlist = data.sort((a,b) => {
+                return a.companyName.localeCompare(b.companyName);
+            });
         })
     }
 
-    supplierPage(supplierID) {
+    supplierPage(supplierid) {
         let loader = this.loadingCtrl.create({ content: "Please wait..." });
         loader.present();
         setTimeout(() => {
-            this.mrepcdata.getSupplierDetails(supplierID).then(data => {
+            this.mrepcdata.getSupplierDetails(supplierid).then(data => {
                 loader.dismiss();
                 this.navCtrl.push(SupplierDetailsPage, {
                     companyData: data[0],

@@ -31,7 +31,7 @@ export class HomePage {
 
         this.homeOptions = {
             initialSlide: 0,
-            autoplay: 3000,
+//            autoplay: 3000,
             autoplayDisableOnInteraction: false
         };
 
@@ -50,7 +50,7 @@ export class HomePage {
         return this.mrepcdata.geteventcriteria('6', '1').then(data => {
             this.comingsoonevent = data.filter(newdata => {
                 let setdate = new Date (newdata.eventdetail.startdate);
-                return setdate > new Date();
+                return setdate < new Date();
             });
             this.comingsoonevent = this.comingsoonevent.slice(0,5);
             console.log(this.comingsoonevent);

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
-import {Mrepcdata} from '../../providers/mrepcdata/mrepcdata';
+import { Mrepcdata } from '../../providers/mrepcdata/mrepcdata';
+import { BuyerDetailsPage } from '../../pages/buyer-details/buyer-details';
 
 /*
   Generated class for the BuyerPage page.
@@ -26,8 +27,24 @@ export class BuyerPage {
 
     loadSupplier() {
         return this.mrepcdata.getMarketplaceBuyer().then(data => {
-            this.buyerlist = data;
+            this.buyerlist = data.sort((a,b) => {
+                return a.rubbername.localeCompare(b.rubbername);
+            });
         })
+    }
+
+    buyerPage(buyerid, buyername) {
+        let loader = this.loadingCtrl.create({ content: "Please wait..." });
+        loader.present();
+        setTimeout(() => {
+            this.mrepcdata.getBuyerDetails(buyerid).then(data => {
+                loader.dismiss();
+                this.navCtrl.push(BuyerDetailsPage, {
+                    buyerCategory: buyername,
+                    buyerData: data
+                });
+            });
+        }, 0);
     }
 
     presentLoadingData() {

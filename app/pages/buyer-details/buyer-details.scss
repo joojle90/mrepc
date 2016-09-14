@@ -1,3 +1,40 @@
 .buyer-details {
+    ion-list {
+        margin: 0;
+    }
+    .item {
+        ion-label {
+            h2 {
+                width: 90%;
+                font-weight: 700;
+                white-space: nowrap;
+                text-transform: capitalize;
+                overflow: hidden;
+                text-overflow: ellipsis
+            }
+        }
+    }
 
+    ion-card.itemdetails {
+        ion-item {
+            h3 {
+                font-size: 20px;
+                white-space: initial;
+                line-height: 30px;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+
+            p {
+                white-space: pre-line;
+                line-height: 20px;
+                margin-bottom: 20px;
+            }
+        }
+        ion-list {
+            .input-wrapper {
+                font-size: small;
+            }
+        }
+    }
 }

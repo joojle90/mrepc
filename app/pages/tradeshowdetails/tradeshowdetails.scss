@@ -1,6 +1,7 @@
 .tradeshowdetails {
     ion-card {
         h1 {
+            color: $textcolor;
             padding: 0 0 20px;
             text-transform: capitalize;
         }
@@ -12,6 +13,9 @@
         h5 {
             line-height: 30px;
             font-weight: bold;
+        }
+        p {
+            white-space: pre-line;
         }
     }
     ion-row {
@@ -25,6 +29,11 @@
             a {
                 text-decoration: inherit;
             }
+        }
+
+        p.eventdate {
+            color: #088e00;
+            font-weight: 700;
         }
     }
 }

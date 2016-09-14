@@ -10219,10 +10219,11 @@ body.ios .segment-button.activated, body.ios .segment-button.segment-activated {
     font-size: 25px;
     white-space: normal;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     display: -webkit-box;
     text-transform: capitalize;
-    overflow: hidden; }
+    overflow: hidden;
+    text-overflow: ellipsis; }
   .home .eventcoming ion-item .button-inner {
     margin-right: 10px;
     margin-left: 5px; }
@@ -10270,7 +10271,7 @@ body.ios .segment-button.activated, body.ios .segment-button.segment-activated {
     font-weight: normal;
     text-transform: capitalize; }
   .alltradeshows .allevent ion-item h2 {
-    color: #00b6f1;
+    color: #0016bf;
     font-weight: 700;
     font-size: 25px;
     white-space: normal;
@@ -10319,6 +10320,7 @@ body.ios .segment-button.activated, body.ios .segment-button.segment-activated {
     margin-left: 5px; }
 
 .tradeshowdetails ion-card h1 {
+  color: #0016bf;
   padding: 0 0 20px;
   text-transform: capitalize; }
 
@@ -10329,6 +10331,9 @@ body.ios .segment-button.activated, body.ios .segment-button.segment-activated {
   line-height: 30px;
   font-weight: bold; }
 
+.tradeshowdetails ion-card-content p {
+  white-space: pre-line; }
+
 .tradeshowdetails ion-row {
   padding: 5px; }
   .tradeshowdetails ion-row ion-col {
@@ -10338,6 +10343,9 @@ body.ios .segment-button.activated, body.ios .segment-button.segment-activated {
       margin-right: 10px; }
     .tradeshowdetails ion-row ion-col a {
       text-decoration: inherit; }
+  .tradeshowdetails ion-row p.eventdate {
+    color: #088e00;
+    font-weight: 700; }
 
 .seminardetails ion-card h1 {
   padding: 0 0 20px;
@@ -10371,6 +10379,9 @@ body.ios .segment-button.activated, body.ios .segment-button.segment-activated {
 
 .useraccount .item-input ion-label {
   color: #000; }
+
+.userprofile ion-item.item {
+  font-size: 1.4rem; }
 
 .mytradeshow .card-title {
   position: absolute;
@@ -10469,6 +10480,32 @@ body.ios .segment-button.activated, body.ios .segment-button.segment-activated {
   text-transform: capitalize;
   overflow: hidden;
   text-overflow: ellipsis; }
+
+.buyer-details ion-list {
+  margin: 0; }
+
+.buyer-details .item ion-label h2 {
+  width: 90%;
+  font-weight: 700;
+  white-space: nowrap;
+  text-transform: capitalize;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.buyer-details ion-card.itemdetails ion-item h3 {
+  font-size: 20px;
+  white-space: initial;
+  line-height: 30px;
+  font-weight: 700;
+  margin-bottom: 10px; }
+
+.buyer-details ion-card.itemdetails ion-item p {
+  white-space: pre-line;
+  line-height: 20px;
+  margin-bottom: 20px; }
+
+.buyer-details ion-card.itemdetails ion-list .input-wrapper {
+  font-size: small; }
 
 .supplier ion-list {
   margin: 0; }

@@ -12,7 +12,7 @@
     <ion-list>
         <button ion-item *ngFor="let spl of supplierlist; let i = index" (click)="supplierPage(spl.companyID)">
             <ion-avatar item-left>
-                <img src="img/marketplace/supplier/{{spl.image}}" onError="this.src='img/marketplace/noimage.png'">
+                <img src="img/marketplace/supplier/image_{{spl.companyNo}}.jpg" onError="this.src='img/marketplace/noimage.png'">
             </ion-avatar>
             <h2>{{spl.companyName}}</h2>
             <p>{{spl.companyNo}}</p>
