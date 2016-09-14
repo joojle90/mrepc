@@ -52,20 +52,19 @@ var MyApp = (function () {
         this.nav.setRoot(userpage[pageid]);
     };
     __decorate([
-        core_1.ViewChild(ionic_angular_1.Nav), 
+        core_1.ViewChild(ionic_angular_1.Nav),
         __metadata('design:type', ionic_angular_1.Nav)
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
         core_1.Component({
             templateUrl: 'build/app.html'
-        }), 
+        }),
         __metadata('design:paramtypes', [ionic_angular_1.Platform, ionic_angular_1.MenuController, mrepcdata_1.Mrepcdata, userdata_1.Userdata])
     ], MyApp);
     return MyApp;
 }());
 exports.MyApp = MyApp;
 ionic_angular_1.ionicBootstrap(MyApp, [mrepcdata_1.Mrepcdata, userdata_1.Userdata], {});
-
 },{"./pages/about/about":2,"./pages/alltradeshows/alltradeshows":3,"./pages/home/home":6,"./pages/marketplace/marketplace":7,"./pages/myseminar/myseminar":8,"./pages/mytradeshow/mytradeshow":9,"./pages/seminar/seminar":10,"./pages/tutorial/tutorial":15,"./pages/userprofile/userprofile":17,"./providers/mrepcdata/mrepcdata":18,"./providers/userdata/userdata":19,"@angular/core":167,"ionic-angular":481,"ionic-native":508}],2:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -95,13 +94,12 @@ var AboutPage = (function () {
     AboutPage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/about/about.html'
-        }), 
+        }),
         __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.AlertController])
     ], AboutPage);
     return AboutPage;
 }());
 exports.AboutPage = AboutPage;
-
 },{"@angular/core":167,"ionic-angular":481}],3:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -161,13 +159,12 @@ var AlltradeshowsPage = (function () {
     AlltradeshowsPage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/alltradeshows/alltradeshows.html',
-        }), 
+        }),
         __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.LoadingController, mrepcdata_1.Mrepcdata])
     ], AlltradeshowsPage);
     return AlltradeshowsPage;
 }());
 exports.AlltradeshowsPage = AlltradeshowsPage;
-
 },{"../../pages/tradeshowdetails/tradeshowdetails":14,"../../providers/mrepcdata/mrepcdata":18,"@angular/core":167,"ionic-angular":481}],4:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -211,7 +208,7 @@ var BuyerDetailsPage = (function () {
     BuyerDetailsPage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/buyer-details/buyer-details.html',
-        }), 
+        }),
         __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.LoadingController, ionic_angular_1.NavParams, ionic_angular_1.ModalController])
     ], BuyerDetailsPage);
     return BuyerDetailsPage;
@@ -240,13 +237,12 @@ var BuyerItemsPage = (function () {
     BuyerItemsPage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/buyer-details/buyer-items.html',
-        }), 
+        }),
         __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.NavParams, ionic_angular_1.AlertController, ionic_angular_1.ViewController])
     ], BuyerItemsPage);
     return BuyerItemsPage;
 }());
 exports.BuyerItemsPage = BuyerItemsPage;
-
 },{"@angular/core":167,"ionic-angular":481}],5:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -311,13 +307,12 @@ var BuyerPage = (function () {
     BuyerPage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/buyer/buyer.html',
-        }), 
+        }),
         __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.LoadingController, mrepcdata_1.Mrepcdata])
     ], BuyerPage);
     return BuyerPage;
 }());
 exports.BuyerPage = BuyerPage;
-
 },{"../../pages/buyer-details/buyer-details":4,"../../providers/mrepcdata/mrepcdata":18,"@angular/core":167,"ionic-angular":481}],6:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -420,19 +415,18 @@ var HomePage = (function () {
         return newdate;
     };
     __decorate([
-        core_1.ViewChild('imgtest'), 
+        core_1.ViewChild('imgtest'),
         __metadata('design:type', core_1.ElementRef)
     ], HomePage.prototype, "imgtest", void 0);
     HomePage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/home/home.html'
-        }), 
+        }),
         __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.LoadingController, mrepcdata_1.Mrepcdata])
     ], HomePage);
     return HomePage;
 }());
 exports.HomePage = HomePage;
-
 },{"../../pages/alltradeshows/alltradeshows":3,"../../pages/marketplace/marketplace":7,"../../pages/seminar/seminar":10,"../../pages/tradeshowdetails/tradeshowdetails":14,"../../pages/useraccount/useraccount":16,"../../providers/mrepcdata/mrepcdata":18,"@angular/core":167,"ionic-angular":481}],7:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -463,13 +457,12 @@ var MarketplacePage = (function () {
     MarketplacePage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/marketplace/marketplace.html',
-        }), 
+        }),
         __metadata('design:paramtypes', [ionic_angular_1.NavController])
     ], MarketplacePage);
     return MarketplacePage;
 }());
 exports.MarketplacePage = MarketplacePage;
-
 },{"../../pages/buyer/buyer":5,"../../pages/supplier/supplier":13,"@angular/core":167,"ionic-angular":481}],8:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -513,13 +506,12 @@ var MyseminarPage = (function () {
     MyseminarPage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/myseminar/myseminar.html',
-        }), 
+        }),
         __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.AlertController])
     ], MyseminarPage);
     return MyseminarPage;
 }());
 exports.MyseminarPage = MyseminarPage;
-
 },{"@angular/core":167,"ionic-angular":481}],9:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -555,13 +547,12 @@ var MytradeshowPage = (function () {
     MytradeshowPage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/mytradeshow/mytradeshow.html',
-        }), 
+        }),
         __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.AlertController])
     ], MytradeshowPage);
     return MytradeshowPage;
 }());
 exports.MytradeshowPage = MytradeshowPage;
-
 },{"@angular/core":167,"ionic-angular":481}],10:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -656,13 +647,12 @@ var SeminarPage = (function () {
     SeminarPage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/seminar/seminar.html',
-        }), 
+        }),
         __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.LoadingController, ionic_angular_1.AlertController, mrepcdata_1.Mrepcdata])
     ], SeminarPage);
     return SeminarPage;
 }());
 exports.SeminarPage = SeminarPage;
-
 },{"../../pages/seminardetails/seminardetails":11,"../../providers/mrepcdata/mrepcdata":18,"@angular/core":167,"ionic-angular":481}],11:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -700,13 +690,12 @@ var SeminardetailsPage = (function () {
     SeminardetailsPage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/seminardetails/seminardetails.html',
-        }), 
+        }),
         __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.NavParams])
     ], SeminardetailsPage);
     return SeminardetailsPage;
 }());
 exports.SeminardetailsPage = SeminardetailsPage;
-
 },{"@angular/core":167,"ionic-angular":481}],12:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -746,7 +735,7 @@ var SupplierDetailsPage = (function () {
     SupplierDetailsPage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/supplier-details/supplier-details.html',
-        }), 
+        }),
         __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.LoadingController, ionic_angular_1.NavParams, ionic_angular_1.ModalController])
     ], SupplierDetailsPage);
     return SupplierDetailsPage;
@@ -776,13 +765,12 @@ var SupplierItemsPage = (function () {
     SupplierItemsPage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/supplier-details/supplier-items.html',
-        }), 
+        }),
         __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.NavParams, ionic_angular_1.AlertController, ionic_angular_1.ViewController])
     ], SupplierItemsPage);
     return SupplierItemsPage;
 }());
 exports.SupplierItemsPage = SupplierItemsPage;
-
 },{"@angular/core":167,"ionic-angular":481}],13:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -847,13 +835,12 @@ var SupplierPage = (function () {
     SupplierPage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/supplier/supplier.html',
-        }), 
+        }),
         __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.LoadingController, mrepcdata_1.Mrepcdata])
     ], SupplierPage);
     return SupplierPage;
 }());
 exports.SupplierPage = SupplierPage;
-
 },{"../../pages/supplier-details/supplier-details":12,"../../providers/mrepcdata/mrepcdata":18,"@angular/core":167,"ionic-angular":481}],14:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -891,13 +878,12 @@ var TradeshowdetailsPage = (function () {
     TradeshowdetailsPage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/tradeshowdetails/tradeshowdetails.html',
-        }), 
+        }),
         __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.NavParams])
     ], TradeshowdetailsPage);
     return TradeshowdetailsPage;
 }());
 exports.TradeshowdetailsPage = TradeshowdetailsPage;
-
 },{"@angular/core":167,"ionic-angular":481}],15:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -946,13 +932,12 @@ var TutorialPage = (function () {
     TutorialPage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/tutorial/tutorial.html',
-        }), 
+        }),
         __metadata('design:paramtypes', [ionic_angular_1.NavController])
     ], TutorialPage);
     return TutorialPage;
 }());
 exports.TutorialPage = TutorialPage;
-
 },{"@angular/core":167,"ionic-angular":481}],16:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1039,13 +1024,12 @@ var UseraccountPage = (function () {
     UseraccountPage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/useraccount/useraccount.html',
-        }), 
+        }),
         __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.AlertController, ionic_angular_1.Platform, userdata_1.Userdata])
     ], UseraccountPage);
     return UseraccountPage;
 }());
 exports.UseraccountPage = UseraccountPage;
-
 },{"../../providers/userdata/userdata":19,"../home/home":6,"@angular/core":167,"ionic-angular":481}],17:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1081,13 +1065,12 @@ var UserprofilePage = (function () {
     UserprofilePage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/userprofile/userprofile.html',
-        }), 
+        }),
         __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.AlertController])
     ], UserprofilePage);
     return UserprofilePage;
 }());
 exports.UserprofilePage = UserprofilePage;
-
 },{"@angular/core":167,"ionic-angular":481}],18:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1176,13 +1159,12 @@ var Mrepcdata = (function () {
         });
     };
     Mrepcdata = __decorate([
-        core_1.Injectable(), 
+        core_1.Injectable(),
         __metadata('design:paramtypes', [http_1.Http])
     ], Mrepcdata);
     return Mrepcdata;
 }());
 exports.Mrepcdata = Mrepcdata;
-
 },{"@angular/core":167,"@angular/http":294,"rxjs/add/operator/map":594}],19:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1220,13 +1202,12 @@ var Userdata = (function () {
         this.storage.set('username', username);
     };
     Userdata = __decorate([
-        core_1.Injectable(), 
+        core_1.Injectable(),
         __metadata('design:paramtypes', [http_1.Http, ionic_angular_1.Events])
     ], Userdata);
     return Userdata;
 }());
 exports.Userdata = Userdata;
-
 },{"@angular/core":167,"@angular/http":294,"ionic-angular":481,"rxjs/add/operator/map":594}],20:[function(require,module,exports){
 /**
  * @license
@@ -4040,7 +4021,7 @@ var core_1 = require('@angular/core');
  * See {@link DefaultValueAccessor} for how to implement one.
  * @experimental
  */
-exports.NG_VALUE_ACCESSOR = 
+exports.NG_VALUE_ACCESSOR =
 /*@ts2dart_const*/ new core_1.OpaqueToken('NgValueAccessor');
 
 },{"@angular/core":167}],45:[function(require,module,exports){
@@ -4055,7 +4036,7 @@ exports.NG_VALUE_ACCESSOR =
 var core_1 = require('@angular/core');
 var lang_1 = require('../../facade/lang');
 var control_value_accessor_1 = require('./control_value_accessor');
-exports.DEFAULT_VALUE_ACCESSOR = 
+exports.DEFAULT_VALUE_ACCESSOR =
 /* @ts2dart_Provider */ {
     provide: control_value_accessor_1.NG_VALUE_ACCESSOR,
     useExisting: core_1.forwardRef(function () { return DefaultValueAccessor; }),
@@ -4157,7 +4138,7 @@ var core_1 = require('@angular/core');
 var validators_1 = require('../validators');
 var control_container_1 = require('./control_container');
 var shared_1 = require('./shared');
-exports.controlGroupProvider = 
+exports.controlGroupProvider =
 /*@ts2dart_const*/ /* @ts2dart_Provider */ {
     provide: control_container_1.ControlContainer,
     useExisting: core_1.forwardRef(function () { return NgControlGroup; })
@@ -4246,7 +4227,7 @@ var control_container_1 = require('./control_container');
 var control_value_accessor_1 = require('./control_value_accessor');
 var ng_control_1 = require('./ng_control');
 var shared_1 = require('./shared');
-exports.controlNameBinding = 
+exports.controlNameBinding =
 /*@ts2dart_const*/ /* @ts2dart_Provider */ {
     provide: ng_control_1.NgControl,
     useExisting: core_1.forwardRef(function () { return NgControlName; })
@@ -4428,7 +4409,7 @@ var model_1 = require('../model');
 var validators_1 = require('../validators');
 var control_container_1 = require('./control_container');
 var shared_1 = require('./shared');
-exports.formDirectiveProvider = 
+exports.formDirectiveProvider =
 /*@ts2dart_const*/ { provide: control_container_1.ControlContainer, useExisting: core_1.forwardRef(function () { return NgForm; }) };
 var _formWarningDisplayed = false;
 var NgForm = (function (_super) {
@@ -4573,7 +4554,7 @@ var validators_1 = require('../validators');
 var control_value_accessor_1 = require('./control_value_accessor');
 var ng_control_1 = require('./ng_control');
 var shared_1 = require('./shared');
-exports.formControlBinding = 
+exports.formControlBinding =
 /*@ts2dart_const*/ /* @ts2dart_Provider */ {
     provide: ng_control_1.NgControl,
     useExisting: core_1.forwardRef(function () { return NgFormControl; })
@@ -4668,7 +4649,7 @@ var lang_1 = require('../../facade/lang');
 var validators_1 = require('../validators');
 var control_container_1 = require('./control_container');
 var shared_1 = require('./shared');
-exports.formDirectiveProvider = 
+exports.formDirectiveProvider =
 /*@ts2dart_const*/ /* @ts2dart_Provider */ {
     provide: control_container_1.ControlContainer,
     useExisting: core_1.forwardRef(function () { return NgFormModel; })
@@ -4804,7 +4785,7 @@ var validators_1 = require('../validators');
 var control_value_accessor_1 = require('./control_value_accessor');
 var ng_control_1 = require('./ng_control');
 var shared_1 = require('./shared');
-exports.formControlBinding = 
+exports.formControlBinding =
 /*@ts2dart_const*/ /* @ts2dart_Provider */ {
     provide: ng_control_1.NgControl,
     useExisting: core_1.forwardRef(function () { return NgModel; })
@@ -6274,7 +6255,7 @@ exports.NG_VALIDATORS = new core_1.OpaqueToken('NgValidators');
  *
  * @experimental
  */
-exports.NG_ASYNC_VALIDATORS = 
+exports.NG_ASYNC_VALIDATORS =
 /*@ts2dart_const*/ new core_1.OpaqueToken('NgAsyncValidators');
 /**
  * Provides a set of validators used by form controls.
@@ -9767,7 +9748,7 @@ var pipe_resolver_2 = require('./pipe_resolver');
  * A set of providers that provide `RuntimeCompiler` and its dependencies to use for
  * template compilation.
  */
-exports.COMPILER_PROVIDERS = 
+exports.COMPILER_PROVIDERS =
 /*@ts2dart_const*/ [
     lexer_1.Lexer, parser_1.Parser, html_parser_1.HtmlParser, template_parser_2.TemplateParser, directive_normalizer_1.DirectiveNormalizer, metadata_resolver_1.CompileMetadataResolver,
     url_resolver_2.DEFAULT_PACKAGE_URL_PROVIDER, style_compiler_1.StyleCompiler, view_compiler_1.ViewCompiler,
@@ -19449,7 +19430,7 @@ var OBJECT = 'object';
 // dom_security_schema.ts. Reach out to mprobst & rjamet for details.
 //
 // =================================================================================================
-var SCHEMA = 
+var SCHEMA =
 /*@ts2dart_const*/ ([
     '*|textContent,%classList,className,id,innerHTML,*beforecopy,*beforecut,*beforepaste,*copy,*cut,*paste,*search,*selectstart,*webkitfullscreenchange,*webkitfullscreenerror,*wheel,outerHTML,#scrollLeft,#scrollTop',
     '^*|accessKey,contentEditable,dir,!draggable,!hidden,innerText,lang,*abort,*autocomplete,*autocompleteerror,*beforecopy,*beforecut,*beforepaste,*blur,*cancel,*canplay,*canplaythrough,*change,*click,*close,*contextmenu,*copy,*cuechange,*cut,*dblclick,*drag,*dragend,*dragenter,*dragleave,*dragover,*dragstart,*drop,*durationchange,*emptied,*ended,*error,*focus,*input,*invalid,*keydown,*keypress,*keyup,*load,*loadeddata,*loadedmetadata,*loadstart,*message,*mousedown,*mouseenter,*mouseleave,*mousemove,*mouseout,*mouseover,*mouseup,*mousewheel,*mozfullscreenchange,*mozfullscreenerror,*mozpointerlockchange,*mozpointerlockerror,*paste,*pause,*play,*playing,*progress,*ratechange,*reset,*resize,*scroll,*search,*seeked,*seeking,*select,*selectstart,*show,*stalled,*submit,*suspend,*timeupdate,*toggle,*volumechange,*waiting,*webglcontextcreationerror,*webglcontextlost,*webglcontextrestored,*webkitfullscreenchange,*webkitfullscreenerror,*wheel,outerText,!spellcheck,%style,#tabIndex,title,!translate',
@@ -26290,7 +26271,7 @@ var __unused; // avoid unused import when Type union types are erased
  * application, regardless of the platform it runs onto.
  * @stable
  */
-exports.APPLICATION_COMMON_PROVIDERS = 
+exports.APPLICATION_COMMON_PROVIDERS =
 /*@ts2dart_const*/ [
     application_ref_1.APPLICATION_CORE_PROVIDERS,
     /* @ts2dart_Provider */ { provide: component_resolver_1.ComponentResolver, useClass: component_resolver_1.ReflectorComponentResolver },
@@ -26773,7 +26754,7 @@ var ApplicationRef_ = (function (_super) {
     return ApplicationRef_;
 }(ApplicationRef));
 exports.ApplicationRef_ = ApplicationRef_;
-exports.PLATFORM_CORE_PROVIDERS = 
+exports.PLATFORM_CORE_PROVIDERS =
 /*@ts2dart_const*/ [
     PlatformRef_,
     /*@ts2dart_const*/ (
@@ -26814,7 +26795,7 @@ function _appIdRandomProviderFactory() {
  * Providers that will generate a random APP_ID_TOKEN.
  * @experimental
  */
-exports.APP_ID_RANDOM_PROVIDER = 
+exports.APP_ID_RANDOM_PROVIDER =
 /*@ts2dart_const*/ /* @ts2dart_Provider */ {
     provide: exports.APP_ID,
     useFactory: _appIdRandomProviderFactory,
@@ -26827,19 +26808,19 @@ function _randomChar() {
  * A function that will be executed when a platform is initialized.
  * @experimental
  */
-exports.PLATFORM_INITIALIZER = 
+exports.PLATFORM_INITIALIZER =
 /*@ts2dart_const*/ new di_1.OpaqueToken('Platform Initializer');
 /**
  * A function that will be executed when an application is initialized.
  * @experimental
  */
-exports.APP_INITIALIZER = 
+exports.APP_INITIALIZER =
 /*@ts2dart_const*/ new di_1.OpaqueToken('Application Initializer');
 /**
  * A token which indicates the root directory of the application
  * @experimental
  */
-exports.PACKAGE_ROOT_URL = 
+exports.PACKAGE_ROOT_URL =
 /*@ts2dart_const*/ new di_1.OpaqueToken('Application Packages Root URL');
 
 },{"../src/facade/lang":211,"./di":194}],182:[function(require,module,exports){
@@ -26909,12 +26890,12 @@ exports.KeyValueDiffers = keyvalue_differs_2.KeyValueDiffers;
 /**
  * Structural diffing for `Object`s and `Map`s.
  */
-exports.keyValDiff = 
+exports.keyValDiff =
 /*@ts2dart_const*/ [new default_keyvalue_differ_1.DefaultKeyValueDifferFactory()];
 /**
  * Structural diffing for `Iterable` types such as `Array`s.
  */
-exports.iterableDiff = 
+exports.iterableDiff =
 /*@ts2dart_const*/ [new default_iterable_differ_1.DefaultIterableDifferFactory()];
 exports.defaultIterableDiffers = new iterable_differs_1.IterableDiffers(exports.iterableDiff);
 exports.defaultKeyValueDiffers = new keyvalue_differs_1.KeyValueDiffers(exports.keyValDiff);
@@ -30806,7 +30787,7 @@ var ResolvedReflectiveFactory = (function () {
         /**
          * Factory function which can return an instance of an object represented by a key.
          */
-        factory, 
+        factory,
         /**
          * Arguments (dependencies) to the `factory` function.
          */
@@ -36771,7 +36752,7 @@ var di_1 = require('./di');
   * ```
   * @stable
   */
-exports.PLATFORM_DIRECTIVES = 
+exports.PLATFORM_DIRECTIVES =
 /*@ts2dart_const*/ new di_1.OpaqueToken('Platform Directives');
 /**
   * A token that can be provided when bootstraping an application to make an array of pipes
@@ -38439,7 +38420,7 @@ exports.FORM_DIRECTIVES = [
 /**
  * @experimental
  */
-exports.REACTIVE_FORM_DIRECTIVES = 
+exports.REACTIVE_FORM_DIRECTIVES =
 /*@ts2dart_const*/ [
     form_control_directive_1.FormControlDirective, form_group_directive_1.FormGroupDirective, form_control_name_1.FormControlName, form_group_name_1.FormGroupName, form_array_name_1.FormArrayName
 ];
@@ -38655,7 +38636,7 @@ arguments[4][44][0].apply(exports,arguments)
 var core_1 = require('@angular/core');
 var lang_1 = require('../facade/lang');
 var control_value_accessor_1 = require('./control_value_accessor');
-exports.DEFAULT_VALUE_ACCESSOR = 
+exports.DEFAULT_VALUE_ACCESSOR =
 /* @ts2dart_Provider */ {
     provide: control_value_accessor_1.NG_VALUE_ACCESSOR,
     useExisting: core_1.forwardRef(function () { return DefaultValueAccessor; }),
@@ -38841,7 +38822,7 @@ var model_1 = require('../model');
 var validators_1 = require('../validators');
 var control_container_1 = require('./control_container');
 var shared_1 = require('./shared');
-exports.formDirectiveProvider = 
+exports.formDirectiveProvider =
 /*@ts2dart_const*/ { provide: control_container_1.ControlContainer, useExisting: core_1.forwardRef(function () { return NgForm; }) };
 var NgForm = (function (_super) {
     __extends(NgForm, _super);
@@ -38976,7 +38957,7 @@ var control_container_1 = require('./control_container');
 var control_value_accessor_1 = require('./control_value_accessor');
 var ng_control_1 = require('./ng_control');
 var shared_1 = require('./shared');
-exports.formControlBinding = 
+exports.formControlBinding =
 /*@ts2dart_const*/ /* @ts2dart_Provider */ {
     provide: ng_control_1.NgControl,
     useExisting: core_1.forwardRef(function () { return NgModel; })
@@ -39105,7 +39086,7 @@ var core_1 = require('@angular/core');
 var validators_1 = require('../validators');
 var abstract_form_group_directive_1 = require('./abstract_form_group_directive');
 var control_container_1 = require('./control_container');
-exports.modelGroupProvider = 
+exports.modelGroupProvider =
 /*@ts2dart_const*/ /* @ts2dart_Provider */ {
     provide: control_container_1.ControlContainer,
     useExisting: core_1.forwardRef(function () { return NgModelGroup; })
@@ -39331,7 +39312,7 @@ var core_1 = require('@angular/core');
 var validators_1 = require('../../validators');
 var control_container_1 = require('../control_container');
 var shared_1 = require('../shared');
-exports.formArrayNameProvider = 
+exports.formArrayNameProvider =
 /*@ts2dart_const*/ /* @ts2dart_Provider */ {
     provide: control_container_1.ControlContainer,
     useExisting: core_1.forwardRef(function () { return FormArrayName; })
@@ -39410,7 +39391,7 @@ var validators_1 = require('../../validators');
 var control_value_accessor_1 = require('../control_value_accessor');
 var ng_control_1 = require('../ng_control');
 var shared_1 = require('../shared');
-exports.formControlBinding = 
+exports.formControlBinding =
 /*@ts2dart_const*/ /* @ts2dart_Provider */ {
     provide: ng_control_1.NgControl,
     useExisting: core_1.forwardRef(function () { return FormControlDirective; })
@@ -39504,7 +39485,7 @@ var control_container_1 = require('../control_container');
 var control_value_accessor_1 = require('../control_value_accessor');
 var ng_control_1 = require('../ng_control');
 var shared_1 = require('../shared');
-exports.controlNameBinding = 
+exports.controlNameBinding =
 /*@ts2dart_const*/ /* @ts2dart_Provider */ {
     provide: ng_control_1.NgControl,
     useExisting: core_1.forwardRef(function () { return FormControlName; })
@@ -39605,7 +39586,7 @@ var lang_1 = require('../../facade/lang');
 var validators_1 = require('../../validators');
 var control_container_1 = require('../control_container');
 var shared_1 = require('../shared');
-exports.formDirectiveProvider = 
+exports.formDirectiveProvider =
 /*@ts2dart_const*/ /* @ts2dart_Provider */ {
     provide: control_container_1.ControlContainer,
     useExisting: core_1.forwardRef(function () { return FormGroupDirective; })
@@ -39737,7 +39718,7 @@ var core_1 = require('@angular/core');
 var validators_1 = require('../../validators');
 var abstract_form_group_directive_1 = require('../abstract_form_group_directive');
 var control_container_1 = require('../control_container');
-exports.formGroupNameProvider = 
+exports.formGroupNameProvider =
 /*@ts2dart_const*/ /* @ts2dart_Provider */ {
     provide: control_container_1.ControlContainer,
     useExisting: core_1.forwardRef(function () { return FormGroupName; })
@@ -41607,7 +41588,7 @@ exports.NG_VALIDATORS = new core_1.OpaqueToken('NgValidators');
  *
  * @experimental
  */
-exports.NG_ASYNC_VALIDATORS = 
+exports.NG_ASYNC_VALIDATORS =
 /*@ts2dart_const*/ new core_1.OpaqueToken('NgAsyncValidators');
 /**
  * Provides a set of validators used by form controls.
@@ -51424,9 +51405,9 @@ var ActionSheetCmp = (function () {
         return this._viewCtrl.dismiss(null, role);
     };
     __decorate([
-        core_1.HostListener('body:keyup', ['$event']), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [KeyboardEvent]), 
+        core_1.HostListener('body:keyup', ['$event']),
+        __metadata('design:type', Function),
+        __metadata('design:paramtypes', [KeyboardEvent]),
         __metadata('design:returntype', void 0)
     ], ActionSheetCmp.prototype, "_keyUp", null);
     ActionSheetCmp = __decorate([
@@ -51440,7 +51421,7 @@ var ActionSheetCmp = (function () {
                 '[attr.aria-describedby]': 'descId'
             },
             encapsulation: core_1.ViewEncapsulation.None,
-        }), 
+        }),
         __metadata('design:paramtypes', [view_controller_1.ViewController, config_1.Config, core_1.ElementRef, form_1.Form, nav_params_1.NavParams, core_1.Renderer])
     ], ActionSheetCmp);
     return ActionSheetCmp;
@@ -51778,7 +51759,7 @@ var ActionSheetController = (function () {
         return new ActionSheet(this._app, opts);
     };
     ActionSheetController = __decorate([
-        core_1.Injectable(), 
+        core_1.Injectable(),
         __metadata('design:paramtypes', [app_1.App])
     ], ActionSheetController);
     return ActionSheetController;
@@ -51984,9 +51965,9 @@ var AlertCmp = (function () {
         return values;
     };
     __decorate([
-        core_1.HostListener('body:keyup', ['$event']), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [KeyboardEvent]), 
+        core_1.HostListener('body:keyup', ['$event']),
+        __metadata('design:type', Function),
+        __metadata('design:paramtypes', [KeyboardEvent]),
         __metadata('design:returntype', void 0)
     ], AlertCmp.prototype, "_keyUp", null);
     AlertCmp = __decorate([
@@ -52000,7 +51981,7 @@ var AlertCmp = (function () {
                 '[attr.aria-describedby]': 'descId'
             },
             encapsulation: core_1.ViewEncapsulation.None,
-        }), 
+        }),
         __metadata('design:paramtypes', [view_controller_1.ViewController, core_1.ElementRef, config_1.Config, nav_params_1.NavParams, core_1.Renderer])
     ], AlertCmp);
     return AlertCmp;
@@ -52454,7 +52435,7 @@ var AlertController = (function () {
         return new Alert(this._app, opts);
     };
     AlertController = __decorate([
-        core_1.Injectable(), 
+        core_1.Injectable(),
         __metadata('design:paramtypes', [app_1.App])
     ], AlertController);
     return AlertController;
@@ -52713,7 +52694,7 @@ var App = (function () {
         void 0;
     };
     App = __decorate([
-        core_1.Injectable(), 
+        core_1.Injectable(),
         __metadata('design:paramtypes', [config_1.Config, platform_1.Platform])
     ], App);
     return App;
@@ -52741,11 +52722,11 @@ var AppRoot = (function () {
         });
     };
     __decorate([
-        core_1.ViewChild('anchor', { read: core_1.ViewContainerRef }), 
+        core_1.ViewChild('anchor', { read: core_1.ViewContainerRef }),
         __metadata('design:type', core_1.ViewContainerRef)
     ], AppRoot.prototype, "_viewport", void 0);
     __decorate([
-        core_1.HostBinding('class.disable-scroll'), 
+        core_1.HostBinding('class.disable-scroll'),
         __metadata('design:type', Boolean)
     ], AppRoot.prototype, "disableScroll", void 0);
     AppRoot = __decorate([
@@ -52753,7 +52734,7 @@ var AppRoot = (function () {
             selector: 'ion-app',
             template: "\n    <div #anchor nav-portal></div>\n    <click-block></click-block>\n  ",
             directives: [nav_portal_1.NavPortal, click_block_1.ClickBlock]
-        }), 
+        }),
         __metadata('design:paramtypes', [UserComponent, core_1.ComponentResolver, core_1.Renderer, App])
     ], AppRoot);
     return AppRoot;
@@ -52800,7 +52781,7 @@ var Backdrop = (function () {
         return this._elementRef.nativeElement;
     };
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], Backdrop.prototype, "disableScroll", void 0);
     Backdrop = __decorate([
@@ -52811,7 +52792,7 @@ var Backdrop = (function () {
                 'tappable': '',
                 'disable-activated': ''
             },
-        }), 
+        }),
         __metadata('design:paramtypes', [gesture_controller_1.GestureController, core_1.ElementRef])
     ], Backdrop);
     return Backdrop;
@@ -52871,7 +52852,7 @@ var Badge = (function () {
     Badge = __decorate([
         core_1.Directive({
             selector: 'ion-badge'
-        }), 
+        }),
         __metadata('design:paramtypes', [config_1.Config, core_1.ElementRef, core_1.Renderer])
     ], Badge);
     return Badge;
@@ -53221,57 +53202,57 @@ var Button = (function () {
         }
     };
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], Button.prototype, "category", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean), 
+        core_1.Input(),
+        __metadata('design:type', Boolean),
         __metadata('design:paramtypes', [Boolean])
     ], Button.prototype, "large", null);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean), 
+        core_1.Input(),
+        __metadata('design:type', Boolean),
         __metadata('design:paramtypes', [Boolean])
     ], Button.prototype, "small", null);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean), 
+        core_1.Input(),
+        __metadata('design:type', Boolean),
         __metadata('design:paramtypes', [Boolean])
     ], Button.prototype, "default", null);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean), 
+        core_1.Input(),
+        __metadata('design:type', Boolean),
         __metadata('design:paramtypes', [Boolean])
     ], Button.prototype, "outline", null);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean), 
+        core_1.Input(),
+        __metadata('design:type', Boolean),
         __metadata('design:paramtypes', [Boolean])
     ], Button.prototype, "clear", null);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean), 
+        core_1.Input(),
+        __metadata('design:type', Boolean),
         __metadata('design:paramtypes', [Boolean])
     ], Button.prototype, "solid", null);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean), 
+        core_1.Input(),
+        __metadata('design:type', Boolean),
         __metadata('design:paramtypes', [Boolean])
     ], Button.prototype, "round", null);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean), 
+        core_1.Input(),
+        __metadata('design:type', Boolean),
         __metadata('design:paramtypes', [Boolean])
     ], Button.prototype, "block", null);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean), 
+        core_1.Input(),
+        __metadata('design:type', Boolean),
         __metadata('design:paramtypes', [Boolean])
     ], Button.prototype, "full", null);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object), 
+        core_1.Input(),
+        __metadata('design:type', Object),
         __metadata('design:paramtypes', [Object])
     ], Button.prototype, "color", null);
     Button = __decorate([
@@ -53282,7 +53263,7 @@ var Button = (function () {
             changeDetection: core_1.ChangeDetectionStrategy.OnPush,
             encapsulation: core_1.ViewEncapsulation.None,
         }),
-        __param(3, core_1.Attribute('ion-item')), 
+        __param(3, core_1.Attribute('ion-item')),
         __metadata('design:paramtypes', [config_1.Config, core_1.ElementRef, core_1.Renderer, String])
     ], Button);
     return Button;
@@ -53469,21 +53450,21 @@ var Checkbox = (function () {
         this._form.deregister(this);
     };
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], Checkbox.prototype, "ionChange", void 0);
     __decorate([
-        core_1.HostListener('click', ['$event']), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [UIEvent]), 
+        core_1.HostListener('click', ['$event']),
+        __metadata('design:type', Function),
+        __metadata('design:paramtypes', [UIEvent]),
         __metadata('design:returntype', void 0)
     ], Checkbox.prototype, "_click", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Boolean)
     ], Checkbox.prototype, "checked", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Boolean)
     ], Checkbox.prototype, "disabled", null);
     Checkbox = __decorate([
@@ -53496,7 +53477,7 @@ var Checkbox = (function () {
             providers: [exports.CHECKBOX_VALUE_ACCESSOR],
             encapsulation: core_1.ViewEncapsulation.None,
         }),
-        __param(1, core_1.Optional()), 
+        __param(1, core_1.Optional()),
         __metadata('design:paramtypes', [form_1.Form, item_1.Item])
     ], Checkbox);
     return Checkbox;
@@ -54036,7 +54017,7 @@ var Content = (function (_super) {
         }
     };
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Boolean)
     ], Content.prototype, "fullscreen", null);
     Content = __decorate([
@@ -54054,7 +54035,7 @@ var Content = (function (_super) {
             }
         }),
         __param(5, core_1.Optional()),
-        __param(6, core_1.Optional()), 
+        __param(6, core_1.Optional()),
         __metadata('design:paramtypes', [core_1.ElementRef, config_1.Config, app_1.App, keyboard_1.Keyboard, core_1.NgZone, view_controller_1.ViewController, tabs_1.Tabs])
     ], Content);
     return Content;
@@ -54720,91 +54701,91 @@ var DateTime = (function () {
         this._form.deregister(this);
     };
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], DateTime.prototype, "min", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], DateTime.prototype, "max", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], DateTime.prototype, "displayFormat", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], DateTime.prototype, "pickerFormat", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], DateTime.prototype, "cancelText", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], DateTime.prototype, "doneText", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], DateTime.prototype, "yearValues", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], DateTime.prototype, "monthValues", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], DateTime.prototype, "dayValues", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], DateTime.prototype, "hourValues", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], DateTime.prototype, "minuteValues", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], DateTime.prototype, "monthNames", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], DateTime.prototype, "monthShortNames", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], DateTime.prototype, "dayNames", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], DateTime.prototype, "dayShortNames", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], DateTime.prototype, "pickerOptions", void 0);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], DateTime.prototype, "ionChange", void 0);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], DateTime.prototype, "ionCancel", void 0);
     __decorate([
-        core_1.HostListener('click', ['$event']), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [UIEvent]), 
+        core_1.HostListener('click', ['$event']),
+        __metadata('design:type', Function),
+        __metadata('design:paramtypes', [UIEvent]),
         __metadata('design:returntype', void 0)
     ], DateTime.prototype, "_click", null);
     __decorate([
-        core_1.HostListener('keyup.space'), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', []), 
+        core_1.HostListener('keyup.space'),
+        __metadata('design:type', Function),
+        __metadata('design:paramtypes', []),
         __metadata('design:returntype', void 0)
     ], DateTime.prototype, "_keyup", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], DateTime.prototype, "disabled", null);
     DateTime = __decorate([
@@ -54818,7 +54799,7 @@ var DateTime = (function () {
             encapsulation: core_1.ViewEncapsulation.None,
         }),
         __param(2, core_1.Optional()),
-        __param(3, core_1.Optional()), 
+        __param(3, core_1.Optional()),
         __metadata('design:paramtypes', [form_1.Form, config_1.Config, item_1.Item, picker_1.PickerController])
     ], DateTime);
     return DateTime;
@@ -55036,19 +55017,19 @@ var Icon = (function () {
         this._renderer.setElementClass(this._elementRef.nativeElement, className, true);
     };
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], Icon.prototype, "name", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], Icon.prototype, "ios", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], Icon.prototype, "md", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Boolean)
     ], Icon.prototype, "isActive", null);
     Icon = __decorate([
@@ -55057,7 +55038,7 @@ var Icon = (function () {
             host: {
                 'role': 'img'
             }
-        }), 
+        }),
         __metadata('design:paramtypes', [config_1.Config, core_1.ElementRef, core_1.Renderer])
     ], Icon);
     return Icon;
@@ -55193,34 +55174,34 @@ var Img = (function () {
         configurable: true
     });
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String), 
+        core_1.Input(),
+        __metadata('design:type', String),
         __metadata('design:paramtypes', [String])
     ], Img.prototype, "src", null);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object), 
+        core_1.Input(),
+        __metadata('design:type', Object),
         __metadata('design:paramtypes', [Object])
     ], Img.prototype, "width", null);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object), 
+        core_1.Input(),
+        __metadata('design:type', Object),
         __metadata('design:paramtypes', [Object])
     ], Img.prototype, "height", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], Img.prototype, "alt", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], Img.prototype, "title", void 0);
     __decorate([
-        core_1.HostBinding('style.width'), 
+        core_1.HostBinding('style.width'),
         __metadata('design:type', String)
     ], Img.prototype, "_width", null);
     __decorate([
-        core_1.HostBinding('style.height'), 
+        core_1.HostBinding('style.height'),
         __metadata('design:type', String)
     ], Img.prototype, "_height", null);
     Img = __decorate([
@@ -55229,7 +55210,7 @@ var Img = (function () {
             template: '<div class="img-placeholder" [style.height]="_h" [style.width]="_w"></div>',
             changeDetection: core_1.ChangeDetectionStrategy.OnPush,
             encapsulation: core_1.ViewEncapsulation.None,
-        }), 
+        }),
         __metadata('design:paramtypes', [core_1.ElementRef, platform_1.Platform, core_1.NgZone])
     ], Img);
     return Img;
@@ -55285,11 +55266,11 @@ var InfiniteScrollContent = (function () {
         }
     };
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], InfiniteScrollContent.prototype, "loadingSpinner", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], InfiniteScrollContent.prototype, "loadingText", void 0);
     InfiniteScrollContent = __decorate([
@@ -55306,7 +55287,7 @@ var InfiniteScrollContent = (function () {
                 '[attr.state]': 'inf.state'
             },
             encapsulation: core_1.ViewEncapsulation.None,
-        }), 
+        }),
         __metadata('design:paramtypes', [infinite_scroll_1.InfiniteScroll, config_1.Config])
     ], InfiniteScrollContent);
     return InfiniteScrollContent;
@@ -55558,18 +55539,18 @@ var InfiniteScroll = (function () {
         this._setListeners(false);
     };
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], InfiniteScroll.prototype, "threshold", null);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], InfiniteScroll.prototype, "ionInfinite", void 0);
     InfiniteScroll = __decorate([
         core_1.Directive({
             selector: 'ion-infinite-scroll'
         }),
-        __param(0, core_1.Host()), 
+        __param(0, core_1.Host()),
         __metadata('design:paramtypes', [content_1.Content, core_1.NgZone, core_1.ElementRef])
     ], InfiniteScroll);
     return InfiniteScroll;
@@ -56077,45 +56058,45 @@ var InputBase = (function () {
         return scrollData;
     };
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], InputBase.prototype, "clearInput", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], InputBase.prototype, "placeholder", void 0);
     __decorate([
-        core_1.ViewChild(native_input_1.NativeInput), 
+        core_1.ViewChild(native_input_1.NativeInput),
         __metadata('design:type', native_input_1.NativeInput)
     ], InputBase.prototype, "_native", void 0);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], InputBase.prototype, "blur", void 0);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], InputBase.prototype, "focus", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], InputBase.prototype, "value", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], InputBase.prototype, "type", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], InputBase.prototype, "disabled", null);
     __decorate([
-        core_1.ViewChild(native_input_1.NativeInput), 
-        __metadata('design:type', native_input_1.NativeInput), 
+        core_1.ViewChild(native_input_1.NativeInput),
+        __metadata('design:type', native_input_1.NativeInput),
         __metadata('design:paramtypes', [native_input_1.NativeInput])
     ], InputBase.prototype, "_nativeInput", null);
     __decorate([
-        core_1.ViewChild(native_input_1.NextInput), 
-        __metadata('design:type', native_input_1.NextInput), 
+        core_1.ViewChild(native_input_1.NextInput),
+        __metadata('design:type', native_input_1.NextInput),
         __metadata('design:paramtypes', [native_input_1.NextInput])
     ], InputBase.prototype, "_nextInput", null);
     return InputBase;
@@ -56254,7 +56235,7 @@ var TextInput = (function (_super) {
         __param(2, core_1.Optional()),
         __param(6, core_1.Optional()),
         __param(7, core_1.Optional()),
-        __param(8, core_1.Optional()), 
+        __param(8, core_1.Optional()),
         __metadata('design:paramtypes', [config_1.Config, form_1.Form, item_1.Item, app_1.App, platform_1.Platform, core_1.ElementRef, content_1.Content, nav_controller_1.NavController, forms_1.NgControl])
     ], TextInput);
     return TextInput;
@@ -56340,7 +56321,7 @@ var TextArea = (function (_super) {
         __param(2, core_1.Optional()),
         __param(6, core_1.Optional()),
         __param(7, core_1.Optional()),
-        __param(8, core_1.Optional()), 
+        __param(8, core_1.Optional()),
         __metadata('design:paramtypes', [config_1.Config, form_1.Form, item_1.Item, app_1.App, platform_1.Platform, core_1.ElementRef, content_1.Content, nav_controller_1.NavController, forms_1.NgControl])
     ], TextArea);
     return TextArea;
@@ -56493,35 +56474,35 @@ var NativeInput = (function () {
         this._unrefBlur && this._unrefBlur();
     };
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], NativeInput.prototype, "focusChange", void 0);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], NativeInput.prototype, "valueChange", void 0);
     __decorate([
-        core_1.HostListener('input', ['$event']), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [Object]), 
+        core_1.HostListener('input', ['$event']),
+        __metadata('design:type', Function),
+        __metadata('design:paramtypes', [Object]),
         __metadata('design:returntype', void 0)
     ], NativeInput.prototype, "_change", null);
     __decorate([
-        core_1.HostListener('focus'), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', []), 
+        core_1.HostListener('focus'),
+        __metadata('design:type', Function),
+        __metadata('design:paramtypes', []),
         __metadata('design:returntype', void 0)
     ], NativeInput.prototype, "_focus", null);
     __decorate([
-        core_1.HostListener('blur'), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', []), 
+        core_1.HostListener('blur'),
+        __metadata('design:type', Function),
+        __metadata('design:paramtypes', []),
         __metadata('design:returntype', void 0)
     ], NativeInput.prototype, "_blur", null);
     NativeInput = __decorate([
         core_1.Directive({
             selector: '.text-input'
-        }), 
+        }),
         __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer, config_1.Config, forms_1.NgControl])
     ], NativeInput);
     return NativeInput;
@@ -56557,19 +56538,19 @@ var NextInput = (function () {
         this.focused.emit(true);
     };
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], NextInput.prototype, "focused", void 0);
     __decorate([
-        core_1.HostListener('focus'), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', []), 
+        core_1.HostListener('focus'),
+        __metadata('design:type', Function),
+        __metadata('design:paramtypes', []),
         __metadata('design:returntype', void 0)
     ], NextInput.prototype, "receivedFocus", null);
     NextInput = __decorate([
         core_1.Directive({
             selector: '[next-input]'
-        }), 
+        }),
         __metadata('design:paramtypes', [])
     ], NextInput);
     return NextInput;
@@ -57020,11 +57001,11 @@ var ItemReorder = (function () {
         return this._element;
     };
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], ItemReorder.prototype, "ionItemReorder", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Boolean)
     ], ItemReorder.prototype, "reorder", null);
     ItemReorder = __decorate([
@@ -57034,7 +57015,7 @@ var ItemReorder = (function () {
                 '[class.reorder-enabled]': '_enableReorder',
             }
         }),
-        __param(3, core_1.Optional()), 
+        __param(3, core_1.Optional()),
         __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer, core_1.NgZone, content_1.Content])
     ], ItemReorder);
     return ItemReorder;
@@ -57058,7 +57039,7 @@ var Reorder = (function () {
             selector: 'ion-reorder',
             template: "<ion-icon name=\"menu\"></ion-icon>"
         }),
-        __param(0, core_1.Inject(core_1.forwardRef(function () { return item_1.Item; }))), 
+        __param(0, core_1.Inject(core_1.forwardRef(function () { return item_1.Item; }))),
         __metadata('design:paramtypes', [item_1.Item, core_1.ElementRef])
     ], Reorder);
     return Reorder;
@@ -57259,17 +57240,17 @@ var ItemOptions = (function () {
         return this._elementRef.nativeElement.offsetWidth;
     };
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], ItemOptions.prototype, "side", void 0);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], ItemOptions.prototype, "ionSwipe", void 0);
     ItemOptions = __decorate([
         core_1.Directive({
             selector: 'ion-item-options',
-        }), 
+        }),
         __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer])
     ], ItemOptions);
     return ItemOptions;
@@ -57628,16 +57609,16 @@ var ItemSliding = (function () {
         this._renderer.setElementStyle(this._elementRef.nativeElement, property, value);
     };
     __decorate([
-        core_1.ContentChild(item_1.Item), 
+        core_1.ContentChild(item_1.Item),
         __metadata('design:type', item_1.Item)
     ], ItemSliding.prototype, "item", void 0);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], ItemSliding.prototype, "ionDrag", void 0);
     __decorate([
-        core_1.ContentChildren(ItemOptions), 
-        __metadata('design:type', core_1.QueryList), 
+        core_1.ContentChildren(ItemOptions),
+        __metadata('design:type', core_1.QueryList),
         __metadata('design:paramtypes', [core_1.QueryList])
     ], ItemSliding.prototype, "_itemOptions", null);
     ItemSliding = __decorate([
@@ -57647,7 +57628,7 @@ var ItemSliding = (function () {
             changeDetection: core_1.ChangeDetectionStrategy.OnPush,
             encapsulation: core_1.ViewEncapsulation.None
         }),
-        __param(0, core_1.Optional()), 
+        __param(0, core_1.Optional()),
         __metadata('design:paramtypes', [list_1.List, core_1.Renderer, core_1.ElementRef])
     ], ItemSliding);
     return ItemSliding;
@@ -58066,23 +58047,23 @@ var Item = (function () {
         return this._elementRef.nativeElement;
     };
     __decorate([
-        core_1.ContentChild(label_1.Label), 
-        __metadata('design:type', label_1.Label), 
+        core_1.ContentChild(label_1.Label),
+        __metadata('design:type', label_1.Label),
         __metadata('design:paramtypes', [label_1.Label])
     ], Item.prototype, "contentLabel", null);
     __decorate([
-        core_1.ViewChild(label_1.Label), 
-        __metadata('design:type', label_1.Label), 
+        core_1.ViewChild(label_1.Label),
+        __metadata('design:type', label_1.Label),
         __metadata('design:paramtypes', [label_1.Label])
     ], Item.prototype, "viewLabel", null);
     __decorate([
-        core_1.ContentChildren(button_1.Button), 
-        __metadata('design:type', Object), 
+        core_1.ContentChildren(button_1.Button),
+        __metadata('design:type', Object),
         __metadata('design:paramtypes', [Object])
     ], Item.prototype, "_buttons", null);
     __decorate([
-        core_1.ContentChildren(icon_1.Icon), 
-        __metadata('design:type', Object), 
+        core_1.ContentChildren(icon_1.Icon),
+        __metadata('design:type', Object),
         __metadata('design:paramtypes', [Object])
     ], Item.prototype, "_icons", null);
     Item = __decorate([
@@ -58092,7 +58073,7 @@ var Item = (function () {
             directives: [common_1.NgIf, label_1.Label, core_1.forwardRef(function () { return item_reorder_1.Reorder; })],
             changeDetection: core_1.ChangeDetectionStrategy.OnPush,
             encapsulation: core_1.ViewEncapsulation.None,
-        }), 
+        }),
         __metadata('design:paramtypes', [form_1.Form, core_1.Renderer, core_1.ElementRef])
     ], Item);
     return Item;
@@ -58110,7 +58091,7 @@ var ItemContent = (function () {
             host: {
                 'class': 'item'
             }
-        }), 
+        }),
         __metadata('design:paramtypes', [])
     ], ItemContent);
     return ItemContent;
@@ -58221,7 +58202,7 @@ var Label = (function () {
         this._renderer.setElementClass(this._elementRef.nativeElement, className, true);
     };
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], Label.prototype, "id", null);
     Label = __decorate([
@@ -58231,7 +58212,7 @@ var Label = (function () {
         __param(2, core_1.Attribute('floating')),
         __param(3, core_1.Attribute('stacked')),
         __param(4, core_1.Attribute('fixed')),
-        __param(5, core_1.Attribute('inset')), 
+        __param(5, core_1.Attribute('inset')),
         __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer, String, String, String, String])
     ], Label);
     return Label;
@@ -58352,13 +58333,13 @@ var List = (function (_super) {
         this._slidingGesture && this._slidingGesture.closeOpened();
     };
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Boolean)
     ], List.prototype, "sliding", null);
     List = __decorate([
         core_1.Directive({
             selector: 'ion-list',
-        }), 
+        }),
         __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer, gesture_controller_1.GestureController])
     ], List);
     return List;
@@ -58388,7 +58369,7 @@ var ListHeader = (function () {
         core_1.Directive({
             selector: 'ion-list-header'
         }),
-        __param(2, core_1.Attribute('id')), 
+        __param(2, core_1.Attribute('id')),
         __metadata('design:paramtypes', [core_1.Renderer, core_1.ElementRef, String])
     ], ListHeader);
     return ListHeader;
@@ -58468,7 +58449,7 @@ var LoadingCmp = (function () {
                 'role': 'dialog'
             },
             encapsulation: core_1.ViewEncapsulation.None,
-        }), 
+        }),
         __metadata('design:paramtypes', [view_controller_1.ViewController, config_1.Config, core_1.ElementRef, nav_params_1.NavParams, core_1.Renderer])
     ], LoadingCmp);
     return LoadingCmp;
@@ -58774,7 +58755,7 @@ var LoadingController = (function () {
         return new Loading(this._app, opts);
     };
     LoadingController = __decorate([
-        core_1.Injectable(), 
+        core_1.Injectable(),
         __metadata('design:paramtypes', [app_1.App])
     ], LoadingController);
     return LoadingController;
@@ -58830,19 +58811,19 @@ var MenuClose = (function () {
         menu && menu.close();
     };
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], MenuClose.prototype, "menuClose", void 0);
     __decorate([
-        core_1.HostListener('click'), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', []), 
+        core_1.HostListener('click'),
+        __metadata('design:type', Function),
+        __metadata('design:paramtypes', []),
         __metadata('design:returntype', void 0)
     ], MenuClose.prototype, "close", null);
     MenuClose = __decorate([
         core_1.Directive({
             selector: '[menuClose]'
-        }), 
+        }),
         __metadata('design:paramtypes', [menu_controller_1.MenuController])
     ], MenuClose);
     return MenuClose;
@@ -59365,13 +59346,13 @@ var MenuToggle = (function () {
         configurable: true
     });
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], MenuToggle.prototype, "menuToggle", void 0);
     __decorate([
-        core_1.HostListener('click'), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', []), 
+        core_1.HostListener('click'),
+        __metadata('design:type', Function),
+        __metadata('design:paramtypes', []),
         __metadata('design:returntype', void 0)
     ], MenuToggle.prototype, "toggle", null);
     MenuToggle = __decorate([
@@ -59383,7 +59364,7 @@ var MenuToggle = (function () {
             }
         }),
         __param(2, core_1.Optional()),
-        __param(3, core_1.Optional()), 
+        __param(3, core_1.Optional()),
         __metadata('design:paramtypes', [menu_controller_1.MenuController, core_1.ElementRef, view_controller_1.ViewController, navbar_1.Navbar])
     ], MenuToggle);
     return MenuToggle;
@@ -60072,51 +60053,51 @@ var Menu = (function () {
         this._cntEle = null;
     };
     __decorate([
-        core_1.ViewChild(backdrop_1.Backdrop), 
+        core_1.ViewChild(backdrop_1.Backdrop),
         __metadata('design:type', backdrop_1.Backdrop)
     ], Menu.prototype, "backdrop", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], Menu.prototype, "content", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], Menu.prototype, "id", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], Menu.prototype, "side", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], Menu.prototype, "type", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Boolean)
     ], Menu.prototype, "enabled", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Boolean)
     ], Menu.prototype, "swipeEnabled", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Boolean)
     ], Menu.prototype, "persistent", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Number)
     ], Menu.prototype, "maxEdgeStart", void 0);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], Menu.prototype, "ionDrag", void 0);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], Menu.prototype, "ionOpen", void 0);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], Menu.prototype, "ionClose", void 0);
     Menu = __decorate([
@@ -60129,7 +60110,7 @@ var Menu = (function () {
             directives: [backdrop_1.Backdrop],
             changeDetection: core_1.ChangeDetectionStrategy.OnPush,
             encapsulation: core_1.ViewEncapsulation.None,
-        }), 
+        }),
         __metadata('design:paramtypes', [menu_controller_1.MenuController, core_1.ElementRef, config_1.Config, platform_1.Platform, core_1.Renderer, keyboard_1.Keyboard, core_1.NgZone, gesture_controller_1.GestureController])
     ], Menu);
     return Menu;
@@ -60205,13 +60186,13 @@ var ModalCmp = (function () {
         }
     };
     __decorate([
-        core_1.ViewChild('viewport', { read: core_1.ViewContainerRef }), 
+        core_1.ViewChild('viewport', { read: core_1.ViewContainerRef }),
         __metadata('design:type', core_1.ViewContainerRef)
     ], ModalCmp.prototype, "viewport", void 0);
     __decorate([
-        core_1.HostListener('body:keyup', ['$event']), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [KeyboardEvent]), 
+        core_1.HostListener('body:keyup', ['$event']),
+        __metadata('design:type', Function),
+        __metadata('design:paramtypes', [KeyboardEvent]),
         __metadata('design:returntype', void 0)
     ], ModalCmp.prototype, "_keyUp", null);
     ModalCmp = __decorate([
@@ -60219,7 +60200,7 @@ var ModalCmp = (function () {
             selector: 'ion-modal',
             template: "\n    <ion-backdrop disableScroll=\"false\" (click)=\"bdClick($event)\"></ion-backdrop>\n    <div class=\"modal-wrapper\">\n      <div #viewport nav-viewport></div>\n    </div>\n  ",
             directives: [backdrop_1.Backdrop]
-        }), 
+        }),
         __metadata('design:paramtypes', [core_1.ComponentResolver, core_1.Renderer, nav_params_1.NavParams, view_controller_1.ViewController])
     ], ModalCmp);
     return ModalCmp;
@@ -60528,7 +60509,7 @@ var ModalController = (function () {
         return new Modal(this._app, componentType, data, opts);
     };
     ModalController = __decorate([
-        core_1.Injectable(), 
+        core_1.Injectable(),
         __metadata('design:paramtypes', [app_1.App])
     ], ModalController);
     return ModalController;
@@ -62061,16 +62042,16 @@ var NavPop = (function () {
         return true;
     };
     __decorate([
-        core_1.HostListener('click'), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', []), 
+        core_1.HostListener('click'),
+        __metadata('design:type', Function),
+        __metadata('design:paramtypes', []),
         __metadata('design:returntype', Boolean)
     ], NavPop.prototype, "onClick", null);
     NavPop = __decorate([
         core_1.Directive({
             selector: '[navPop]'
         }),
-        __param(0, core_1.Optional()), 
+        __param(0, core_1.Optional()),
         __metadata('design:paramtypes', [nav_controller_1.NavController])
     ], NavPop);
     return NavPop;
@@ -62121,7 +62102,7 @@ var NavPortal = (function (_super) {
         core_1.Directive({
             selector: '[nav-portal]'
         }),
-        __param(0, core_1.Inject(core_1.forwardRef(function () { return app_1.App; }))), 
+        __param(0, core_1.Inject(core_1.forwardRef(function () { return app_1.App; }))),
         __metadata('design:paramtypes', [app_1.App, config_1.Config, keyboard_1.Keyboard, core_1.ElementRef, core_1.NgZone, core_1.Renderer, core_1.ComponentResolver, gesture_controller_1.GestureController, core_1.ViewContainerRef])
     ], NavPortal);
     return NavPortal;
@@ -62202,24 +62183,24 @@ var NavPush = (function () {
         return true;
     };
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], NavPush.prototype, "navPush", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], NavPush.prototype, "navParams", void 0);
     __decorate([
-        core_1.HostListener('click'), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', []), 
+        core_1.HostListener('click'),
+        __metadata('design:type', Function),
+        __metadata('design:paramtypes', []),
         __metadata('design:returntype', Boolean)
     ], NavPush.prototype, "onClick", null);
     NavPush = __decorate([
         core_1.Directive({
             selector: '[navPush]'
         }),
-        __param(0, core_1.Optional()), 
+        __param(0, core_1.Optional()),
         __metadata('design:paramtypes', [nav_controller_1.NavController])
     ], NavPush);
     return NavPush;
@@ -62364,16 +62345,16 @@ var Nav = (function (_super) {
         configurable: true
     });
     __decorate([
-        core_1.ViewChild('viewport', { read: core_1.ViewContainerRef }), 
-        __metadata('design:type', core_1.ViewContainerRef), 
+        core_1.ViewChild('viewport', { read: core_1.ViewContainerRef }),
+        __metadata('design:type', core_1.ViewContainerRef),
         __metadata('design:paramtypes', [core_1.ViewContainerRef])
     ], Nav.prototype, "_vp", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], Nav.prototype, "root", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Boolean)
     ], Nav.prototype, "swipeBackEnabled", null);
     Nav = __decorate([
@@ -62383,7 +62364,7 @@ var Nav = (function (_super) {
             encapsulation: core_1.ViewEncapsulation.None,
         }),
         __param(0, core_1.Optional()),
-        __param(1, core_1.Optional()), 
+        __param(1, core_1.Optional()),
         __metadata('design:paramtypes', [view_controller_1.ViewController, nav_controller_base_1.NavControllerBase, app_1.App, config_1.Config, keyboard_1.Keyboard, core_1.ElementRef, core_1.NgZone, core_1.Renderer, core_1.ComponentResolver, gesture_controller_1.GestureController])
     ], Nav);
     return Nav;
@@ -62927,7 +62908,7 @@ var ViewController = (function () {
         this._destroyFn = null;
     };
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], ViewController.prototype, "_emitter", void 0);
     return ViewController;
@@ -63006,7 +62987,7 @@ var BackButton = (function (_super) {
         }),
         __param(0, core_1.Optional()),
         __param(2, core_1.Optional()),
-        __param(2, core_1.Inject(core_1.forwardRef(function () { return Navbar; }))), 
+        __param(2, core_1.Inject(core_1.forwardRef(function () { return Navbar; }))),
         __metadata('design:paramtypes', [nav_controller_1.NavController, core_1.ElementRef, Navbar])
     ], BackButton);
     return BackButton;
@@ -63019,7 +63000,7 @@ var BackButtonText = (function () {
         core_1.Directive({
             selector: '.back-button-text'
         }),
-        __param(1, core_1.Inject(core_1.forwardRef(function () { return Navbar; }))), 
+        __param(1, core_1.Inject(core_1.forwardRef(function () { return Navbar; }))),
         __metadata('design:paramtypes', [core_1.ElementRef, Navbar])
     ], BackButtonText);
     return BackButtonText;
@@ -63032,7 +63013,7 @@ var ToolbarBackground = (function () {
         core_1.Directive({
             selector: '.toolbar-background'
         }),
-        __param(1, core_1.Inject(core_1.forwardRef(function () { return Navbar; }))), 
+        __param(1, core_1.Inject(core_1.forwardRef(function () { return Navbar; }))),
         __metadata('design:paramtypes', [core_1.ElementRef, Navbar])
     ], ToolbarBackground);
     return ToolbarBackground;
@@ -63159,7 +63140,7 @@ var Navbar = (function (_super) {
         this._hidden = isHidden;
     };
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Boolean)
     ], Navbar.prototype, "hideBackButton", null);
     Navbar = __decorate([
@@ -63173,7 +63154,7 @@ var Navbar = (function (_super) {
                 '[class.statusbar-padding]': '_sbPadding'
             }
         }),
-        __param(1, core_1.Optional()), 
+        __param(1, core_1.Optional()),
         __metadata('design:paramtypes', [app_1.App, view_controller_1.ViewController, core_1.ElementRef, config_1.Config])
     ], Navbar);
     return Navbar;
@@ -63190,7 +63171,7 @@ var NavbarTemplate = (function () {
     NavbarTemplate = __decorate([
         core_1.Directive({
             selector: 'template[navbar]'
-        }), 
+        }),
         __metadata('design:paramtypes', [])
     ], NavbarTemplate);
     return NavbarTemplate;
@@ -63280,25 +63261,25 @@ var Option = (function () {
         configurable: true
     });
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], Option.prototype, "ionSelect", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], Option.prototype, "selected", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], Option.prototype, "value", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], Option.prototype, "disabled", null);
     Option = __decorate([
         core_1.Directive({
             selector: 'ion-option'
-        }), 
+        }),
         __metadata('design:paramtypes', [core_1.ElementRef])
     ], Option);
     return Option;
@@ -63571,15 +63552,15 @@ var PickerColumnCmp = (function () {
         }
     };
     __decorate([
-        core_1.ViewChild('colEle'), 
+        core_1.ViewChild('colEle'),
         __metadata('design:type', core_1.ElementRef)
     ], PickerColumnCmp.prototype, "colEle", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], PickerColumnCmp.prototype, "col", void 0);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], PickerColumnCmp.prototype, "ionChange", void 0);
     PickerColumnCmp = __decorate([
@@ -63592,7 +63573,7 @@ var PickerColumnCmp = (function () {
                 '[class.picker-opts-left]': 'col.align=="left"',
                 '[class.picker-opts-right]': 'col.align=="right"',
             }
-        }), 
+        }),
         __metadata('design:paramtypes', [config_1.Config, core_1.ElementRef, platform_browser_1.DomSanitizationService])
     ], PickerColumnCmp);
     return PickerColumnCmp;
@@ -63739,13 +63720,13 @@ var PickerCmp = (function () {
         return selected;
     };
     __decorate([
-        core_1.ViewChildren(PickerColumnCmp), 
+        core_1.ViewChildren(PickerColumnCmp),
         __metadata('design:type', core_1.QueryList)
     ], PickerCmp.prototype, "_cols", void 0);
     __decorate([
-        core_1.HostListener('body:keyup', ['$event']), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [KeyboardEvent]), 
+        core_1.HostListener('body:keyup', ['$event']),
+        __metadata('design:type', Function),
+        __metadata('design:paramtypes', [KeyboardEvent]),
         __metadata('design:returntype', void 0)
     ], PickerCmp.prototype, "_keyUp", null);
     PickerCmp = __decorate([
@@ -63757,7 +63738,7 @@ var PickerCmp = (function () {
                 'role': 'dialog'
             },
             encapsulation: core_1.ViewEncapsulation.None,
-        }), 
+        }),
         __metadata('design:paramtypes', [view_controller_1.ViewController, core_1.ElementRef, config_1.Config, nav_params_1.NavParams, core_1.Renderer])
     ], PickerCmp);
     return PickerCmp;
@@ -63888,7 +63869,7 @@ var Picker = (function (_super) {
         void 0;
     };
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], Picker.prototype, "ionChange", void 0);
     return Picker;
@@ -63912,7 +63893,7 @@ var PickerController = (function () {
         return new Picker(this._app, opts);
     };
     PickerController = __decorate([
-        core_1.Injectable(), 
+        core_1.Injectable(),
         __metadata('design:paramtypes', [app_1.App])
     ], PickerController);
     return PickerController;
@@ -63997,13 +63978,13 @@ var PopoverCmp = (function () {
         }
     };
     __decorate([
-        core_1.ViewChild('viewport', { read: core_1.ViewContainerRef }), 
+        core_1.ViewChild('viewport', { read: core_1.ViewContainerRef }),
         __metadata('design:type', core_1.ViewContainerRef)
     ], PopoverCmp.prototype, "viewport", void 0);
     __decorate([
-        core_1.HostListener('body:keyup', ['$event']), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [KeyboardEvent]), 
+        core_1.HostListener('body:keyup', ['$event']),
+        __metadata('design:type', Function),
+        __metadata('design:paramtypes', [KeyboardEvent]),
         __metadata('design:returntype', void 0)
     ], PopoverCmp.prototype, "_keyUp", null);
     PopoverCmp = __decorate([
@@ -64011,7 +63992,7 @@ var PopoverCmp = (function () {
             selector: 'ion-popover',
             template: "\n    <ion-backdrop (click)=\"bdClick($event)\" [class.hide-backdrop]=\"!d.showBackdrop\"></ion-backdrop>\n    <div class=\"popover-wrapper\">\n      <div class=\"popover-arrow\"></div>\n      <div class=\"popover-content\">\n        <div class=\"popover-viewport\">\n          <div #viewport nav-viewport></div>\n        </div>\n      </div>\n    </div>\n  ",
             directives: [backdrop_1.Backdrop]
-        }), 
+        }),
         __metadata('design:paramtypes', [core_1.ComponentResolver, core_1.ElementRef, core_1.Renderer, config_1.Config, nav_params_1.NavParams, view_controller_1.ViewController])
     ], PopoverCmp);
     return PopoverCmp;
@@ -64419,7 +64400,7 @@ var PopoverController = (function () {
         return new Popover(this._app, componentType, data, opts);
     };
     PopoverController = __decorate([
-        core_1.Injectable(), 
+        core_1.Injectable(),
         __metadata('design:paramtypes', [app_1.App])
     ], PopoverController);
     return PopoverController;
@@ -64575,25 +64556,25 @@ var RadioButton = (function () {
         this._group && this._group.remove(this);
     };
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], RadioButton.prototype, "ionSelect", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], RadioButton.prototype, "value", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Boolean)
     ], RadioButton.prototype, "checked", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Boolean)
     ], RadioButton.prototype, "disabled", null);
     __decorate([
-        core_1.HostListener('click', ['$event']), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [UIEvent]), 
+        core_1.HostListener('click', ['$event']),
+        __metadata('design:type', Function),
+        __metadata('design:paramtypes', [UIEvent]),
         __metadata('design:returntype', void 0)
     ], RadioButton.prototype, "_click", null);
     RadioButton = __decorate([
@@ -64606,7 +64587,7 @@ var RadioButton = (function () {
             encapsulation: core_1.ViewEncapsulation.None,
         }),
         __param(1, core_1.Optional()),
-        __param(2, core_1.Optional()), 
+        __param(2, core_1.Optional()),
         __metadata('design:paramtypes', [form_1.Form, item_1.Item, radio_group_1.RadioGroup])
     ], RadioButton);
     return RadioButton;
@@ -64813,12 +64794,12 @@ var RadioGroup = (function () {
      */
     RadioGroup.prototype.onTouched = function () { };
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], RadioGroup.prototype, "ionChange", void 0);
     __decorate([
-        core_1.ContentChild(list_1.ListHeader), 
-        __metadata('design:type', Object), 
+        core_1.ContentChild(list_1.ListHeader),
+        __metadata('design:type', Object),
         __metadata('design:paramtypes', [Object])
     ], RadioGroup.prototype, "_header", null);
     RadioGroup = __decorate([
@@ -64829,7 +64810,7 @@ var RadioGroup = (function () {
                 'role': 'radiogroup'
             },
             providers: [exports.RADIO_VALUE_ACCESSOR]
-        }), 
+        }),
         __metadata('design:paramtypes', [core_1.Renderer, core_1.ElementRef])
     ], RadioGroup);
     return RadioGroup;
@@ -64927,7 +64908,7 @@ var RangeKnob = (function () {
         this.position();
     };
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Boolean)
     ], RangeKnob.prototype, "upper", void 0);
     RangeKnob = __decorate([
@@ -64949,7 +64930,7 @@ var RangeKnob = (function () {
                 'tabindex': '0'
             }
         }),
-        __param(0, core_1.Inject(core_1.forwardRef(function () { return Range; }))), 
+        __param(0, core_1.Inject(core_1.forwardRef(function () { return Range; }))),
         __metadata('design:paramtypes', [Range])
     ], RangeKnob);
     return RangeKnob;
@@ -65457,51 +65438,51 @@ var Range = (function () {
         this._events.unlistenAll();
     };
     __decorate([
-        core_1.ViewChild('bar'), 
+        core_1.ViewChild('bar'),
         __metadata('design:type', core_1.ElementRef)
     ], Range.prototype, "_bar", void 0);
     __decorate([
-        core_1.ViewChild('slider'), 
+        core_1.ViewChild('slider'),
         __metadata('design:type', core_1.ElementRef)
     ], Range.prototype, "_slider", void 0);
     __decorate([
-        core_1.ViewChildren(RangeKnob), 
+        core_1.ViewChildren(RangeKnob),
         __metadata('design:type', core_1.QueryList)
     ], Range.prototype, "_knobs", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Number)
     ], Range.prototype, "min", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Number)
     ], Range.prototype, "max", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Number)
     ], Range.prototype, "step", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Boolean)
     ], Range.prototype, "snaps", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Boolean)
     ], Range.prototype, "pin", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Number)
     ], Range.prototype, "debounce", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Boolean)
     ], Range.prototype, "dualKnobs", null);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], Range.prototype, "ionChange", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Boolean)
     ], Range.prototype, "disabled", null);
     Range = __decorate([
@@ -65517,7 +65498,7 @@ var Range = (function () {
             providers: [exports.RANGE_VALUE_ACCESSOR],
             encapsulation: core_1.ViewEncapsulation.None,
         }),
-        __param(1, core_1.Optional()), 
+        __param(1, core_1.Optional()),
         __metadata('design:paramtypes', [form_1.Form, item_1.Item, core_1.Renderer])
     ], Range);
     return Range;
@@ -65561,19 +65542,19 @@ var RefresherContent = (function () {
         }
     };
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], RefresherContent.prototype, "pullingIcon", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], RefresherContent.prototype, "pullingText", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], RefresherContent.prototype, "refreshingSpinner", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], RefresherContent.prototype, "refreshingText", void 0);
     RefresherContent = __decorate([
@@ -65585,7 +65566,7 @@ var RefresherContent = (function () {
                 '[attr.state]': 'r.state'
             },
             encapsulation: core_1.ViewEncapsulation.None,
-        }), 
+        }),
         __metadata('design:paramtypes', [refresher_1.Refresher, config_1.Config])
     ], RefresherContent);
     return RefresherContent;
@@ -66033,35 +66014,35 @@ var Refresher = (function () {
         this._setListeners(false);
     };
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Number)
     ], Refresher.prototype, "pullMin", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Number)
     ], Refresher.prototype, "pullMax", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Number)
     ], Refresher.prototype, "closeDuration", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Number)
     ], Refresher.prototype, "snapbackDuration", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Boolean)
     ], Refresher.prototype, "enabled", null);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], Refresher.prototype, "ionRefresh", void 0);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], Refresher.prototype, "ionPull", void 0);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], Refresher.prototype, "ionStart", void 0);
     Refresher = __decorate([
@@ -66072,7 +66053,7 @@ var Refresher = (function () {
                 '[style.top]': '_top'
             }
         }),
-        __param(0, core_1.Host()), 
+        __param(0, core_1.Host()),
         __metadata('design:paramtypes', [content_1.Content, core_1.NgZone, gesture_controller_1.GestureController])
     ], Refresher);
     return Refresher;
@@ -66177,7 +66158,7 @@ var Scroll = (function (_super) {
                 '</scroll-content>',
             changeDetection: core_1.ChangeDetectionStrategy.OnPush,
             encapsulation: core_1.ViewEncapsulation.None,
-        }), 
+        }),
         __metadata('design:paramtypes', [core_1.ElementRef])
     ], Scroll);
     return Scroll;
@@ -66497,76 +66478,76 @@ var Searchbar = (function () {
         this.onTouched = fn;
     };
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], Searchbar.prototype, "cancelButtonText", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], Searchbar.prototype, "showCancelButton", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Number)
     ], Searchbar.prototype, "debounce", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], Searchbar.prototype, "placeholder", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], Searchbar.prototype, "autocomplete", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], Searchbar.prototype, "autocorrect", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], Searchbar.prototype, "spellcheck", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], Searchbar.prototype, "type", void 0);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], Searchbar.prototype, "ionInput", void 0);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], Searchbar.prototype, "ionBlur", void 0);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], Searchbar.prototype, "ionFocus", void 0);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], Searchbar.prototype, "ionCancel", void 0);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], Searchbar.prototype, "ionClear", void 0);
     __decorate([
-        core_1.HostBinding('class.searchbar-has-focus'), 
+        core_1.HostBinding('class.searchbar-has-focus'),
         __metadata('design:type', Boolean)
     ], Searchbar.prototype, "_sbHasFocus", void 0);
     __decorate([
-        core_1.ViewChild('searchbarInput'), 
-        __metadata('design:type', core_1.ElementRef), 
+        core_1.ViewChild('searchbarInput'),
+        __metadata('design:type', core_1.ElementRef),
         __metadata('design:paramtypes', [core_1.ElementRef])
     ], Searchbar.prototype, "searchbarInput", null);
     __decorate([
-        core_1.ViewChild('searchbarIcon'), 
+        core_1.ViewChild('searchbarIcon'),
         __metadata('design:type', core_1.ElementRef)
     ], Searchbar.prototype, "_searchbarIcon", void 0);
     __decorate([
-        core_1.ViewChild('cancelButton', { read: core_1.ElementRef }), 
+        core_1.ViewChild('cancelButton', { read: core_1.ElementRef }),
         __metadata('design:type', core_1.ElementRef)
     ], Searchbar.prototype, "_cancelButton", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], Searchbar.prototype, "value", null);
     Searchbar = __decorate([
@@ -66590,7 +66571,7 @@ var Searchbar = (function () {
             },
             encapsulation: core_1.ViewEncapsulation.None
         }),
-        __param(2, core_1.Optional()), 
+        __param(2, core_1.Optional()),
         __metadata('design:paramtypes', [core_1.ElementRef, config_1.Config, forms_1.NgControl])
     ], Searchbar);
     return Searchbar;
@@ -66708,21 +66689,21 @@ var SegmentButton = (function () {
         configurable: true
     });
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], SegmentButton.prototype, "value", void 0);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], SegmentButton.prototype, "ionSelect", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Boolean)
     ], SegmentButton.prototype, "disabled", null);
     __decorate([
-        core_1.HostListener('click'), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', []), 
+        core_1.HostListener('click'),
+        __metadata('design:type', Function),
+        __metadata('design:paramtypes', []),
         __metadata('design:returntype', void 0)
     ], SegmentButton.prototype, "onClick", null);
     SegmentButton = __decorate([
@@ -66735,7 +66716,7 @@ var SegmentButton = (function () {
                 'role': 'button'
             },
             encapsulation: core_1.ViewEncapsulation.None,
-        }), 
+        }),
         __metadata('design:paramtypes', [core_1.Renderer, core_1.ElementRef])
     ], SegmentButton);
     return SegmentButton;
@@ -66882,22 +66863,22 @@ var Segment = (function () {
      */
     Segment.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], Segment.prototype, "ionChange", void 0);
     __decorate([
-        core_1.ContentChildren(SegmentButton), 
+        core_1.ContentChildren(SegmentButton),
         __metadata('design:type', core_1.QueryList)
     ], Segment.prototype, "_buttons", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Boolean)
     ], Segment.prototype, "disabled", null);
     Segment = __decorate([
         core_1.Directive({
             selector: 'ion-segment'
         }),
-        __param(0, core_1.Optional()), 
+        __param(0, core_1.Optional()),
         __metadata('design:paramtypes', [forms_1.NgControl])
     ], Segment);
     return Segment;
@@ -67309,60 +67290,60 @@ var Select = (function () {
         this._form.deregister(this);
     };
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], Select.prototype, "cancelText", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], Select.prototype, "okText", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], Select.prototype, "placeholder", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], Select.prototype, "alertOptions", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], Select.prototype, "interface", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], Select.prototype, "selectedText", void 0);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], Select.prototype, "ionChange", void 0);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], Select.prototype, "ionCancel", void 0);
     __decorate([
-        core_1.HostListener('click', ['$event']), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [UIEvent]), 
+        core_1.HostListener('click', ['$event']),
+        __metadata('design:type', Function),
+        __metadata('design:paramtypes', [UIEvent]),
         __metadata('design:returntype', void 0)
     ], Select.prototype, "_click", null);
     __decorate([
-        core_1.HostListener('keyup.space'), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', []), 
+        core_1.HostListener('keyup.space'),
+        __metadata('design:type', Function),
+        __metadata('design:paramtypes', []),
         __metadata('design:returntype', void 0)
     ], Select.prototype, "_keyup", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], Select.prototype, "multiple", null);
     __decorate([
-        core_1.ContentChildren(option_1.Option), 
-        __metadata('design:type', core_1.QueryList), 
+        core_1.ContentChildren(option_1.Option),
+        __metadata('design:type', core_1.QueryList),
         __metadata('design:paramtypes', [core_1.QueryList])
     ], Select.prototype, "options", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], Select.prototype, "disabled", null);
     Select = __decorate([
@@ -67377,7 +67358,7 @@ var Select = (function () {
             encapsulation: core_1.ViewEncapsulation.None,
         }),
         __param(4, core_1.Optional()),
-        __param(5, core_1.Optional()), 
+        __param(5, core_1.Optional()),
         __metadata('design:paramtypes', [app_1.App, form_1.Form, core_1.ElementRef, core_1.Renderer, item_1.Item, nav_controller_1.NavController])
     ], Select);
     return Select;
@@ -67502,7 +67483,7 @@ var ShowWhen = (function (_super) {
                 '[class.hidden-show-when]': '!isMatch'
             }
         }),
-        __param(0, core_1.Attribute('showWhen')), 
+        __param(0, core_1.Attribute('showWhen')),
         __metadata('design:paramtypes', [String, platform_1.Platform, core_1.NgZone])
     ], ShowWhen);
     return ShowWhen;
@@ -67561,7 +67542,7 @@ var HideWhen = (function (_super) {
                 '[class.hidden-hide-when]': 'isMatch'
             }
         }),
-        __param(0, core_1.Attribute('hideWhen')), 
+        __param(0, core_1.Attribute('hideWhen')),
         __metadata('design:paramtypes', [String, platform_1.Platform, core_1.NgZone])
     ], HideWhen);
     return HideWhen;
@@ -67964,12 +67945,12 @@ var Slides = (function (_super) {
         /*
         let x = e.pointers[0].clientX;
         let y = e.pointers[0].clientY;
-    
+
         let mx = this.viewportWidth / 2;
         let my = this.viewportHeight / 2;
-    
+
         let tx, ty;
-    
+
         if (x > mx) {
           // Greater than half
           tx = -x;
@@ -67982,7 +67963,7 @@ var Slides = (function (_super) {
         } else {
           ty = y-my;
         }
-    
+
         console.debug(y);
         */
         var zi = new animation_1.Animation(this.touch.target.children[0])
@@ -68212,35 +68193,35 @@ var Slides = (function (_super) {
         return this.slider;
     };
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], Slides.prototype, "options", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], Slides.prototype, "pager", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], Slides.prototype, "zoom", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], Slides.prototype, "zoomDuration", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], Slides.prototype, "zoomMax", void 0);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], Slides.prototype, "ionWillChange", void 0);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], Slides.prototype, "ionDidChange", void 0);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], Slides.prototype, "ionDrag", void 0);
     Slides = __decorate([
@@ -68254,7 +68235,7 @@ var Slides = (function (_super) {
                 '</div>',
             changeDetection: core_1.ChangeDetectionStrategy.OnPush,
             encapsulation: core_1.ViewEncapsulation.None,
-        }), 
+        }),
         __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer])
     ], Slides);
     return Slides;
@@ -68283,7 +68264,7 @@ var Slide = (function () {
         this.slides.rapidUpdate();
     };
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], Slide.prototype, "zoom", void 0);
     Slide = __decorate([
@@ -68293,7 +68274,7 @@ var Slide = (function () {
             changeDetection: core_1.ChangeDetectionStrategy.OnPush,
             encapsulation: core_1.ViewEncapsulation.None,
         }),
-        __param(1, core_1.Host()), 
+        __param(1, core_1.Host()),
         __metadata('design:paramtypes', [core_1.ElementRef, Slides])
     ], Slide);
     return Slide;
@@ -68311,7 +68292,7 @@ var SlideLazy = (function () {
             host: {
                 'class': 'swiper-lazy'
             }
-        }), 
+        }),
         __metadata('design:paramtypes', [])
     ], SlideLazy);
     return SlideLazy;
@@ -72457,15 +72438,15 @@ var Spinner = (function () {
         return data;
     };
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], Spinner.prototype, "name", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Number)
     ], Spinner.prototype, "duration", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Boolean)
     ], Spinner.prototype, "paused", void 0);
     Spinner = __decorate([
@@ -72479,7 +72460,7 @@ var Spinner = (function () {
             },
             changeDetection: core_1.ChangeDetectionStrategy.OnPush,
             encapsulation: core_1.ViewEncapsulation.None,
-        }), 
+        }),
         __metadata('design:paramtypes', [config_1.Config])
     ], Spinner);
     return Spinner;
@@ -72616,17 +72597,17 @@ var TabButton = (function (_super) {
         ev.preventDefault();
     };
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', tab_1.Tab)
     ], TabButton.prototype, "tab", void 0);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], TabButton.prototype, "ionSelect", void 0);
     __decorate([
-        core_1.HostListener('click', ['$event']), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [UIEvent]), 
+        core_1.HostListener('click', ['$event']),
+        __metadata('design:type', Function),
+        __metadata('design:paramtypes', [UIEvent]),
         __metadata('design:returntype', void 0)
     ], TabButton.prototype, "onClick", null);
     TabButton = __decorate([
@@ -72643,7 +72624,7 @@ var TabButton = (function (_super) {
                 '[class.has-badge]': 'hasBadge',
                 '[class.disable-hover]': 'disHover'
             }
-        }), 
+        }),
         __metadata('design:paramtypes', [config_1.Config, core_1.ElementRef])
     ], TabButton);
     return TabButton;
@@ -72687,7 +72668,7 @@ var TabHighlight = (function () {
     TabHighlight = __decorate([
         core_1.Directive({
             selector: 'tab-highlight'
-        }), 
+        }),
         __metadata('design:paramtypes', [core_1.ElementRef])
     ], TabHighlight);
     return TabHighlight;
@@ -72984,48 +72965,48 @@ var Tab = (function (_super) {
         _super.prototype.ngOnDestroy.call(this);
     };
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], Tab.prototype, "root", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], Tab.prototype, "rootParams", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], Tab.prototype, "tabTitle", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], Tab.prototype, "tabIcon", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], Tab.prototype, "tabBadge", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], Tab.prototype, "tabBadgeStyle", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Boolean)
     ], Tab.prototype, "enabled", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Boolean)
     ], Tab.prototype, "show", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Boolean)
     ], Tab.prototype, "swipeBackEnabled", null);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], Tab.prototype, "ionSelect", void 0);
     __decorate([
-        core_1.ViewChild('viewport', { read: core_1.ViewContainerRef }), 
-        __metadata('design:type', core_1.ViewContainerRef), 
+        core_1.ViewChild('viewport', { read: core_1.ViewContainerRef }),
+        __metadata('design:type', core_1.ViewContainerRef),
         __metadata('design:paramtypes', [core_1.ViewContainerRef])
     ], Tab.prototype, "_vp", null);
     Tab = __decorate([
@@ -73040,7 +73021,7 @@ var Tab = (function (_super) {
             template: '<div #viewport></div><div class="nav-decor"></div>',
             encapsulation: core_1.ViewEncapsulation.None,
         }),
-        __param(0, core_1.Inject(core_1.forwardRef(function () { return tabs_1.Tabs; }))), 
+        __param(0, core_1.Inject(core_1.forwardRef(function () { return tabs_1.Tabs; }))),
         __metadata('design:paramtypes', [tabs_1.Tabs, app_1.App, config_1.Config, keyboard_1.Keyboard, core_1.ElementRef, core_1.NgZone, core_1.Renderer, core_1.ComponentResolver, core_1.ChangeDetectorRef, gesture_controller_1.GestureController])
     ], Tab);
     return Tab;
@@ -73524,47 +73505,47 @@ var Tabs = (function (_super) {
         }
     };
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], Tabs.prototype, "selectedIndex", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Object)
     ], Tabs.prototype, "preloadTabs", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], Tabs.prototype, "tabbarLayout", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], Tabs.prototype, "tabsLayout", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], Tabs.prototype, "tabbarPlacement", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], Tabs.prototype, "tabsPlacement", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Boolean)
     ], Tabs.prototype, "tabsHighlight", void 0);
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], Tabs.prototype, "ionChange", void 0);
     __decorate([
-        core_1.ViewChild(tab_highlight_1.TabHighlight), 
+        core_1.ViewChild(tab_highlight_1.TabHighlight),
         __metadata('design:type', tab_highlight_1.TabHighlight)
     ], Tabs.prototype, "_highlight", void 0);
     __decorate([
-        core_1.ViewChild('tabbar'), 
+        core_1.ViewChild('tabbar'),
         __metadata('design:type', core_1.ElementRef)
     ], Tabs.prototype, "_tabbar", void 0);
     __decorate([
-        core_1.ViewChild('portal', { read: core_1.ViewContainerRef }), 
+        core_1.ViewChild('portal', { read: core_1.ViewContainerRef }),
         __metadata('design:type', core_1.ViewContainerRef)
     ], Tabs.prototype, "portal", void 0);
     Tabs = __decorate([
@@ -73575,7 +73556,7 @@ var Tabs = (function (_super) {
             encapsulation: core_1.ViewEncapsulation.None,
         }),
         __param(0, core_1.Optional()),
-        __param(1, core_1.Optional()), 
+        __param(1, core_1.Optional()),
         __metadata('design:paramtypes', [nav_controller_1.NavController, view_controller_1.ViewController, app_1.App, config_1.Config, core_1.ElementRef, platform_1.Platform, core_1.Renderer])
     ], Tabs);
     return Tabs;
@@ -73924,7 +73905,7 @@ var TapClick = (function () {
         return this.disableClick > Date.now();
     };
     TapClick = __decorate([
-        core_1.Injectable(), 
+        core_1.Injectable(),
         __metadata('design:paramtypes', [config_1.Config, app_1.App, core_1.NgZone])
     ], TapClick);
     return TapClick;
@@ -74050,7 +74031,7 @@ var ToastCmp = (function () {
                 '[attr.aria-labelledby]': 'hdrId',
                 '[attr.aria-describedby]': 'descId',
             },
-        }), 
+        }),
         __metadata('design:paramtypes', [view_controller_1.ViewController, config_1.Config, core_1.ElementRef, nav_params_1.NavParams, core_1.Renderer])
     ], ToastCmp);
     return ToastCmp;
@@ -74403,7 +74384,7 @@ var ToastController = (function () {
         return new Toast(this._app, opts);
     };
     ToastController = __decorate([
-        core_1.Injectable(), 
+        core_1.Injectable(),
         __metadata('design:paramtypes', [app_1.App])
     ], ToastController);
     return ToastController;
@@ -74634,15 +74615,15 @@ var Toggle = (function () {
         this._events.unlistenAll();
     };
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', core_1.EventEmitter)
     ], Toggle.prototype, "ionChange", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Boolean)
     ], Toggle.prototype, "checked", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Boolean)
     ], Toggle.prototype, "disabled", null);
     Toggle = __decorate([
@@ -74655,7 +74636,7 @@ var Toggle = (function () {
             providers: [exports.TOGGLE_VALUE_ACCESSOR],
             encapsulation: core_1.ViewEncapsulation.None,
         }),
-        __param(3, core_1.Optional()), 
+        __param(3, core_1.Optional()),
         __metadata('design:paramtypes', [form_1.Form, core_1.ElementRef, core_1.Renderer, item_1.Item])
     ], Toggle);
     return Toggle;
@@ -74701,8 +74682,8 @@ var ToolbarItem = (function () {
         configurable: true
     });
     __decorate([
-        core_1.ContentChildren(button_1.Button), 
-        __metadata('design:type', Object), 
+        core_1.ContentChildren(button_1.Button),
+        __metadata('design:type', Object),
         __metadata('design:paramtypes', [Object])
     ], ToolbarItem.prototype, "_buttons", null);
     ToolbarItem = __decorate([
@@ -74711,7 +74692,7 @@ var ToolbarItem = (function () {
         }),
         __param(1, core_1.Optional()),
         __param(2, core_1.Optional()),
-        __param(2, core_1.Inject(core_1.forwardRef(function () { return navbar_1.Navbar; }))), 
+        __param(2, core_1.Inject(core_1.forwardRef(function () { return navbar_1.Navbar; }))),
         __metadata('design:paramtypes', [core_1.ElementRef, toolbar_1.Toolbar, navbar_1.Navbar])
     ], ToolbarItem);
     return ToolbarItem;
@@ -74801,7 +74782,7 @@ var ToolbarTitle = (function (_super) {
         }),
         __param(1, core_1.Optional()),
         __param(2, core_1.Optional()),
-        __param(2, core_1.Inject(core_1.forwardRef(function () { return navbar_1.Navbar; }))), 
+        __param(2, core_1.Inject(core_1.forwardRef(function () { return navbar_1.Navbar; }))),
         __metadata('design:paramtypes', [core_1.ElementRef, toolbar_1.Toolbar, navbar_1.Navbar])
     ], ToolbarTitle);
     return ToolbarTitle;
@@ -74866,7 +74847,7 @@ var Header = (function () {
         core_1.Directive({
             selector: 'ion-header'
         }),
-        __param(0, core_1.Optional()), 
+        __param(0, core_1.Optional()),
         __metadata('design:paramtypes', [view_controller_1.ViewController])
     ], Header);
     return Header;
@@ -74902,7 +74883,7 @@ var Footer = (function () {
         core_1.Directive({
             selector: 'ion-footer'
         }),
-        __param(0, core_1.Optional()), 
+        __param(0, core_1.Optional()),
         __metadata('design:paramtypes', [view_controller_1.ViewController])
     ], Footer);
     return Footer;
@@ -75113,7 +75094,7 @@ var Toolbar = (function (_super) {
         }),
         __param(0, core_1.Optional()),
         __param(1, core_1.Optional()),
-        __param(2, core_1.Optional()), 
+        __param(2, core_1.Optional()),
         __metadata('design:paramtypes', [view_controller_1.ViewController, Header, Footer, config_1.Config, core_1.ElementRef])
     ], Toolbar);
     return Toolbar;
@@ -75140,7 +75121,7 @@ var VirtualHeader = (function () {
         this.templateRef = templateRef;
     }
     VirtualHeader = __decorate([
-        core_1.Directive({ selector: '[virtualHeader]' }), 
+        core_1.Directive({ selector: '[virtualHeader]' }),
         __metadata('design:paramtypes', [core_1.TemplateRef])
     ], VirtualHeader);
     return VirtualHeader;
@@ -75154,7 +75135,7 @@ var VirtualFooter = (function () {
         this.templateRef = templateRef;
     }
     VirtualFooter = __decorate([
-        core_1.Directive({ selector: '[virtualFooter]' }), 
+        core_1.Directive({ selector: '[virtualFooter]' }),
         __metadata('design:paramtypes', [core_1.TemplateRef])
     ], VirtualFooter);
     return VirtualFooter;
@@ -75169,7 +75150,7 @@ var VirtualItem = (function () {
         this.viewContainer = viewContainer;
     }
     VirtualItem = __decorate([
-        core_1.Directive({ selector: '[virtualItem]' }), 
+        core_1.Directive({ selector: '[virtualItem]' }),
         __metadata('design:paramtypes', [core_1.TemplateRef, core_1.ViewContainerRef])
     ], VirtualItem);
     return VirtualItem;
@@ -75707,74 +75688,74 @@ var VirtualScroll = (function () {
         this._unreg = null;
     };
     __decorate([
-        core_1.ContentChild(virtual_item_1.VirtualItem), 
+        core_1.ContentChild(virtual_item_1.VirtualItem),
         __metadata('design:type', virtual_item_1.VirtualItem)
     ], VirtualScroll.prototype, "_itmTmp", void 0);
     __decorate([
-        core_1.ContentChild(virtual_item_1.VirtualHeader), 
+        core_1.ContentChild(virtual_item_1.VirtualHeader),
         __metadata('design:type', virtual_item_1.VirtualHeader)
     ], VirtualScroll.prototype, "_hdrTmp", void 0);
     __decorate([
-        core_1.ContentChild(virtual_item_1.VirtualFooter), 
+        core_1.ContentChild(virtual_item_1.VirtualFooter),
         __metadata('design:type', virtual_item_1.VirtualFooter)
     ], VirtualScroll.prototype, "_ftrTmp", void 0);
     __decorate([
-        core_1.ContentChildren(img_1.Img), 
+        core_1.ContentChildren(img_1.Img),
         __metadata('design:type', core_1.QueryList)
     ], VirtualScroll.prototype, "_imgs", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object), 
+        core_1.Input(),
+        __metadata('design:type', Object),
         __metadata('design:paramtypes', [Object])
     ], VirtualScroll.prototype, "virtualScroll", null);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', Number)
     ], VirtualScroll.prototype, "bufferRatio", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], VirtualScroll.prototype, "approxItemWidth", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], VirtualScroll.prototype, "approxItemHeight", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], VirtualScroll.prototype, "approxHeaderWidth", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], VirtualScroll.prototype, "approxHeaderHeight", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], VirtualScroll.prototype, "approxFooterWidth", void 0);
     __decorate([
-        core_1.Input(), 
+        core_1.Input(),
         __metadata('design:type', String)
     ], VirtualScroll.prototype, "approxFooterHeight", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Function), 
+        core_1.Input(),
+        __metadata('design:type', Function),
         __metadata('design:paramtypes', [Function])
     ], VirtualScroll.prototype, "headerFn", null);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Function), 
+        core_1.Input(),
+        __metadata('design:type', Function),
         __metadata('design:paramtypes', [Function])
     ], VirtualScroll.prototype, "footerFn", null);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Function), 
+        core_1.Input(),
+        __metadata('design:type', Function),
         __metadata('design:paramtypes', [Function])
     ], VirtualScroll.prototype, "virtualTrackBy", null);
     VirtualScroll = __decorate([
         core_1.Directive({
             selector: '[virtualScroll]'
         }),
-        __param(7, core_1.Optional()), 
+        __param(7, core_1.Optional()),
         __metadata('design:paramtypes', [core_1.IterableDiffers, core_1.ElementRef, core_1.Renderer, core_1.NgZone, core_1.ChangeDetectorRef, content_1.Content, platform_1.Platform, view_controller_1.ViewController, config_1.Config])
     ], VirtualScroll);
     return VirtualScroll;
@@ -77432,7 +77413,7 @@ var GestureController = (function () {
     };
     GestureController = __decorate([
         core_1.Injectable(),
-        __param(0, core_1.Inject(core_1.forwardRef(function () { return app_1.App; }))), 
+        __param(0, core_1.Inject(core_1.forwardRef(function () { return app_1.App; }))),
         __metadata('design:paramtypes', [app_1.App])
     ], GestureController);
     return GestureController;
@@ -81692,7 +81673,7 @@ var TranslatePipe = (function () {
     TranslatePipe.prototype.supports = function (obj) { return true; };
     TranslatePipe = __decorate([
         core_1.Pipe({ name: 'translate' }),
-        core_1.Injectable(), 
+        core_1.Injectable(),
         __metadata('design:paramtypes', [translate_1.Translate])
     ], TranslatePipe);
     return TranslatePipe;
@@ -81755,7 +81736,7 @@ var ClickBlock = (function () {
         core_1.Directive({
             selector: 'click-block'
         }),
-        __param(0, core_1.Inject(core_1.forwardRef(function () { return app_1.App; }))), 
+        __param(0, core_1.Inject(core_1.forwardRef(function () { return app_1.App; }))),
         __metadata('design:paramtypes', [app_1.App, config_1.Config, core_1.ElementRef, core_1.Renderer])
     ], ClickBlock);
     return ClickBlock;
@@ -82722,7 +82703,7 @@ var Form = (function () {
         return ++this._ids;
     };
     Form = __decorate([
-        core_1.Injectable(), 
+        core_1.Injectable(),
         __metadata('design:paramtypes', [])
     ], Form);
     return Form;
@@ -82915,7 +82896,7 @@ var Keyboard = (function () {
         document.addEventListener('keydown', keyDown);
     };
     Keyboard = __decorate([
-        core_1.Injectable(), 
+        core_1.Injectable(),
         __metadata('design:paramtypes', [config_1.Config, form_1.Form, core_1.NgZone])
     ], Keyboard);
     return Keyboard;

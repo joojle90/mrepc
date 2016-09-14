@@ -16,6 +16,7 @@
             </ion-avatar>
             <h2>{{spl.companyName}}</h2>
             <p>{{spl.companyNo}}</p>
+            <ion-badge item-right [hidden]="spl.itemList == 0">{{spl.itemList}}</ion-badge>
         </button>
     </ion-list>
 </ion-content>
