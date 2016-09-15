@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController, AlertController, ModalController, ViewController } from 'ionic-angular';
+import { BuyerItemsPage } from '../../pages/buyer-items/buyer-items';
 
 /*
   Generated class for the BuyerDetailsPage page.
@@ -24,24 +25,31 @@ export class BuyerDetailsPage {
         this.getbuyeritems = this.getbuyerdetails.buyerData.sort((a,b) => {
             return a.category.localeCompare(b.category);
         });
-        console.log(this.getbuyeritems);
     }
 
     buyerItems(itemscount, items) {
         if(itemscount == 0) {
-            let modal = this.modalCtrl.create(BuyerItemsPage, items);
+            let modal = this.modalCtrl.create(BuyerContactPage, items);
             modal.present();
         } else {
-            console.log("here 2");
+            let loader = this.loadingCtrl.create({ content: "Please wait..." });
+            loader.present();
+            setTimeout(() => {
+                loader.dismiss();
+                this.navCtrl.push(BuyerItemsPage, {
+                    buyerCategory: items.category,
+                    buyerItems: items.itemList
+                });
+            }, 0);
         }
     }
 
 }
 
 @Component({
-    templateUrl: 'build/pages/buyer-details/buyer-items.html',
+    templateUrl: 'build/pages/buyer-details/buyer-contact.html',
 })
-export class BuyerItemsPage {
+export class BuyerContactPage {
     contactBuyer: any;
     itemdetails: any;
 

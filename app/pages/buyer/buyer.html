@@ -15,7 +15,9 @@
                 <img src="img/marketplace/buyer/image_{{byl.rubbertype}}.png" onError="this.src='img/marketplace/noimage.png'">
             </ion-thumbnail>
             <h2>{{byl.rubbername}}</h2>
-            <p>{{byl.rubberinbm}}</p>
+<!--            <p>{{byl.rubberinbm}}</p>-->
+            <ion-badge item-right [hidden]="byl.itemlist == 0">{{byl.itemlist}}</ion-badge>
+            <ion-note item-right [hidden]="byl.itemlist != 0">No items</ion-note>
         </button>
     </ion-list>
 </ion-content>

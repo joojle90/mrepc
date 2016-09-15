@@ -10533,7 +10533,8 @@ body.ios .segment-button.activated, body.ios .segment-button.segment-activated {
       background-color: #d8d8d8; }
       .supplier-details ion-row ion-card ion-item.item p {
         color: #124698;
-        font-weight: 700; }
+        font-weight: 700;
+        text-align: center; }
   .supplier-details ion-row ion-col {
     white-space: normal; }
     .supplier-details ion-row ion-col a {

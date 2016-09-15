@@ -22,8 +22,9 @@
                 <img src="img/marketplace/buyeritems/buyer_{{byi.rubbertype}}.png" onError="this.src='img/marketplace/noimage.png'">
             </ion-avatar>
             <h2>{{byi.category}}</h2>
-            <p>{{byi.categorybm}}</p>
+<!--            <p>{{byi.categorybm}}</p>-->
             <ion-badge item-right [hidden]="byi.itemList.length == 0">{{byi.itemList.length}}</ion-badge>
+            <ion-note item-right [hidden]="byi.itemList.length != 0">No items</ion-note>
         </button>
     </ion-list>
 </ion-content>
