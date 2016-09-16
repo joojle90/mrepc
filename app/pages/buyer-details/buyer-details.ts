@@ -21,6 +21,9 @@ export class BuyerDetailsPage {
         private navParams: NavParams,
         public modalCtrl: ModalController
     ) {
+    }
+
+    onPageLoaded() {
         this.getbuyerdetails = this.navParams.data
         this.getbuyeritems = this.getbuyerdetails.buyerData.sort((a,b) => {
             return a.category.localeCompare(b.category);

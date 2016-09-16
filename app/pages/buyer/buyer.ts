@@ -21,8 +21,10 @@ export class BuyerPage {
         private loadingCtrl: LoadingController,
         public mrepcdata: Mrepcdata
     ) {
-        this.loadSupplier();
-//        this.presentLoadingData();
+    }
+
+    onPageDidEnter() {
+        this.presentLoadingData();
     }
 
     loadSupplier() {

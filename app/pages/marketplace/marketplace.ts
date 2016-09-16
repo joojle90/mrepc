@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Type } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { BuyerPage } from '../../pages/buyer/buyer';
 import { SupplierPage} from '../../pages/supplier/supplier';
@@ -15,6 +15,7 @@ import { SupplierPage} from '../../pages/supplier/supplier';
 export class MarketplacePage {
     tab1Root: any = BuyerPage;
     tab2Root: any = SupplierPage;
+    private rootPage: Type = BuyerPage;
 
     constructor(
         private navCtrl: NavController

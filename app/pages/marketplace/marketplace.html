@@ -1,6 +1,5 @@
-<ion-content class="marketplace">
-    <ion-tabs>
-        <ion-tab [root]="tab1Root" tabTitle="Buyer" tabIcon="briefcase"></ion-tab>
-        <ion-tab [root]="tab2Root" tabTitle="Supplier" tabIcon="people"></ion-tab>
-    </ion-tabs>
-</ion-content>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-tabs class="marketplace">
+    <ion-tab [root]="tab1Root" tabTitle="Buyer" tabIcon="briefcase"></ion-tab>
+    <ion-tab [root]="tab2Root" tabTitle="Supplier" tabIcon="people"></ion-tab>
+</ion-tabs>

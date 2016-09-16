@@ -50,12 +50,10 @@ export class MyApp {
     }
 
     openPage(pageid) {
-        console.log(pageid);
         this.nav.setRoot(component[pageid]);
     }
 
     userPage(pageid) {
-        console.log(pageid);
         this.nav.setRoot(userpage[pageid]);
     }
 }

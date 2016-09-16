@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController, LoadingController } from 'ionic-angular';
-import {Mrepcdata} from '../../providers/mrepcdata/mrepcdata';
-import {SeminardetailsPage} from '../../pages/seminardetails/seminardetails';
+import { Mrepcdata } from '../../providers/mrepcdata/mrepcdata';
+import { SeminardetailsPage } from '../../pages/seminardetails/seminardetails';
 
 /*
   Generated class for the SeminarPage page.
@@ -9,7 +9,6 @@ import {SeminardetailsPage} from '../../pages/seminardetails/seminardetails';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-let monthname = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 @Component({
   templateUrl: 'build/pages/seminar/seminar.html',
@@ -17,7 +16,6 @@ let monthname = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", 
 export class SeminarPage {
 
     seminarlist: any;
-    seminarday: any;
 
     constructor(
         private navCtrl: NavController,
@@ -25,25 +23,13 @@ export class SeminarPage {
         private alertCtrl: AlertController,
         public mrepcdata: Mrepcdata
     ) {
-
         this.presentLoadingData();
-        this.loadSeminarData();
     }
 
     loadSeminarData() {
-        this.mrepcdata.geteventcriteria('8', '1,4').then(data => {
+        return this.mrepcdata.geteventcriteria('8', '1,4').then(data => {
             this.seminarlist = data;
-            this.seminarday = data.filter(newdata => {
-                return newdata.eventdetail.startdate;
-            });
         });
-    }
-
-    loadSeminarDay() {
-                console.log(this.seminarday);
-//        let seminarday = this.seminarlist.filter(newdata => {
-//            console.log(newdata.eventdetail.startdate);
-//        });
     }
 
     detailsPage(page) {
@@ -61,23 +47,14 @@ export class SeminarPage {
     }
 
     presentLoadingData() {
-        let loading = this.loadingCtrl.create({
-            content: 'Please wait...'
-        });
+        setTimeout(() => {
+            let loader = this.loadingCtrl.create({ content: "Please wait..." });
+            loader.present();
 
-        loading.present();
-
-        if(this.seminarlist !== null){
-            setTimeout(() => {
-                loading.dismiss();
-            }, 2000);
-        }
-    }
-
-    convertdate(date){
-        let thedate = date.split("-");
-        let newdate = thedate[2] +" "+ monthname[thedate[1]-1] +" "+ thedate[0];
-        return newdate;
+            this.loadSeminarData().then(() => {
+                loader.dismiss();
+            });
+        }, 0);
     }
 
     seminarBookmark() {

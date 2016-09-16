@@ -31,7 +31,7 @@ export class HomePage {
 
         this.homeOptions = {
             initialSlide: 0,
-//            autoplay: 3000,
+            autoplay: 3000,
             autoplayDisableOnInteraction: false
         };
 

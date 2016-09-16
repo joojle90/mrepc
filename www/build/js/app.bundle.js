@@ -44,11 +44,9 @@ var MyApp = (function () {
         });
     };
     MyApp.prototype.openPage = function (pageid) {
-        console.log(pageid);
         this.nav.setRoot(component[pageid]);
     };
     MyApp.prototype.userPage = function (pageid) {
-        console.log(pageid);
         this.nav.setRoot(userpage[pageid]);
     };
     __decorate([
@@ -194,11 +192,13 @@ var BuyerDetailsPage = (function () {
         this.loadingCtrl = loadingCtrl;
         this.navParams = navParams;
         this.modalCtrl = modalCtrl;
+    }
+    BuyerDetailsPage.prototype.onPageLoaded = function () {
         this.getbuyerdetails = this.navParams.data;
         this.getbuyeritems = this.getbuyerdetails.buyerData.sort(function (a, b) {
             return a.category.localeCompare(b.category);
         });
-    }
+    };
     BuyerDetailsPage.prototype.buyerItems = function (itemscount, items) {
         var _this = this;
         if (itemscount == 0) {
@@ -278,8 +278,11 @@ var BuyerItemsPage = (function () {
         this.getitemlist = this.navParams.data.buyerItems.sort(function (a, b) {
             return a.item.localeCompare(b.item);
         });
-        console.log(this.getitemlist);
+        console.log(this.navParams.data);
     }
+    BuyerItemsPage.prototype.goback = function () {
+        console.log("here");
+    };
     BuyerItemsPage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/buyer-items/buyer-items.html',
@@ -316,9 +319,10 @@ var BuyerPage = (function () {
         this.navCtrl = navCtrl;
         this.loadingCtrl = loadingCtrl;
         this.mrepcdata = mrepcdata;
-        this.loadSupplier();
-        //        this.presentLoadingData();
     }
+    BuyerPage.prototype.onPageDidEnter = function () {
+        this.presentLoadingData();
+    };
     BuyerPage.prototype.loadSupplier = function () {
         var _this = this;
         return this.mrepcdata.getMarketplaceBuyer().then(function (data) {
@@ -389,7 +393,7 @@ var HomePage = (function () {
         this.mrepcdata = mrepcdata;
         this.homeOptions = {
             initialSlide: 0,
-            //            autoplay: 3000,
+            autoplay: 3000,
             autoplayDisableOnInteraction: false
         };
         this.presentLoadingData();
@@ -502,6 +506,7 @@ var MarketplacePage = (function () {
         this.navCtrl = navCtrl;
         this.tab1Root = buyer_1.BuyerPage;
         this.tab2Root = supplier_1.SupplierPage;
+        this.rootPage = buyer_1.BuyerPage;
     }
     MarketplacePage = __decorate([
         core_1.Component({
@@ -626,7 +631,6 @@ var seminardetails_1 = require('../../pages/seminardetails/seminardetails');
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-var monthname = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 var SeminarPage = (function () {
     function SeminarPage(navCtrl, loadingCtrl, alertCtrl, mrepcdata) {
         this.navCtrl = navCtrl;
@@ -634,22 +638,12 @@ var SeminarPage = (function () {
         this.alertCtrl = alertCtrl;
         this.mrepcdata = mrepcdata;
         this.presentLoadingData();
-        this.loadSeminarData();
     }
     SeminarPage.prototype.loadSeminarData = function () {
         var _this = this;
-        this.mrepcdata.geteventcriteria('8', '1,4').then(function (data) {
+        return this.mrepcdata.geteventcriteria('8', '1,4').then(function (data) {
             _this.seminarlist = data;
-            _this.seminarday = data.filter(function (newdata) {
-                return newdata.eventdetail.startdate;
-            });
         });
-    };
-    SeminarPage.prototype.loadSeminarDay = function () {
-        console.log(this.seminarday);
-        //        let seminarday = this.seminarlist.filter(newdata => {
-        //            console.log(newdata.eventdetail.startdate);
-        //        });
     };
     SeminarPage.prototype.detailsPage = function (page) {
         console.log(page);
@@ -665,20 +659,14 @@ var SeminarPage = (function () {
         });
     };
     SeminarPage.prototype.presentLoadingData = function () {
-        var loading = this.loadingCtrl.create({
-            content: 'Please wait...'
-        });
-        loading.present();
-        if (this.seminarlist !== null) {
-            setTimeout(function () {
-                loading.dismiss();
-            }, 2000);
-        }
-    };
-    SeminarPage.prototype.convertdate = function (date) {
-        var thedate = date.split("-");
-        var newdate = thedate[2] + " " + monthname[thedate[1] - 1] + " " + thedate[0];
-        return newdate;
+        var _this = this;
+        setTimeout(function () {
+            var loader = _this.loadingCtrl.create({ content: "Please wait..." });
+            loader.present();
+            _this.loadSeminarData().then(function () {
+                loader.dismiss();
+            });
+        }, 0);
     };
     SeminarPage.prototype.seminarBookmark = function () {
         var alert = this.alertCtrl.create({

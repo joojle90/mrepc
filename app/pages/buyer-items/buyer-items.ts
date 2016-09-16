@@ -17,7 +17,11 @@ export class BuyerItemsPage {
         this.getitemlist = this.navParams.data.buyerItems.sort((a,b) => {
             return a.item.localeCompare(b.item);
         });
-        console.log(this.getitemlist);
+        console.log(this.navParams.data);
+    }
+
+    goback() {
+        console.log("here");
     }
 
 }
