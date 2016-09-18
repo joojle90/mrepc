@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, LoadingController } from 'ionic-angular';
+import { NavController, LoadingController, NavParams } from 'ionic-angular';
 import {Mrepcdata} from '../../providers/mrepcdata/mrepcdata';
 import {TradeshowdetailsPage} from '../../pages/tradeshowdetails/tradeshowdetails';
 
@@ -15,12 +15,15 @@ import {TradeshowdetailsPage} from '../../pages/tradeshowdetails/tradeshowdetail
 export class AlltradeshowsPage {
 
     tradeshowslist: any;
+    urllink: string;
 
     constructor(
         private navCtrl: NavController,
         private loadingCtrl: LoadingController,
+        private navParams: NavParams,
         public mrepcdata: Mrepcdata
     ) {
+        this.urllink = this.navParams.get('urllink');
         this.presentLoadingData();
     }
 
@@ -39,7 +42,8 @@ export class AlltradeshowsPage {
             location: page.eventdetail.location,
             email: page.eventdetail.email,
             website: page.eventdetail.linkurl,
-            eventdetails: page.eventdetail
+            eventdetails: page.eventdetail,
+            urllink: this.urllink
         });
     }
 

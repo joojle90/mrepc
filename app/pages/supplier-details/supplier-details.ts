@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Directive, ElementRef, Input } from '@angular/core';
 import { NavController, NavParams, LoadingController, AlertController, ModalController, ViewController } from 'ionic-angular';
 
 /*
@@ -7,28 +7,42 @@ import { NavController, NavParams, LoadingController, AlertController, ModalCont
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
+@Directive({
+  selector: '[imageLoader]'
+})
 @Component({
     templateUrl: 'build/pages/supplier-details/supplier-details.html',
 })
 export class SupplierDetailsPage {
     getsupplierdetails: any;
     getsupplieritems: any;
+    urllink: string;
+    @Input() imageLoader;
 
     constructor(
         private navCtrl: NavController,
         private loadingCtrl: LoadingController,
         private navParams: NavParams,
-        public modalCtrl: ModalController
+        public modalCtrl: ModalController,
+        private el: ElementRef
     ) {
+    }
+
+    ionViewDidEnter() {
+        setTimeout(() => {
+            this.navParams.get('loading').dismiss();
+        }, 200);
+    }
+
+    onPageLoaded() {
         this.getsupplierdetails = this.navParams.data;
+        this.urllink = this.navParams.get('urllink');
         this.getsupplieritems = this.getsupplierdetails.companyProduct;
 
         this.getsupplieritems = this.getsupplierdetails.companyProduct.sort((a,b) => {
             return a.productName.localeCompare(b.productName);
         });
-        console.log(this.getsupplieritems);
     }
-
     contactSupplier(items) {
         let modal = this.modalCtrl.create(SupplierItemsPage, items, this.getsupplierdetails.companyPerson);
         modal.present();

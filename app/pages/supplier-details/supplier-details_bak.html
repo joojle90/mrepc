@@ -31,7 +31,7 @@
             <ion-item>
                 <ion-row>
                     <ion-col width-25>
-                        Business
+                        Type
                     </ion-col>
                     <ion-col width-75>
                         {{getsupplierdetails.companyData.bussinessType}}
@@ -64,34 +64,30 @@
             </ion-item>
         </ion-list>
 
-        <ion-row *ngFor="let cp of getsupplierdetails.companyProduct; let i = index" [hidden]="i % 2 !==0">
+        <ion-row *ngFor="let cp of getsupplieritems; let i = index" [hidden]="i % 2 !==0">
             <ion-col width-50>
-                <ion-card *ngIf="i % 2 === 0 && i < getsupplierdetails.companyProduct.length">
-                    <button clear (click)="contactSupplier()">
-                        <img src="img/marketplace/product/{{getsupplierdetails.companyProduct[i].productImage}}" onError="this.src='img/no-thumbnail.jpg'">
+                <ion-card *ngIf="i % 2 === 0 && i < getsupplieritems.length">
+                    <button clear (click)="contactSupplier(getsupplieritems[i])">
+                        <img src="img/marketplace/product/{{getsupplieritems[i].productImage}}" onError="this.src='img/no-thumbnail.jpg'">
                     </button>
                     <ion-item actions>
-                        <p danger>{{getsupplierdetails.companyProduct[i].productName}}</p>
+                        <p secondary>{{getsupplieritems[i].productName}}</p>
                     </ion-item>
                 </ion-card>
             </ion-col>
-            <ion-col *ngIf="i % 2 === 0 && i+1 < getsupplierdetails.companyProduct.length" width-50>
+            <ion-col *ngIf="i % 2 === 0 && i+1 < getsupplieritems.length" width-50>
                 <ion-card>
-                    <button clear (click)="contactSupplier()">
-                        <img src="img/marketplace/product/{{getsupplierdetails.companyProduct[i+1].productImage}}" onError="this.src='img/no-thumbnail.jpg'">
+                    <button clear (click)="contactSupplier(getsupplieritems[i+1])">
+                        <img src="img/marketplace/product/{{getsupplieritems[i+1].productImage}}" onError="this.src='img/no-thumbnail.jpg'">
                     </button>
                     <ion-item actions>
-                        <p danger>{{getsupplierdetails.companyProduct[i+1].productName}}</p>
+                        <p secondary>{{getsupplieritems[i+1].productName}}</p>
                     </ion-item>
                 </ion-card>
             </ion-col>
         </ion-row>
-        <button ion-item *ngFor="let cp of getsupplierdetails.companyProduct; let i = index">
-            <ion-thumbnail item-left>
-                <img src="img/marketplace/product/{{cp.productImage}}" onError="this.src='img/no-thumbnail.jpg'">
-            </ion-thumbnail>
-            <h3>{{cp.productName}}</h3>
-            <p>{{cp.productDesc}}</p>
-        </button>
+        <ion-item [hidden]="getsupplieritems.length > 0">
+            <h3>NO DATA ITEM</h3>
+        </ion-item>
     </ion-card>
 </ion-content>

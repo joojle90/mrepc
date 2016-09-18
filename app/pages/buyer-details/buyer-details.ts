@@ -14,6 +14,8 @@ import { BuyerItemsPage } from '../../pages/buyer-items/buyer-items';
 export class BuyerDetailsPage {
     getbuyerdetails: any;
     getbuyeritems: any;
+    newdata: any;
+    urllink: string;
 
     constructor(
         private navCtrl: NavController,
@@ -23,8 +25,15 @@ export class BuyerDetailsPage {
     ) {
     }
 
+    ionViewDidEnter() {
+        setTimeout(() => {
+            this.navParams.get('loading').dismiss();
+        }, 200);
+    }
+
     onPageLoaded() {
-        this.getbuyerdetails = this.navParams.data
+        this.urllink = this.navParams.get('urllink');
+        this.getbuyerdetails = this.navParams.data;
         this.getbuyeritems = this.getbuyerdetails.buyerData.sort((a,b) => {
             return a.category.localeCompare(b.category);
         });
@@ -35,13 +44,14 @@ export class BuyerDetailsPage {
             let modal = this.modalCtrl.create(BuyerContactPage, items);
             modal.present();
         } else {
-            let loader = this.loadingCtrl.create({ content: "Please wait..." });
-            loader.present();
+//            let loader = this.loadingCtrl.create({ content: "Please wait..." });
+//            loader.present();
             setTimeout(() => {
-                loader.dismiss();
+//                loader.dismiss();
                 this.navCtrl.push(BuyerItemsPage, {
                     buyerCategory: items.category,
-                    buyerItems: items.itemList
+                    buyerItems: items.itemList,
+                    urllink: this.urllink
                 });
             }, 0);
         }

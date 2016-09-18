@@ -14,13 +14,22 @@
 
 <ion-content class="buyer-details">
     <ion-card class="itemdetails">
-        <ion-item>
+        <ion-item [hidden]="contactBuyer.category == null">
             <ion-thumbnail item-left>
-                <img src="img/marketplace/product/{{contactBuyer.image}}" onError="this.src='img/no-thumbnail.jpg'">
+                <img src="{{urllink}}/img/marketplace/product/{{contactBuyer.image}}" onError="this.src='img/misc/no-image_thumbnail.png'">
             </ion-thumbnail>
             <h3>{{contactBuyer.category}}</h3>
             <span secondary>Product Description : </span>
             <p>{{contactBuyer.categorybm}}</p>
+        </ion-item>
+
+        <ion-item [hidden]="contactBuyer.category != null">
+            <ion-thumbnail item-left>
+                <img src="{{urllink}}/img/marketplace/product/{{contactBuyer.image}}" onError="this.src='img/misc/no-image_thumbnail.png'">
+            </ion-thumbnail>
+            <h3>{{contactBuyer.item}}</h3>
+            <span secondary>Product Description : </span>
+            <p>{{contactBuyer.itembm}}</p>
         </ion-item>
 
         <div padding>

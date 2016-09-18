@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            {{getbuyerdetails.buyerCategory}}
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content class="buyer-details">
+
+    <ion-item-group>
+        <ion-item-divider light>No items</ion-item-divider>
+        <ion-list>
+            <button ion-item *ngFor="let byi of getbuyeritems; let i = index" (click)="buyerItems(getbuyeritems[i])" [hidden]="byi.itemList.length != 0">
+                <ion-avatar item-left>
+                    <img src="img/marketplace/buyeritems/buyer_{{byi.rubbertype}}.png" onError="this.src='img/marketplace/noimage.png'">
+                </ion-avatar>
+                <h2>{{byi.category}}</h2>
+                <ion-badge item-right [hidden]="byi.itemList.length == 0">{{byi.itemList.length}}</ion-badge>
+            </button>
+        </ion-list>
+
+        <div *ngFor="let byi of getbuyeritems; let i = index;">
+            <ion-item-divider light [hidden]="byi.itemList.length == 0">
+                <ion-badge item-right>{{byi.itemList.length}} items</ion-badge>
+                {{byi.category}}
+            </ion-item-divider>
+            <button ion-item *ngFor="let bbi of getbuyeritems[i].itemList; let i = index" (click)="buyerItems(bbi)">
+                <ion-avatar item-left>
+                    <img src="img/marketplace/buyeritems/buyeritems_{{bbi.image}}.png" onError="this.src='img/marketplace/noimage.png'">
+                </ion-avatar>
+                <h2>{{bbi.item}}</h2>
+            </button>
+        </div>
+
+    </ion-item-group>
+</ion-content>

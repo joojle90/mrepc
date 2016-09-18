@@ -1,7 +1,6 @@
 import {Component, ViewChild, Type} from '@angular/core';
 import {ionicBootstrap, Platform, MenuController, Nav} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
-
 import {Mrepcdata} from './providers/mrepcdata/mrepcdata';
 import {Userdata} from './providers/userdata/userdata';
 import {TabsPage} from './pages/tabs/tabs';
@@ -25,6 +24,7 @@ let userpage = [UserprofilePage, MytradeshowPage, MyseminarPage];
 
 export class MyApp {
     @ViewChild(Nav) nav: Nav;
+    urllink: string;
 
     private rootPage: Type = HomePage;
      
@@ -40,6 +40,7 @@ export class MyApp {
             StatusBar.styleDefault();
         });
         
+        this.urllink = "http://techapp.info/mrepc-api";
         this.loadleftsidemenu();
     }
      
@@ -50,11 +51,15 @@ export class MyApp {
     }
 
     openPage(pageid) {
-        this.nav.setRoot(component[pageid]);
+        this.nav.setRoot(component[pageid], {
+            urllink: this.urllink
+        });
     }
 
     userPage(pageid) {
-        this.nav.setRoot(userpage[pageid]);
+        this.nav.setRoot(userpage[pageid], {
+            urllink: this.urllink
+        });
     }
 }
 

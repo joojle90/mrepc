@@ -11,10 +11,9 @@
     <ion-list>
         <button ion-item *ngFor="let byi of getbuyeritems; let i = index" (click)="buyerItems(byi.itemList.length, getbuyeritems[i])">
             <ion-avatar item-left>
-                <img src="img/marketplace/buyeritems/buyer_{{byi.rubbertype}}.png" onError="this.src='img/marketplace/noimage.png'">
+                <img src="{{urllink}}/img/marketplace/buyeritems/buyer_{{byi.rubbertype}}.png" onError="this.src='img/misc/no-image_thumbnail.png'">
             </ion-avatar>
             <h2>{{byi.category}}</h2>
-<!--            <p>{{byi.categorybm}}</p>-->
             <ion-badge item-right [hidden]="byi.itemList.length == 0">{{byi.itemList.length}}</ion-badge>
             <ion-note item-right [hidden]="byi.itemList.length != 0">No items</ion-note>
         </button>

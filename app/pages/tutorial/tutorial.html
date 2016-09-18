@@ -20,12 +20,12 @@
 <ion-content class="tutorial">
     <ion-slides pager>
         <ion-slide *ngFor="let slide of slides">
-            <img [src]="slide.image" onError="this.src='img/no-image.jpg'" class="slide-image" />
+            <img [src]="slide.image" onError="this.src='img/misc/no-image_event.jpg'" class="slide-image" />
             <h2 class="slide-title" [innerHTML]="slide.title"></h2>
             <p [innerHTML]="slide.description"></p>
         </ion-slide>
         <ion-slide>
-            <img src="img/misc/slide5.png" onError="this.src='img/no-image.jpg'" class="slide-image" />
+            <img src="img/misc/slide5.png" onError="this.src='img/misc/no-image_event.jpg'" class="slide-image" />
             <h2 class="slide-title">Start using MREPC app?</h2>
             <button large clear>
                 Continue

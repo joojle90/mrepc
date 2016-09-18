@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, AlertController, NavParams } from 'ionic-angular';
 
 /*
   Generated class for the MytradeshowPage page.
@@ -11,12 +11,15 @@ import { NavController, AlertController } from 'ionic-angular';
     templateUrl: 'build/pages/mytradeshow/mytradeshow.html',
 })
 export class MytradeshowPage {
+    urllink: string;
 
     constructor(
         private navCtrl: NavController,
-        private alertCtrl: AlertController
+        private alertCtrl: AlertController,
+        private navParams: NavParams
     ) {
-
+        this.urllink = this.navParams.get('urllink');
+        console.log(this.urllink);
     }
 
     tradeshowbtn() {

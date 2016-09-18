@@ -12,7 +12,7 @@
     <ion-list>
         <button ion-item *ngFor="let byl of buyerlist; let i = index" (click)="buyerPage(byl.rubbertype, byl.rubbername)">
             <ion-thumbnail item-left>
-                <img src="img/marketplace/buyer/image_{{byl.rubbertype}}.png" onError="this.src='img/marketplace/noimage.png'">
+                <img src="{{urllink}}/img/marketplace/buyer/image_{{byl.rubbertype}}.png" onError="this.src='img/misc/no-image_thumbnail.png'">
             </ion-thumbnail>
             <h2>{{byl.rubbername}}</h2>
 <!--            <p>{{byl.rubberinbm}}</p>-->

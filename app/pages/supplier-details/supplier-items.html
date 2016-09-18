@@ -16,14 +16,11 @@
 <ion-content class="supplier-details">
     <ion-card class="itemdetails">
         <ion-item>
-            <ion-thumbnail item-left>
-                <img src="img/marketplace/product/{{itemdetails.productImage}}" onError="this.src='img/no-thumbnail.jpg'">
-            </ion-thumbnail>
             <h3>{{itemdetails.productName}}</h3>
-            <span secondary>Product Description : </span>
-            <p>{{itemdetails.productDesc}}</p>
-            <span secondary>Product Specification : </span>
-            <p>{{itemdetails.productSpec}}</p>
+                <span favorite> Description </span>
+                <p>{{itemdetails.productDesc}}</p>
+                <span favorite> Specification </span>
+                <p>{{itemdetails.productSpec}}</p>
         </ion-item>
 
         <ion-list>

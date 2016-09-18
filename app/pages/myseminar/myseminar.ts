@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, AlertController, NavParams } from 'ionic-angular';
 
 /*
   Generated class for the MyseminarPage page.
@@ -11,12 +11,14 @@ import { NavController, AlertController } from 'ionic-angular';
     templateUrl: 'build/pages/myseminar/myseminar.html',
 })
 export class MyseminarPage {
+    urllink: string;
 
     constructor(
         private navCtrl: NavController,
-        private alertCtrl: AlertController
+        private alertCtrl: AlertController,
+        private navParams: NavParams
     ) {
-
+        this.urllink = this.navParams.get('urllink');
     }
 
     seminarBookmark() {

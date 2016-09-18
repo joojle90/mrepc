@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, LoadingController } from 'ionic-angular';
+import { NavController, LoadingController, NavParams } from 'ionic-angular';
 import { Mrepcdata } from '../../providers/mrepcdata/mrepcdata';
 import { BuyerDetailsPage } from '../../pages/buyer-details/buyer-details';
 
@@ -15,15 +15,18 @@ import { BuyerDetailsPage } from '../../pages/buyer-details/buyer-details';
 export class BuyerPage {
 
     buyerlist: any;
+    urllink: string;
 
     constructor(
         private navCtrl: NavController,
         private loadingCtrl: LoadingController,
+        private navParams: NavParams,
         public mrepcdata: Mrepcdata
     ) {
+        this.urllink = this.navParams.data;
     }
 
-    onPageDidEnter() {
+    ngAfterViewInit() {
         this.presentLoadingData();
     }
 
@@ -36,17 +39,17 @@ export class BuyerPage {
     }
 
     buyerPage(buyerid, buyername) {
-        let loader = this.loadingCtrl.create({ content: "Please wait..." });
-        loader.present();
-        setTimeout(() => {
+        let loader = this.loadingCtrl.create({ content: "Please wait..."});
+        loader.present().then(() => {
             this.mrepcdata.getBuyerDetails(buyerid).then(data => {
-                loader.dismiss();
                 this.navCtrl.push(BuyerDetailsPage, {
                     buyerCategory: buyername,
-                    buyerData: data
+                    buyerData: data,
+                    urllink: this.urllink,
+                    loading: loader
                 });
             });
-        }, 0);
+        });
     }
 
     presentLoadingData() {
@@ -57,7 +60,7 @@ export class BuyerPage {
             this.loadSupplier().then(() => {
                 loader.dismiss();
             });
-        }, 0);
+        }, 200);
     }
 
 }

@@ -9482,6 +9482,9 @@ body.ios .segment-button.activated, body.ios .segment-button.segment-activated {
   overflow: hidden;
   text-overflow: ellipsis; }
 
+.buyer-details [item-right] {
+  margin-right: 16px; }
+
 .buyer-details ion-card.itemdetails ion-item h3 {
   font-size: 20px;
   white-space: initial;
@@ -9508,9 +9511,13 @@ body.ios .segment-button.activated, body.ios .segment-button.segment-activated {
   overflow: hidden;
   text-overflow: ellipsis; }
 
+.supplier-details ion-card-content {
+  background-color: #41484e; }
+
 .supplier-details ion-card h2 {
   font-size: 2.2rem;
-  text-transform: capitalize; }
+  text-transform: capitalize;
+  color: #51ffb9; }
 
 .supplier-details ion-label {
   line-height: 25px; }
@@ -9559,6 +9566,14 @@ body.ios .segment-button.activated, body.ios .segment-button.segment-activated {
 
 .supplier-details ion-card.itemdetails ion-list .input-wrapper {
   font-size: small; }
+
+.supplier-details ion-list.listitems button {
+  background-color: #c9e6ff; }
+  .supplier-details ion-list.listitems button p {
+    color: black; }
+
+.supplier-details ion-list.listitems .item .item-inner {
+  border-color: #64add4; }
 
 .tutorial .toolbar-background {
   background: #fff;

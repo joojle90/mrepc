@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, LoadingController } from 'ionic-angular';
+import { NavController, LoadingController, NavParams } from 'ionic-angular';
 import { Mrepcdata } from '../../providers/mrepcdata/mrepcdata';
 import { SupplierDetailsPage } from '../../pages/supplier-details/supplier-details';
 
@@ -15,12 +15,18 @@ import { SupplierDetailsPage } from '../../pages/supplier-details/supplier-detai
 export class SupplierPage {
 
     supplierlist: any;
+    urllink: string;
 
     constructor(
         private navCtrl: NavController,
         private loadingCtrl: LoadingController,
+        private navParams: NavParams,
         public mrepcdata: Mrepcdata
     ) {
+        this.urllink = this.navParams.data;
+    }
+
+    onPageLoaded() {
         this.presentLoadingData();
     }
 
@@ -33,18 +39,18 @@ export class SupplierPage {
     }
 
     supplierPage(supplierid) {
-        let loader = this.loadingCtrl.create({ content: "Please wait..." });
-        loader.present();
-        setTimeout(() => {
+        let loader = this.loadingCtrl.create({ content: "Please wait..."});
+        loader.present().then(() => {
             this.mrepcdata.getSupplierDetails(supplierid).then(data => {
-                loader.dismiss();
                 this.navCtrl.push(SupplierDetailsPage, {
                     companyData: data[0],
                     companyPerson: data[0].contactPerson,
-                    companyProduct: data[0].latestProduct
+                    companyProduct: data[0].latestProduct,
+                    urllink: this.urllink,
+                    loading: loader
                 });
             });
-        }, 0);
+        });
     }
 
     presentLoadingData() {

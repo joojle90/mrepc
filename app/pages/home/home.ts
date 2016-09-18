@@ -1,5 +1,5 @@
 import {Component, ViewChild, ElementRef} from '@angular/core';
-import {NavController, LoadingController} from 'ionic-angular';
+import {NavController, LoadingController, Nav} from 'ionic-angular';
 import {Mrepcdata} from '../../providers/mrepcdata/mrepcdata';
 import {TradeshowdetailsPage} from '../../pages/tradeshowdetails/tradeshowdetails';
 import {MarketplacePage} from '../../pages/marketplace/marketplace';
@@ -15,6 +15,7 @@ let monthname = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", 
 })
 export class HomePage {
     @ViewChild('imgtest') imgtest: ElementRef;
+    @ViewChild(Nav) nav: Nav;
 
     mastermenu: any;
     comingsoonevent: any;
@@ -22,6 +23,7 @@ export class HomePage {
     homeOptions: any;
     imageurl: string;
     eventstart: string;
+    urllink: string;
 
     constructor(
         private navCtrl: NavController,
@@ -34,7 +36,7 @@ export class HomePage {
             autoplay: 3000,
             autoplayDisableOnInteraction: false
         };
-
+        this.urllink = "http://techapp.info/mrepc-api";
         this.presentLoadingData();
     }
 
@@ -43,7 +45,6 @@ export class HomePage {
         return this.mrepcdata.getMastermenu().then(data => {
             this.mastermenu = data;
         });
-//        this.eventstart = this.convertdate(this.geteventdetails.startdate);
     }
 
     loadComingsoonMenu() {
@@ -82,12 +83,15 @@ export class HomePage {
             location: page.eventdetail.location,
             email: page.eventdetail.email,
             website: page.eventdetail.linkurl,
-            eventdetails: page.eventdetail
+            eventdetails: page.eventdetail,
+            urllink: this.urllink
         });
     }
 
     openmenuPage(pageid) {
-        this.navCtrl.push(menubutton[pageid]);
+        this.navCtrl.push(menubutton[pageid], {
+            urllink: this.urllink
+        });
     }
 
     useraccountPage(pageid) {

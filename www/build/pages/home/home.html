@@ -20,7 +20,7 @@
             <button clear (click)="tradeshowspage(comingsoonevent[i])">
                 <ion-card class="eventcoming">
                     <div>
-                        <img src="img/event/{{ce.image}}" onError="this.src='img/no-image_event.jpg'"/>
+                        <img src="{{urllink}}/img/event/{{ce.image}}" onError="this.src='img/misc/no-image_event.jpg'"/>
                     </div>
                     <ion-item>
                         <h2>{{comingsoonevent[i].eventdetail.name}}</h2>
@@ -36,7 +36,7 @@
     </ion-slides>
     <button clear *ngFor="let mm of mastermenu; let i = index" (click)="openmenuPage(i)">
         <ion-card class="menubtn">
-            <img [src]="mm.image" />
+            <img src="{{urllink}}/img/mastermenu/{{mm.image}}" onError="this.src='img/misc/no-image_event.jpg'"/>
             <p class="card-title">{{mm.featuredmenu}}</p>
             <p class="card-subtitle">{{mm.tagline}}</p>
         </ion-card>

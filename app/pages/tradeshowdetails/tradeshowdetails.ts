@@ -17,6 +17,7 @@ export class TradeshowdetailsPage {
     geteventdetails: any;
     eventstart: string;
     eventend: string;
+    urllink: string;
 
     constructor(
         private navCtrl: NavController,
@@ -24,7 +25,8 @@ export class TradeshowdetailsPage {
     ) {
 
         this.geteventdetails = this.navParams.data;
-        console.log(this.geteventdetails);
+        this.urllink = this.navParams.get('urllink');
+        console.log(this.urllink);
 
         this.eventstart = this.convertdate(this.geteventdetails.startdate);
         this.eventend = this.convertdate(this.geteventdetails.enddate);

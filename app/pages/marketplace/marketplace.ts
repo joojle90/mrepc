@@ -1,5 +1,5 @@
 import { Component, Type } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { BuyerPage } from '../../pages/buyer/buyer';
 import { SupplierPage} from '../../pages/supplier/supplier';
 
@@ -13,13 +13,18 @@ import { SupplierPage} from '../../pages/supplier/supplier';
     templateUrl: 'build/pages/marketplace/marketplace.html',
 })
 export class MarketplacePage {
-    tab1Root: any = BuyerPage;
-    tab2Root: any = SupplierPage;
-    private rootPage: Type = BuyerPage;
+    tab1Root: any;
+    tab2Root: any;
+    urllink: string;
+//    private rootPage: Type = BuyerPage;
 
     constructor(
-        private navCtrl: NavController
+        private navCtrl: NavController,
+        private navParams: NavParams
     ) {
+        this.tab1Root = BuyerPage;
+        this.tab2Root = SupplierPage;
+        this.urllink = this.navParams.get('urllink');
     }
 
 }

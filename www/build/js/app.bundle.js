@@ -35,6 +35,7 @@ var MyApp = (function () {
         platform.ready().then(function () {
             ionic_native_1.StatusBar.styleDefault();
         });
+        this.urllink = "http://techapp.info/mrepc-api";
         this.loadleftsidemenu();
     }
     MyApp.prototype.loadleftsidemenu = function () {
@@ -44,10 +45,14 @@ var MyApp = (function () {
         });
     };
     MyApp.prototype.openPage = function (pageid) {
-        this.nav.setRoot(component[pageid]);
+        this.nav.setRoot(component[pageid], {
+            urllink: this.urllink
+        });
     };
     MyApp.prototype.userPage = function (pageid) {
-        this.nav.setRoot(userpage[pageid]);
+        this.nav.setRoot(userpage[pageid], {
+            urllink: this.urllink
+        });
     };
     __decorate([
         core_1.ViewChild(ionic_angular_1.Nav), 
@@ -78,9 +83,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var ionic_angular_1 = require('ionic-angular');
 var AboutPage = (function () {
-    function AboutPage(navCtrl, alertCtrl) {
+    function AboutPage(navCtrl, alertCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.alertCtrl = alertCtrl;
+        this.navParams = navParams;
+        this.urllink = this.navParams.get('urllink');
     }
     AboutPage.prototype.mapshow = function () {
         var alert = this.alertCtrl.create({
@@ -94,7 +101,7 @@ var AboutPage = (function () {
         core_1.Component({
             templateUrl: 'build/pages/about/about.html'
         }), 
-        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.AlertController])
+        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.AlertController, ionic_angular_1.NavParams])
     ], AboutPage);
     return AboutPage;
 }());
@@ -122,10 +129,12 @@ var tradeshowdetails_1 = require('../../pages/tradeshowdetails/tradeshowdetails'
   Ionic pages and navigation.
 */
 var AlltradeshowsPage = (function () {
-    function AlltradeshowsPage(navCtrl, loadingCtrl, mrepcdata) {
+    function AlltradeshowsPage(navCtrl, loadingCtrl, navParams, mrepcdata) {
         this.navCtrl = navCtrl;
         this.loadingCtrl = loadingCtrl;
+        this.navParams = navParams;
         this.mrepcdata = mrepcdata;
+        this.urllink = this.navParams.get('urllink');
         this.presentLoadingData();
     }
     AlltradeshowsPage.prototype.loadTradeshow = function () {
@@ -143,7 +152,8 @@ var AlltradeshowsPage = (function () {
             location: page.eventdetail.location,
             email: page.eventdetail.email,
             website: page.eventdetail.linkurl,
-            eventdetails: page.eventdetail
+            eventdetails: page.eventdetail,
+            urllink: this.urllink
         });
     };
     AlltradeshowsPage.prototype.presentLoadingData = function () {
@@ -160,7 +170,7 @@ var AlltradeshowsPage = (function () {
         core_1.Component({
             templateUrl: 'build/pages/alltradeshows/alltradeshows.html',
         }), 
-        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.LoadingController, mrepcdata_1.Mrepcdata])
+        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.LoadingController, ionic_angular_1.NavParams, mrepcdata_1.Mrepcdata])
     ], AlltradeshowsPage);
     return AlltradeshowsPage;
 }());
@@ -193,7 +203,14 @@ var BuyerDetailsPage = (function () {
         this.navParams = navParams;
         this.modalCtrl = modalCtrl;
     }
+    BuyerDetailsPage.prototype.ionViewDidEnter = function () {
+        var _this = this;
+        setTimeout(function () {
+            _this.navParams.get('loading').dismiss();
+        }, 200);
+    };
     BuyerDetailsPage.prototype.onPageLoaded = function () {
+        this.urllink = this.navParams.get('urllink');
         this.getbuyerdetails = this.navParams.data;
         this.getbuyeritems = this.getbuyerdetails.buyerData.sort(function (a, b) {
             return a.category.localeCompare(b.category);
@@ -206,13 +223,14 @@ var BuyerDetailsPage = (function () {
             modal.present();
         }
         else {
-            var loader_1 = this.loadingCtrl.create({ content: "Please wait..." });
-            loader_1.present();
+            //            let loader = this.loadingCtrl.create({ content: "Please wait..." });
+            //            loader.present();
             setTimeout(function () {
-                loader_1.dismiss();
+                //                loader.dismiss();
                 _this.navCtrl.push(buyer_items_1.BuyerItemsPage, {
                     buyerCategory: items.category,
-                    buyerItems: items.itemList
+                    buyerItems: items.itemList,
+                    urllink: _this.urllink
                 });
             }, 0);
         }
@@ -315,12 +333,14 @@ var buyer_details_1 = require('../../pages/buyer-details/buyer-details');
   Ionic pages and navigation.
 */
 var BuyerPage = (function () {
-    function BuyerPage(navCtrl, loadingCtrl, mrepcdata) {
+    function BuyerPage(navCtrl, loadingCtrl, navParams, mrepcdata) {
         this.navCtrl = navCtrl;
         this.loadingCtrl = loadingCtrl;
+        this.navParams = navParams;
         this.mrepcdata = mrepcdata;
+        this.urllink = this.navParams.data;
     }
-    BuyerPage.prototype.onPageDidEnter = function () {
+    BuyerPage.prototype.ngAfterViewInit = function () {
         this.presentLoadingData();
     };
     BuyerPage.prototype.loadSupplier = function () {
@@ -334,16 +354,16 @@ var BuyerPage = (function () {
     BuyerPage.prototype.buyerPage = function (buyerid, buyername) {
         var _this = this;
         var loader = this.loadingCtrl.create({ content: "Please wait..." });
-        loader.present();
-        setTimeout(function () {
+        loader.present().then(function () {
             _this.mrepcdata.getBuyerDetails(buyerid).then(function (data) {
-                loader.dismiss();
                 _this.navCtrl.push(buyer_details_1.BuyerDetailsPage, {
                     buyerCategory: buyername,
-                    buyerData: data
+                    buyerData: data,
+                    urllink: _this.urllink,
+                    loading: loader
                 });
             });
-        }, 0);
+        });
     };
     BuyerPage.prototype.presentLoadingData = function () {
         var _this = this;
@@ -353,13 +373,13 @@ var BuyerPage = (function () {
             _this.loadSupplier().then(function () {
                 loader.dismiss();
             });
-        }, 0);
+        }, 200);
     };
     BuyerPage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/buyer/buyer.html',
         }), 
-        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.LoadingController, mrepcdata_1.Mrepcdata])
+        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.LoadingController, ionic_angular_1.NavParams, mrepcdata_1.Mrepcdata])
     ], BuyerPage);
     return BuyerPage;
 }());
@@ -396,6 +416,7 @@ var HomePage = (function () {
             autoplay: 3000,
             autoplayDisableOnInteraction: false
         };
+        this.urllink = "http://techapp.info/mrepc-api";
         this.presentLoadingData();
     }
     HomePage.prototype.loadHomemenu = function () {
@@ -404,7 +425,6 @@ var HomePage = (function () {
         return this.mrepcdata.getMastermenu().then(function (data) {
             _this.mastermenu = data;
         });
-        //        this.eventstart = this.convertdate(this.geteventdetails.startdate);
     };
     HomePage.prototype.loadComingsoonMenu = function () {
         var _this = this;
@@ -442,11 +462,14 @@ var HomePage = (function () {
             location: page.eventdetail.location,
             email: page.eventdetail.email,
             website: page.eventdetail.linkurl,
-            eventdetails: page.eventdetail
+            eventdetails: page.eventdetail,
+            urllink: this.urllink
         });
     };
     HomePage.prototype.openmenuPage = function (pageid) {
-        this.navCtrl.push(menubutton[pageid]);
+        this.navCtrl.push(menubutton[pageid], {
+            urllink: this.urllink
+        });
     };
     HomePage.prototype.useraccountPage = function (pageid) {
         this.navCtrl.push(useraccount_1.UseraccountPage);
@@ -470,6 +493,10 @@ var HomePage = (function () {
         core_1.ViewChild('imgtest'), 
         __metadata('design:type', core_1.ElementRef)
     ], HomePage.prototype, "imgtest", void 0);
+    __decorate([
+        core_1.ViewChild(ionic_angular_1.Nav), 
+        __metadata('design:type', ionic_angular_1.Nav)
+    ], HomePage.prototype, "nav", void 0);
     HomePage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/home/home.html'
@@ -502,17 +529,19 @@ var supplier_1 = require('../../pages/supplier/supplier');
   Ionic pages and navigation.
 */
 var MarketplacePage = (function () {
-    function MarketplacePage(navCtrl) {
+    //    private rootPage: Type = BuyerPage;
+    function MarketplacePage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
+        this.navParams = navParams;
         this.tab1Root = buyer_1.BuyerPage;
         this.tab2Root = supplier_1.SupplierPage;
-        this.rootPage = buyer_1.BuyerPage;
+        this.urllink = this.navParams.get('urllink');
     }
     MarketplacePage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/marketplace/marketplace.html',
         }), 
-        __metadata('design:paramtypes', [ionic_angular_1.NavController])
+        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.NavParams])
     ], MarketplacePage);
     return MarketplacePage;
 }());
@@ -538,9 +567,11 @@ var ionic_angular_1 = require('ionic-angular');
   Ionic pages and navigation.
 */
 var MyseminarPage = (function () {
-    function MyseminarPage(navCtrl, alertCtrl) {
+    function MyseminarPage(navCtrl, alertCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.alertCtrl = alertCtrl;
+        this.navParams = navParams;
+        this.urllink = this.navParams.get('urllink');
     }
     MyseminarPage.prototype.seminarBookmark = function () {
         var alert = this.alertCtrl.create({
@@ -562,7 +593,7 @@ var MyseminarPage = (function () {
         core_1.Component({
             templateUrl: 'build/pages/myseminar/myseminar.html',
         }), 
-        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.AlertController])
+        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.AlertController, ionic_angular_1.NavParams])
     ], MyseminarPage);
     return MyseminarPage;
 }());
@@ -588,9 +619,12 @@ var ionic_angular_1 = require('ionic-angular');
   Ionic pages and navigation.
 */
 var MytradeshowPage = (function () {
-    function MytradeshowPage(navCtrl, alertCtrl) {
+    function MytradeshowPage(navCtrl, alertCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.alertCtrl = alertCtrl;
+        this.navParams = navParams;
+        this.urllink = this.navParams.get('urllink');
+        console.log(this.urllink);
     }
     MytradeshowPage.prototype.tradeshowbtn = function () {
         var alert = this.alertCtrl.create({
@@ -604,7 +638,7 @@ var MytradeshowPage = (function () {
         core_1.Component({
             templateUrl: 'build/pages/mytradeshow/mytradeshow.html',
         }), 
-        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.AlertController])
+        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.AlertController, ionic_angular_1.NavParams])
     ], MytradeshowPage);
     return MytradeshowPage;
 }());
@@ -632,11 +666,13 @@ var seminardetails_1 = require('../../pages/seminardetails/seminardetails');
   Ionic pages and navigation.
 */
 var SeminarPage = (function () {
-    function SeminarPage(navCtrl, loadingCtrl, alertCtrl, mrepcdata) {
+    function SeminarPage(navCtrl, loadingCtrl, alertCtrl, navParams, mrepcdata) {
         this.navCtrl = navCtrl;
         this.loadingCtrl = loadingCtrl;
         this.alertCtrl = alertCtrl;
+        this.navParams = navParams;
         this.mrepcdata = mrepcdata;
+        this.urllink = this.navParams.get('urllink');
         this.presentLoadingData();
     }
     SeminarPage.prototype.loadSeminarData = function () {
@@ -646,7 +682,6 @@ var SeminarPage = (function () {
         });
     };
     SeminarPage.prototype.detailsPage = function (page) {
-        console.log(page);
         var picture = page.image;
         this.navCtrl.push(seminardetails_1.SeminardetailsPage, {
             eventpic: picture,
@@ -655,7 +690,8 @@ var SeminarPage = (function () {
             location: page.eventdetail.location,
             email: page.eventdetail.email,
             website: page.eventdetail.linkurl,
-            eventdetails: page.eventdetail
+            eventdetails: page.eventdetail,
+            urllink: this.urllink
         });
     };
     SeminarPage.prototype.presentLoadingData = function () {
@@ -688,7 +724,7 @@ var SeminarPage = (function () {
         core_1.Component({
             templateUrl: 'build/pages/seminar/seminar.html',
         }), 
-        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.LoadingController, ionic_angular_1.AlertController, mrepcdata_1.Mrepcdata])
+        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.LoadingController, ionic_angular_1.AlertController, ionic_angular_1.NavParams, mrepcdata_1.Mrepcdata])
     ], SeminarPage);
     return SeminarPage;
 }());
@@ -758,27 +794,43 @@ var ionic_angular_1 = require('ionic-angular');
   Ionic pages and navigation.
 */
 var SupplierDetailsPage = (function () {
-    function SupplierDetailsPage(navCtrl, loadingCtrl, navParams, modalCtrl) {
+    function SupplierDetailsPage(navCtrl, loadingCtrl, navParams, modalCtrl, el) {
         this.navCtrl = navCtrl;
         this.loadingCtrl = loadingCtrl;
         this.navParams = navParams;
         this.modalCtrl = modalCtrl;
+        this.el = el;
+    }
+    SupplierDetailsPage.prototype.ionViewDidEnter = function () {
+        var _this = this;
+        setTimeout(function () {
+            _this.navParams.get('loading').dismiss();
+        }, 200);
+    };
+    SupplierDetailsPage.prototype.onPageLoaded = function () {
         this.getsupplierdetails = this.navParams.data;
+        this.urllink = this.navParams.get('urllink');
         this.getsupplieritems = this.getsupplierdetails.companyProduct;
         this.getsupplieritems = this.getsupplierdetails.companyProduct.sort(function (a, b) {
             return a.productName.localeCompare(b.productName);
         });
-        console.log(this.getsupplieritems);
-    }
+    };
     SupplierDetailsPage.prototype.contactSupplier = function (items) {
         var modal = this.modalCtrl.create(SupplierItemsPage, items, this.getsupplierdetails.companyPerson);
         modal.present();
     };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], SupplierDetailsPage.prototype, "imageLoader", void 0);
     SupplierDetailsPage = __decorate([
+        core_1.Directive({
+            selector: '[imageLoader]'
+        }),
         core_1.Component({
             templateUrl: 'build/pages/supplier-details/supplier-details.html',
         }), 
-        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.LoadingController, ionic_angular_1.NavParams, ionic_angular_1.ModalController])
+        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.LoadingController, ionic_angular_1.NavParams, ionic_angular_1.ModalController, core_1.ElementRef])
     ], SupplierDetailsPage);
     return SupplierDetailsPage;
 }());
@@ -836,12 +888,16 @@ var supplier_details_1 = require('../../pages/supplier-details/supplier-details'
   Ionic pages and navigation.
 */
 var SupplierPage = (function () {
-    function SupplierPage(navCtrl, loadingCtrl, mrepcdata) {
+    function SupplierPage(navCtrl, loadingCtrl, navParams, mrepcdata) {
         this.navCtrl = navCtrl;
         this.loadingCtrl = loadingCtrl;
+        this.navParams = navParams;
         this.mrepcdata = mrepcdata;
-        this.presentLoadingData();
+        this.urllink = this.navParams.data;
     }
+    SupplierPage.prototype.onPageLoaded = function () {
+        this.presentLoadingData();
+    };
     SupplierPage.prototype.loadSupplier = function () {
         var _this = this;
         return this.mrepcdata.getMarketplaceSupplier().then(function (data) {
@@ -853,17 +909,17 @@ var SupplierPage = (function () {
     SupplierPage.prototype.supplierPage = function (supplierid) {
         var _this = this;
         var loader = this.loadingCtrl.create({ content: "Please wait..." });
-        loader.present();
-        setTimeout(function () {
+        loader.present().then(function () {
             _this.mrepcdata.getSupplierDetails(supplierid).then(function (data) {
-                loader.dismiss();
                 _this.navCtrl.push(supplier_details_1.SupplierDetailsPage, {
                     companyData: data[0],
                     companyPerson: data[0].contactPerson,
-                    companyProduct: data[0].latestProduct
+                    companyProduct: data[0].latestProduct,
+                    urllink: _this.urllink,
+                    loading: loader
                 });
             });
-        }, 0);
+        });
     };
     SupplierPage.prototype.presentLoadingData = function () {
         var _this = this;
@@ -879,7 +935,7 @@ var SupplierPage = (function () {
         core_1.Component({
             templateUrl: 'build/pages/supplier/supplier.html',
         }), 
-        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.LoadingController, mrepcdata_1.Mrepcdata])
+        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.LoadingController, ionic_angular_1.NavParams, mrepcdata_1.Mrepcdata])
     ], SupplierPage);
     return SupplierPage;
 }());
@@ -910,7 +966,8 @@ var TradeshowdetailsPage = (function () {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.geteventdetails = this.navParams.data;
-        console.log(this.geteventdetails);
+        this.urllink = this.navParams.get('urllink');
+        console.log(this.urllink);
         this.eventstart = this.convertdate(this.geteventdetails.startdate);
         this.eventend = this.convertdate(this.geteventdetails.enddate);
     }
@@ -1139,8 +1196,8 @@ require('rxjs/add/operator/map');
   See https://angular.io/docs/ts/latest/guide/dependency-injection.html
   for more info on providers and Angular 2 DI.
 */
-//let serverURL = 'http://techapp.info/mrepc-api/';
-var serverURL = '/mrepc-api/';
+var serverURL = 'http://techapp.info/mrepc-api/';
+//let serverURL = '/mrepc-api/';
 var favorites = [];
 var Mrepcdata = (function () {
     function Mrepcdata(http) {

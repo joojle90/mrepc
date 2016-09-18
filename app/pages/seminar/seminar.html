@@ -13,7 +13,7 @@
 <ion-content class="seminar">
     <ion-card *ngFor="let sl of seminarlist; let i = index">
         <div>
-            <img src="img/seminar/{{sl.image}}" onError="this.src='img/no-image.jpg'">
+            <img src="{{urllink}}/img/seminar/{{sl.image}}" onError="this.src='img/misc/no-image_event.jpg'">
         </div>
         <ion-item>
             <p><strong primary>Start date : </strong>{{sl.eventdetail.startdate}}</p>
