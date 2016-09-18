@@ -1196,8 +1196,8 @@ require('rxjs/add/operator/map');
   See https://angular.io/docs/ts/latest/guide/dependency-injection.html
   for more info on providers and Angular 2 DI.
 */
-var serverURL = 'http://techapp.info/mrepc-api/';
-//let serverURL = '/mrepc-api/';
+//let serverURL = 'http://techapp.info/mrepc-api/';
+var serverURL = '/mrepc-api/';
 var favorites = [];
 var Mrepcdata = (function () {
     function Mrepcdata(http) {
