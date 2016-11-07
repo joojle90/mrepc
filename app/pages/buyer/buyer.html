@@ -1,6 +1,6 @@
 <ion-header>
     <ion-navbar>
-        <ion-title>Buyer</ion-title>
+        <ion-title>Products</ion-title>
 
         <button menuToggle>
             <ion-icon name="menu"></ion-icon>
@@ -10,12 +10,18 @@
 
 <ion-content class="buyer">
     <ion-list>
+        <button ion-item (click)="buyerPage('HSH', 'Medical Gloves')">
+            <ion-thumbnail item-left>
+                <img src="img/misc/gloves.png" onError="this.src='img/misc/no-image_thumbnail.png'">
+            </ion-thumbnail>
+            <h2>Medical Gloves</h2>
+            <ion-badge item-right>5</ion-badge>
+        </button>
         <button ion-item *ngFor="let byl of buyerlist; let i = index" (click)="buyerPage(byl.rubbertype, byl.rubbername)">
             <ion-thumbnail item-left>
                 <img src="{{urllink}}/img/marketplace/buyer/image_{{byl.rubbertype}}.png" onError="this.src='img/misc/no-image_thumbnail.png'">
             </ion-thumbnail>
             <h2>{{byl.rubbername}}</h2>
-<!--            <p>{{byl.rubberinbm}}</p>-->
             <ion-badge item-right [hidden]="byl.itemlist == 0">{{byl.itemlist}}</ion-badge>
             <ion-note item-right [hidden]="byl.itemlist != 0">No items</ion-note>
         </button>

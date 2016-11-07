@@ -921,6 +921,18 @@ var SupplierPage = (function () {
             });
         });
     };
+    SupplierPage.prototype.getItems = function (ev) {
+        // Reset items back to all of the items
+        this.loadSupplier();
+        // set val to the value of the searchbar
+        var val = ev.target.value;
+        // if the value is an empty string don't filter the items
+        if (val && val.trim() != '') {
+            this.supplierlist = this.supplierlist.filter(function (item) {
+                return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+            });
+        }
+    };
     SupplierPage.prototype.presentLoadingData = function () {
         var _this = this;
         setTimeout(function () {
