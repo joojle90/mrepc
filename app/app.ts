@@ -40,7 +40,7 @@ export class MyApp {
             StatusBar.styleDefault();
         });
         
-        this.urllink = "http://techapp.info/mrepc-api";
+        this.urllink = "http://khaujakanjohor.org/mrepc-api";
         this.loadleftsidemenu();
     }
      

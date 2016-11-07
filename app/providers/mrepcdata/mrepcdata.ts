@@ -8,8 +8,8 @@ import 'rxjs/add/operator/map';
   See https://angular.io/docs/ts/latest/guide/dependency-injection.html
   for more info on providers and Angular 2 DI.
 */
-//let serverURL = 'http://techapp.info/mrepc-api/';
-let serverURL = '/mrepc-api/';
+let serverURL = 'http://khaujakanjohor.org/mrepc-api/';
+//let serverURL = '/mrepc-api/';
 let favorites = [];
 
 @Injectable()

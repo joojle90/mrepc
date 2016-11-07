@@ -36,7 +36,7 @@ export class HomePage {
             autoplay: 3000,
             autoplayDisableOnInteraction: false
         };
-        this.urllink = "http://techapp.info/mrepc-api";
+        this.urllink = "http://khaujakanjohor.org/mrepc-api";
         this.presentLoadingData();
     }
 

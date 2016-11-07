@@ -35,7 +35,7 @@ var MyApp = (function () {
         platform.ready().then(function () {
             ionic_native_1.StatusBar.styleDefault();
         });
-        this.urllink = "http://techapp.info/mrepc-api";
+        this.urllink = "http://khaujakanjohor.org/mrepc-api";
         this.loadleftsidemenu();
     }
     MyApp.prototype.loadleftsidemenu = function () {
@@ -416,7 +416,7 @@ var HomePage = (function () {
             autoplay: 3000,
             autoplayDisableOnInteraction: false
         };
-        this.urllink = "http://techapp.info/mrepc-api";
+        this.urllink = "http://khaujakanjohor.org/mrepc-api";
         this.presentLoadingData();
     }
     HomePage.prototype.loadHomemenu = function () {
@@ -1196,8 +1196,8 @@ require('rxjs/add/operator/map');
   See https://angular.io/docs/ts/latest/guide/dependency-injection.html
   for more info on providers and Angular 2 DI.
 */
-//let serverURL = 'http://techapp.info/mrepc-api/';
-var serverURL = '/mrepc-api/';
+var serverURL = 'http://khaujakanjohor.org/mrepc-api/';
+//let serverURL = '/mrepc-api/';
 var favorites = [];
 var Mrepcdata = (function () {
     function Mrepcdata(http) {
