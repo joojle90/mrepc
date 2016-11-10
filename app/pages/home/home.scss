@@ -7,7 +7,8 @@
     }
     ion-card.menubtn {
         img {
-            filter: brightness(70%);
+            filter: brightness(50%);
+            height: 200px;
         }
     }
 
@@ -25,7 +26,7 @@
         font-size: 1.0em;
         position: absolute;
         top: 45%;
-        color: #cad0d4;
+        color: #ebff00;
         font-weight: bold;
         text-align: left;
         padding-left: 20px;
@@ -52,7 +53,7 @@
     }
     .eventcoming {
         .item {
-            padding: 0 16px;
+            padding: 0 10px;
 
             ion-label {
                 margin: 13px 0;
@@ -64,6 +65,7 @@
         }
         ion-item {
             border-top: 1px outset;
+            background: #2b2424;
 
             span {
                 width: 70%;
