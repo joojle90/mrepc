@@ -53,19 +53,18 @@ export class SupplierPage {
         });
     }
 
-
-
     getItems(ev: any) {
         // Reset items back to all of the items
         this.loadSupplier();
 
         // set val to the value of the searchbar
         let val = ev.target.value;
+        console.log(val);
 
         // if the value is an empty string don't filter the items
         if (val && val.trim() != '') {
             this.supplierlist = this.supplierlist.filter((item) => {
-                return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+                return (item.companyName.toLowerCase().indexOf(val.toLowerCase()) > -1);
             })
         }
     }

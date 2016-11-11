@@ -1,0 +1,65 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title> About CinemAR </ion-title>
+
+        <button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="about">
+    <ion-card>
+        <div>
+            <img src="img/misc/myxlab.jpg" onError="this.src='img/misc/default.jpg'">
+            <button fab fab-right fab-top class="fab-map" (click)="mapshow()">
+                <ion-icon name='pin'></ion-icon>
+            </button>
+        </div>
+        <ion-item>
+            <h1><strong>My X Lab (Myxlab)</strong></h1>
+        </ion-item>
+        <ion-card-content>
+            <ion-row>
+                <ion-col width-33>
+                    <strong secondary>Author</strong>
+                </ion-col>
+                <ion-col width-66>
+                    <span>Prof. Dr. Haslina Arshad</span>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col width-33>
+                    <strong secondary>Email</strong>
+                </ion-col>
+                <ion-col width-66>
+                    <span>haslinaarshad@gmail.com</span>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col width-33>
+                    <strong secondary>Phone no</strong>
+                </ion-col>
+                <ion-col width-66>
+                    <span>(+603) 8921 6086</span>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col width-33>
+                    <strong secondary>Fax no</strong>
+                </ion-col>
+                <ion-col width-66>
+                    <span>(+603) 8921 6094</span>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col width-33>
+                    <strong secondary>Location</strong>
+                </ion-col>
+                <ion-col width-66>
+                    <span>MyXLab at FTSM, UKM, 43600 Bangi, Selangor, Malaysia</span>
+                </ion-col>
+            </ion-row>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

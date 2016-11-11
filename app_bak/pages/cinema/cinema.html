@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Cinema</ion-title>
+        <button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content class="cinema">
+    <ion-card class="card-style" *ngFor="let cnl of cinemalist; let i = index">
+        <a clear (click)="moviesbycinema(cinemalist[i])">
+            <img src="img/cinema/{{cnl.image_land}}" />
+            <p class="card-style-title">{{cnl.cinemaname}}</p>
+            <p class="card-style-subtitle">
+                <span>{{cinemalist[i].cinemadetails[0].hall}}</span> Hall
+                <span class="letter"> and </span>
+                <span>{{cinemalist[i].cinemadetails[0].totalmovies}}</span> Movies
+            </p>
+        </a>
+        <button darklight fab fab-right fab-top class="fab-map">
+            <ion-icon name='navigate'></ion-icon>
+        </button>
+        <ion-item>
+            <ion-icon subtle large item-left name='pin'></ion-icon>
+            <p>{{cnl.address}}</p>
+        </ion-item>
+    </ion-card>
+</ion-content>

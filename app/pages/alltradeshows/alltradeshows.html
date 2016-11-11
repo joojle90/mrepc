@@ -6,7 +6,7 @@
             <ion-icon name="menu"></ion-icon>
         </button>
     </ion-navbar>
-
+    <ion-searchbar (ionCancel)="onCancel($event)" (ionInput)="getItems($event)"></ion-searchbar>
 </ion-header>
 
 
@@ -16,6 +16,7 @@
             <div>
                 <img src="{{urllink}}/img/event/{{tl.image}}" onError="this.src='img/misc/no-image_event.jpg'"/>
             </div>
+<!--
             <ion-item>
                 <h2>{{tradeshowslist[i].eventdetail.name}}</h2>
                 <p><strong secondary>Start from : </strong>
@@ -24,6 +25,7 @@
                     <span danger>{{tradeshowslist[i].eventdetail.enddate}}</span>
                 </p>
             </ion-item>
+-->
         </ion-card>
     </button>
 </ion-content>

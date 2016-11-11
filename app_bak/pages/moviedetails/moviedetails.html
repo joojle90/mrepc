@@ -1,0 +1,83 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{getmoviedetails.movienames}}</ion-title>
+        <ion-buttons end>
+            <button (click)="presentActionSheet()">
+                <ion-icon ios="ios-share-alt" md="md-share-alt"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content class="moviedetails">
+
+    <ion-card>
+        <div id="elastic-header" class="video-container">
+            <iframe width="100%" height="315" [src]="youtubelink" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <span class="tags">
+            <span class="price-tag">
+                <p [hidden]="getmoviedetails.discount === 0">OFF {{getmoviedetails.discount}}%</p>
+            </span>
+        </span>
+        <ion-card-content>
+            <p class="card-title">PG{{getmoviedetails.moviedetails.audience}}</p>
+
+            <ion-row>
+                <ion-col width-50>
+                    <ion-icon name="time"></ion-icon>
+                    Showtime
+                </ion-col>
+                <ion-col width-50>
+                    <span>{{getmoviedetails.showtimes}}</span>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col width-50>
+                    <ion-icon name="people"></ion-icon>
+                    Genre
+                </ion-col>
+                <ion-col width-50>
+                    <span *ngFor="let gnr of getmoviedetails.moviedetails.genre; let i = index">
+                        {{gnr.genrename}}<span [hidden]="i === getmoviedetails.moviedetails.genre.length-1">,</span>
+                    </span>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col width-50>
+                    <ion-icon name="chatboxes"></ion-icon>
+                    Language
+                </ion-col>
+                <ion-col width-50>
+                    <span *ngFor="let sbt of getmoviedetails.moviedetails.subtitle; let i = index">
+                        {{sbt.lang}}<span [hidden]="i === getmoviedetails.moviedetails.subtitle.length-1">,</span>
+                    </span>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col width-50>
+                    <ion-icon name="person"></ion-icon>
+                    Director
+                </ion-col>
+                <ion-col width-50>
+                    <span>{{getmoviedetails.moviedetails.directedby}}</span>
+                </ion-col>
+            </ion-row>
+            <br>
+            <h5>
+                Synopsis
+            </h5>
+            <p>{{getmoviedetails.moviedetails.synopsis}}</p>
+            <br>
+            <div class="getlikes">
+                <ion-icon name='heart'></ion-icon> {{getmoviedetails.likes}} likes
+            </div>
+        </ion-card-content>
+    </ion-card>
+
+
+</ion-content>
+<button fab btncart fab-bottom fab-right (click)="bookticket(getmoviedetails)" style="z-index: 100" [hidden]="getmoviedetails.comingshow === 1">
+    <ion-icon name='cart' is-active="true"></ion-icon>
+</button>

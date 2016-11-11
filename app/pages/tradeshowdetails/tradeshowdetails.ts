@@ -1,12 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-
-/*
-  Generated class for the TradeshowdetailsPage page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
+import { NavController, NavParams, LoadingController, AlertController, ModalController, ViewController } from 'ionic-angular';
 
 let monthname = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -21,7 +14,8 @@ export class TradeshowdetailsPage {
 
     constructor(
         private navCtrl: NavController,
-        private navParams: NavParams
+        private navParams: NavParams,
+        public modalCtrl: ModalController
     ) {
 
         this.geteventdetails = this.navParams.data;
@@ -36,6 +30,41 @@ export class TradeshowdetailsPage {
         let thedate = date.split("-");
         let newdate = thedate[2] +" "+ monthname[thedate[1]-1] +" "+ thedate[0];
         return newdate;
+    }
+
+    registerform() {
+        let modal = this.modalCtrl.create(TradeshowdetailsFormPage);
+        modal.present();
+    }
+
+}
+
+@Component({
+    templateUrl: 'build/pages/tradeshowdetails/tradeshowdetails-register.html',
+})
+export class TradeshowdetailsFormPage {
+    contactSupplier: any;
+    itemdetails: any;
+
+    constructor(
+        private navCtrl: NavController,
+        private navParams: NavParams,
+        private alertCtrl: AlertController,
+        public viewCtrl: ViewController
+    ) {
+    }
+
+    dismiss() {
+        this.viewCtrl.dismiss();
+    }
+
+    register() {
+        let alert = this.alertCtrl.create({
+          title: 'Successful registration',
+          subTitle: 'Your request will be process',
+          buttons: ['OK']
+        });
+        alert.present();
     }
 
 }

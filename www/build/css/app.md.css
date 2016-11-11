@@ -10456,13 +10456,18 @@ body {
 .bar-button-default {
   color: #ffffff; }
 
-scroll-content {
-  background: #b1d4ed;
-  background: -webkit-gradient(left top, right top, color-stop(0%, #b1d4ed), color-stop(100%, #65a1d2));
-  background: -webkit-linear-gradient(left, #b1d4ed 0%, #65a1d2 100%);
-  background: linear-gradient(to right, #b1d4ed 0%, #65a1d2 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b1d4ed', endColorstr='#65a1d2', GradientType=1); }
-
+/*scroll-content {
+    //    background: url('../../img/misc/layout_bg.jpg');
+    //    background-size: contain;
+    background: rgba(177, 212, 237, 1);
+    background: -moz-linear-gradient(left, rgba(177, 212, 237, 1) 0%, rgba(101, 161, 210, 1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(177, 212, 237, 1)), color-stop(100%, rgba(101, 161, 210, 1)));
+    background: -webkit-linear-gradient(left, rgba(177, 212, 237, 1) 0%, rgba(101, 161, 210, 1) 100%);
+    background: -o-linear-gradient(left, rgba(177, 212, 237, 1) 0%, rgba(101, 161, 210, 1) 100%);
+    background: -ms-linear-gradient(left, rgba(177, 212, 237, 1) 0%, rgba(101, 161, 210, 1) 100%);
+    background: linear-gradient(to right, rgba(177, 212, 237, 1) 0%, rgba(101, 161, 210, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b1d4ed', endColorstr='#65a1d2', GradientType=1);
+}*/
 body.ios div > p {
   margin-bottom: 15px !important; }
 
@@ -10508,8 +10513,9 @@ body.ios .segment-button.activated, body.ios .segment-button.segment-activated {
     border-radius: 5px; }
 
 .home ion-card.menubtn img {
-  -webkit-filter: brightness(70%);
-  filter: brightness(70%); }
+  -webkit-filter: brightness(50%);
+  filter: brightness(50%);
+  height: 200px; }
 
 .home .card-title {
   position: absolute;
@@ -10525,7 +10531,7 @@ body.ios .segment-button.activated, body.ios .segment-button.segment-activated {
   font-size: 1.0em;
   position: absolute;
   top: 45%;
-  color: #cad0d4;
+  color: #ebff00;
   font-weight: bold;
   text-align: left;
   padding-left: 20px;
@@ -10550,7 +10556,7 @@ body.ios .segment-button.activated, body.ios .segment-button.segment-activated {
     box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.3); }
 
 .home .eventcoming .item {
-  padding: 0 16px; }
+  padding: 0 10px; }
   .home .eventcoming .item ion-label {
     margin: 13px 0;
     text-align: center; }
@@ -10558,7 +10564,8 @@ body.ios .segment-button.activated, body.ios .segment-button.segment-activated {
     padding: 0; }
 
 .home .eventcoming ion-item {
-  border-top: 1px outset; }
+  border-top: 1px outset;
+  background: #2b2424; }
   .home .eventcoming ion-item span {
     width: 70%;
     font-size: 1.2rem;
@@ -10684,6 +10691,9 @@ body.ios .segment-button.activated, body.ios .segment-button.segment-activated {
 
 .tradeshowdetails ion-card-content p {
   white-space: pre-line; }
+
+.tradeshowdetails ion-card-content ion-grid {
+  text-align: center; }
 
 .tradeshowdetails ion-row {
   padding: 5px; }
