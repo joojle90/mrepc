@@ -1,0 +1,87 @@
+.sidemenu {
+    .toolbar {
+        height: 270px;
+        padding: 0;
+
+        div {
+            padding-top: 0;
+
+            p {
+                margin-bottom: 25px;
+            }
+        }
+
+        button {
+            margin: 0;
+            height: 6.5em;
+        }
+    }
+    ion-toolbar {
+        img {
+            max-width: 90px;
+            border-radius: 50%;
+        }
+    }
+    scroll-content {
+        background: #08f;
+        .item {
+//            min-height: 5.4rem;
+            background-color: #ad344b;
+            color: #ffd83d;
+            font-size: 1.4rem;
+        }
+        ion-list {
+            .item:first-child {
+                border-top: 1px solid #333;
+            }
+            .item-inner {
+                border-bottom: none;
+            }
+            .item:last-child {
+                border-bottom: none;
+            }
+            ion-list-header {
+                color: #f7f7f7;
+                background-color: #1c2127;
+            }
+
+            button {
+                ion-icon[item-left] {
+                    color: #fff;
+                }
+
+                .home {
+                    background-color: black;
+                }
+            }
+
+            .button_active {
+                background-color: #55517b;
+            }
+        }
+    }
+}
+.toolbar-background {
+//    background: $themebg;
+    background: #00c6ff; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #00c6ff , #0072ff); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #00c6ff , #0072ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.toolbar-title {
+    color: $iconcolor;
+    width: 90%;
+    text-transform: capitalize;
+}
+.bar-button-default {
+    color: $iconcolor;
+}
+scroll-content {
+    background-color: #08f;
+}
+
+body.ios {
+    div > p {
+        margin-bottom: 15px !important;
+    }
+}

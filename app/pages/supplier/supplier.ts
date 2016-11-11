@@ -39,6 +39,7 @@ export class SupplierPage {
     }
 
     supplierPage(supplierid) {
+        console.log(supplierid);
         let loader = this.loadingCtrl.create({ content: "Please wait..."});
         loader.present().then(() => {
             this.mrepcdata.getSupplierDetails(supplierid).then(data => {

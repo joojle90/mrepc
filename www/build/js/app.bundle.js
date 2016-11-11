@@ -17,13 +17,12 @@ var userdata_1 = require('./providers/userdata/userdata');
 var home_1 = require('./pages/home/home');
 var marketplace_1 = require('./pages/marketplace/marketplace');
 var alltradeshows_1 = require('./pages/alltradeshows/alltradeshows');
-var seminar_1 = require('./pages/seminar/seminar');
 var userprofile_1 = require('./pages/userprofile/userprofile');
 var mytradeshow_1 = require('./pages/mytradeshow/mytradeshow');
 var myseminar_1 = require('./pages/myseminar/myseminar');
 var tutorial_1 = require('./pages/tutorial/tutorial');
 var about_1 = require('./pages/about/about');
-var component = [home_1.HomePage, alltradeshows_1.AlltradeshowsPage, marketplace_1.MarketplacePage, seminar_1.SeminarPage, tutorial_1.TutorialPage, about_1.AboutPage];
+var component = [home_1.HomePage, alltradeshows_1.AlltradeshowsPage, marketplace_1.MarketplacePage, tutorial_1.TutorialPage, about_1.AboutPage];
 var userpage = [userprofile_1.UserprofilePage, mytradeshow_1.MytradeshowPage, myseminar_1.MyseminarPage];
 var MyApp = (function () {
     function MyApp(platform, mymenu, mrepcdata, userdata) {
@@ -68,7 +67,7 @@ var MyApp = (function () {
 }());
 exports.MyApp = MyApp;
 ionic_angular_1.ionicBootstrap(MyApp, [mrepcdata_1.Mrepcdata, userdata_1.Userdata], {});
-},{"./pages/about/about":2,"./pages/alltradeshows/alltradeshows":3,"./pages/home/home":7,"./pages/marketplace/marketplace":8,"./pages/myseminar/myseminar":9,"./pages/mytradeshow/mytradeshow":10,"./pages/seminar/seminar":11,"./pages/tutorial/tutorial":16,"./pages/userprofile/userprofile":18,"./providers/mrepcdata/mrepcdata":19,"./providers/userdata/userdata":20,"@angular/core":168,"ionic-angular":482,"ionic-native":509}],2:[function(require,module,exports){
+},{"./pages/about/about":2,"./pages/alltradeshows/alltradeshows":3,"./pages/home/home":7,"./pages/marketplace/marketplace":8,"./pages/myseminar/myseminar":9,"./pages/mytradeshow/mytradeshow":10,"./pages/tutorial/tutorial":16,"./pages/userprofile/userprofile":18,"./providers/mrepcdata/mrepcdata":19,"./providers/userdata/userdata":20,"@angular/core":168,"ionic-angular":482,"ionic-native":509}],2:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -82,9 +81,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var ionic_angular_1 = require('ionic-angular');
 var AboutPage = (function () {
-    function AboutPage(navCtrl, alertCtrl, navParams) {
+    function AboutPage(navCtrl, alertCtrl, loadingCtrl, modalCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.alertCtrl = alertCtrl;
+        this.loadingCtrl = loadingCtrl;
+        this.modalCtrl = modalCtrl;
         this.navParams = navParams;
         this.urllink = this.navParams.get('urllink');
     }
@@ -96,15 +97,46 @@ var AboutPage = (function () {
         });
         alert.present();
     };
+    AboutPage.prototype.contactus = function () {
+        var modal = this.modalCtrl.create(AboutcontactPage);
+        modal.present();
+    };
     AboutPage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/about/about.html'
         }),
-        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.AlertController, ionic_angular_1.NavParams])
+        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.AlertController, ionic_angular_1.LoadingController, ionic_angular_1.ModalController, ionic_angular_1.NavParams])
     ], AboutPage);
     return AboutPage;
 }());
 exports.AboutPage = AboutPage;
+var AboutcontactPage = (function () {
+    function AboutcontactPage(navCtrl, navParams, alertCtrl, viewCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.alertCtrl = alertCtrl;
+        this.viewCtrl = viewCtrl;
+    }
+    AboutcontactPage.prototype.dismiss = function () {
+        this.viewCtrl.dismiss();
+    };
+    AboutcontactPage.prototype.submitinquiry = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Successful message',
+            subTitle: 'Thank you for submit your inquiry',
+            buttons: ['OK']
+        });
+        alert.present();
+    };
+    AboutcontactPage = __decorate([
+        core_1.Component({
+            templateUrl: 'build/pages/about/about-contact.html',
+        }),
+        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.NavParams, ionic_angular_1.AlertController, ionic_angular_1.ViewController])
+    ], AboutcontactPage);
+    return AboutcontactPage;
+}());
+exports.AboutcontactPage = AboutcontactPage;
 },{"@angular/core":168,"ionic-angular":482}],3:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -122,10 +154,11 @@ var mrepcdata_1 = require('../../providers/mrepcdata/mrepcdata');
 var tradeshowdetails_1 = require('../../pages/tradeshowdetails/tradeshowdetails');
 var tradeshowname = [];
 var AlltradeshowsPage = (function () {
-    function AlltradeshowsPage(navCtrl, loadingCtrl, navParams, mrepcdata) {
+    function AlltradeshowsPage(navCtrl, loadingCtrl, navParams, alertCtrl, mrepcdata) {
         this.navCtrl = navCtrl;
         this.loadingCtrl = loadingCtrl;
         this.navParams = navParams;
+        this.alertCtrl = alertCtrl;
         this.mrepcdata = mrepcdata;
         this.urllink = this.navParams.get('urllink');
         this.presentLoadingData();
@@ -183,11 +216,42 @@ var AlltradeshowsPage = (function () {
             });
         }
     };
+    AlltradeshowsPage.prototype.sortdatapopup = function () {
+        var _this = this;
+        var alert = this.alertCtrl.create();
+        alert.setTitle('Which sort do you want to use?');
+        alert.addInput({
+            type: 'checkbox',
+            label: 'Sort A to Z',
+            value: 'value1',
+            checked: true
+        });
+        alert.addInput({
+            type: 'checkbox',
+            label: 'Sort by Latest Event',
+            value: 'value2'
+        });
+        alert.addInput({
+            type: 'checkbox',
+            label: 'Sort by Amount of Participation',
+            value: 'value3'
+        });
+        alert.addButton('Cancel');
+        alert.addButton({
+            text: 'Okay',
+            handler: function (data) {
+                console.log('Checkbox data:', data);
+                _this.testCheckboxOpen = false;
+                _this.testCheckboxResult = data;
+            }
+        });
+        alert.present();
+    };
     AlltradeshowsPage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/alltradeshows/alltradeshows.html',
         }),
-        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.LoadingController, ionic_angular_1.NavParams, mrepcdata_1.Mrepcdata])
+        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.LoadingController, ionic_angular_1.NavParams, ionic_angular_1.AlertController, mrepcdata_1.Mrepcdata])
     ], AlltradeshowsPage);
     return AlltradeshowsPage;
 }());
@@ -414,10 +478,10 @@ var ionic_angular_1 = require('ionic-angular');
 var mrepcdata_1 = require('../../providers/mrepcdata/mrepcdata');
 var tradeshowdetails_1 = require('../../pages/tradeshowdetails/tradeshowdetails');
 var marketplace_1 = require('../../pages/marketplace/marketplace');
-var alltradeshows_1 = require('../../pages/alltradeshows/alltradeshows');
 var seminar_1 = require('../../pages/seminar/seminar');
 var useraccount_1 = require('../../pages/useraccount/useraccount');
-var menubutton = [marketplace_1.MarketplacePage, alltradeshows_1.AlltradeshowsPage, seminar_1.SeminarPage];
+var tutorial_1 = require('../../pages/tutorial/tutorial');
+var menubutton = [marketplace_1.MarketplacePage, tutorial_1.TutorialPage, seminar_1.SeminarPage];
 var monthname = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 var HomePage = (function () {
     function HomePage(navCtrl, loadingCtrl, mrepcdata) {
@@ -519,7 +583,7 @@ var HomePage = (function () {
     return HomePage;
 }());
 exports.HomePage = HomePage;
-},{"../../pages/alltradeshows/alltradeshows":3,"../../pages/marketplace/marketplace":8,"../../pages/seminar/seminar":11,"../../pages/tradeshowdetails/tradeshowdetails":15,"../../pages/useraccount/useraccount":17,"../../providers/mrepcdata/mrepcdata":19,"@angular/core":168,"ionic-angular":482}],8:[function(require,module,exports){
+},{"../../pages/marketplace/marketplace":8,"../../pages/seminar/seminar":11,"../../pages/tradeshowdetails/tradeshowdetails":15,"../../pages/tutorial/tutorial":16,"../../pages/useraccount/useraccount":17,"../../providers/mrepcdata/mrepcdata":19,"@angular/core":168,"ionic-angular":482}],8:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -914,6 +978,7 @@ var SupplierPage = (function () {
     };
     SupplierPage.prototype.supplierPage = function (supplierid) {
         var _this = this;
+        console.log(supplierid);
         var loader = this.loadingCtrl.create({ content: "Please wait..." });
         loader.present().then(function () {
             _this.mrepcdata.getSupplierDetails(supplierid).then(function (data) {
@@ -972,12 +1037,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var ionic_angular_1 = require('ionic-angular');
+var mrepcdata_1 = require('../../providers/mrepcdata/mrepcdata');
+var supplier_details_1 = require('../../pages/supplier-details/supplier-details');
 var monthname = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 var TradeshowdetailsPage = (function () {
-    function TradeshowdetailsPage(navCtrl, navParams, modalCtrl) {
+    function TradeshowdetailsPage(navCtrl, navParams, loadingCtrl, modalCtrl, mrepcdata) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.loadingCtrl = loadingCtrl;
         this.modalCtrl = modalCtrl;
+        this.mrepcdata = mrepcdata;
         this.geteventdetails = this.navParams.data;
         this.urllink = this.navParams.get('urllink');
         console.log(this.urllink);
@@ -989,6 +1058,21 @@ var TradeshowdetailsPage = (function () {
         var newdate = thedate[2] + " " + monthname[thedate[1] - 1] + " " + thedate[0];
         return newdate;
     };
+    TradeshowdetailsPage.prototype.gotosupplier = function (supplierid) {
+        var _this = this;
+        var loader = this.loadingCtrl.create({ content: "Please wait..." });
+        loader.present().then(function () {
+            _this.mrepcdata.getSupplierDetails(supplierid).then(function (data) {
+                _this.navCtrl.push(supplier_details_1.SupplierDetailsPage, {
+                    companyData: data[0],
+                    companyPerson: data[0].contactPerson,
+                    companyProduct: data[0].latestProduct,
+                    urllink: _this.urllink,
+                    loading: loader
+                });
+            });
+        });
+    };
     TradeshowdetailsPage.prototype.registerform = function () {
         var modal = this.modalCtrl.create(TradeshowdetailsFormPage);
         modal.present();
@@ -997,7 +1081,7 @@ var TradeshowdetailsPage = (function () {
         core_1.Component({
             templateUrl: 'build/pages/tradeshowdetails/tradeshowdetails.html',
         }),
-        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.NavParams, ionic_angular_1.ModalController])
+        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.NavParams, ionic_angular_1.LoadingController, ionic_angular_1.ModalController, mrepcdata_1.Mrepcdata])
     ], TradeshowdetailsPage);
     return TradeshowdetailsPage;
 }());
@@ -1029,7 +1113,7 @@ var TradeshowdetailsFormPage = (function () {
     return TradeshowdetailsFormPage;
 }());
 exports.TradeshowdetailsFormPage = TradeshowdetailsFormPage;
-},{"@angular/core":168,"ionic-angular":482}],16:[function(require,module,exports){
+},{"../../pages/supplier-details/supplier-details":13,"../../providers/mrepcdata/mrepcdata":19,"@angular/core":168,"ionic-angular":482}],16:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1263,6 +1347,11 @@ var Mrepcdata = (function () {
             });
         });
     };
+    //    getLeftsidemenu() {
+    //        return this.load('leftsidemenu.json').then(data => {
+    //            return data.leftsidemenu;
+    //        });
+    //    }
     Mrepcdata.prototype.getLeftsidemenu = function () {
         return this.load('leftsidemenu').then(function (data) {
             return data.leftsidemenu.submenu;

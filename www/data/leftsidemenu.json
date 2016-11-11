@@ -1,0 +1,37 @@
+{
+    "leftsidemenu": [{
+        "name": "Mrepc Menu",
+        "submenu": [{
+            "idmenu": 1,
+            "title": "Home",
+            "icon": "home"
+  }, {
+            "idmenu": 2,
+            "title": "Marketplace",
+            "icon": "podium"
+    }]
+  }, {
+        "name": "Function",
+        "submenu": [{
+            "idmenu": 3,
+            "title": "Trade Show",
+            "icon": "podium"
+    }, {
+            "idmenu": 4,
+            "title": "My Bookmark",
+            "icon": "bookmarks",
+            "notif": 5
+    }]
+  }, {
+        "name": "Others",
+        "submenu": [{
+            "idmenu": 6,
+            "title": "Tutorial",
+            "icon": "book"
+    }, {
+            "idmenu": 7,
+            "title": "About Us",
+            "icon": "people"
+    }]
+  }]
+}

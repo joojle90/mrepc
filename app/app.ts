@@ -15,7 +15,7 @@ import {TutorialPage} from './pages/tutorial/tutorial';
 import {AboutPage} from './pages/about/about';
 
 
-let component = [HomePage, AlltradeshowsPage, MarketplacePage, SeminarPage, TutorialPage, AboutPage];
+let component = [HomePage, AlltradeshowsPage, MarketplacePage, TutorialPage, AboutPage];
 let userpage = [UserprofilePage, MytradeshowPage, MyseminarPage];
 
 @Component({
