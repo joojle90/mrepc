@@ -122,12 +122,7 @@ var core_1 = require('@angular/core');
 var ionic_angular_1 = require('ionic-angular');
 var mrepcdata_1 = require('../../providers/mrepcdata/mrepcdata');
 var tradeshowdetails_1 = require('../../pages/tradeshowdetails/tradeshowdetails');
-/*
-  Generated class for the AlltradeshowsPage page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
+var tradeshowname = [];
 var AlltradeshowsPage = (function () {
     function AlltradeshowsPage(navCtrl, loadingCtrl, navParams, mrepcdata) {
         this.navCtrl = navCtrl;
@@ -141,7 +136,18 @@ var AlltradeshowsPage = (function () {
         var _this = this;
         return this.mrepcdata.geteventcriteria('6', '1,4').then(function (data) {
             _this.tradeshowslist = data;
+            for (var i in data) {
+                tradeshowname.push({
+                    name: data[i].eventdetail["name"],
+                    startdate: data[i].eventdetail["startdate"],
+                    enddate: data[i].eventdetail["enddate"]
+                });
+            }
+            console.log(tradeshowname);
         });
+    };
+    AlltradeshowsPage.prototype.loadTradeshowname = function () {
+        return tradeshowname;
     };
     AlltradeshowsPage.prototype.detailsPage = function (page) {
         var picture = page.image;
@@ -165,6 +171,19 @@ var AlltradeshowsPage = (function () {
                 loader.dismiss();
             });
         }, 0);
+    };
+    AlltradeshowsPage.prototype.getItems = function (ev) {
+        // Reset items back to all of the items
+        this.loadTradeshowname();
+        // set val to the value of the searchbar
+        var val = ev.target.value;
+        console.log(this.loadTradeshowname());
+        // if the value is an empty string don't filter the items
+        if (val && val.trim() != '') {
+            tradeshowname = tradeshowname.filter(function (item) {
+                return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+            });
+        }
     };
     AlltradeshowsPage = __decorate([
         core_1.Component({
@@ -967,17 +986,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var ionic_angular_1 = require('ionic-angular');
-/*
-  Generated class for the TradeshowdetailsPage page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 var monthname = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 var TradeshowdetailsPage = (function () {
-    function TradeshowdetailsPage(navCtrl, navParams) {
+    function TradeshowdetailsPage(navCtrl, navParams, modalCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.modalCtrl = modalCtrl;
         this.geteventdetails = this.navParams.data;
         this.urllink = this.navParams.get('urllink');
         console.log(this.urllink);
@@ -989,15 +1003,46 @@ var TradeshowdetailsPage = (function () {
         var newdate = thedate[2] + " " + monthname[thedate[1] - 1] + " " + thedate[0];
         return newdate;
     };
+    TradeshowdetailsPage.prototype.registerform = function () {
+        var modal = this.modalCtrl.create(TradeshowdetailsFormPage);
+        modal.present();
+    };
     TradeshowdetailsPage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/tradeshowdetails/tradeshowdetails.html',
         }), 
-        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.NavParams])
+        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.NavParams, ionic_angular_1.ModalController])
     ], TradeshowdetailsPage);
     return TradeshowdetailsPage;
 }());
 exports.TradeshowdetailsPage = TradeshowdetailsPage;
+var TradeshowdetailsFormPage = (function () {
+    function TradeshowdetailsFormPage(navCtrl, navParams, alertCtrl, viewCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.alertCtrl = alertCtrl;
+        this.viewCtrl = viewCtrl;
+    }
+    TradeshowdetailsFormPage.prototype.dismiss = function () {
+        this.viewCtrl.dismiss();
+    };
+    TradeshowdetailsFormPage.prototype.register = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Successful registration',
+            subTitle: 'Your request will be process',
+            buttons: ['OK']
+        });
+        alert.present();
+    };
+    TradeshowdetailsFormPage = __decorate([
+        core_1.Component({
+            templateUrl: 'build/pages/tradeshowdetails/tradeshowdetails-register.html',
+        }), 
+        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.NavParams, ionic_angular_1.AlertController, ionic_angular_1.ViewController])
+    ], TradeshowdetailsFormPage);
+    return TradeshowdetailsFormPage;
+}());
+exports.TradeshowdetailsFormPage = TradeshowdetailsFormPage;
 
 },{"@angular/core":168,"ionic-angular":482}],16:[function(require,module,exports){
 "use strict";

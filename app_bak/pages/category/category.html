@@ -1,0 +1,21 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Category</ion-title>
+        <button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content class="category">
+    <ion-card class="card-style" *ngFor="let grl of categorylist; let i = index">
+        <img src="img/category/{{grl.image}}" />
+        <p class="card-style-title">{{grl.genrename}}</p>
+        <p class="card-style-subtitle"><span>{{grl.total}}</span> Movies Available</p>
+        <button ion-button class="card-style-details" icon-left (click)="moviebygenre(grl.genrename)">
+            <ion-icon name='grid'></ion-icon>More details
+        </button>
+    </ion-card>
+</ion-content>

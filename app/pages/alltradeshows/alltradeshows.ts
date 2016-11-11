@@ -3,12 +3,10 @@ import { NavController, LoadingController, NavParams } from 'ionic-angular';
 import {Mrepcdata} from '../../providers/mrepcdata/mrepcdata';
 import {TradeshowdetailsPage} from '../../pages/tradeshowdetails/tradeshowdetails';
 
-/*
-  Generated class for the AlltradeshowsPage page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
+
+let tradeshowname = [];
+
 @Component({
     templateUrl: 'build/pages/alltradeshows/alltradeshows.html',
 })
@@ -30,7 +28,20 @@ export class AlltradeshowsPage {
     loadTradeshow() {
         return this.mrepcdata.geteventcriteria('6', '1,4').then(data => {
             this.tradeshowslist = data;
+
+            for(let i in data) {
+                tradeshowname.push ({
+                    name: data[i].eventdetail["name"],
+                    startdate: data[i].eventdetail["startdate"],
+                    enddate: data[i].eventdetail["enddate"]
+                })
+            }
+            console.log(tradeshowname);
         })
+    }
+
+    loadTradeshowname() {
+        return tradeshowname;
     }
 
     detailsPage(page) {
@@ -56,5 +67,21 @@ export class AlltradeshowsPage {
                 loader.dismiss();
             });
         }, 0);
+    }
+
+    getItems(ev: any) {
+        // Reset items back to all of the items
+        this.loadTradeshowname();
+
+        // set val to the value of the searchbar
+        let val = ev.target.value;
+        console.log(this.loadTradeshowname());
+
+        // if the value is an empty string don't filter the items
+        if (val && val.trim() != '') {
+            tradeshowname = tradeshowname.filter((item) => {
+                return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+            })
+        }
     }
 }

@@ -1,0 +1,57 @@
+.about {
+    ion-card {
+        margin: 0;
+        width: calc(100% - 0px);
+        background: inherit;
+
+        div {
+             position: relative;
+        }
+        p {
+            font-size: 0.7em;
+        }
+
+        ion-label {
+            h1 {
+                color: #fff133;
+            }
+        }
+
+        ion-col {
+            span {
+                color: #fff;
+            }
+        }
+    }
+    button[fab].fab-map {
+        top: calc(100% - 35px);
+        z-index: 50;
+        background-color: #556ca0;
+    }
+    ion-item {
+        border-top: 1px outset;
+
+        span {
+            font-size: 1.2rem;
+            font-weight: normal;
+            text-transform: capitalize;
+        }
+
+        h2 {
+            white-space: normal;
+            width: 80%;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            display: -webkit-box;
+            text-transform: capitalize;
+        }
+
+        .button-inner {
+            margin-right: 10px;
+            margin-left: 5px;
+        }
+    }
+    .item {
+        background-color: inherit;
+    }
+}

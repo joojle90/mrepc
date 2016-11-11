@@ -6,7 +6,7 @@
             <ion-icon name="menu"></ion-icon>
         </button>
     </ion-navbar>
-
+    <ion-searchbar (ionCancel)="onCancel($event)" (ionInput)="getItems($event)"></ion-searchbar>
 </ion-header>
 
 

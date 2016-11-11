@@ -10341,6 +10341,9 @@ body.ios .segment-button.activated, body.ios .segment-button.segment-activated {
 .tradeshowdetails ion-card-content p {
   white-space: pre-line; }
 
+.tradeshowdetails ion-card-content ion-grid {
+  text-align: center; }
+
 .tradeshowdetails ion-row {
   padding: 5px; }
   .tradeshowdetails ion-row ion-col {

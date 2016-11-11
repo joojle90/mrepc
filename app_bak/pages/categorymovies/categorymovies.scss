@@ -1,0 +1,111 @@
+.categorymovies {
+    ion-row {
+        padding: 4px;
+        ion-col {
+            padding: 4px;
+        }
+    }
+    ion-card {
+        margin: 0px 0px 10px 0px;
+        width: calc(100% - 0px);
+        img {
+            height: 155px;
+        }
+        ion-card-content {
+            padding: 0;
+            button {
+                padding: 0 0.1em;
+            }
+        }
+        ion-item.item {
+            [item-left],
+            [item-right] {
+                margin: 0;
+            }
+        }
+        ion-item {
+            p {
+                font-weight: bold;
+                min-width: 200px;
+                color: #2ab700;
+            }
+            .item-inner {
+                padding-right: 0;
+            }
+            .item-button {
+                padding: 0 1.4em;
+            }
+            ion-label {
+                margin: 0;
+            }
+        }
+    }
+    ion-row + ion-row {
+        margin-top: -18px;
+    }
+
+    /*Ribbon style*/
+    .wrapper {
+        border-radius: 10px;
+        -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+        position: relative;
+        z-index: 90;
+    }
+    .ribbon-wrapper-color {
+        width: 85px;
+        height: 88px;
+        overflow: hidden;
+        position: absolute;
+        top: -3px;
+        right: -3px;
+    }
+    .ribbon-color {
+        font-size: 10px;
+        color: #fff;
+        text-align: center;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        position: relative;
+        padding: 7px 0;
+        left: -5px;
+        top: 20px;
+        width: 120px;
+        background-color: #387ef5;
+        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+    }
+    .ribbon-color:before,
+    .ribbon-color:after {
+        content: "";
+        border-top: 3px solid #6e8900;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+        position: absolute;
+        bottom: -3px;
+    }
+    .ribbon-color:before {
+        left: 0;
+    }
+    .ribbon-color:after {
+        right: 0;
+    }
+    .discount {
+        background-color: #cc1d6c;
+    }
+}
+
+body.ios {
+    ion-card {
+        ion-item.item {
+            padding-left: 8px;
+        }
+        ion-item {
+            .item-button {
+                padding: 0 0.8em;
+            }
+        }
+    }
+}

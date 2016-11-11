@@ -1,0 +1,29 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Top Hits</ion-title>
+        <button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="tophits">
+    <ion-card *ngFor="let thl of tophitslist; let i = index">
+        <a clear (click)="watchtrailer(tophitslist[i], thl.moviedetails[0])">
+            <div class="wrapper" [hidden]="thl.discount == 0">
+                <div class="ribbon-wrapper-color">
+                    <div class="ribbon-color">Off {{thl.discount}}%</div>
+                </div>
+            </div>
+            <img src="img/poster_land/{{thl.image_land}}" />
+            <div class="card-title">{{thl.moviename}}</div>
+            <p class="like-count">
+                <ion-icon name='heart'></ion-icon>&nbsp;{{thl.like}} likes
+            </p>
+        </a>
+        <button fab fab-right fab-bottom class="tophits-rank" (click)="bookticket(tophitslist[i])">
+            #{{i+1}}
+        </button>
+    </ion-card>
+</ion-content>
