@@ -1,0 +1,42 @@
+<ion-menu [content]="content" class="sidemenu">
+
+    <ion-toolbar>
+        <!--        <ion-title>Side Menu</ion-title>-->
+        <div padding-top text-center>
+            <button clear menuClose (click)="userPage(0)">
+                <img src="http://www.gravatar.com/avatar?d=mm&s=140">
+            </button>
+            <p>Hi, Bob</p>
+        </div>
+        <ion-segment id="bookmarkbutton">
+            <ion-segment-button value="mytradeshows" menuClose (click)="userPage(1)">
+                <ion-badge>3</ion-badge>
+                <ion-icon name="bookmarks"></ion-icon>
+                <ion-label>My Trade Show</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="myseminars" menuClose (click)="userPage(2)">
+                <ion-badge>2</ion-badge>
+                <ion-icon name="albums"></ion-icon>
+                <ion-label>My Seminar</ion-label>
+            </ion-segment-button>
+        </ion-segment>
+
+    </ion-toolbar>
+
+    <ion-content>
+        <ion-list>
+            <button menuClose ion-item *ngFor="let lsm of leftsidemenu; let i = index;" (click)="openPage(i)">
+                <ion-icon myicon item-left [name]="lsm.icon"></ion-icon>
+                {{lsm.title}}
+<!--
+                <ion-note item-right [hidden]="note === null">{{lsm.note}}</ion-note>
+                <ion-badge item-right [hidden]="notif === null">{{lsm.notif}}</ion-badge>
+-->
+            </button>
+        </ion-list>
+    </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

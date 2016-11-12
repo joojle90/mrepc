@@ -10409,44 +10409,42 @@ body {
       margin-bottom: 25px; }
   .sidemenu .toolbar button {
     margin: 0;
-    height: 5em; }
-  .sidemenu .toolbar ion-segment {
-    position: inherit; }
-    .sidemenu .toolbar ion-segment .segment-button {
-      color: #4c4949;
-      height: 7.5rem;
-      line-height: 2.2rem;
-      border-bottom-style: none; }
-      .sidemenu .toolbar ion-segment .segment-button ion-badge {
-        display: block;
-        width: 25px;
-        position: absolute;
-        right: 30px;
-        background-color: #f53838; }
-    .sidemenu .toolbar ion-segment .segment-button.activated, .sidemenu .toolbar ion-segment .segment-button.segment-activated {
-      border-color: #0e34dc;
-      color: #fff;
-      border-bottom-style: none; }
-    .sidemenu .toolbar ion-segment ion-label {
-      margin: 0; }
+    height: 6.5em; }
 
 .sidemenu ion-toolbar img {
-  max-width: 60px;
+  max-width: 90px;
   border-radius: 50%; }
 
 .sidemenu scroll-content {
-  background: #ffffff; }
+  background: #08f; }
   .sidemenu scroll-content .item {
-    min-height: 7.4rem; }
+    background-color: #ad344b;
+    color: #ffd83d;
+    font-size: 1.4rem; }
   .sidemenu scroll-content ion-list .item:first-child {
     border-top: 1px solid #333; }
   .sidemenu scroll-content ion-list .item-inner {
-    border-bottom: 1px solid #626D71; }
+    border-bottom: none; }
   .sidemenu scroll-content ion-list .item:last-child {
-    border-bottom: 1px solid #626D71; }
+    border-bottom: none; }
+  .sidemenu scroll-content ion-list ion-list-header {
+    color: #f7f7f7;
+    background-color: #1c2127; }
+  .sidemenu scroll-content ion-list button ion-icon[item-left] {
+    color: #fff; }
+  .sidemenu scroll-content ion-list button .home {
+    background-color: black; }
+  .sidemenu scroll-content ion-list .button_active {
+    background-color: #55517b; }
 
 .toolbar-background {
-  background: #00b6f1; }
+  background: #00c6ff;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #00c6ff, #0072ff);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(right, #00c6ff, #0072ff);
+  background: linear-gradient(to left, #00c6ff, #0072ff);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
 
 .toolbar-title {
   color: #ffffff;
@@ -10456,29 +10454,14 @@ body {
 .bar-button-default {
   color: #ffffff; }
 
-/*scroll-content {
-    //    background: url('../../img/misc/layout_bg.jpg');
-    //    background-size: contain;
-    background: rgba(177, 212, 237, 1);
-    background: -moz-linear-gradient(left, rgba(177, 212, 237, 1) 0%, rgba(101, 161, 210, 1) 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(177, 212, 237, 1)), color-stop(100%, rgba(101, 161, 210, 1)));
-    background: -webkit-linear-gradient(left, rgba(177, 212, 237, 1) 0%, rgba(101, 161, 210, 1) 100%);
-    background: -o-linear-gradient(left, rgba(177, 212, 237, 1) 0%, rgba(101, 161, 210, 1) 100%);
-    background: -ms-linear-gradient(left, rgba(177, 212, 237, 1) 0%, rgba(101, 161, 210, 1) 100%);
-    background: linear-gradient(to right, rgba(177, 212, 237, 1) 0%, rgba(101, 161, 210, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b1d4ed', endColorstr='#65a1d2', GradientType=1);
-}*/
+.toolbar {
+  min-height: 7.0rem; }
+
+scroll-content {
+  background-color: #08f; }
+
 body.ios div > p {
   margin-bottom: 15px !important; }
-
-body.ios .segment-button {
-  height: 5.5rem !important;
-  border-bottom-style: solid !important; }
-  body.ios .segment-button ion-badge {
-    right: 10px !important; }
-
-body.ios .segment-button.activated, body.ios .segment-button.segment-activated {
-  border-bottom-style: solid !important; }
 
 .about ion-card div {
   position: relative; }
@@ -10577,7 +10560,7 @@ body.ios .segment-button.activated, body.ios .segment-button.segment-activated {
     font-size: 25px;
     white-space: normal;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
     display: -webkit-box;
     text-transform: capitalize;
     overflow: hidden;

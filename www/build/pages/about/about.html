@@ -19,21 +19,43 @@
         <ion-item>
             <h2><strong>Malaysian Rubber Export Promotion Council (MREPC)</strong></h2>
         </ion-item>
-        <ion-item actions>
-            <span item-left><strong secondary>Phone no : </strong>(603) 2780 5888</span>
-        </ion-item>
-        <ion-item actions>
-            <span item-left><strong secondary>Fax no : </strong>(603) 2780 5088</span>
-        </ion-item>
-        <ion-item actions>
-            <span item-left><strong secondary>Email : </strong>info@mrepc.com</span>
-        </ion-item>
-        <ion-item actions>
-            <span item-left><strong secondary>Operating hours : </strong>Monday to Friday: 8.30am - 5.30pm</span>
-        </ion-item>
-        <ion-item actions>
-            <span item-left><strong secondary>Location : </strong>Unit No 36-02, Level 36, Q Sentral 2A Jalan Stesen Sentral 2, KL Sentral 50470 Kuala Lumpur, Malaysia, Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia
-            </span>
-        </ion-item>
+        <ion-card-content>
+            <ion-row>
+                <ion-col width-33>
+                    <strong secondary>Email</strong>
+                </ion-col>
+                <ion-col width-66>
+                    <span>mpd@mrepc.com</span>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col width-33>
+                    <strong secondary>Phone no</strong>
+                </ion-col>
+                <ion-col width-66>
+                    <span>(+603) 2780 5888</span>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col width-33>
+                    <strong secondary>Fax no</strong>
+                </ion-col>
+                <ion-col width-66>
+                    <span>(+603) 2780 5088</span>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col width-33>
+                    <strong secondary>Location</strong>
+                </ion-col>
+                <ion-col width-66>
+                    <span>Unit No 36-02, Level 36, Q Sentral 2A Jalan Stesen Sentral 2, KL Sentral 50470 Kuala Lumpur, Malaysia, Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia</span>
+                </ion-col>
+            </ion-row>
+
+            <div padding>
+                <button block (click)="contactus()">Contact us</button>
+            </div>
+        </ion-card-content>
     </ion-card>
 </ion-content>

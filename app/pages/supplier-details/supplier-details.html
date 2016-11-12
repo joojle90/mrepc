@@ -36,7 +36,6 @@
                         {{getsupplierdetails.companyData.bussinessType}}
                     </ion-col>
                 </ion-row>
--->
                 <ion-row>
                     <ion-col width-25>
                         Product
@@ -45,6 +44,7 @@
                         {{getsupplierdetails.companyData.productType}}
                     </ion-col>
                 </ion-row>
+-->
                 <ion-row>
                     <ion-col width-25>
                         Address
@@ -67,9 +67,11 @@
 
         <ion-list class="listitems">
             <button ion-item *ngFor="let cp of getsupplieritems; let i = index" (click)="contactSupplier(getsupplieritems[i])">
+<!--
                 <ion-avatar item-left>
                     <img src="{{urllink}}/img/misc/defaultproduct.png" onError="this.src='img/misc/no-image_thumbnail.png'">
                 </ion-avatar>
+-->
                 <p secondary>{{getsupplieritems[i].productName}}</p>
             </button>
         </ion-list>

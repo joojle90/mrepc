@@ -6,8 +6,9 @@ import {MarketplacePage} from '../../pages/marketplace/marketplace';
 import {AlltradeshowsPage} from '../../pages/alltradeshows/alltradeshows';
 import {SeminarPage} from '../../pages/seminar/seminar';
 import {UseraccountPage} from '../../pages/useraccount/useraccount';
+import {TutorialPage} from '../../pages/tutorial/tutorial';
 
-let menubutton = [MarketplacePage, AlltradeshowsPage, SeminarPage];
+let menubutton = [MarketplacePage, TutorialPage, SeminarPage];
 let monthname = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 @Component({
@@ -31,11 +32,11 @@ export class HomePage {
         public mrepcdata: Mrepcdata
         ) {
 
-        this.homeOptions = {
-            initialSlide: 0,
-            autoplay: 3000,
-            autoplayDisableOnInteraction: false
-        };
+//        this.homeOptions = {
+//            initialSlide: 0,
+//            autoplay: 3000,
+//            autoplayDisableOnInteraction: false
+//        };
         this.urllink = "http://khaujakanjohor.org/mrepc-api";
         this.presentLoadingData();
     }

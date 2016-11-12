@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController, AlertController, ModalController, ViewController } from 'ionic-angular';
+import { Mrepcdata } from '../../providers/mrepcdata/mrepcdata';
+import { SupplierDetailsPage } from '../../pages/supplier-details/supplier-details';
 
 let monthname = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -15,7 +17,9 @@ export class TradeshowdetailsPage {
     constructor(
         private navCtrl: NavController,
         private navParams: NavParams,
-        public modalCtrl: ModalController
+        private loadingCtrl: LoadingController,
+        public modalCtrl: ModalController,
+        public mrepcdata: Mrepcdata
     ) {
 
         this.geteventdetails = this.navParams.data;
@@ -30,6 +34,21 @@ export class TradeshowdetailsPage {
         let thedate = date.split("-");
         let newdate = thedate[2] +" "+ monthname[thedate[1]-1] +" "+ thedate[0];
         return newdate;
+    }
+
+    gotosupplier(supplierid) {
+        let loader = this.loadingCtrl.create({ content: "Please wait..."});
+        loader.present().then(() => {
+            this.mrepcdata.getSupplierDetails(supplierid).then(data => {
+                this.navCtrl.push(SupplierDetailsPage, {
+                    companyData: data[0],
+                    companyPerson: data[0].contactPerson,
+                    companyProduct: data[0].latestProduct,
+                    urllink: this.urllink,
+                    loading: loader
+                });
+            });
+        });
     }
 
     registerform() {

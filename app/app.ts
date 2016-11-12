@@ -15,45 +15,56 @@ import {TutorialPage} from './pages/tutorial/tutorial';
 import {AboutPage} from './pages/about/about';
 
 
-let component = [HomePage, AlltradeshowsPage, MarketplacePage, SeminarPage, TutorialPage, AboutPage];
-let userpage = [UserprofilePage, MytradeshowPage, MyseminarPage];
+let component = [HomePage, AlltradeshowsPage, MarketplacePage, TutorialPage, AboutPage];
+let userpage = [UserprofilePage];
+
+let mymenu = ["Home", "Promotion", "Fast Ticket", "Cinema", "Coming Soon",
+                 "FAQs", "About Us"];
 
 @Component({
     templateUrl: 'build/app.html'
 })
-
 export class MyApp {
     @ViewChild(Nav) nav: Nav;
     urllink: string;
+    activemenu: any = [true, false, false, false, false, false, false];
 
     private rootPage: Type = HomePage;
-     
-    leftsidemenu: any;
+
+    leftsidemenu: string[];
 
     constructor(
         private platform: Platform,
         public mymenu: MenuController,
-        public mrepcdata: Mrepcdata,
-        public userdata: Userdata
-    ) {       
+        public userdata: Userdata,
+        public mrepcdata: Mrepcdata
+    ) {
         platform.ready().then(() => {
             StatusBar.styleDefault();
         });
-        
+
         this.urllink = "http://khaujakanjohor.org/mrepc-api";
         this.loadleftsidemenu();
     }
-     
+
     loadleftsidemenu() {
         return this.mrepcdata.getLeftsidemenu().then(data => {
             this.leftsidemenu = data;
+            console.log(this.leftsidemenu);
         })
     }
 
-    openPage(pageid) {
-        this.nav.setRoot(component[pageid], {
-            urllink: this.urllink
-        });
+    openPage(mypage: any) {
+        let pageid;
+        for (var i in mymenu) {
+            if(mymenu[i] === mypage) {
+                this.activemenu[i] = true;
+                pageid = i;
+            } else {
+                this.activemenu[i] = false;
+            }
+        }
+        this.nav.setRoot(component[pageid]);
     }
 
     userPage(pageid) {
@@ -63,5 +74,4 @@ export class MyApp {
     }
 }
 
-ionicBootstrap(MyApp, [Mrepcdata, Userdata], { });
-
+ionicBootstrap(MyApp, [Mrepcdata, Userdata], { tabsHideOnSubPages:"true" });
