@@ -16,14 +16,10 @@ import {AboutPage} from './pages/about/about';
 
 
 let component = [HomePage, AlltradeshowsPage, MarketplacePage, TutorialPage, AboutPage];
-<<<<<<< HEAD
 let userpage = [UserprofilePage];
 
 let mymenu = ["Home", "Promotion", "Fast Ticket", "Cinema", "Coming Soon",
                  "FAQs", "About Us"];
-=======
-let userpage = [UserprofilePage, MytradeshowPage, MyseminarPage];
->>>>>>> origin/master
 
 @Component({
     templateUrl: 'build/app.html'
