@@ -44,7 +44,13 @@ export class SupplierDetailsPage {
         });
     }
     contactSupplier(items) {
+        console.log(items);
         let modal = this.modalCtrl.create(SupplierItemsPage, items, this.getsupplierdetails.companyPerson);
+        modal.present();
+    }
+    registerforitem(items) {
+        console.log(items);
+        let modal = this.modalCtrl.create(SupplierRegisterPage);
         modal.present();
     }
 
@@ -66,6 +72,24 @@ export class SupplierItemsPage {
         this.contactSupplier = this.navParams.data.companyPerson;
         this.itemdetails = this.navParams.data;
         console.log(this.navParams.data);
+    }
+
+    dismiss() {
+        this.viewCtrl.dismiss();
+    }
+}
+
+@Component({
+    templateUrl: 'build/pages/supplier-details/supplier-register.html',
+})
+export class SupplierRegisterPage {
+
+    constructor(
+        private navCtrl: NavController,
+        private navParams: NavParams,
+        private alertCtrl: AlertController,
+        public viewCtrl: ViewController
+    ) {
     }
 
     dismiss() {

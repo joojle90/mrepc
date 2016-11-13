@@ -1,6 +1,8 @@
 .marketplace {
     ion-tabbar {
-        background: $themebg;
+        background: #00c6ff;
+        background: -webkit-linear-gradient(to left, #00c6ff , #0072ff);
+        background: linear-gradient(to left, #00c6ff , #0072ff);
 
         .tab-button {
             color: #4c4949;

@@ -38,17 +38,19 @@ export class TradeshowdetailsPage {
 
     gotosupplier(supplierid) {
         let loader = this.loadingCtrl.create({ content: "Please wait..."});
-        loader.present().then(() => {
+        loader.present();
+        setTimeout(() => {
             this.mrepcdata.getSupplierDetails(supplierid).then(data => {
+                console.log(data[0])
                 this.navCtrl.push(SupplierDetailsPage, {
                     companyData: data[0],
                     companyPerson: data[0].contactPerson,
                     companyProduct: data[0].latestProduct,
-                    urllink: this.urllink,
-                    loading: loader
+                    urllink: this.urllink
                 });
             });
-        });
+            loader.dismiss();
+        }, 2500);
     }
 
     registerform() {

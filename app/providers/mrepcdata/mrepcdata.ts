@@ -54,7 +54,7 @@ export class Mrepcdata {
     }
 
     getLeftsidemenu() {
-        return this.load('leftsidemenu.json').then(data => {
+        return this.load('leftsidemenu').then(data => {
             return data.leftsidemenu;
         });
     }

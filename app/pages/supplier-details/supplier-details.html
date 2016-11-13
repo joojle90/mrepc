@@ -1,17 +1,14 @@
-<!--
-  Generated template for the SupplierDetailsPage page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
     <ion-navbar>
         <ion-title>
             {{getsupplierdetails.companyData.companyName}}
         </ion-title>
+        <ion-buttons end>
+            <button (click)="registerforitem(getsupplieritems)">
+                <ion-icon ios="ios-document" md="md-document"></ion-icon>
+            </button>
+        </ion-buttons>
     </ion-navbar>
-
 </ion-header>
 
 

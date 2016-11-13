@@ -15,15 +15,10 @@ import {TutorialPage} from './pages/tutorial/tutorial';
 import {AboutPage} from './pages/about/about';
 
 
-let component = [HomePage, AlltradeshowsPage, MarketplacePage, TutorialPage, AboutPage];
-<<<<<<< HEAD
+let component = [HomePage, MarketplacePage, AlltradeshowsPage, MytradeshowPage, TutorialPage, AboutPage];
 let userpage = [UserprofilePage];
 
-let mymenu = ["Home", "Promotion", "Fast Ticket", "Cinema", "Coming Soon",
-                 "FAQs", "About Us"];
-=======
-let userpage = [UserprofilePage, MytradeshowPage, MyseminarPage];
->>>>>>> origin/master
+let mymenu = ["Home", "Marketplace", "Trade Show", "My Trade Show", "Tutorial", "Contact Us"];
 
 @Component({
     templateUrl: 'build/app.html'
@@ -68,7 +63,9 @@ export class MyApp {
                 this.activemenu[i] = false;
             }
         }
-        this.nav.setRoot(component[pageid]);
+        this.nav.setRoot(component[pageid], {
+            urllink: this.urllink
+        });
     }
 
     userPage(pageid) {

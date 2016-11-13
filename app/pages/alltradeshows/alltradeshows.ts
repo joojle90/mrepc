@@ -90,7 +90,7 @@ export class AlltradeshowsPage {
 
     sortdatapopup() {
         let alert = this.alertCtrl.create();
-        alert.setTitle('Which sort do you want to use?');
+        alert.setTitle('Sort options :');
 
         alert.addInput({
             type: 'checkbox',
@@ -103,12 +103,6 @@ export class AlltradeshowsPage {
             type: 'checkbox',
             label: 'Sort by Latest Event',
             value: 'value2'
-        });
-
-        alert.addInput({
-            type: 'checkbox',
-            label: 'Sort by Amount of Participation',
-            value: 'value3'
         });
 
         alert.addButton('Cancel');

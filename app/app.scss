@@ -26,8 +26,8 @@
         background: #08f;
         .item {
 //            min-height: 5.4rem;
-            background-color: #ad344b;
-            color: #ffd83d;
+            background-color: #0088ff;
+            color: #fff;
             font-size: 1.4rem;
         }
         ion-list {
@@ -47,7 +47,7 @@
 
             button {
                 ion-icon[item-left] {
-                    color: #fff;
+                    color: #0025b9;
                 }
 
                 .home {
@@ -56,7 +56,11 @@
             }
 
             .button_active {
-                background-color: #55517b;
+                background-color: #6dc1ff;
+            }
+
+            ion-badge {
+                background-color: #5a5d75;
             }
         }
     }

@@ -32,11 +32,11 @@ export class HomePage {
         public mrepcdata: Mrepcdata
         ) {
 
-//        this.homeOptions = {
-//            initialSlide: 0,
-//            autoplay: 3000,
-//            autoplayDisableOnInteraction: false
-//        };
+        this.homeOptions = {
+            initialSlide: 0,
+            autoplay: 3000,
+            autoplayDisableOnInteraction: false
+        };
         this.urllink = "http://khaujakanjohor.org/mrepc-api";
         this.presentLoadingData();
     }

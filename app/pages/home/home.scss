@@ -8,7 +8,7 @@
     ion-card.menubtn {
         img {
             filter: brightness(50%);
-            height: 200px;
+            height: 343px;
         }
     }
 
@@ -65,7 +65,7 @@
         }
         ion-item {
             border-top: 1px outset;
-            background: #2b2424;
+            background: #f7feff;
 
             span {
                 width: 70%;
@@ -74,10 +74,10 @@
                 text-transform: capitalize;
             }
 
-            h2 {
-                color: $themebg;
+            h3 {
+                color: #0d429c;
+                font-size: 1.7rem;
                 font-weight: 700;
-                font-size: 25px;
                 white-space: normal;
                 -webkit-box-orient: vertical;
                 -webkit-line-clamp: 2;

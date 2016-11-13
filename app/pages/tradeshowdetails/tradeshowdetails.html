@@ -11,6 +11,11 @@
         <button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
+        <ion-buttons end>
+            <button (click)="registerform()">
+                <ion-icon ios="ios-document" md="md-document"></ion-icon>
+            </button>
+        </ion-buttons>
     </ion-navbar>
 
 </ion-header>
@@ -63,81 +68,31 @@
                 </ion-col>
             </ion-row>
             <br>
-<!--
-            <h5>
-                Description
-            </h5>
-            <p>{{geteventdetails.eventdetails.description}}</p>
-            <br>
--->
             <h5>
                 Product
             </h5>
             <p>{{geteventdetails.eventdetails.productdetails}}</p>
             <br>
             <h5>
-                Company Participate
+                Company Participants
             </h5>
-            <ion-grid>
-                <ion-row>
-                    <ion-col width-20>
-                        <a ion-avatar (click)="gotosupplier(00014)">
-                            <img src="{{urllink}}/img/misc/sample_logo.png">
-                        </a>
-                    </ion-col>
-                    <ion-col width-20>
-                        <a ion-avatar (click)="gotosupplier(00002)">
-                            <img src="{{urllink}}/img/misc/sample_logo.png">
-                        </a>
-                    </ion-col>
-                    <ion-col width-20>
-                        <a ion-avatar (click)="gotosupplier(00006)">
-                            <img src="{{urllink}}/img/misc/sample_logo.png">
-                        </a>
-                    </ion-col>
-                    <ion-col width-20>
-                        <a ion-avatar (click)="gotosupplier(00015)">
-                            <img src="{{urllink}}/img/misc/sample_logo.png">
-                        </a>
-                    </ion-col>
-                    <ion-col width-20>
-                        <a ion-avatar (click)="gotosupplier(00018)">
-                            <img src="{{urllink}}/img/misc/sample_logo.png">
-                        </a>
-                    </ion-col>
-                </ion-row>
-                <ion-row>
-                    <ion-col width-20>
-                        <a ion-avatar (click)="gotosupplier(00011)">
-                            <img src="{{urllink}}/img/misc/sample_logo.png">
-                        </a>
-                    </ion-col>
-                    <ion-col width-20>
-                        <a ion-avatar (click)="gotosupplier(00001)">
-                            <img src="{{urllink}}/img/misc/sample_logo.png">
-                        </a>
-                    </ion-col>
-                    <ion-col width-20>
-                        <a ion-avatar (click)="gotosupplier(00010)">
-                            <img src="{{urllink}}/img/misc/sample_logo.png">
-                        </a>
-                    </ion-col>
-                    <ion-col width-20>
-                        <a ion-avatar (click)="gotosupplier(00003)">
-                            <img src="{{urllink}}/img/misc/sample_logo.png">
-                        </a>
-                    </ion-col>
-                    <ion-col width-20>
-                        <a ion-avatar (click)="gotosupplier(00007)">
-                            <img src="{{urllink}}/img/misc/sample_logo.png">
-                        </a>
-                    </ion-col>
-                </ion-row>
-            </ion-grid>
-
-            <div padding>
-                <button block (click)="registerform()">Register with us</button>
-            </div>
+            <ion-list class="listitems">
+                <button ion-item (click)="gotosupplier(00014)">
+                    <p>Ablesun Rubber Industries Sdn Bhd</p>
+                </button>
+                <button ion-item (click)="gotosupplier(00002)">
+                    <p>Ae Rubber Sdn Bhd</p>
+                </button>
+                <button ion-item (click)="gotosupplier(00007)">
+                    <p>Altoraba Industries Sdn Bhd</p>
+                </button>
+                <button ion-item (click)="gotosupplier(00053)">
+                    <p>Everthrough Rubber Products Sdn Bhd</p>
+                </button>
+                <button ion-item (click)="gotosupplier(00016)">
+                    <p>Der Sheng Rubber Product Sdn Bhd</p>
+                </button>
+            </ion-list>
         </ion-card-content>
     </ion-card>
 </ion-content>

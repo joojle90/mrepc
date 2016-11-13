@@ -9057,8 +9057,8 @@ body {
 .sidemenu scroll-content {
   background: #08f; }
   .sidemenu scroll-content .item {
-    background-color: #ad344b;
-    color: #ffd83d;
+    background-color: #0088ff;
+    color: #fff;
     font-size: 1.4rem; }
   .sidemenu scroll-content ion-list .item:first-child {
     border-top: 1px solid #333; }
@@ -9070,11 +9070,13 @@ body {
     color: #f7f7f7;
     background-color: #1c2127; }
   .sidemenu scroll-content ion-list button ion-icon[item-left] {
-    color: #fff; }
+    color: #0025b9; }
   .sidemenu scroll-content ion-list button .home {
     background-color: black; }
   .sidemenu scroll-content ion-list .button_active {
-    background-color: #55517b; }
+    background-color: #6dc1ff; }
+  .sidemenu scroll-content ion-list ion-badge {
+    background-color: #5a5d75; }
 
 .toolbar-background {
   background: #00c6ff;
@@ -9129,6 +9131,9 @@ body.ios div > p {
     margin-right: 10px;
     margin-left: 5px; }
 
+.about ion-icon {
+  padding-right: 10px; }
+
 .home ion-slides {
   height: initial; }
   .home ion-slides button {
@@ -9137,7 +9142,7 @@ body.ios div > p {
 .home ion-card.menubtn img {
   -webkit-filter: brightness(50%);
   filter: brightness(50%);
-  height: 200px; }
+  height: 343px; }
 
 .home .card-title {
   position: absolute;
@@ -9187,16 +9192,16 @@ body.ios div > p {
 
 .home .eventcoming ion-item {
   border-top: 1px outset;
-  background: #2b2424; }
+  background: #f7feff; }
   .home .eventcoming ion-item span {
     width: 70%;
     font-size: 1.2rem;
     font-weight: normal;
     text-transform: capitalize; }
-  .home .eventcoming ion-item h2 {
-    color: #00b6f1;
+  .home .eventcoming ion-item h3 {
+    color: #0d429c;
+    font-size: 1.7rem;
     font-weight: 700;
-    font-size: 25px;
     white-space: normal;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
@@ -9265,7 +9270,10 @@ body.ios div > p {
     margin-left: 5px; }
 
 .marketplace ion-tabbar {
-  background: #00b6f1; }
+  background: #00c6ff;
+  background: -webkit-linear-gradient(to left, #00c6ff, #0072ff);
+  background: -webkit-linear-gradient(right, #00c6ff, #0072ff);
+  background: linear-gradient(to left, #00c6ff, #0072ff); }
   .marketplace ion-tabbar .tab-button {
     color: #4c4949; }
   .marketplace ion-tabbar .tab-button[aria-selected=true] {
@@ -9363,8 +9371,14 @@ body.ios div > p {
 .useraccount .item-input ion-label {
   color: #000; }
 
+.useraccount .button-full {
+  background-color: #646e80; }
+
 .userprofile ion-item.item {
   font-size: 1.4rem; }
+
+.userprofile .button {
+  background-color: #646e80; }
 
 .mytradeshow .card-title {
   position: absolute;
@@ -9451,7 +9465,7 @@ body.ios div > p {
     margin-left: 5px; }
 
 .buyer scroll-content {
-  margin: 9vh 0; }
+  margin: 12vh 0; }
 
 .buyer ion-list {
   margin: 0; }

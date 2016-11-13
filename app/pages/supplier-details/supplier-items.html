@@ -1,7 +1,7 @@
 <ion-header>
     <ion-toolbar>
         <ion-title>
-            Contact Supplier
+            Item details
         </ion-title>
         <ion-buttons start>
             <button (click)="dismiss()">
@@ -22,39 +22,5 @@
                 <span favorite> Specification </span>
                 <p>{{itemdetails.productSpec}}</p>
         </ion-item>
-
-        <ion-list>
-            <ion-list-header danger>
-                <ion-label danger>Message direct to Supplier :</ion-label>
-            </ion-list-header>
-            <ion-item>
-                <ion-label fixed>From</ion-label>
-                <ion-input type="text" value=""></ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label fixed>Message</ion-label>
-                <ion-textarea></ion-textarea>
-            </ion-item>
-            <ion-item>
-                <ion-label fixed>To</ion-label>
-                <ion-label>{{itemdetails.opts.email}}</ion-label>
-            </ion-item>
-            <ion-item>
-                <ion-label fixed>Name</ion-label>
-                <ion-label>{{itemdetails.opts.name}}</ion-label>
-            </ion-item>
-            <ion-item>
-                <ion-label fixed>Designation</ion-label>
-                <ion-label>{{itemdetails.opts.designation}}</ion-label>
-            </ion-item>
-            <ion-item>
-                <ion-label fixed>Phone no</ion-label>
-                <ion-label>{{itemdetails.opts.telp}}</ion-label>
-            </ion-item>
-
-            <div padding>
-                <button block (click)="sendemail()">Send Email</button>
-            </div>
-        </ion-list>
     </ion-card>
 </ion-content>

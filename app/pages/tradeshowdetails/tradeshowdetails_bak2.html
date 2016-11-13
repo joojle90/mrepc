@@ -1,0 +1,143 @@
+<!--
+  Generated template for the TradeshowdetailsPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>{{geteventdetails.eventdetails.name}}</ion-title>
+        <button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="tradeshowdetails">
+    <ion-card>
+        <div>
+          <img src="{{urllink}}/img/event/{{geteventdetails.eventpic}}" onError="this.src='img/misc/no-image_event.jpg'">
+        </div>
+        <ion-card-content>
+            <h1 class="card-title">
+                {{geteventdetails.eventdetails.name}}
+            </h1>
+
+            <ion-row>
+                <ion-col width-50>
+                    <ion-icon name="watch"></ion-icon>
+                    Event
+                </ion-col>
+                <ion-col width-50>
+                    <p class="eventdate">{{eventstart}} <strong style="color: #333">to</strong> {{eventend}}</p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col width-50>
+                    <ion-icon name="pin"></ion-icon>
+                    Location
+                </ion-col>
+                <ion-col width-50>
+                    <p>{{geteventdetails.location}}</p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col width-50>
+                    <ion-icon name="mail"></ion-icon>
+                    Email
+                </ion-col>
+                <ion-col width-50>
+                    <p>mpd@mrepc.com</p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col width-50>
+                    <ion-icon name="globe"></ion-icon>
+                    Website
+                </ion-col>
+                <ion-col width-50>
+                    <a href="{{geteventdetails.website}}" clear primary>More details</a>
+                </ion-col>
+            </ion-row>
+            <br>
+<!--
+            <h5>
+                Description
+            </h5>
+            <p>{{geteventdetails.eventdetails.description}}</p>
+            <br>
+-->
+            <h5>
+                Product
+            </h5>
+            <p>{{geteventdetails.eventdetails.productdetails}}</p>
+            <br>
+            <h5>
+                Company Participate
+            </h5>
+            <ion-grid>
+                <ion-row>
+                    <ion-col width-20>
+                        <a ion-avatar (click)="gotosupplier(00014)">
+                            <img src="{{urllink}}/img/misc/sample_logo.png">
+                        </a>
+                    </ion-col>
+                    <ion-col width-20>
+                        <a ion-avatar (click)="gotosupplier(00002)">
+                            <img src="{{urllink}}/img/misc/sample_logo.png">
+                        </a>
+                    </ion-col>
+                    <ion-col width-20>
+                        <a ion-avatar (click)="gotosupplier(00006)">
+                            <img src="{{urllink}}/img/misc/sample_logo.png">
+                        </a>
+                    </ion-col>
+                    <ion-col width-20>
+                        <a ion-avatar (click)="gotosupplier(00015)">
+                            <img src="{{urllink}}/img/misc/sample_logo.png">
+                        </a>
+                    </ion-col>
+                    <ion-col width-20>
+                        <a ion-avatar (click)="gotosupplier(00018)">
+                            <img src="{{urllink}}/img/misc/sample_logo.png">
+                        </a>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col width-20>
+                        <a ion-avatar (click)="gotosupplier(00011)">
+                            <img src="{{urllink}}/img/misc/sample_logo.png">
+                        </a>
+                    </ion-col>
+                    <ion-col width-20>
+                        <a ion-avatar (click)="gotosupplier(00001)">
+                            <img src="{{urllink}}/img/misc/sample_logo.png">
+                        </a>
+                    </ion-col>
+                    <ion-col width-20>
+                        <a ion-avatar (click)="gotosupplier(00010)">
+                            <img src="{{urllink}}/img/misc/sample_logo.png">
+                        </a>
+                    </ion-col>
+                    <ion-col width-20>
+                        <a ion-avatar (click)="gotosupplier(00003)">
+                            <img src="{{urllink}}/img/misc/sample_logo.png">
+                        </a>
+                    </ion-col>
+                    <ion-col width-20>
+                        <a ion-avatar (click)="gotosupplier(00007)">
+                            <img src="{{urllink}}/img/misc/sample_logo.png">
+                        </a>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+            <div padding>
+                <button block (click)="registerform()">Register with us</button>
+            </div>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
