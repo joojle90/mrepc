@@ -10415,29 +10415,34 @@ body {
   max-width: 90px;
   border-radius: 50%; }
 
+.sidemenu ion-list-header ion-label {
+  font-size: x-large; }
+
 .sidemenu scroll-content {
-  background: #08f; }
+  background: #fff; }
   .sidemenu scroll-content .item {
-    background-color: #0088ff;
-    color: #fff;
-    font-size: 1.4rem; }
-  .sidemenu scroll-content ion-list .item:first-child {
-    border-top: 1px solid #333; }
-  .sidemenu scroll-content ion-list .item-inner {
-    border-bottom: none; }
-  .sidemenu scroll-content ion-list .item:last-child {
-    border-bottom: none; }
-  .sidemenu scroll-content ion-list ion-list-header {
-    color: #f7f7f7;
-    background-color: #1c2127; }
-  .sidemenu scroll-content ion-list button ion-icon[item-left] {
-    color: #0025b9; }
-  .sidemenu scroll-content ion-list button .home {
-    background-color: black; }
-  .sidemenu scroll-content ion-list .button_active {
-    background-color: #6dc1ff; }
-  .sidemenu scroll-content ion-list ion-badge {
-    background-color: #5a5d75; }
+    background-color: #fff;
+    color: #003fff;
+    font-size: 2.0rem; }
+  .sidemenu scroll-content ion-list {
+    margin: 0; }
+    .sidemenu scroll-content ion-list .item:first-child {
+      border-top: none; }
+    .sidemenu scroll-content ion-list .item-inner {
+      border-bottom: none; }
+    .sidemenu scroll-content ion-list .item:last-child {
+      border-bottom: none; }
+    .sidemenu scroll-content ion-list ion-list-header {
+      color: #f7f7f7;
+      background-color: #1c2127; }
+    .sidemenu scroll-content ion-list button ion-icon[item-left] {
+      color: #4c4f58; }
+    .sidemenu scroll-content ion-list button .home {
+      background-color: black; }
+    .sidemenu scroll-content ion-list .button_active {
+      background-color: #6dc1ff; }
+    .sidemenu scroll-content ion-list ion-badge {
+      background-color: #3549ef; }
 
 .toolbar-background {
   background: #00c6ff;
@@ -10460,7 +10465,7 @@ body {
   min-height: 7.0rem; }
 
 scroll-content {
-  background-color: #08f; }
+  background-color: #fff; }
 
 body.ios div > p {
   margin-bottom: 15px !important; }
@@ -10501,29 +10506,27 @@ body.ios div > p {
     border-radius: 5px; }
 
 .home ion-card.menubtn img {
-  -webkit-filter: brightness(50%);
-  filter: brightness(50%);
+  -webkit-filter: brightness(75%);
+  filter: brightness(75%);
   height: 343px; }
 
 .home .card-title {
   position: absolute;
-  top: 10%;
-  font-size: 2.0em;
+  top: 22%;
+  font-size: 2.7em;
   width: 100%;
   font-weight: bold;
   color: #fff;
-  text-align: right;
-  padding-right: 20px; }
+  text-align: center; }
 
 .home .card-subtitle {
-  font-size: 1.0em;
+  font-size: 1.5em;
   position: absolute;
   top: 45%;
-  color: #ebff00;
+  color: #52ff00;
   font-weight: bold;
-  text-align: left;
-  padding-left: 20px;
-  width: 70%;
+  text-align: center;
+  width: 98%;
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 10%;
   -ms-flex: 0 0 10%;
@@ -10698,6 +10701,10 @@ body.ios div > p {
   .tradeshowdetails ion-row p.eventdate {
     color: #088e00;
     font-weight: 700; }
+
+.tradeshowdetails .button {
+  height: 5.6rem;
+  text-transform: capitalize; }
 
 .seminardetails ion-card h1 {
   padding: 0 0 20px;
@@ -10891,7 +10898,7 @@ body.ios div > p {
   line-height: 25px; }
 
 .supplier-details ion-row {
-  font-size: 14px; }
+  font-size: 16px; }
   .supplier-details ion-row ion-card {
     margin: 2px 10px; }
     .supplier-details ion-row ion-card ion-item.item {
@@ -10938,7 +10945,8 @@ body.ios div > p {
 .supplier-details ion-list.listitems button {
   background-color: #c9e6ff; }
   .supplier-details ion-list.listitems button p {
-    color: black; }
+    color: black;
+    font-size: 1.7rem; }
 
 .supplier-details ion-list.listitems .item .item-inner {
   border-color: #64add4; }

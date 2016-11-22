@@ -3,11 +3,13 @@
         <ion-title>
             {{getsupplierdetails.companyData.companyName}}
         </ion-title>
+<!--
         <ion-buttons end>
             <button (click)="registerforitem(getsupplieritems)">
                 <ion-icon ios="ios-document" md="md-document"></ion-icon>
             </button>
         </ion-buttons>
+-->
     </ion-navbar>
 </ion-header>
 
@@ -59,6 +61,10 @@
                     </ion-col>
                 </ion-row>
             </ion-item>
+            <br>
+            <div padding>
+                <button block (click)="registerforitem(getsupplierdetails)">Contact Company</button>
+            </div>
         </ion-list>
 
 

@@ -1,6 +1,6 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>Inquiry Form</ion-title>
+        <ion-title>Enquiry Form</ion-title>
         <ion-buttons start>
             <button (click)="dismiss()">
                 <span primary showWhen="ios">Cancel</span>
@@ -18,20 +18,28 @@
                 <ion-input type="text" value=""></ion-input>
             </ion-item>
             <ion-item>
+                <ion-label fixed>Company</ion-label>
+                <ion-input type="text" value=""></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label fixed>Designation</ion-label>
+                <ion-input type="text" value=""></ion-input>
+            </ion-item>
+            <ion-item>
                 <ion-label fixed>Email</ion-label>
                 <ion-input type="text" value=""></ion-input>
             </ion-item>
             <ion-item>
-                <ion-label fixed>Phone no</ion-label>
+                <ion-label fixed>Contact no</ion-label>
                 <ion-input type="text" value=""></ion-input>
             </ion-item>
             <ion-item>
-                <ion-label fixed>Question?</ion-label>
+                <ion-label fixed>Message</ion-label>
                 <ion-textarea></ion-textarea>
             </ion-item>
 
             <div padding>
-                <button block (click)="submitinquiry()">Apply</button>
+                <button block (click)="submitinquiry()">Submit</button>
             </div>
         </ion-list>
     </ion-card>

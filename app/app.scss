@@ -22,17 +22,25 @@
             border-radius: 50%;
         }
     }
+    ion-list-header {
+        ion-label {
+            font-size: x-large;
+        }
+    }
     scroll-content {
-        background: #08f;
+        background: #fff;
         .item {
 //            min-height: 5.4rem;
-            background-color: #0088ff;
-            color: #fff;
-            font-size: 1.4rem;
+            background-color: #fff;
+            color: #003fff;
+            font-size: 2.0rem;
         }
         ion-list {
+            margin: 0;
+
             .item:first-child {
-                border-top: 1px solid #333;
+//                border-top: 1px solid #333;
+                border-top: none;
             }
             .item-inner {
                 border-bottom: none;
@@ -47,7 +55,7 @@
 
             button {
                 ion-icon[item-left] {
-                    color: #0025b9;
+                    color: #4c4f58;
                 }
 
                 .home {
@@ -60,7 +68,7 @@
             }
 
             ion-badge {
-                background-color: #5a5d75;
+                background-color: #3549ef;
             }
         }
     }
@@ -84,7 +92,7 @@
     min-height: 7.0rem;
 }
 scroll-content {
-    background-color: #08f;
+    background-color: #fff;
 }
 
 body.ios {
