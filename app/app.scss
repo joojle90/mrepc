@@ -21,18 +21,19 @@
             max-width: 90px;
             border-radius: 50%;
         }
-    }
-    ion-list-header {
-        ion-label {
-            font-size: x-large;
+        h6 {
+            color: #fff;
         }
     }
+    ion-label {
+        font-size: large;
+    }
     scroll-content {
-        background: #fff;
+        background: #343434;
         .item {
 //            min-height: 5.4rem;
-            background-color: #fff;
-            color: #003fff;
+            background-color: #343434;
+            color: #fff;
             font-size: 2.0rem;
         }
         ion-list {
@@ -55,7 +56,7 @@
 
             button {
                 ion-icon[item-left] {
-                    color: #4c4f58;
+                    color: #99CD4E;
                 }
 
                 .home {
@@ -64,20 +65,20 @@
             }
 
             .button_active {
-                background-color: #6dc1ff;
+                background-color: #7f8674;
             }
 
             ion-badge {
-                background-color: #3549ef;
+                background-color: #f52c2c;
             }
         }
     }
 }
 .toolbar-background {
-//    background: $themebg;
-    background: #00c6ff; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #00c6ff , #0072ff); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #00c6ff , #0072ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #99CD4E;
+//    background: #00c6ff; /* fallback for old browsers */
+//    background: -webkit-linear-gradient(to left, #00c6ff , #0072ff); /* Chrome 10-25, Safari 5.1-6 */
+//    background: linear-gradient(to left, #00c6ff , #0072ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 .toolbar-title {
