@@ -9525,6 +9525,9 @@ body.ios div > p {
   overflow: hidden;
   text-overflow: ellipsis; }
 
+.supplier ion-badge {
+  background-color: #99CD4E; }
+
 .supplier-details ion-card-content {
   background-color: #343434; }
 
