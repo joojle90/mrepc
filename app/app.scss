@@ -1,6 +1,6 @@
 .sidemenu {
     .toolbar {
-        height: 270px;
+        height: 340px;
         padding: 0;
 
         div {
@@ -23,6 +23,7 @@
         }
         h6 {
             color: #fff;
+            font-size: 2.0rem;
         }
     }
     ion-label {
@@ -35,6 +36,10 @@
             background-color: #343434;
             color: #fff;
             font-size: 2.0rem;
+
+            ion-icon {
+                font-size: 4.0rem;
+            }
         }
         ion-list {
             margin: 0;
@@ -69,7 +74,7 @@
             }
 
             ion-badge {
-                background-color: #f52c2c;
+                background-color: #99CD4E;
             }
         }
     }

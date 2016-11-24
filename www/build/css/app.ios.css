@@ -9040,7 +9040,7 @@ body {
   background-color: #fff; }
 
 .sidemenu .toolbar {
-  height: 270px;
+  height: 340px;
   padding: 0; }
   .sidemenu .toolbar div {
     padding-top: 0; }
@@ -9055,7 +9055,8 @@ body {
   border-radius: 50%; }
 
 .sidemenu ion-toolbar h6 {
-  color: #fff; }
+  color: #fff;
+  font-size: 2.0rem; }
 
 .sidemenu ion-label {
   font-size: large; }
@@ -9066,6 +9067,8 @@ body {
     background-color: #343434;
     color: #fff;
     font-size: 2.0rem; }
+    .sidemenu scroll-content .item ion-icon {
+      font-size: 4.0rem; }
   .sidemenu scroll-content ion-list {
     margin: 0; }
     .sidemenu scroll-content ion-list .item:first-child {
@@ -9084,7 +9087,7 @@ body {
     .sidemenu scroll-content ion-list .button_active {
       background-color: #7f8674; }
     .sidemenu scroll-content ion-list ion-badge {
-      background-color: #f52c2c; }
+      background-color: #99CD4E; }
 
 .toolbar-background {
   background: #99CD4E; }
@@ -9144,7 +9147,7 @@ body.ios div > p {
 .home ion-card.menubtn img {
   -webkit-filter: brightness(75%);
   filter: brightness(75%);
-  height: 343px; }
+  height: 47vh; }
 
 .home .card-title {
   position: absolute;
@@ -9212,6 +9215,9 @@ body.ios div > p {
   .home .eventcoming ion-item .button-inner {
     margin-right: 10px;
     margin-left: 5px; }
+
+.home .swiper-slide img {
+  height: 25vh; }
 
 .alltradeshows .card-title {
   position: absolute;
@@ -9520,12 +9526,17 @@ body.ios div > p {
   text-overflow: ellipsis; }
 
 .supplier-details ion-card-content {
-  background-color: #41484e; }
+  background-color: #343434; }
 
 .supplier-details ion-card h2 {
   font-size: 2.2rem;
   text-transform: capitalize;
-  color: #51ffb9; }
+  color: #99CD4E;
+  text-align: center; }
+
+.supplier-details ion-card ion-list button {
+  background-color: #99cd4e;
+  font-size: 1.8rem; }
 
 .supplier-details ion-label {
   line-height: 25px; }
@@ -9543,7 +9554,8 @@ body.ios div > p {
   .supplier-details ion-row ion-col {
     white-space: normal; }
     .supplier-details ion-row ion-col a {
-      text-decoration: none; }
+      text-decoration: none;
+      color: #5b9a00 !important; }
   .supplier-details ion-row button {
     height: inherit; }
     .supplier-details ion-row button .input-wrapper {
@@ -9576,13 +9588,13 @@ body.ios div > p {
   font-size: small; }
 
 .supplier-details ion-list.listitems button {
-  background-color: #c9e6ff; }
+  background-color: #fff; }
   .supplier-details ion-list.listitems button p {
-    color: black;
-    font-size: 1.7rem; }
+    color: #7b7979;
+    font-size: 1.5rem; }
 
 .supplier-details ion-list.listitems .item .item-inner {
-  border-color: #64add4; }
+  border-color: #bdbdbd; }
 
 .tutorial .toolbar-background {
   background: #fff;

@@ -1,11 +1,20 @@
 .supplier-details {
     ion-card-content {
-        background-color: #41484e;
+        background-color: #343434;
     }
-    ion-card h2 {
-        font-size: 2.2rem;
-        text-transform: capitalize;
-        color: #51ffb9;
+    ion-card {
+        h2 {
+            font-size: 2.2rem;
+            text-transform: capitalize;
+            color: #99CD4E;
+            text-align: center;
+        }
+        ion-list {
+            button {
+                background-color: #99cd4e;
+                font-size: 1.8rem;
+            }
+        }
     }
     ion-label {
         line-height: 25px;
@@ -31,6 +40,7 @@
             white-space: normal;
             a {
                 text-decoration: none;
+                color: #5b9a00 !important;
             }
         }
         button {
@@ -76,16 +86,16 @@
 
     ion-list.listitems {
         button {
-            background-color: #c9e6ff;
+            background-color: #fff;
 
             p {
-                color: black;
-                font-size: 1.7rem;
+                color: #7b7979;
+                font-size: 1.5rem;
             }
         }
 
         .item .item-inner {
-            border-color: #64add4;
+            border-color: #bdbdbd;
         }
     }
 }
