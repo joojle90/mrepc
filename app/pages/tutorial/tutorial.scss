@@ -1,6 +1,6 @@
 .tutorial {
     .toolbar-background {
-        background: #fff;
+        background-color: $colortext;
         border-color: transparent;
     }
     .slide-zoom {
@@ -10,8 +10,6 @@
         margin-top: 2.8rem;
     }
     .slide-image {
-//        max-height: 50%;
-//        max-width: 60%;
         margin: 18px 0;
     }
     b {
@@ -21,9 +19,5 @@
         padding: 0 40px;
         font-size: 14px;
         line-height: 1.5;
-        color: #60646B;
-        b {
-            color: #000000;
-        }
     }
 }

@@ -1,25 +1,10 @@
-<!--
-  Generated template for the TradeshowdetailsPage page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
     <ion-navbar>
         <ion-title>{{geteventdetails.eventdetails.name}}</ion-title>
         <button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
-<!--
-        <ion-buttons end>
-            <button (click)="registerform()">
-                <ion-icon ios="ios-document" md="md-document"></ion-icon>
-            </button>
-        </ion-buttons>
--->
     </ion-navbar>
-
 </ion-header>
 
 
@@ -28,14 +13,13 @@
         <div>
           <img src="{{urllink}}/img/event/{{geteventdetails.eventpic}}" onError="this.src='img/misc/no-image_event.jpg'">
         </div>
+        <h1 myicon1>
+            {{geteventdetails.eventdetails.name}}
+        </h1>
         <ion-card-content>
-            <h1 class="card-title">
-                {{geteventdetails.eventdetails.name}}
-            </h1>
-
             <ion-row>
                 <ion-col width-50>
-                    <ion-icon name="calendar"></ion-icon>
+                    <ion-icon myicon1 name="calendar"></ion-icon>
                     Event
                 </ion-col>
                 <ion-col width-50>
@@ -44,31 +28,20 @@
             </ion-row>
             <ion-row>
                 <ion-col width-50>
-                    <ion-icon name="pin"></ion-icon>
+                    <ion-icon myicon1 name="pin"></ion-icon>
                     Location
                 </ion-col>
                 <ion-col width-50>
                     <p>{{geteventdetails.location}}</p>
                 </ion-col>
             </ion-row>
-<!--
             <ion-row>
                 <ion-col width-50>
-                    <ion-icon name="mail"></ion-icon>
-                    Email
-                </ion-col>
-                <ion-col width-50>
-                    <p>mpd@mrepc.com</p>
-                </ion-col>
-            </ion-row>
--->
-            <ion-row>
-                <ion-col width-50>
-                    <ion-icon name="globe"></ion-icon>
+                    <ion-icon myicon1 name="globe"></ion-icon>
                     Website
                 </ion-col>
                 <ion-col width-50>
-                    <a href="{{geteventdetails.website}}" clear primary>More details</a>
+                    <a myicon1 href="{{geteventdetails.website}}" clear primary>More details</a>
                 </ion-col>
             </ion-row>
             <br>
@@ -78,7 +51,7 @@
             <p>{{geteventdetails.eventdetails.productdetails}}</p>
             <br>
             <div padding>
-                <button block (click)="registerform()">Book Appointment with Malaysian Companies</button>
+                <button myicon1 block (click)="registerform()">Book Appointment with Malaysian Companies</button>
             </div>
             <br>
             <h5>

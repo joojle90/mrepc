@@ -3,13 +3,6 @@
         <ion-title>
             {{getsupplierdetails.companyData.companyName}}
         </ion-title>
-<!--
-        <ion-buttons end>
-            <button (click)="registerforitem(getsupplieritems)">
-                <ion-icon ios="ios-document" md="md-document"></ion-icon>
-            </button>
-        </ion-buttons>
--->
     </ion-navbar>
 </ion-header>
 
@@ -26,24 +19,6 @@
         </ion-card-content>
         <ion-list>
             <ion-item>
-<!--
-                <ion-row>
-                    <ion-col width-25>
-                        Type
-                    </ion-col>
-                    <ion-col width-75>
-                        {{getsupplierdetails.companyData.bussinessType}}
-                    </ion-col>
-                </ion-row>
-                <ion-row>
-                    <ion-col width-25>
-                        Product
-                    </ion-col>
-                    <ion-col width-75>
-                        {{getsupplierdetails.companyData.productType}}
-                    </ion-col>
-                </ion-row>
--->
                 <ion-row>
                     <ion-col width-25>
                         Address
@@ -57,25 +32,20 @@
                         Website
                     </ion-col>
                     <ion-col width-75>
-                        <a href="{{getsupplierdetails.companyData.companyWeb}}" clear primary>More details</a>
+                        <a myicon1 href="{{getsupplierdetails.companyData.companyWeb}}" clear primary>More details</a>
                     </ion-col>
                 </ion-row>
             </ion-item>
             <br>
             <div padding>
-                <button block (click)="registerforitem(getsupplierdetails)">Contact Company</button>
+                <button myicon1 block (click)="registerforitem(getsupplierdetails)">Contact Company</button>
             </div>
         </ion-list>
 
 
         <ion-list class="listitems">
             <button ion-item *ngFor="let cp of getsupplieritems; let i = index" (click)="contactSupplier(getsupplieritems[i])">
-<!--
-                <ion-avatar item-left>
-                    <img src="{{urllink}}/img/misc/defaultproduct.png" onError="this.src='img/misc/no-image_thumbnail.png'">
-                </ion-avatar>
--->
-                <p secondary>{{getsupplieritems[i].productName}}</p>
+                <p>{{getsupplieritems[i].productName}}</p>
             </button>
         </ion-list>
         <ion-item [hidden]="getsupplieritems.length > 0">
