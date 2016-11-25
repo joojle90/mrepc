@@ -47,6 +47,11 @@
         }
     }
 
+    ion-card h3 {
+        font-size: 16px;
+        font-weight: 700;
+    }
+
     ion-list.listitems {
         button {
             background-color: $colortext;

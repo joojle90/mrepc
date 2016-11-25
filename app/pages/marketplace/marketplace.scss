@@ -3,7 +3,7 @@
         background-color: $colorbg;
 
         .tab-button {
-            color: $colorlayout;
+            color: $activetab;
         }
         .tab-button[aria-selected=true] {
             color: $colortext;
