@@ -1,15 +1,6 @@
 .sidemenu {
     .toolbar {
-        height: 340px;
-        padding: 0;
-
-        div {
-            padding-top: 0;
-
-            p {
-                margin-bottom: 25px;
-            }
-        }
+        height: 55vh;
 
         button {
             margin: 0;
@@ -22,20 +13,18 @@
             border-radius: 50%;
         }
         h6 {
-            color: #fff;
-            font-size: 2.0rem;
+            font-size: 1.8rem;
         }
     }
-    ion-label {
-        font-size: large;
-    }
     scroll-content {
-        background: #343434;
-        .item {
-//            min-height: 5.4rem;
-            background-color: #343434;
-            color: #fff;
+        background-color: $colorlayout;
+
+        ion-label {
             font-size: 2.0rem;
+        }
+        .item {
+            background-color: $colorlayout;
+            color: $colortext;
 
             ion-icon {
                 font-size: 4.0rem;
@@ -45,64 +34,35 @@
             margin: 0;
 
             .item:first-child {
-//                border-top: 1px solid #333;
                 border-top: none;
             }
-            .item-inner {
+            .item-inner, .item:last-child {
                 border-bottom: none;
             }
-            .item:last-child {
-                border-bottom: none;
-            }
-            ion-list-header {
-                color: #f7f7f7;
-                background-color: #1c2127;
-            }
-
-            button {
-                ion-icon[item-left] {
-                    color: #99CD4E;
-                }
-
-                .home {
-                    background-color: black;
-                }
-            }
-
             .button_active {
-                background-color: #7f8674;
+                background-color: $activebtn;
             }
 
             ion-badge {
-                background-color: #99CD4E;
+                background-color: $colorbg;
             }
         }
     }
 }
 .toolbar-background {
-    background: #99CD4E;
-//    background: #00c6ff; /* fallback for old browsers */
-//    background: -webkit-linear-gradient(to left, #00c6ff , #0072ff); /* Chrome 10-25, Safari 5.1-6 */
-//    background: linear-gradient(to left, #00c6ff , #0072ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background: $colorbg;
 }
 .toolbar-title {
-    color: $iconcolor;
+    color: $colortext;
     width: 90%;
     text-transform: capitalize;
 }
 .bar-button-default {
-    color: $iconcolor;
+    color: $colortext;
 }
 .toolbar {
     min-height: 7.0rem;
 }
 scroll-content {
-    background-color: #fff;
-}
-
-body.ios {
-    div > p {
-        margin-bottom: 15px !important;
-    }
+    background-color: $colortext;
 }

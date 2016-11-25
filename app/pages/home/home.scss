@@ -1,4 +1,11 @@
 .home {
+    .toolbar {
+        .toolbar-title {
+            color: $colortext;
+            width: 90%;
+            text-transform: capitalize;
+        }
+    }
     ion-slides {
         height: initial;
         button {

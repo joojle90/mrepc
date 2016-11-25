@@ -13,7 +13,7 @@
         <ion-list *ngFor="let lsm of leftsidemenu; let i = index;">
 <!--            <ion-list-header>{{lsm.name}}</ion-list-header>-->
             <button menuClose ion-item *ngFor="let sbm of lsm.submenu; let j = index;" (click)="openPage(sbm.title)" [ngClass]="{'button_active':activemenu[sbm.idmenu-1]}">
-                <ion-icon myicon item-left [name]="sbm.icon"></ion-icon>
+                <ion-icon myicon1 item-left [name]="sbm.icon"></ion-icon>
                 {{sbm.title}}
                 <ion-note item-right [hidden]="note === null">{{sbm.note}}</ion-note>
                 <ion-badge item-right [hidden]="notif === null">{{sbm.notif}}</ion-badge>
