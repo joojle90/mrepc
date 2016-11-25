@@ -1,33 +1,27 @@
 .tradeshowdetails {
     ion-card {
         h1 {
-            color: $colortext;
-            padding: 0 0 20px;
+            background-color: $colorlayout;
+            padding: 15px;
             text-transform: capitalize;
         }
-        ion-item.item{
-            padding-left: 8px;
-        }
-    }
-    ion-card-content {
-        h5 {
-            line-height: 30px;
-            font-weight: bold;
-        }
-        p {
-            white-space: pre-line;
-        }
-        ion-grid {
-            text-align: center;
+        ion-card-content {
+            h5 {
+                line-height: 30px;
+                font-weight: bold;
+            }
+            .button {
+                text-transform: capitalize;
+            }
         }
     }
     ion-row {
         padding: 5px;
         ion-col {
             padding: 0;
+
             ion-icon {
-                color: #00b6f1;
-                margin-right: 10px;
+                padding-right: 10px;
             }
             a {
                 text-decoration: inherit;
@@ -35,12 +29,7 @@
         }
 
         p.eventdate {
-            color: #088e00;
             font-weight: 700;
         }
-    }
-    .button {
-        height: 5.6rem;
-        text-transform: capitalize;
     }
 }

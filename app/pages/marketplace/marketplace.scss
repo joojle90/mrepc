@@ -1,12 +1,12 @@
 .marketplace {
     ion-tabbar {
-        background: #99CD4E;
+        background-color: $colorbg;
 
         .tab-button {
-            color: #4c4949;
+            color: $colorlayout;
         }
-//        .tab-button[aria-selected=true] {
-//            color: $color;
-//        }
+        .tab-button[aria-selected=true] {
+            color: $colortext;
+        }
     }
 }

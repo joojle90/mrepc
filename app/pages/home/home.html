@@ -26,13 +26,6 @@
                         <h3>For high quality Made in Malaysia</h3>
                         <h3>rubber products, meet us at ThisEvent</h3>
                         <h3>No 1234, Hall 3</h3>
-<!--
-                        <p><strong secondary>Start from : </strong>
-                            <span danger>{{comingsoonevent[i].eventdetail.startdate}}</span>
-                            <strong> until </strong>
-                            <span danger>{{comingsoonevent[i].eventdetail.enddate}}</span>
-                        </p>
--->
                     </ion-item>
                 </ion-card>
             </button>
@@ -41,8 +34,8 @@
     <button clear *ngFor="let mm of mastermenu; let i = index" (click)="openmenuPage(i)">
         <ion-card class="menubtn">
             <img src="{{urllink}}/img/mastermenu/{{mm.image}}" onError="this.src='img/misc/no-image_event.jpg'"/>
-            <p class="card-title">{{mm.featuredmenu}}</p>
-            <p class="card-subtitle">{{mm.tagline}}</p>
+            <p light class="card-title">{{mm.featuredmenu}}</p>
+            <p subcolor class="card-subtitle">{{mm.tagline}}</p>
         </ion-card>
     </button>
 </ion-content>

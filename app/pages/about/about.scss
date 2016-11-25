@@ -3,23 +3,15 @@
         div {
              position: relative;
         }
-        p {
-            font-size: 0.7em;
+        button[fab].fab-map {
+            top: calc(100% - 35px);
+            z-index: 50;
         }
-    }
-    button[fab].fab-map {
-        top: calc(100% - 35px);
-        z-index: 50;
+        ion-icon {
+            padding-right: 10px;
+        }
     }
     ion-item {
-        border-top: 1px outset;
-
-        span {
-            font-size: 1.2rem;
-            font-weight: normal;
-            text-transform: capitalize;
-        }
-
         h2 {
             white-space: normal;
             width: 80%;
@@ -28,13 +20,5 @@
             display: -webkit-box;
             text-transform: capitalize;
         }
-
-        .button-inner {
-            margin-right: 10px;
-            margin-left: 5px;
-        }
-    }
-    ion-icon {
-        padding-right: 10px;
     }
 }
