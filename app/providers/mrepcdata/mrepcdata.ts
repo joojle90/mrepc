@@ -29,7 +29,7 @@ export class Mrepcdata {
         this.http = http;
 
         this.startdate = '2016-01-01';
-        this.enddate = '2016-09-20';
+        this.enddate = '2017-01-01';
     }
 
     load(apidata) {

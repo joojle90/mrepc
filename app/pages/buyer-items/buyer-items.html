@@ -1,10 +1,14 @@
 <ion-header>
     <ion-navbar>
-        <ion-title>{{getitemlist.buyerCategory}}</ion-title>
+        <ion-title>{{itemlisttitle}}</ion-title>
     </ion-navbar>
 </ion-header>
 
 
 <ion-content class="buyer-items">
-
+    <ion-list>
+            <button ion-item *ngFor="let gil of getitemlist; let i = index">
+                <h2>{{gil.item}}</h2>
+            </button>
+        </ion-list>
 </ion-content>

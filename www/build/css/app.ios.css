@@ -9519,6 +9519,12 @@ scroll-content {
 .supplier-details ion-card ion-label {
   line-height: 25px; }
 
+.supplier-details ion-card ion-col[width-75] {
+  color: #7b7979; }
+
+.supplier-details ion-card ion-col[width-25] {
+  font-weight: 700; }
+
 .supplier-details ion-row {
   font-size: 16px; }
   .supplier-details ion-row ion-col {

@@ -7,6 +7,7 @@ import { NavController, NavParams, LoadingController, AlertController, ModalCont
 })
 export class BuyerItemsPage {
     getitemlist: any;
+    itemlisttitle: string;
 
     constructor(
         private navCtrl: NavController,
@@ -14,10 +15,11 @@ export class BuyerItemsPage {
         private navParams: NavParams,
         public modalCtrl: ModalController
     ) {
+        this.itemlisttitle = this.navParams.data["buyerCategory"];
         this.getitemlist = this.navParams.data.buyerItems.sort((a,b) => {
             return a.item.localeCompare(b.item);
         });
-        console.log(this.navParams.data);
+        console.log(this.getitemlist);
     }
 
     goback() {
