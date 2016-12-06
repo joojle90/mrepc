@@ -13,6 +13,7 @@ let tradeshowname = [];
 export class AlltradeshowsPage {
 
     tradeshowslist: any;
+    tradeshowsdata: any;
     urllink: string;
     testCheckboxOpen: boolean;
     testCheckboxResult;
@@ -26,25 +27,36 @@ export class AlltradeshowsPage {
     ) {
         this.urllink = this.navParams.get('urllink');
         this.presentLoadingData();
+        this.loadtradeshowsdata();
     }
 
     loadTradeshow() {
         return this.mrepcdata.geteventcriteria('6', '1,4').then(data => {
-            this.tradeshowslist = data;
-        console.log(this.tradeshowslist);
+            this.tradeshowslist = data.filter(newdata => {
+                let setdate = new Date (newdata.eventdetail.startdate);
+//                return setdate.getFullYear() == new Date().getFullYear();
+                return setdate > new Date();
+            });
+            this.tradeshowslist = this.tradeshowslist.sort((a,b) => {
+                let datea = new Date (a.eventdetail.startdate);
+                let dateb = new Date (b.eventdetail.startdate);
+                return datea > dateb ? 1 : -1;
+            });
+            console.log(data);
+            this.tradeshowsdata = data;
 
-            for(let i in data) {
-                tradeshowname.push ({
-                    name: data[i].eventdetail["name"],
-                    startdate: data[i].eventdetail["startdate"],
-                    enddate: data[i].eventdetail["enddate"]
-                })
-            }
+//            for(let i in data) {
+//                tradeshowname.push ({
+//                    name: data[i].eventdetail["name"],
+//                    startdate: data[i].eventdetail["startdate"],
+//                    enddate: data[i].eventdetail["enddate"]
+//                })
+//            }
         })
     }
 
-    loadTradeshowname() {
-        return tradeshowname;
+    loadtradeshowsdata() {
+        return this.tradeshowsdata;
     }
 
     detailsPage(page) {
@@ -74,14 +86,14 @@ export class AlltradeshowsPage {
 
     getItems(ev: any) {
         // Reset items back to all of the items
+        this.loadtradeshowsdata();
 
         // set val to the value of the searchbar
         let val = ev.target.value;
 
         // if the value is an empty string don't filter the items
         if (val && val.trim() != '') {
-            this.tradeshowslist = this.tradeshowslist.filter((item) => {
-//                console.log(item.eventdetail.startdate);
+            this.tradeshowslist = this.tradeshowsdata.filter((item) => {
                 return (item.eventdetail.startdate.toLowerCase().indexOf(val.toLowerCase()) > -1
                        || item.eventdetail.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
             })
@@ -95,14 +107,13 @@ export class AlltradeshowsPage {
         alert.setTitle('Sort options :');
 
         alert.addInput({
-            type: 'checkbox',
+            type: 'radio',
             label: 'Sort A to Z',
-            value: 'value1',
-            checked: true
+            value: 'value1'
         });
 
         alert.addInput({
-            type: 'checkbox',
+            type: 'radio',
             label: 'Sort by Latest Event',
             value: 'value2'
         });

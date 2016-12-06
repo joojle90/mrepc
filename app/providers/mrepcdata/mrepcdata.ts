@@ -24,9 +24,12 @@ export class Mrepcdata {
     errormsg: string;
     supplierid: string;
     buyerid: string;
+    year: any;
     
     constructor(private http: Http) {
         this.http = http;
+
+        this.year = new Date().getFullYear();
 
         this.startdate = '2016-01-01';
         this.enddate = '2018-01-01';
