@@ -32,4 +32,7 @@
             font-weight: 700;
         }
     }
+    .item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+        box-shadow: none;
+    }
 }

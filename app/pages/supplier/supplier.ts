@@ -16,6 +16,7 @@ export class SupplierPage {
 
     supplierlist: any;
     urllink: string;
+    supplierdata: any;
 
     constructor(
         private navCtrl: NavController,
@@ -28,6 +29,7 @@ export class SupplierPage {
 
     onPageLoaded() {
         this.presentLoadingData();
+        this.loadsupplierdata();
     }
 
     loadSupplier() {
@@ -35,7 +37,12 @@ export class SupplierPage {
             this.supplierlist = data.sort((a,b) => {
                 return a.companyName.localeCompare(b.companyName);
             });
+            this.supplierdata = this.supplierlist;
         })
+    }
+
+    loadsupplierdata() {
+        return this.supplierdata;
     }
 
     supplierPage(supplierid) {
@@ -67,17 +74,14 @@ export class SupplierPage {
 
     getItems(ev: any) {
         // Reset items back to all of the items
-
-        console.log(this.supplierlist);
-
+        this.loadsupplierdata();
 
         // set val to the value of the searchbar
         let val = ev.target.value;
-        console.log(val);
 
         // if the value is an empty string don't filter the items
         if (val && val.trim() != '') {
-            this.supplierlist = this.supplierlist.filter((item) => {
+            this.supplierlist = this.supplierdata.filter((item) => {
                 return (item.companyName.toLowerCase().indexOf(val.toLowerCase()) > -1);
             })
         } else {

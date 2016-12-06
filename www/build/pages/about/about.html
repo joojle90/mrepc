@@ -1,6 +1,6 @@
 <ion-header>
     <ion-navbar>
-        <ion-title> About MREPC </ion-title>
+        <ion-title>About MREPC</ion-title>
 
         <button menuToggle>
             <ion-icon name="menu"></ion-icon>
@@ -8,58 +8,13 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content class="about">
-    <ion-card>
-        <div>
-            <img src="{{urllink}}/img/misc/mrepc_address.jpg" onError="this.src='img/misc/no-image_event.jpg'">
-            <button myicon1 fab fab-right fab-top class="fab-map" (click)="mapshow()">
-                <ion-icon name='pin'></ion-icon>
-            </button>
-        </div>
-        <ion-item>
-            <h2><strong>Malaysian Rubber Export Promotion Council (MREPC)</strong></h2>
-        </ion-item>
-        <ion-card-content>
-            <ion-row>
-                <ion-col width-33>
-                    <ion-icon myicon1 name="mail"></ion-icon>
-                    <span myicon1>Email</span>
-                </ion-col>
-                <ion-col width-66>
-                    <span>mpd@mrepc.com</span>
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col width-33>
-                    <ion-icon myicon1 name="call"></ion-icon>
-                    <span myicon1>Contact no</span>
-                </ion-col>
-                <ion-col width-66>
-                    <span>(+603) 2780 5888</span>
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col width-33>
-                    <ion-icon myicon1 name="wifi"></ion-icon>
-                    <span myicon1>Fax no</span>
-                </ion-col>
-                <ion-col width-66>
-                    <span>(+603) 2780 5088</span>
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col width-33>
-                    <ion-icon myicon1 name="pin"></ion-icon>
-                    <span myicon1>Location</span>
-                </ion-col>
-                <ion-col width-66>
-                    <span>Unit No 36-02, Level 36, Q Sentral 2A Jalan Stesen Sentral 2, KL Sentral 50470 Kuala Lumpur, Malaysia, Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia</span>
-                </ion-col>
-            </ion-row>
 
-            <div padding>
-                <button myicon1 block (click)="contactus()">Contact us</button>
-            </div>
-        </ion-card-content>
+<ion-content class="about">
+    <ion-card class="card-style" *ngFor="let addr of aboutaddress; let i = index">
+        <a clear (click)="officeaddress(aboutaddress[i])">
+            <img src="{{urllink}}/img/office/{{addr.image}}" onError="this.src='img/misc/no-image_event.jpg'"/>
+            <p class="card-style-title">{{addr.country}}</p>
+            <p class="card-style-subtitle"><span>{{addr.contactperson}}</span></p>
+        </a>
     </ion-card>
 </ion-content>

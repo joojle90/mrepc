@@ -16,30 +16,51 @@
 <ion-content class="supplier-details">
     <ion-card class="itemdetails">
         <ion-list>
-            <ion-item>
-                <ion-label fixed>From</ion-label>
-                <ion-input type="text" value=""></ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label fixed>Company</ion-label>
-                <ion-input type="text" value=""></ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label fixed>Designation</ion-label>
-                <ion-input type="text" value=""></ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label fixed>Contact no</ion-label>
-                <ion-input type="text" value=""></ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label fixed>Message</ion-label>
-                <ion-textarea></ion-textarea>
-            </ion-item>
+            <form #companyForm="ngForm" novalidate>
+                <ion-item>
+                    <ion-label fixed>Name</ion-label>
+                    <ion-input [(ngModel)]="contact.name" name="name" type="text" #name="ngModel" required></ion-input>
+                </ion-item>
+                <p [hidden]="name.valid || submitted == false" danger padding-left>
+                    Name is required
+                </p>
+                <ion-item>
+                    <ion-label fixed>Company</ion-label>
+                    <ion-input [(ngModel)]="contact.company" name="company" type="text" #company="ngModel" required></ion-input>
+                </ion-item>
+                <p [hidden]="company.valid || submitted == false" danger padding-left>
+                    Company is required
+                </p>
+                <ion-item>
+                    <ion-label fixed>Country</ion-label>
+                    <ion-input [(ngModel)]="contact.country" name="country" type="text" #country="ngModel" required></ion-input>
+                </ion-item>
+                <p [hidden]="country.valid || submitted == false" danger padding-left>
+                    Country is required
+                </p>
+                <ion-item>
+                    <ion-label fixed>Email</ion-label>
+                    <ion-input [(ngModel)]="contact.email" name="email" type="email" #email="ngModel" required></ion-input>
+                </ion-item>
+                <p [hidden]="email.valid || submitted == false" danger padding-left>
+                    Email is required
+                </p>
+                <ion-item>
+                    <ion-label fixed>Contact no</ion-label>
+                    <ion-input [(ngModel)]="contact.contactno" name="contactno" type="number" #contactno="ngModel"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label fixed>Message</ion-label>
+                    <ion-textarea [(ngModel)]="contact.message" name="message" type="text" #message="ngModel" required></ion-textarea>
+                </ion-item>
+                <p [hidden]="message.valid || submitted == false" danger padding-left>
+                    Message is required
+                </p>
 
-            <div padding>
-                <button myicon1 block (click)="sendemail()">Send Email</button>
-            </div>
+                <div padding>
+                    <button myicon1 block (click)="sendemail(companyForm)">Send Email</button>
+                </div>
+            </form>
         </ion-list>
     </ion-card>
 </ion-content>

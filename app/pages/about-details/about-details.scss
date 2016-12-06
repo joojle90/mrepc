@@ -1,0 +1,24 @@
+.about-details {
+    ion-card {
+        div {
+             position: relative;
+        }
+        button[fab].fab-map {
+            top: calc(100% - 35px);
+            z-index: 50;
+        }
+        ion-icon {
+            padding-right: 10px;
+        }
+    }
+    ion-item {
+        h2 {
+            white-space: normal;
+            width: 80%;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            display: -webkit-box;
+            text-transform: capitalize;
+        }
+    }
+}

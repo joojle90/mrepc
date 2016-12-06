@@ -83,6 +83,8 @@ export class SupplierItemsPage {
     templateUrl: 'build/pages/supplier-details/supplier-register.html',
 })
 export class SupplierRegisterPage {
+    contact: {name?: string, company?: string, country?: string, email?: string, message?: string} = {};
+    submitted = false;
 
     constructor(
         private navCtrl: NavController,
@@ -96,13 +98,17 @@ export class SupplierRegisterPage {
         this.viewCtrl.dismiss();
     }
 
-    sendemail() {
-        let alert = this.alertCtrl.create({
-          title: 'Successful Email',
-          subTitle: 'Your email has been sent',
-          buttons: ['OK']
-        });
-        alert.present();
+    sendemail(form) {
+        this.submitted = true;
+
+        if (form.valid) {
+            let alert = this.alertCtrl.create({
+              title: 'Successful Email',
+              subTitle: 'Your email has been sent',
+              buttons: ['OK']
+            });
+            alert.present();
+        }
     }
 
 }

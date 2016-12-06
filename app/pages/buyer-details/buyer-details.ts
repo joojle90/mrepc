@@ -14,6 +14,7 @@ import { BuyerItemsPage } from '../../pages/buyer-items/buyer-items';
 export class BuyerDetailsPage {
     getbuyerdetails: any;
     getbuyeritems: any;
+    getbuyerdata: any;
     newdata: any;
     urllink: string;
 
@@ -23,6 +24,7 @@ export class BuyerDetailsPage {
         private navParams: NavParams,
         public modalCtrl: ModalController
     ) {
+        this.loadbuyersdata();
     }
 
     ionViewDidEnter() {
@@ -37,6 +39,12 @@ export class BuyerDetailsPage {
         this.getbuyeritems = this.getbuyerdetails.buyerData.sort((a,b) => {
             return a.category.localeCompare(b.category);
         });
+        this.getbuyerdata = this.getbuyeritems;
+        console.log(this.getbuyeritems);
+    }
+
+    loadbuyersdata() {
+        return this.getbuyerdata;
     }
 
     buyerItems(itemscount, items) {
@@ -54,6 +62,23 @@ export class BuyerDetailsPage {
                     urllink: this.urllink
                 });
             }, 0);
+        }
+    }
+
+    getItems(ev: any) {
+        // Reset items back to all of the items
+        this.loadbuyersdata();
+
+        // set val to the value of the searchbar
+        let val = ev.target.value;
+
+        // if the value is an empty string don't filter the items
+        if (val && val.trim() != '') {
+            this.getbuyeritems = this.getbuyerdata.filter((item) => {
+                return (item.category.toLowerCase().indexOf(val.toLowerCase()) > -1);
+            })
+        } else {
+            this.onPageLoaded();
         }
     }
 

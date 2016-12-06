@@ -15,10 +15,10 @@ import {TutorialPage} from './pages/tutorial/tutorial';
 import {AboutPage} from './pages/about/about';
 
 
-let component = [HomePage, MarketplacePage, AlltradeshowsPage, MytradeshowPage, TutorialPage, AboutPage];
+let component = [HomePage, MarketplacePage, AlltradeshowsPage, MytradeshowPage, AboutPage];
 let userpage = [UserprofilePage];
 
-let mymenu = ["Home", "Marketplace", "Trade Show", "My Trade Show", "Tutorial", "Contact Us"];
+let mymenu = ["Home", "Marketplace", "Trade Show", "My Trade Show", "Contact Us"];
 
 @Component({
     templateUrl: 'build/app.html'
@@ -26,7 +26,7 @@ let mymenu = ["Home", "Marketplace", "Trade Show", "My Trade Show", "Tutorial", 
 export class MyApp {
     @ViewChild(Nav) nav: Nav;
     urllink: string;
-    activemenu: any = [true, false, false, false, false, false, false];
+    activemenu: any = [true, false, false, false, false, false];
 
     private rootPage: Type = HomePage;
 

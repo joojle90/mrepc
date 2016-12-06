@@ -73,6 +73,8 @@ export class TradeshowdetailsPage {
 export class TradeshowdetailsFormPage {
     contactSupplier: any;
     itemdetails: any;
+    contact: {name?: string, company?: string, country?: string, email?: string, message?: string} = {};
+    submitted = false;
 
     constructor(
         private navCtrl: NavController,
@@ -86,13 +88,17 @@ export class TradeshowdetailsFormPage {
         this.viewCtrl.dismiss();
     }
 
-    register() {
-        let alert = this.alertCtrl.create({
-          title: 'Successful registration',
-          subTitle: 'Your request will be process',
-          buttons: ['OK']
-        });
-        alert.present();
+    register(form) {
+        this.submitted = true;
+
+        if (form.valid) {
+            let alert = this.alertCtrl.create({
+              title: 'Successful registration',
+              subTitle: 'Your request will be process',
+              buttons: ['OK']
+            });
+            alert.present();
+        }
     }
 
 }
