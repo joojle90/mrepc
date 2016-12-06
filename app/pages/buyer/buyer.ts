@@ -32,9 +32,10 @@ export class BuyerPage {
 
     loadSupplier() {
         return this.mrepcdata.getMarketplaceBuyer().then(data => {
-            this.buyerlist = data.sort((a,b) => {
-                return a.rubbername.localeCompare(b.rubbername);
-            });
+            this.buyerlist = data;
+//            this.buyerlist = data.sort((a,b) => {
+//                return a.rubbername.localeCompare(b.rubbername);
+//            });
         })
     }
 

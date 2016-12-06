@@ -14,5 +14,18 @@
             overflow: hidden;
             text-overflow: ellipsis
         }
+        ion-thumbnail[item-left] {
+            margin: 10px 0;
+        }
+        ion-thumbnail {
+            min-width: 7rem;
+            min-height: 6rem;
+
+            img {
+                max-width: 6rem;
+                max-height: 5rem;
+
+            }
+        }
     }
 }

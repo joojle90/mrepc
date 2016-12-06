@@ -1,6 +1,7 @@
 .marketplace {
     ion-tabbar {
         background-color: $colorbg;
+        height: 80px;
 
         .tab-button {
             color: $activetab;
@@ -9,4 +10,11 @@
             color: $colortext;
         }
     }
+}
+
+.ios {
+    ion-tabbar {
+        height: 70px;
+    }
+
 }

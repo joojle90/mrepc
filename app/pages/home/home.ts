@@ -52,16 +52,15 @@ export class HomePage {
         return this.mrepcdata.geteventcriteria('6', '1').then(data => {
             this.comingsoonevent = data.filter(newdata => {
                 let setdate = new Date (newdata.eventdetail.startdate);
-                return setdate < new Date();
+                return setdate > new Date();
             });
-            this.comingsoonevent = this.comingsoonevent.slice(0,5);
-            console.log(this.comingsoonevent);
             this.comingsoonevent = this.comingsoonevent.sort((a,b) => {
                 let datea = new Date (a.eventdetail.startdate);
                 let dateb = new Date (b.eventdetail.startdate);
-                console.log(a.eventdetail.startdate);
-                return datea > dateb;
+                return datea > dateb ? 1 : -1;
             });
+            this.comingsoonevent = this.comingsoonevent.slice(0,5);
+            console.log(this.comingsoonevent);
         });
     }
 

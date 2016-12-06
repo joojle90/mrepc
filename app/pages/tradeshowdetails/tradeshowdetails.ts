@@ -13,6 +13,7 @@ export class TradeshowdetailsPage {
     eventstart: string;
     eventend: string;
     urllink: string;
+    eventdate: string;
 
     constructor(
         private navCtrl: NavController,
@@ -28,6 +29,12 @@ export class TradeshowdetailsPage {
 
         this.eventstart = this.convertdate(this.geteventdetails.startdate);
         this.eventend = this.convertdate(this.geteventdetails.enddate);
+
+        if(this.eventstart.split(" ")[1] === this.eventend.split(" ")[1]) {
+            this.eventdate = this.eventstart.split(" ")[0] + " to " + this.eventend;
+        } else {
+            this.eventdate = this.eventstart.split(" ")[0] + " " + this.eventstart.split(" ")[1] + " to " + this.eventend;
+        }
     }
 
     convertdate(date){

@@ -54,9 +54,22 @@ export class SupplierPage {
         });
     }
 
+    presentLoadingData() {
+        setTimeout(() => {
+            let loader = this.loadingCtrl.create({ content: "Please wait..." });
+            loader.present();
+
+            this.loadSupplier().then(() => {
+                loader.dismiss();
+            });
+        }, 0);
+    }
+
     getItems(ev: any) {
         // Reset items back to all of the items
-        this.loadSupplier();
+
+        console.log(this.supplierlist);
+
 
         // set val to the value of the searchbar
         let val = ev.target.value;
@@ -67,18 +80,8 @@ export class SupplierPage {
             this.supplierlist = this.supplierlist.filter((item) => {
                 return (item.companyName.toLowerCase().indexOf(val.toLowerCase()) > -1);
             })
+        } else {
+            this.loadSupplier();
         }
-    }
-
-
-    presentLoadingData() {
-        setTimeout(() => {
-            let loader = this.loadingCtrl.create({ content: "Please wait..." });
-            loader.present();
-
-            this.loadSupplier().then(() => {
-                loader.dismiss();
-            });
-        }, 0);
     }
 }

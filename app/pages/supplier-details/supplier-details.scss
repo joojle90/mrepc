@@ -17,6 +17,12 @@
         ion-label {
             line-height: 25px;
         }
+        ion-col[width-75] {
+            color: $colorlist;
+        }
+        ion-col[width-25] {
+            font-weight: 700;
+        }
     }
     ion-row {
         font-size: 16px;

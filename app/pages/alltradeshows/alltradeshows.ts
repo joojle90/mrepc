@@ -31,6 +31,7 @@ export class AlltradeshowsPage {
     loadTradeshow() {
         return this.mrepcdata.geteventcriteria('6', '1,4').then(data => {
             this.tradeshowslist = data;
+        console.log(this.tradeshowslist);
 
             for(let i in data) {
                 tradeshowname.push ({
@@ -39,7 +40,6 @@ export class AlltradeshowsPage {
                     enddate: data[i].eventdetail["enddate"]
                 })
             }
-            console.log(tradeshowname);
         })
     }
 
@@ -74,17 +74,19 @@ export class AlltradeshowsPage {
 
     getItems(ev: any) {
         // Reset items back to all of the items
-        this.loadTradeshowname();
 
         // set val to the value of the searchbar
         let val = ev.target.value;
-        console.log(this.loadTradeshowname());
 
         // if the value is an empty string don't filter the items
         if (val && val.trim() != '') {
-            tradeshowname = tradeshowname.filter((item) => {
-                return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+            this.tradeshowslist = this.tradeshowslist.filter((item) => {
+//                console.log(item.eventdetail.startdate);
+                return (item.eventdetail.startdate.toLowerCase().indexOf(val.toLowerCase()) > -1
+                       || item.eventdetail.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
             })
+        } else {
+            this.loadTradeshow();
         }
     }
 
