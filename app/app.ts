@@ -14,6 +14,11 @@ import {MyseminarPage} from './pages/myseminar/myseminar';
 import {TutorialPage} from './pages/tutorial/tutorial';
 import {AboutPage} from './pages/about/about';
 
+import {Push} from 'ionic-native';
+import {Http, Headers, RequestOptions} from '@angular/http';
+import 'rxjs/add/operator/map';
+import {Observable} from 'rxjs/Observable';
+
 
 let component = [HomePage, MarketplacePage, AlltradeshowsPage, MytradeshowPage, AboutPage];
 let userpage = [UserprofilePage];
@@ -36,10 +41,40 @@ export class MyApp {
         private platform: Platform,
         public mymenu: MenuController,
         public userdata: Userdata,
-        public mrepcdata: Mrepcdata
+        public mrepcdata: Mrepcdata,
+        public http: Http
     ) {
         platform.ready().then(() => {
             StatusBar.styleDefault();
+
+            var push = Push.init({
+                android: {
+                    senderID: "583669195324"
+                },
+                ios: {
+                    alert: 'true',
+                    badge: true,
+                    sound: 'false'
+                },
+                windows: {}
+            });
+
+            push.on('registration', (datas) => {
+                this.http.get('http://107.191.60.239/regDevice.php?regdevices='+datas.registrationId.toString()).map(res => res.json()).subscribe(data => {
+                    //alert(data.status);
+                    //console.log(data.status);
+                });
+                //alert(datas.registrationId.toString());
+            });
+
+            push.on('notification', (data) => {
+                console.log(data);
+                alert(data.message);
+            });
+
+            push.on('error', (e) => {
+                console.log(e.message);
+            });
         });
 
         this.urllink = "http://khaujakanjohor.org/mrepc-api";
