@@ -30,7 +30,7 @@ export class AboutPage {
             address: '3516 International Court, NW '+
                      'Washington, DC 20008 '+
                      'USA',
-            contactno: '+1 (202) 572 9771/9721',
+            contactno: '+1 (202) 572 9771',
             fax: '+1 (202) 572 9787',
             email: 'esahsyip@mrepc.com',
             contactperson: 'Dr Esah Yip',

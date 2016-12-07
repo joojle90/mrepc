@@ -1,5 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, NavParams, LoadingController, AlertController, ModalController, ViewController } from 'ionic-angular';
+import { EmailComposer } from 'ionic-native';
 
 @Component({
     templateUrl: 'build/pages/about-details/about-details.html'
@@ -57,9 +58,17 @@ export class AboutcontactPage {
     }
 
     submitenquiry(form) {
+        let email = {
+            to: 'jol_fakar@yahoo.co.id',
+            subject: 'Cordova Icons',
+            body: 'How are you? Nice greetings from Leipzig',
+            isHtml: true
+        };
+
         this.submitted = true;
 
         if (form.valid) {
+            EmailComposer.open(email);
             let alert = this.alertCtrl.create({
               title: 'Successful message',
               subTitle: 'Thank you for submit your inquiry',
