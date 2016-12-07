@@ -64,5 +64,13 @@
         "variables": {
             "SENDER_ID": "583669195324"
         }
+    },
+    "cordova-plugin-email": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-email"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

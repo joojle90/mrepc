@@ -47,5 +47,9 @@
     <string>583669195324</string>
     <key>IS_GCM_ENABLED</key>
     <true/>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+      <string>mailto</string>
+    </array>
   </dict>
 </plist>

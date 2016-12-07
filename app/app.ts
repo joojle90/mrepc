@@ -17,7 +17,7 @@ import {AboutPage} from './pages/about/about';
 import {Push} from 'ionic-native';
 import {Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
-import {Observable} from 'rxjs/Observable';
+//import {Observable} from 'rxjs/Observable';
 
 
 let component = [HomePage, MarketplacePage, AlltradeshowsPage, MytradeshowPage, AboutPage];
@@ -44,7 +44,7 @@ export class MyApp {
         public mrepcdata: Mrepcdata,
         public http: Http
     ) {
-        platform.ready().then(() => {
+        this.platform.ready().then(() => {
             StatusBar.styleDefault();
 
             var push = Push.init({

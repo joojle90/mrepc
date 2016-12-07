@@ -53,6 +53,9 @@
 		C28278FCA72B47C9BFC6FB8A /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BBDA798F21A4D4AB41250D0 /* AddressBook.framework */; };
 		ED38BA7B79DA4378925AA1C2 /* libsqlite3.tbd in Resources */ = {isa = PBXBuildFile; fileRef = 1CE3B9E0B5AE40FC94E305A4 /* libsqlite3.tbd */; };
 		F5998AD12BBE49C497EE5247 /* libz.tbd in Resources */ = {isa = PBXBuildFile; fileRef = BEA6BF0058A249C095F59F44 /* libz.tbd */; };
+		5503477EB0174A46B7ADEAAA /* APPEmailComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 558FCE897761499A9E227545 /* APPEmailComposer.m */; };
+		57D10D44CB3041A5841DA7D3 /* APPEmailComposerImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 302BA03039EE48658C93C853 /* APPEmailComposerImpl.m */; };
+		D88C4E2A3AA04936BDE970EC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0CA9B30A97E49D7A1E174F1 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +157,11 @@
 		8BBDA798F21A4D4AB41250D0 /* AddressBook.framework */ = {isa = PBXFileReference; name = "AddressBook.framework"; path = "System/Library/Frameworks/AddressBook.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		1CE3B9E0B5AE40FC94E305A4 /* libsqlite3.tbd */ = {isa = PBXFileReference; name = "libsqlite3.tbd"; path = "libsqlite3.tbd"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		BEA6BF0058A249C095F59F44 /* libz.tbd */ = {isa = PBXFileReference; name = "libz.tbd"; path = "libz.tbd"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		558FCE897761499A9E227545 /* APPEmailComposer.m */ = {isa = PBXFileReference; name = "APPEmailComposer.m"; path = "cordova-plugin-email/APPEmailComposer.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		302BA03039EE48658C93C853 /* APPEmailComposerImpl.m */ = {isa = PBXFileReference; name = "APPEmailComposerImpl.m"; path = "cordova-plugin-email/APPEmailComposerImpl.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		E34FC163CB09426FAF3388D0 /* APPEmailComposer.h */ = {isa = PBXFileReference; name = "APPEmailComposer.h"; path = "cordova-plugin-email/APPEmailComposer.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		B5049F421DD44B04959F8814 /* APPEmailComposerImpl.h */ = {isa = PBXFileReference; name = "APPEmailComposerImpl.h"; path = "cordova-plugin-email/APPEmailComposerImpl.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		B0CA9B30A97E49D7A1E174F1 /* MessageUI.framework */ = {isa = PBXFileReference; name = "MessageUI.framework"; path = "System/Library/Frameworks/MessageUI.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +199,7 @@
 				C28278FCA72B47C9BFC6FB8A /* AddressBook.framework in Frameworks */,
 				ED38BA7B79DA4378925AA1C2 /* libsqlite3.tbd in Resources */,
 				F5998AD12BBE49C497EE5247 /* libz.tbd in Resources */,
+				D88C4E2A3AA04936BDE970EC /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +298,7 @@
 				8BBDA798F21A4D4AB41250D0 /* AddressBook.framework */,
 				1CE3B9E0B5AE40FC94E305A4 /* libsqlite3.tbd */,
 				BEA6BF0058A249C095F59F44 /* libz.tbd */,
+				B0CA9B30A97E49D7A1E174F1 /* MessageUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -347,6 +357,10 @@
 				220A3381B9F74C5B9199D37F /* GCMReceiverDelegate.h */,
 				DF0B5C2235334719B7A51A88 /* GCMService.h */,
 				B527DFCF292243DEAD1BD3FD /* GoogleCloudMessaging.h */,
+				558FCE897761499A9E227545 /* APPEmailComposer.m */,
+				302BA03039EE48658C93C853 /* APPEmailComposerImpl.m */,
+				E34FC163CB09426FAF3388D0 /* APPEmailComposer.h */,
+				B5049F421DD44B04959F8814 /* APPEmailComposerImpl.h */,
 			);
 			name = Plugins;
 			path = "HelloCordova/Plugins";
@@ -470,6 +484,8 @@
 				2065FB2E123749B7B5B519B7 /* CDVInAppBrowser.m in Sources */,
 				6B11873060414C459FDA87D8 /* AppDelegate+notification.m in Sources */,
 				2BB109EA33024689A3AAFC23 /* PushPlugin.m in Sources */,
+				5503477EB0174A46B7ADEAAA /* APPEmailComposer.m in Sources */,
+				57D10D44CB3041A5841DA7D3 /* APPEmailComposerImpl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

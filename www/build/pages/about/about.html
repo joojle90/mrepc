@@ -1,6 +1,6 @@
 <ion-header>
     <ion-navbar>
-        <ion-title>About MREPC</ion-title>
+        <ion-title>Contact Us</ion-title>
 
         <button menuToggle>
             <ion-icon name="menu"></ion-icon>
@@ -14,7 +14,7 @@
         <a clear (click)="officeaddress(aboutaddress[i])">
             <img src="{{urllink}}/img/office/{{addr.image}}" onError="this.src='img/misc/no-image_event.jpg'"/>
             <p class="card-style-title">{{addr.country}}</p>
-            <p class="card-style-subtitle"><span>{{addr.contactperson}}</span></p>
+            <p class="card-style-subtitle"><span>{{addr.status}}</span></p>
         </a>
     </ion-card>
 </ion-content>
