@@ -66,6 +66,15 @@ module.exports = [
             "cordova.plugins.email",
             "plugin.email"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-email/www/email_composer.js",
+        "id": "cordova-plugin-email.EmailComposer",
+        "pluginId": "cordova-plugin-email",
+        "clobbers": [
+            "cordova.plugins.email",
+            "plugin.email"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -78,6 +87,10 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.2.2",
     "ionic-plugin-keyboard": "2.2.1",
     "cordova-plugin-inappbrowser": "1.4.0",
+<<<<<<< HEAD
+=======
+    "phonegap-plugin-push": "1.8.4",
+>>>>>>> origin/master
     "cordova-plugin-email": "1.2.2"
 }
 // BOTTOM OF METADATA
