@@ -30,9 +30,6 @@
         },
         "cordova-plugin-email": {
             "PACKAGE_NAME": "com.ionicframework.mrepc842922"
-        },
-        "cordova-plugin-email": {
-            "PACKAGE_NAME": "com.ionicframework.mrepc842922"
         }
     },
     "dependent_plugins": {}
