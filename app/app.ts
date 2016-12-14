@@ -31,7 +31,7 @@ let mymenu = ["Home", "Marketplace", "Trade Show", "My Trade Show", "Contact Us"
 export class MyApp {
     @ViewChild(Nav) nav: Nav;
     urllink: string;
-    activemenu: any = [true, false, false, false, false, false];
+    activemenu: any = [true, false, false, false, false];
 
     private rootPage: Type = HomePage;
 
@@ -47,34 +47,34 @@ export class MyApp {
         this.platform.ready().then(() => {
             StatusBar.styleDefault();
 
-            var push = Push.init({
-                android: {
-                    senderID: "583669195324"
-                },
-                ios: {
-                    alert: 'true',
-                    badge: true,
-                    sound: 'false'
-                },
-                windows: {}
-            });
-
-            push.on('registration', (datas) => {
-                this.http.get('http://107.191.60.239/regDevice.php?regdevices='+datas.registrationId.toString()).map(res => res.json()).subscribe(data => {
-                    //alert(data.status);
-                    //console.log(data.status);
-                });
-                //alert(datas.registrationId.toString());
-            });
-
-            push.on('notification', (data) => {
-                console.log(data);
-                alert(data.message);
-            });
-
-            push.on('error', (e) => {
-                console.log(e.message);
-            });
+//            var push = Push.init({
+//                android: {
+//                    senderID: "583669195324"
+//                },
+//                ios: {
+//                    alert: 'true',
+//                    badge: true,
+//                    sound: 'false'
+//                },
+//                windows: {}
+//            });
+//
+//            push.on('registration', (datas) => {
+//                this.http.get('http://107.191.60.239/regDevice.php?regdevices='+datas.registrationId.toString()).map(res => res.json()).subscribe(data => {
+//                    //alert(data.status);
+//                    //console.log(data.status);
+//                });
+//                //alert(datas.registrationId.toString());
+//            });
+//
+//            push.on('notification', (data) => {
+//                console.log(data);
+//                alert(data.message);
+//            });
+//
+//            push.on('error', (e) => {
+//                console.log(e.message);
+//            });
         });
 
         this.urllink = "http://khaujakanjohor.org/mrepc-api";

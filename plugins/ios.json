@@ -28,10 +28,6 @@
         "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "io.ionic.starter"
         },
-        "phonegap-plugin-push": {
-            "SENDER_ID": "583669195324",
-            "PACKAGE_NAME": "com.ionicframework.mrepc842922"
-        },
         "cordova-plugin-email": {
             "PACKAGE_NAME": "com.ionicframework.mrepc842922"
         }

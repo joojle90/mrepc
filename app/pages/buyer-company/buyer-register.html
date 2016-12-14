@@ -1,0 +1,110 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Contact Company
+        </ion-title>
+        <ion-buttons start>
+            <button (click)="dismiss()">
+                <span menuicon showWhen="ios">Cancel</span>
+                <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="supplier-details">
+    <ion-card>
+        <ion-card-content>
+            <h2>
+                {{companyItems.name}}
+                ({{companyItems.company_no}})
+            </h2>
+        </ion-card-content>
+        <ion-list>
+            <ion-item>
+                <ion-row>
+                    <ion-col width-25>
+                        Address
+                    </ion-col>
+                    <ion-col width-75>
+                        {{companyItems.off_address}}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col width-25>
+                        Email
+                    </ion-col>
+                    <ion-col width-75>
+                        {{companyItems.email}}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col width-25>
+                        Contact no
+                    </ion-col>
+                    <ion-col width-75>
+                        <a href="tel:{{companyItems.office_telephone}}">{{companyItems.office_telephone}}</a>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col width-25>
+                        Website
+                    </ion-col>
+                    <ion-col width-75>
+                        <a myicon1 href="{{companyItems.website}}" clear primary>More details</a>
+                    </ion-col>
+                </ion-row>
+            </ion-item>
+        </ion-list>
+    </ion-card>
+    <ion-card class="itemdetails">
+        <ion-list>
+            <form #companyForm="ngForm" novalidate>
+                <ion-item>
+                    <ion-label fixed>Name</ion-label>
+                    <ion-input [(ngModel)]="contact.name" name="name" type="text" #name="ngModel" required></ion-input>
+                </ion-item>
+                <p [hidden]="name.valid || submitted == false" danger padding-left>
+                    Name is required
+                </p>
+                <ion-item>
+                    <ion-label fixed>Company</ion-label>
+                    <ion-input [(ngModel)]="contact.company" name="company" type="text" #company="ngModel" required></ion-input>
+                </ion-item>
+                <p [hidden]="company.valid || submitted == false" danger padding-left>
+                    Company is required
+                </p>
+                <ion-item>
+                    <ion-label fixed>Country</ion-label>
+                    <ion-input [(ngModel)]="contact.country" name="country" type="text" #country="ngModel" required></ion-input>
+                </ion-item>
+                <p [hidden]="country.valid || submitted == false" danger padding-left>
+                    Country is required
+                </p>
+                <ion-item>
+                    <ion-label fixed>Email</ion-label>
+                    <ion-input [(ngModel)]="contact.email" name="email" type="email" #email="ngModel" required></ion-input>
+                </ion-item>
+                <p [hidden]="email.valid || submitted == false" danger padding-left>
+                    Email is required
+                </p>
+                <ion-item>
+                    <ion-label fixed>Contact no</ion-label>
+                    <ion-input [(ngModel)]="contact.contactno" name="contactno" type="number" #contactno="ngModel"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label fixed>Message</ion-label>
+                    <ion-textarea [(ngModel)]="contact.message" name="message" type="text" #message="ngModel" required></ion-textarea>
+                </ion-item>
+                <p [hidden]="message.valid || submitted == false" danger padding-left>
+                    Message is required
+                </p>
+
+                <div padding>
+                    <button myicon1 block (click)="sendemail(companyForm)">Send Email</button>
+                </div>
+            </form>
+        </ion-list>
+    </ion-card>
+</ion-content>

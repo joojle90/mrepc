@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController, AlertController, ModalController, ViewController } from 'ionic-angular';
+import { Mrepcdata } from '../../providers/mrepcdata/mrepcdata';
 import { BuyerItemsPage } from '../../pages/buyer-items/buyer-items';
+import { BuyerCompanyPage } from '../../pages/buyer-company/buyer-company';
 
 /*
   Generated class for the BuyerDetailsPage page.
@@ -22,7 +24,8 @@ export class BuyerDetailsPage {
         private navCtrl: NavController,
         private loadingCtrl: LoadingController,
         private navParams: NavParams,
-        public modalCtrl: ModalController
+        public modalCtrl: ModalController,
+        public mrepcdata: Mrepcdata
     ) {
         this.loadbuyersdata();
     }
@@ -49,14 +52,21 @@ export class BuyerDetailsPage {
 
     buyerItems(itemscount, items) {
         if(itemscount == 0) {
-            let modal = this.modalCtrl.create(BuyerContactPage, items);
-            modal.present();
+            let loader = this.loadingCtrl.create({ content: "Please wait..."});
+            loader.present().then(() => {
+                this.mrepcdata.getBuyerCompany(items.cat_id, "0000").then(data => {
+                    this.navCtrl.push(BuyerCompanyPage, {
+                        companyData: data,
+                        category: items.category,
+                        urllink: this.urllink,
+                        loading: loader
+                    });
+                });
+            });
         } else {
-//            let loader = this.loadingCtrl.create({ content: "Please wait..." });
-//            loader.present();
             setTimeout(() => {
-//                loader.dismiss();
                 this.navCtrl.push(BuyerItemsPage, {
+                    buyerCatId: items.cat_id,
                     buyerCategory: items.category,
                     buyerItems: items.itemList,
                     urllink: this.urllink

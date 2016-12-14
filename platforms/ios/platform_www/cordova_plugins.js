@@ -59,14 +59,6 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/phonegap-plugin-push/www/push.js",
-        "id": "phonegap-plugin-push.PushNotification",
-        "pluginId": "phonegap-plugin-push",
-        "clobbers": [
-            "PushNotification"
-        ]
-    },
-    {
         "file": "plugins/cordova-plugin-email/www/email_composer.js",
         "id": "cordova-plugin-email.EmailComposer",
         "pluginId": "cordova-plugin-email",
@@ -86,7 +78,6 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.2.2",
     "ionic-plugin-keyboard": "2.2.1",
     "cordova-plugin-inappbrowser": "1.4.0",
-    "phonegap-plugin-push": "1.8.4",
     "cordova-plugin-email": "1.2.2"
 }
 // BOTTOM OF METADATA

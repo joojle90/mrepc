@@ -7,7 +7,7 @@
 
 <ion-content class="buyer-items">
     <ion-list>
-            <button ion-item *ngFor="let gil of getitemlist; let i = index">
+            <button ion-item *ngFor="let gil of getitemlist; let i = index" (click)="buyerCompany(catId, getitemlist[i])">
                 <h2>{{gil.item}}</h2>
             </button>
         </ion-list>

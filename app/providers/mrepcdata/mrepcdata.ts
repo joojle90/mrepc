@@ -110,5 +110,12 @@ export class Mrepcdata {
         });
     }
 
+    getBuyerCompany(catid, itemid) {
+        this.apidata = 'companyBsProduct?item_id='+itemid+'&cat_id='+catid;
+        return this.load(this.apidata).then(data => {
+            return data;
+        });
+    }
+
 }
 

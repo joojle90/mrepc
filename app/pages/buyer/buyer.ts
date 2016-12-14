@@ -26,7 +26,7 @@ export class BuyerPage {
         this.urllink = this.navParams.data;
     }
 
-    ngAfterViewInit() {
+    onPageLoaded() {
         this.presentLoadingData();
     }
 

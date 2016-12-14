@@ -39,14 +39,6 @@
       <key>NSAllowsArbitraryLoads</key>
       <true/>
     </dict>
-    <key>UIBackgroundModes</key>
-    <array>
-      <string>remote-notification</string>
-    </array>
-    <key>GCM_SENDER_ID</key>
-    <string>583669195324</string>
-    <key>IS_GCM_ENABLED</key>
-    <true/>
     <key>LSApplicationQueriesSchemes</key>
     <array>
       <string>mailto</string>

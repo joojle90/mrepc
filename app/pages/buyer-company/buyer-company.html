@@ -1,0 +1,17 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{itemcategory}}</ion-title>
+    </ion-navbar>
+    <ion-searchbar (ionCancel)="onCancel($event)" (ionInput)="getItems($event)"></ion-searchbar>
+</ion-header>
+
+
+<ion-content class="buyer-company">
+    <ion-list>
+        <button ion-item *ngFor="let itl of itemlist; let i = index" (click)="contactSupplier(itemlist[i])">
+            <h2>{{itl.name}}</h2>
+            <p>{{itl.company_no}}</p>
+        </button>
+    </ion-list>
+
+</ion-content>

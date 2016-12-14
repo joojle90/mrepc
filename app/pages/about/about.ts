@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, LoadingController, NavParams } from 'ionic-angular';
 import { AboutDetailsPage } from '../../pages/about-details/about-details';
 
 
@@ -12,6 +12,7 @@ export class AboutPage {
 
     constructor(
         private navCtrl: NavController,
+        private loadingCtrl: LoadingController,
         private navParams: NavParams
     ) {
         this.urllink = this.navParams.get('urllink');
@@ -83,6 +84,18 @@ export class AboutPage {
             status: 'Branch',
             image: 'mrepc-india.jpg'
         }];
+    }
+
+    ngAfterViewInit() {
+        this.presentLoadingData();
+    }
+
+    presentLoadingData() {
+        let loader = this.loadingCtrl.create({ content: "Please wait..." });
+        loader.present();
+        setTimeout(() => {
+            loader.dismiss();
+        }, 900);
     }
 
     officeaddress(address) {

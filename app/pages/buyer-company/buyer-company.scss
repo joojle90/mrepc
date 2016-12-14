@@ -1,0 +1,53 @@
+.buyer-company {
+    ion-list {
+        margin: 0;
+    }
+    .item {
+        h2 {
+            width: 90%;
+            font-weight: 700;
+            white-space: nowrap;
+            text-transform: uppercase;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    ion-card {
+        ion-card-content {
+            background-color: $colorlayout;
+        }
+        h2 {
+            font-size: 2.2rem;
+            text-transform: capitalize;
+            color: $colorbg;
+            text-align: center;
+        }
+        ion-list {
+            button {
+                font-size: 1.8rem;
+            }
+        }
+        ion-label {
+            line-height: 25px;
+        }
+        ion-col[width-75] {
+            color: $colorlist;
+        }
+        ion-col[width-25] {
+            font-weight: 700;
+        }
+    }
+    ion-row {
+        font-size: 16px;
+
+        ion-col {
+            white-space: normal;
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+    .item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+        box-shadow: none;
+    }
+}
