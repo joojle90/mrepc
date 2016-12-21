@@ -101,13 +101,13 @@ export class AlltradeshowsPage {
         alert.addInput({
             type: 'radio',
             label: 'Sort A to Z',
-            value: 'value1'
+            value: 'byname'
         });
 
         alert.addInput({
             type: 'radio',
             label: 'Sort by Latest Event',
-            value: 'value2'
+            value: 'bydate'
         });
 
         alert.addButton('Cancel');
@@ -115,9 +115,23 @@ export class AlltradeshowsPage {
         alert.addButton({
             text: 'Okay',
             handler: data => {
-            console.log('Checkbox data:', data);
-            this.testCheckboxOpen = false;
-            this.testCheckboxResult = data;
+                console.log('Checkbox data:', data);
+                console.log(this.tradeshowslist);
+
+                if(data === "byname") {
+                    this.tradeshowslist = this.tradeshowslist.sort((a,b) => {
+                        return a.eventdetail.name.localeCompare(b.eventdetail.name);
+                    });
+                } else {
+                    this.tradeshowslist = this.tradeshowslist.sort((a,b) => {
+                        let datea = new Date (a.eventdetail.startdate);
+                        let dateb = new Date (b.eventdetail.startdate);
+                        return datea < dateb ? 1 : -1;
+                    });
+                }
+
+                this.testCheckboxOpen = false;
+                this.testCheckboxResult = data;
             }
         });
         alert.present();

@@ -10565,6 +10565,8 @@ body {
       font-size: 4.0rem; }
   .sidemenu scroll-content ion-list {
     margin: 0; }
+    .sidemenu scroll-content ion-list ion-list-header {
+      color: #1254a2; }
     .sidemenu scroll-content ion-list .item:first-child {
       border-top: none; }
     .sidemenu scroll-content ion-list .item-inner, .sidemenu scroll-content ion-list .item:last-child {
@@ -10594,13 +10596,13 @@ scroll-content {
 .about ion-card p.card-style-title {
   position: absolute;
   top: 25%;
-  font-size: 2.5em;
+  font-size: 2.0em;
   width: 100%;
   font-weight: bold;
   color: #ffffff !important; }
 
 .about ion-card p.card-style-subtitle {
-  font-size: 1.5em;
+  font-size: 1.3em;
   position: absolute;
   top: 50%;
   width: 100%;
@@ -10693,7 +10695,6 @@ scroll-content {
 .home .eventcoming ion-item {
   background-color: #1254a2; }
   .home .eventcoming ion-item h3 {
-    color: #ffffff;
     font-size: 1.7rem;
     white-space: normal;
     -webkit-box-orient: vertical;
@@ -10701,7 +10702,8 @@ scroll-content {
     display: -webkit-box;
     text-transform: capitalize;
     overflow: hidden;
-    text-overflow: ellipsis; }
+    text-overflow: ellipsis;
+    line-height: 30px; }
 
 .home .swiper-slide img {
   height: 25vh; }
@@ -10765,6 +10767,9 @@ scroll-content {
 
 .tradeshowdetails ion-card ion-card-content .button {
   text-transform: capitalize; }
+
+.tradeshowdetails ion-card ion-label[fixed] {
+  min-width: 140px; }
 
 .tradeshowdetails ion-row {
   padding: 5px; }

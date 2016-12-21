@@ -50,8 +50,8 @@
             </h5>
             <p>{{geteventdetails.eventdetails.productdetails}}</p>
             <br>
-            <div padding>
-                <button myicon1 block (click)="registerform()">Book Appointment with MREPC</button>
+            <div padding [hidden]="showBook === false">
+                <button myicon1 block (click)="registerform()">Book Business Matching Appointment</button>
             </div>
             <br>
             <h5>

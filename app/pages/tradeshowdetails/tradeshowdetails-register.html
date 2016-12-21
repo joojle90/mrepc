@@ -1,6 +1,6 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>Book Business Matching Session</ion-title>
+        <ion-title>Fill in your details</ion-title>
         <ion-buttons start>
             <button (click)="dismiss()">
                 <span menuicon showWhen="ios">Cancel</span>
@@ -46,6 +46,13 @@
                     <ion-label fixed>Contact no</ion-label>
                     <ion-input [(ngModel)]="contact.contactno" name="contactno" type="number" #contactno="ngModel"></ion-input>
                 </ion-item>
+                <ion-item>
+                    <ion-label fixed>Products interested</ion-label>
+                    <ion-input [(ngModel)]="contact.product" name="product" type="text" #product="ngModel" required></ion-input>
+                </ion-item>
+                <p [hidden]="product.valid || submitted == false" danger padding-left>
+                    Product interested is required
+                </p>
                 <ion-item>
                     <ion-label fixed>Message</ion-label>
                     <ion-textarea [(ngModel)]="contact.message" name="message" type="text" #message="ngModel" required></ion-textarea>

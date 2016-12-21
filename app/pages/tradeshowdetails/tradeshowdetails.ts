@@ -14,6 +14,7 @@ export class TradeshowdetailsPage {
     eventend: string;
     urllink: string;
     eventdate: string;
+    showBook: Boolean;
 
     constructor(
         private navCtrl: NavController,
@@ -25,10 +26,13 @@ export class TradeshowdetailsPage {
 
         this.geteventdetails = this.navParams.data;
         this.urllink = this.navParams.get('urllink');
-        console.log(this.urllink);
+        console.log(this.geteventdetails);
 
         this.eventstart = this.convertdate(this.geteventdetails.startdate);
         this.eventend = this.convertdate(this.geteventdetails.enddate);
+
+        this.showBook = new Date(this.eventend) > new Date() ? true : false;
+        console.log(this.showBook);
 
         if(this.eventstart.split(" ")[1] === this.eventend.split(" ")[1]) {
             this.eventdate = this.eventstart.split(" ")[0] + " to " + this.eventend;
@@ -73,7 +77,7 @@ export class TradeshowdetailsPage {
 export class TradeshowdetailsFormPage {
     contactSupplier: any;
     itemdetails: any;
-    contact: {name?: string, company?: string, country?: string, email?: string, message?: string} = {};
+    contact: {name?: string, company?: string, country?: string, email?: string, product?: string, message?: string} = {};
     submitted = false;
 
     constructor(

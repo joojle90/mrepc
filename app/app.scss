@@ -33,6 +33,10 @@
         ion-list {
             margin: 0;
 
+            ion-list-header {
+                color: $colorbg;
+            }
+
             .item:first-child {
                 border-top: none;
             }

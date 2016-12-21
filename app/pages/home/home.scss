@@ -62,7 +62,6 @@
             background-color: $colorbg;
 
             h3 {
-                color: $colortext;
                 font-size: 1.7rem;
                 white-space: normal;
                 -webkit-box-orient: vertical;
@@ -71,6 +70,7 @@
                 text-transform: capitalize;
                 overflow: hidden;
                 text-overflow: ellipsis;
+                line-height: 30px;
             }
         }
     }

@@ -35,7 +35,8 @@ export class HomePage {
         this.homeOptions = {
             initialSlide: 0,
             autoplay: 3500,
-            autoplayDisableOnInteraction: false
+            autoplayDisableOnInteraction: false,
+            loop: true
         };
         this.urllink = "http://khaujakanjohor.org/mrepc-api";
         this.presentLoadingData();
