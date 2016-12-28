@@ -9250,16 +9250,16 @@ scroll-content {
 
 .about ion-card p.card-style-title {
   position: absolute;
-  top: 25%;
+  top: 33%;
   font-size: 2.0em;
   width: 100%;
   font-weight: bold;
   color: #ffffff !important; }
 
 .about ion-card p.card-style-subtitle {
-  font-size: 1.3em;
+  font-size: 1.7em;
   position: absolute;
-  top: 50%;
+  top: 56%;
   width: 100%;
   font-weight: bold;
   color: #FFF23D !important; }
@@ -9272,6 +9272,10 @@ scroll-content {
   .about .card-style img {
     -webkit-filter: brightness(60%);
     filter: brightness(60%); }
+
+.about .branch {
+  top: 15% !important;
+  font-size: 23px !important; }
 
 .about .item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
   box-shadow: none; }
@@ -9413,8 +9417,7 @@ scroll-content {
 
 .tradeshowdetails ion-card h1 {
   background-color: #ffffff;
-  padding: 15px;
-  text-transform: capitalize; }
+  padding: 15px; }
 
 .tradeshowdetails ion-card ion-card-content h5 {
   line-height: 30px;

@@ -14,7 +14,7 @@
         <button ion-item *ngFor="let spl of supplierlist; let i = index" (click)="supplierPage(spl.companyID)">
             <h2>{{spl.companyName}}</h2>
             <p>{{spl.companyNo}}</p>
-            <ion-badge myicon1 item-right [hidden]="spl.itemList == 0">{{spl.itemList}}</ion-badge>
+<!--            <ion-badge myicon1 item-right [hidden]="spl.itemList == 0">{{spl.itemList}}</ion-badge>-->
         </button>
     </ion-list>
 </ion-content>

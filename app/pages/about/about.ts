@@ -17,15 +17,15 @@ export class AboutPage {
     ) {
         this.urllink = this.navParams.get('urllink');
         this.aboutaddress = [{
-            country: 'Kuala Lumpur, Malaysia',
+            country: 'Kuala Lumpur',
             address: 'Unit No 36-02, Level 36, Q Sentral '+
                      '2A Jalan Stesen Sentral 2, KL Sentral '+
                      '50470 Kuala Lumpur Malaysia.',
             contactno: '(603) 2780 5888',
             fax: '(603) 2780 5088',
-            email: 'info@mrepc.com',
+            email: 'mpd@mrepc.com',
             contactperson: '-',
-            status: 'Headquarter',
+            status: 'Malaysia',
             image: 'mrepc-hq.jpg'
         },{
             country: 'Guangzhou',
@@ -37,7 +37,7 @@ export class AboutPage {
             fax: '+86 20 2205 7706',
             email: 'guangzhou@mrepc.com',
             contactperson: 'Mr. Chang Kah Chun',
-            status: 'Branch',
+            status: 'China',
             image: 'mrepc-guangzhou.jpg'
         },{
             country: 'Shanghai',
@@ -49,10 +49,10 @@ export class AboutPage {
             fax: '+86 21 3376 7002',
             email: 'shanghai@mrepc.com',
             contactperson: 'Ms. Lio Lan Sing',
-            status: 'Branch',
+            status: 'China',
             image: 'mrepc-china.jpg'
         },{
-            country: 'India',
+            country: 'Mumbai',
             address: '907, Tulsiani Chambers, '+
                      'Nariman Point, '+
                      'Mumbai-400 021, '+
@@ -61,10 +61,10 @@ export class AboutPage {
             fax: '+91 22 6223 2359',
             email: 'mumbai@mrepc.com',
             contactperson: 'Mr. Samir Shah',
-            status: 'Branch',
+            status: 'India',
             image: 'mrepc-india.jpg'
         },{
-            country: 'USA',
+            country: 'Washington DC',
             address: '3516 International Court, NW '+
                      'Washington, DC 20008 '+
                      'USA',
@@ -72,7 +72,7 @@ export class AboutPage {
             fax: '+1 (202) 572 9787',
             email: 'esahsyip@mrepc.com',
             contactperson: 'Dr Esah Yip',
-            status: 'Branch',
+            status: 'United States of America',
             image: 'mrepc-usa.jpg'
         }];
     }

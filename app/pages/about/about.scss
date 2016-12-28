@@ -1,16 +1,16 @@
 .about {
     ion-card p.card-style-title {
         position: absolute;
-        top: 25%;
+        top: 33%;
         font-size: 2.0em;
         width: 100%;
         font-weight: bold;
         color: $colortext !important;
     }
     ion-card p.card-style-subtitle {
-        font-size: 1.3em;
+        font-size: 1.7em;
         position: absolute;
-        top: 50%;
+        top: 56%;
         width: 100%;
         font-weight: bold;
         color: #FFF23D !important;
@@ -24,6 +24,10 @@
         img {
             filter: brightness(60%);
         }
+    }
+    .branch {
+        top: 15% !important;
+        font-size: 23px !important;
     }
     .item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
         box-shadow: none;
