@@ -39,6 +39,7 @@ export class BuyerDetailsPage {
     onPageLoaded() {
         this.urllink = this.navParams.get('urllink');
         this.getbuyerdetails = this.navParams.data;
+        console.log(this.getbuyerdetails);
         this.getbuyeritems = this.getbuyerdetails.buyerData.sort((a,b) => {
             return a.category.localeCompare(b.category);
         });

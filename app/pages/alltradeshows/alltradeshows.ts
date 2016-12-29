@@ -83,11 +83,15 @@ export class AlltradeshowsPage {
         // set val to the value of the searchbar
         let val = ev.target.value;
 
+        console.log(this.tradeshowsdata);
+
         // if the value is an empty string don't filter the items
         if (val && val.trim() != '') {
             this.tradeshowslist = this.tradeshowsdata.filter((item) => {
                 return (item.eventdetail.startdate.toLowerCase().indexOf(val.toLowerCase()) > -1
-                       || item.eventdetail.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+                       || item.eventdetail.name.toLowerCase().indexOf(val.toLowerCase()) > -1
+                       || item.eventdetail.description.toLowerCase().indexOf(val.toLowerCase()) > -1
+                       || item.eventdetail.location.toLowerCase().indexOf(val.toLowerCase()) > -1);
             })
         } else {
             this.loadTradeshow();

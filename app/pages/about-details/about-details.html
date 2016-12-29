@@ -16,12 +16,14 @@
                 <ion-icon name='pin'></ion-icon>
             </button>
         </div>
+<!--
         <ion-item>
             <h2>
                 <strong>Malaysian Rubber Export Promotion Council (MREPC) - </strong>
                 <span>{{addressdet.officeaddr.country}}</span>
             </h2>
         </ion-item>
+-->
         <ion-card-content>
             <ion-row>
                 <ion-col width-33>
@@ -29,7 +31,8 @@
                     <span myicon1>Email</span>
                 </ion-col>
                 <ion-col width-66>
-                    <span>{{addressdet.officeaddr.email}}</span>
+                    <a href="mailto:{{addressdet.officeaddr.email}}?subject=My%20Feedback">{{addressdet.officeaddr.email}}</a>
+<!--                    <span>{{addressdet.officeaddr.email}}</span>-->
                 </ion-col>
             </ion-row>
             <ion-row>
