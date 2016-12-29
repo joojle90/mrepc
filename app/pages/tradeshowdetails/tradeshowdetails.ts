@@ -31,8 +31,11 @@ export class TradeshowdetailsPage {
         this.eventstart = this.convertdate(this.geteventdetails.startdate);
         this.eventend = this.convertdate(this.geteventdetails.enddate);
 
-        this.showBook = new Date(this.eventend) > new Date() ? true : false;
-        console.log(this.showBook);
+        let oneDay = 24*60*60*1000;
+        let diffDays = Math.round(Math.abs((new Date(this.eventstart).getTime() - new Date().getTime())/(oneDay)));
+
+        this.showBook = (new Date(this.eventend) > new Date()) && diffDays < 150 ? true : false;
+        console.log(this.showBook+" and "+diffDays+" days");
 
         if(this.eventstart.split(" ")[1] === this.eventend.split(" ")[1]) {
             this.eventdate = this.eventstart.split(" ")[0] + " to " + this.eventend;

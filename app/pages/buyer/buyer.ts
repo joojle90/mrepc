@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, LoadingController, NavParams } from 'ionic-angular';
 import { Mrepcdata } from '../../providers/mrepcdata/mrepcdata';
 import { BuyerDetailsPage } from '../../pages/buyer-details/buyer-details';
+import { BuyerItemsPage } from '../../pages/buyer-items/buyer-items';
 
 /*
   Generated class for the BuyerPage page.
@@ -37,6 +38,17 @@ export class BuyerPage {
 //                return a.rubbername.localeCompare(b.rubbername);
 //            });
         })
+    }
+
+    buyerPageDefault(buyerid, buyername) {
+        this.mrepcdata.getBuyerDetails(buyerid).then(data => {
+            this.navCtrl.push(BuyerItemsPage, {
+                buyerCatId: data[1].cat_id,
+                buyerCategory: data[1].category,
+                buyerItems: data[1].itemList,
+                urllink: this.urllink
+            });
+        });
     }
 
     buyerPage(buyerid, buyername) {
