@@ -1,5 +1,5 @@
 import {Component, ViewChild, Type} from '@angular/core';
-import {ionicBootstrap, Platform, MenuController, Nav} from 'ionic-angular';
+import {ionicBootstrap, Platform, MenuController, Nav, NavController, ViewController, AlertController} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {Mrepcdata} from './providers/mrepcdata/mrepcdata';
 import {Userdata} from './providers/userdata/userdata';
@@ -30,6 +30,9 @@ let mymenu = ["Home", "Marketplace", "Trade Show", "My Trade Show", "Contact Us"
 })
 export class MyApp {
     @ViewChild(Nav) nav: Nav;
+    @ViewChild('rootNavController') navCtrl: NavController;
+    app: any;
+
     urllink: string;
     activemenu: any = [true, false, false, false, false];
 
@@ -42,11 +45,37 @@ export class MyApp {
         public mymenu: MenuController,
         public userdata: Userdata,
         public mrepcdata: Mrepcdata,
+        private alertCtrl: AlertController,
         public http: Http
     ) {
         this.platform.ready().then(() => {
             StatusBar.styleDefault();
-
+            this.registerBackButtonListener();
+//            document.addEventListener('backbutton', () => {
+//                let activeVC = this.nav.getActive();
+//                let page = activeVC.instance;
+//
+//                if (!(page instanceof HomePage)) {
+//                    if (!this.nav.canGoBack()) {
+//                        console.log('Exiting app due to back button press at the root view');
+//                        return navigator.app.exitApp();
+//                    }
+//                    console.log('Detected a back button press outside of tabs page - popping a view from the root navigation stack');
+//                    return this.nav.pop();
+//                }
+//
+//                let tabs = page.tabs;
+//                let activeNav = tabs.getSelected();
+//
+//                if (!activeNav.canGoBack()) {
+//                    console.log('Exiting app due to back button press at the bottom of current tab\'s navigation stack');
+//                    return navigator.app.exitApp();
+//                }
+//
+//                console.log('Detected a back button press - popping a view from the current tab\'s navigation stack');
+//                return activeNav.pop();
+//
+//            }, false);
 //            var push = Push.init({
 //                android: {
 //                    senderID: "583669195324"
@@ -80,6 +109,42 @@ export class MyApp {
         this.urllink = "http://khaujakanjohor.org/mrepc-api";
         this.loadleftsidemenu();
     }
+
+    registerBackButtonListener() {
+        document.addEventListener('backbutton', () => {
+            var nav = this.getNav();
+            if (nav.canGoBack()) {
+                nav.pop();
+            }
+            else {
+                this.confirmExitApp(nav);
+            }
+        });
+    }
+
+    confirmExitApp(nav) {
+        let confirm = this.alertCtrl.create({
+            title: 'Confirm Exit',
+            message: 'Really exit app?',
+            buttons: [{
+                text: 'Cancel',
+                handler: () => {
+                    console.log('Disagree clicked');
+                }
+            },{
+                text: 'Exit',
+                handler: () => {
+                    navigator.app.exitApp();
+                }
+            }]
+        });
+        nav.present(confirm);
+    }
+
+    getNav() {
+        return this.app.getComponent('nav');
+    }
+
 
     loadleftsidemenu() {
         return this.mrepcdata.getLeftsidemenu().then(data => {
