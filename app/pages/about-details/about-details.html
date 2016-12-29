@@ -59,7 +59,7 @@
                     <span>{{addressdet.officeaddr.address}}</span>
                 </ion-col>
             </ion-row>
-            <ion-row>
+            <ion-row [hidden]="addressdet.officeaddr.contactperson === '-'">
                 <ion-col width-33>
                     <ion-icon myicon1 name="person"></ion-icon>
                     <span myicon1>Contact</span>

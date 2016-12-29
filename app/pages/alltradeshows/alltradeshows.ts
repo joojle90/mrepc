@@ -106,8 +106,14 @@ export class AlltradeshowsPage {
 
         alert.addInput({
             type: 'radio',
-            label: 'Sort by Latest Event',
-            value: 'bydate'
+            label: 'Past Event',
+            value: 'bydatepast'
+        });
+
+        alert.addInput({
+            type: 'radio',
+            label: 'Coming Event',
+            value: 'bydatecoming'
         });
 
         alert.addButton('Cancel');
@@ -122,7 +128,7 @@ export class AlltradeshowsPage {
                     this.tradeshowslist = this.tradeshowslist.sort((a,b) => {
                         return a.eventdetail.name.localeCompare(b.eventdetail.name);
                     });
-                } else {
+                } else if(data === "bydatepast") {
                     this.tradeshowslist = this.tradeshowslist.sort((a,b) => {
                         let datea = new Date (a.eventdetail.startdate);
                         let dateb = new Date (b.eventdetail.startdate);

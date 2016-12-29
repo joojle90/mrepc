@@ -43,7 +43,7 @@ export class TradeshowdetailsPage {
 
     convertdate(date){
         let thedate = date.split("-");
-        let newdate = thedate[2] +" "+ monthname[thedate[1]-1] +" "+ thedate[0];
+        let newdate = thedate[2].replace(/^0+/, '') +" "+ monthname[thedate[1]-1] +" "+ thedate[0];
         return newdate;
     }
 

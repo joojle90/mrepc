@@ -13,6 +13,7 @@
     <ion-card class="card-style" *ngFor="let addr of aboutaddress; let i = index">
         <a clear (click)="officeaddress(aboutaddress[i])">
             <img src="{{urllink}}/img/office/{{addr.image}}" onError="this.src='img/misc/no-image_event.jpg'"/>
+            <p class="card-style-title branch" *ngIf="i===0">Headquarter</p>
             <p class="card-style-title">{{addr.country}}</p>
             <p class="card-style-subtitle"><span>{{addr.status}}</span></p>
         </a>
