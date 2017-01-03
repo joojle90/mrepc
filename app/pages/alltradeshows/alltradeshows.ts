@@ -3,9 +3,8 @@ import { NavController, LoadingController, NavParams, AlertController  } from 'i
 import {Mrepcdata} from '../../providers/mrepcdata/mrepcdata';
 import {TradeshowdetailsPage} from '../../pages/tradeshowdetails/tradeshowdetails';
 
-
-
 let tradeshowname = [];
+let monthname = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 @Component({
     templateUrl: 'build/pages/alltradeshows/alltradeshows.html',
@@ -88,11 +87,14 @@ export class AlltradeshowsPage {
         // if the value is an empty string don't filter the items
         if (val && val.trim() != '') {
             this.tradeshowslist = this.tradeshowsdata.filter((item) => {
-                return (item.eventdetail.startdate.toLowerCase().indexOf(val.toLowerCase()) > -1
+                let month = monthname[item.eventdetail.startdate.split("-")[1]-1];
+                return (/*item.eventdetail.startdate.toLowerCase().indexOf(val.toLowerCase()) > -1*/
+                       month.toLowerCase().indexOf(val.toLowerCase()) > -1
                        || item.eventdetail.name.toLowerCase().indexOf(val.toLowerCase()) > -1
                        || item.eventdetail.description.toLowerCase().indexOf(val.toLowerCase()) > -1
                        || item.eventdetail.location.toLowerCase().indexOf(val.toLowerCase()) > -1);
-            })
+            });
+        console.log(this.tradeshowslist);
         } else {
             this.loadTradeshow();
         }

@@ -46,11 +46,98 @@ export class MyApp {
         public userdata: Userdata,
         public mrepcdata: Mrepcdata,
         private alertCtrl: AlertController,
+//        private config: ConfigService, private nfc: NfcService,
+//        public events: Events, private translate: TranslateService,
+//        private fetch: ConfigFetchService,
         public http: Http
     ) {
         this.platform.ready().then(() => {
             StatusBar.styleDefault();
-            this.registerBackButtonListener();
+            this.platform.registerBackButtonAction(() => {
+            let activeVC = this.nav.getActive();
+            let page = activeVC.instance;
+
+            if (!(page instanceof HomePage)) {
+                if (!this.nav.canGoBack()) {
+//                    alert('test1');
+//                    return navigator.app.exitApp();
+                    let confirm = this.alertCtrl.create({
+                        title: 'Exit App',
+                        message: 'Do you want to exit the app?',
+                        buttons: [{
+                            text: 'Cancel'
+                        },{
+                            text: 'Exit',
+                            handler: () => {
+                                navigator.app.exitApp();
+                            }
+                        }]
+                    });
+                    confirm.present();
+                }
+//                alert('test2');
+                return this.nav.pop();
+            } else {
+                let confirm = this.alertCtrl.create({
+                    title: 'Exit App',
+                    message: 'Do you want to exit the app?',
+                    buttons: [{
+                        text: 'Cancel'
+                    },{
+                        text: 'Exit',
+                        handler: () => {
+                            navigator.app.exitApp();
+                        }
+                    }]
+                });
+                confirm.present();
+            }
+
+//            let confirm = this.alertCtrl.create({
+//                title: 'Confirm Exit',
+//                message: 'Really exit app?',
+//                buttons: [{
+//                    text: 'Cancel'
+//                },{
+//                    text: 'Exit',
+//                    handler: () => {
+//                        navigator.app.exitApp();
+//                    }
+//                }]
+//            });
+//            confirm.present();
+            //        navigator.app.exitApp();
+            });
+
+//         platform.registerBackButtonAction(() => {
+//            let activeVC = this.nav.getActive();
+//        let page = activeVC.instance;
+//        if (page instanceof TabsPage) {
+//          try {
+//            const portal = navigator.app._appRoot._getPortal();
+//            if (portal.length() == 0) {
+//                // no overlay
+//                // do something  you want
+//        let alert = this.alertCtrl.create({
+//          title: 'Message',
+//          subTitle: 'Stay',
+//          buttons: ['OK']
+//        });
+//        alert.present();
+//            }
+//          } catch (e) {
+//        let alert = this.alertCtrl.create({
+//          title: 'Message',
+//          subTitle: 'Exit',
+//          buttons: ['OK']
+//        });
+//        alert.present();
+//          }
+//        }
+//        //  the default handler
+//        navigator.app.navPop();
+//         });
+//            this.registerBackButtonListener();
 //            document.addEventListener('backbutton', () => {
 //                let activeVC = this.nav.getActive();
 //                let page = activeVC.instance;
@@ -114,10 +201,22 @@ export class MyApp {
         document.addEventListener('backbutton', () => {
             var nav = this.getNav();
             if (nav.canGoBack()) {
-                nav.pop();
+//                nav.pop();
+                let alert = this.alertCtrl.create({
+                  title: 'Message',
+                  subTitle: 'Stay',
+                  buttons: ['OK']
+                });
+                alert.present();
             }
             else {
-                this.confirmExitApp(nav);
+//                this.confirmExitApp(nav);
+                let alert = this.alertCtrl.create({
+                  title: 'Message',
+                  subTitle: 'Exit',
+                  buttons: ['OK']
+                });
+                alert.present();
             }
         });
     }

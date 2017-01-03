@@ -47,11 +47,11 @@
                     <ion-input [(ngModel)]="contact.contactno" name="contactno" type="number" #contactno="ngModel"></ion-input>
                 </ion-item>
                 <ion-item>
-                    <ion-label fixed>Book business</ion-label>
+                    <ion-label fixed>Product interested in</ion-label>
                     <ion-input [(ngModel)]="contact.product" name="product" type="text" #product="ngModel" required></ion-input>
                 </ion-item>
                 <p [hidden]="product.valid || submitted == false" danger padding-left>
-                    Book business is required
+                    Product interested in is required
                 </p>
                 <ion-item>
                     <ion-label fixed>Message</ion-label>
