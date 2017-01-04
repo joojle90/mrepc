@@ -9345,7 +9345,8 @@ scroll-content {
 
 .home .eventcoming .item {
   padding: 0 10px;
-  text-align: center; }
+  text-align: center;
+  height: 95px; }
   .home .eventcoming .item ion-label {
     margin: 13px 0; }
   .home .eventcoming .item .item-inner {
