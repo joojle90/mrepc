@@ -78,6 +78,7 @@ export class HomePage {
     tradeshowspage(page) {
         let picture = page.image;
         this.navCtrl.push(TradeshowdetailsPage, {
+            eventid: page.idlist,
             eventpic: picture,
             startdate: page.eventdetail.startdate,
             enddate: page.eventdetail.enddate,

@@ -58,6 +58,10 @@
                 Participating Malaysian Companies
             </h5>
             <ion-list class="listitems">
+                <button ion-item *ngFor="let pd of participantdata; let i = index" (click)="gotosupplier(pd.company_id)">
+                    <p>{{pd.name}}</p>
+                </button>
+<!--
                 <button ion-item (click)="gotosupplier(00014)">
                     <p>Ablesun Rubber Industries Sdn Bhd</p>
                 </button>
@@ -73,7 +77,11 @@
                 <button ion-item (click)="gotosupplier(00016)">
                     <p>Der Sheng Rubber Product Sdn Bhd</p>
                 </button>
+-->
             </ion-list>
+            <ion-item [hidden]="participantdata !== null">
+                <h3>NO PARTICIPATING COMPANIES</h3>
+            </ion-item>
         </ion-card-content>
     </ion-card>
 </ion-content>

@@ -15,6 +15,7 @@ export class TradeshowdetailsPage {
     urllink: string;
     eventdate: string;
     showBook: Boolean;
+    participantdata: any;
 
     constructor(
         private navCtrl: NavController,
@@ -26,7 +27,6 @@ export class TradeshowdetailsPage {
 
         this.geteventdetails = this.navParams.data;
         this.urllink = this.navParams.get('urllink');
-        console.log(this.geteventdetails);
 
         this.eventstart = this.convertdate(this.geteventdetails.startdate);
         this.eventend = this.convertdate(this.geteventdetails.enddate);
@@ -44,27 +44,40 @@ export class TradeshowdetailsPage {
         }
     }
 
+    onPageLoaded() {
+        this.loadparticipantdata(this.navParams.get('eventid'));
+        console.log(this.navParams.get('eventid'));
+    }
+
     convertdate(date){
         let thedate = date.split("-");
         let newdate = thedate[2].replace(/^0+/, '') +" "+ monthname[thedate[1]-1] +" "+ thedate[0];
         return newdate;
     }
 
+    loadparticipantdata(eventid) {
+        return this.mrepcdata.getParticipantData(eventid).then(data => {
+            this.participantdata = data.sort((a,b) => {
+                return a.name.localeCompare(b.name);
+            });
+            console.log(this.participantdata);
+        });
+    }
+
     gotosupplier(supplierid) {
         let loader = this.loadingCtrl.create({ content: "Please wait..."});
-        loader.present();
-        setTimeout(() => {
+        loader.present().then(() => {
             this.mrepcdata.getSupplierDetails(supplierid).then(data => {
                 console.log(data[0])
                 this.navCtrl.push(SupplierDetailsPage, {
                     companyData: data[0],
                     companyPerson: data[0].contactPerson,
                     companyProduct: data[0].latestProduct,
-                    urllink: this.urllink
+                    urllink: this.urllink,
+                    loading: loader
                 });
             });
-            loader.dismiss();
-        }, 2500);
+        });
     }
 
     registerform() {
