@@ -13,6 +13,15 @@
             .button {
                 text-transform: capitalize;
             }
+            .fab-book {
+                top: 17vh;
+            }
+            .booked {
+                background-color: $bookmark;
+            }
+            .nobook {
+                background-color: $colortitle;
+            }
         }
         ion-label[fixed] {
             min-width: 140px;
@@ -20,6 +29,8 @@
     }
     ion-row {
         padding: 5px;
+        font-size: initial;
+
         ion-col {
             padding: 0;
 
@@ -33,9 +44,16 @@
 
         p.eventdate {
             font-weight: 700;
+            font-size: initial;
         }
     }
     .item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
         box-shadow: none;
+    }
+}
+
+body.ios {
+    .tradeshowdetails ion-card ion-card-content .button {
+        font-size: small;
     }
 }

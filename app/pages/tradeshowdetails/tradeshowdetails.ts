@@ -16,10 +16,11 @@ export class TradeshowdetailsPage {
     urllink: string;
     eventdate: string;
     showBook: Boolean;
-    participantdata: any;
+    participantdata: any = [];
 
     private storage: Storage;
-    public personList: Array<Object>;
+    public bookmarkList: Array<Object>;
+    public bookmarkListById: any;
 
     constructor(
         private navCtrl: NavController,
@@ -31,6 +32,8 @@ export class TradeshowdetailsPage {
 
         this.geteventdetails = this.navParams.data;
         this.urllink = this.navParams.get('urllink');
+
+        console.log(this.geteventdetails);
 
         this.eventstart = this.convertdate(this.geteventdetails.startdate);
         this.eventend = this.convertdate(this.geteventdetails.enddate);
@@ -49,14 +52,16 @@ export class TradeshowdetailsPage {
 
 
         this.storage = new Storage(SqlStorage);
-        this.storage.query("CREATE TABLE IF NOT EXISTS people (id INTEGER PRIMARY KEY AUTOINCREMENT, firstname TEXT, lastname TEXT)");
-        this.personList = [];
+        this.storage.query("CREATE TABLE IF NOT EXISTS eventbook (eventid INTEGER PRIMARY KEY, location TEXT)");
+        this.bookmarkList = [];
+        this.bookmarkListById = [];
     }
 
     onPageLoaded() {
         this.loadparticipantdata(this.navParams.get('eventid'));
         console.log(this.navParams.get('eventid'));
         this.refresh();
+        this.selectDataById(this.navParams.get('eventid'));
     }
 
     convertdate(date){
@@ -70,7 +75,7 @@ export class TradeshowdetailsPage {
             this.participantdata = data.sort((a,b) => {
                 return a.name.localeCompare(b.name);
             });
-            console.log(this.participantdata);
+//            console.log(this.participantdata);
         });
     }
 
@@ -95,29 +100,47 @@ export class TradeshowdetailsPage {
         modal.present();
     }
 
-    additem() {
-        this.storage.query("INSERT INTO people (firstname, lastname) VALUES (?, ?)", ["Nic", "Raboy"]).then((data) => {
-            this.personList.push({
-                "firstname": "Nic",
-                "lastname": "Raboy"
+    additem(eventid, location) {
+        this.storage.query("INSERT INTO eventbook (eventid, location) VALUES (?, ?)", [eventid, location]).then((data) => {
+            this.bookmarkList.push({
+                "eventid": eventid,
+                "location": location
             });
+            this.onPageLoaded();
         }, (error) => {
+            this.storage.query("DELETE FROM eventbook WHERE eventid ="+eventid);
+            this.bookmarkListById = [];
             console.log(error);
         });
     };
 
     refresh() {
-        this.storage.query("SELECT * FROM people").then((data) => {
+        this.storage.query("SELECT * FROM eventbook").then((data) => {
             if(data.res.rows.length > 0) {
-                this.personList = [];
+                this.bookmarkList = [];
                 for(let i = 0; i < data.res.rows.length; i++) {
-                    this.personList.push({
-                        "id": data.res.rows.item(i).id,
-                        "firstname": data.res.rows.item(i).firstname,
-                        "lastname": data.res.rows.item(i).lastname,
+                    this.bookmarkList.push({
+                        "eventid": data.res.rows.item(i).eventid,
+                        "location": data.res.rows.item(i).location,
                     });
                 }
-                console.log(this.personList);
+            }
+        }, (error) => {
+            console.log(error);
+        });
+    }
+
+    selectDataById(eventid) {
+        this.storage.query("SELECT * FROM eventbook WHERE eventid="+eventid).then((data) => {
+            if(data.res.rows.length > 0) {
+                this.bookmarkListById = [];
+                for(let i = 0; i < data.res.rows.length; i++) {
+                    this.bookmarkListById.push({
+                        "eventid": data.res.rows.item(i).eventid,
+                        "location": data.res.rows.item(i).location,
+                    });
+                }
+                console.log(this.bookmarkListById);
             }
         }, (error) => {
             console.log(error);

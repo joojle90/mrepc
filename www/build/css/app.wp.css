@@ -10729,6 +10729,8 @@ scroll-content {
     color: #b1b1b1; }
   .marketplace ion-tabbar .tab-button[aria-selected=true] {
     color: #ffffff; }
+  .marketplace ion-tabbar .tab-button-icon {
+    font-size: 4.4rem; }
 
 .ios ion-tabbar {
   height: 70px; }
@@ -10772,11 +10774,21 @@ scroll-content {
 .tradeshowdetails ion-card ion-card-content .button {
   text-transform: capitalize; }
 
+.tradeshowdetails ion-card ion-card-content .fab-book {
+  top: 17vh; }
+
+.tradeshowdetails ion-card ion-card-content .booked {
+  background-color: #39aa38; }
+
+.tradeshowdetails ion-card ion-card-content .nobook {
+  background-color: #1341b1; }
+
 .tradeshowdetails ion-card ion-label[fixed] {
   min-width: 140px; }
 
 .tradeshowdetails ion-row {
-  padding: 5px; }
+  padding: 5px;
+  font-size: initial; }
   .tradeshowdetails ion-row ion-col {
     padding: 0; }
     .tradeshowdetails ion-row ion-col ion-icon {
@@ -10784,10 +10796,14 @@ scroll-content {
     .tradeshowdetails ion-row ion-col a {
       text-decoration: inherit; }
   .tradeshowdetails ion-row p.eventdate {
-    font-weight: 700; }
+    font-weight: 700;
+    font-size: initial; }
 
 .tradeshowdetails .item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
   box-shadow: none; }
+
+body.ios .tradeshowdetails ion-card ion-card-content .button {
+  font-size: small; }
 
 .seminardetails ion-card h1 {
   padding: 0 0 20px;

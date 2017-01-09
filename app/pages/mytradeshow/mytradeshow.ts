@@ -1,34 +1,107 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController, NavParams } from 'ionic-angular';
+import { NavController, AlertController, LoadingController, NavParams, SqlStorage, Storage } from 'ionic-angular';
+import { Mrepcdata } from '../../providers/mrepcdata/mrepcdata';
+import {TradeshowdetailsPage} from '../../pages/tradeshowdetails/tradeshowdetails';
 
-/*
-  Generated class for the MytradeshowPage page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
     templateUrl: 'build/pages/mytradeshow/mytradeshow.html',
 })
 export class MytradeshowPage {
+
+    bookmarklist: any;
     urllink: string;
+    myeventlist: any;
+
+    private storage: Storage;
+    public mybookmarkList: any = [];
 
     constructor(
         private navCtrl: NavController,
         private alertCtrl: AlertController,
-        private navParams: NavParams
+        private loadingCtrl: LoadingController,
+        private navParams: NavParams,
+        public mrepcdata: Mrepcdata
     ) {
+        this.storage = new Storage(SqlStorage);
         this.urllink = this.navParams.get('urllink');
-        console.log(this.urllink);
     }
 
-    tradeshowbtn() {
-        let alert = this.alertCtrl.create({
-          title: 'Message',
-          subTitle: 'Thank you for join our tradeshow',
-          buttons: ['OK']
+    onPageLoaded() {
+        this.refresh();
+    }
+
+    onPageWillEnter() {
+        this.myeventlist = [];
+        this.presentLoadingData();
+    }
+
+    refresh() {
+        this.storage.query("SELECT * FROM eventbook").then((data) => {
+            if(data.res.rows.length > 0) {
+                this.mybookmarkList = [];
+                for(let i = 0; i < data.res.rows.length; i++) {
+                    this.mybookmarkList.push({
+                        "eventid": data.res.rows.item(i).eventid,
+                        "location": data.res.rows.item(i).location,
+                    });
+                }
+            }
+        }, (error) => {
+            console.log(error);
         });
-        alert.present();
+    }
+
+    loadBookmark() {
+        return this.mrepcdata.geteventcriteria('6', '1,4').then(data => {
+            this.bookmarklist = data.filter(newdata => {
+                let setdate = new Date (newdata.eventdetail.startdate);
+//                return setdate.getFullYear() == new Date().getFullYear();
+                return setdate > new Date();
+            });
+            this.bookmarklist = this.bookmarklist.sort((a,b) => {
+                let datea = new Date (a.eventdetail.startdate);
+                let dateb = new Date (b.eventdetail.startdate);
+                return datea > dateb ? 1 : -1;
+            });
+//            console.log(this.bookmarklist);
+//            console.log(this.mybookmarkList);
+
+            for (var i in this.bookmarklist) {
+                for (var j in this.mybookmarkList) {
+                    if(this.bookmarklist[i].idlist == this.mybookmarkList[j].eventid) {
+                        this.myeventlist.push(this.bookmarklist[i]);
+                    } else {
+                        console.log("no result");
+                    }
+                }
+            }
+        })
+    }
+
+    detailsPage(page) {
+        let picture = page.image;
+        this.navCtrl.push(TradeshowdetailsPage, {
+            eventid: page.idlist,
+            eventpic: picture,
+            startdate: page.eventdetail.startdate,
+            enddate: page.eventdetail.enddate,
+            location: page.eventdetail.location,
+            email: page.eventdetail.email,
+            website: page.eventdetail.linkurl,
+            eventdetails: page.eventdetail,
+            urllink: this.urllink
+        });
+    }
+
+    presentLoadingData() {
+        setTimeout(() => {
+            let loader = this.loadingCtrl.create({ content: "Please wait..." });
+            loader.present();
+
+            this.loadBookmark().then(() => {
+                loader.dismiss();
+            });
+        }, 0);
     }
 
 }

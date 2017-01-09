@@ -4,11 +4,13 @@
         <button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
+<!--
         <ion-buttons end>
             <button (click)="additem()">
                 <ion-icon ios="ios-add" md="md-add"></ion-icon>
             </button>
         </ion-buttons>
+-->
     </ion-navbar>
 </ion-header>
 
@@ -49,6 +51,9 @@
                     <a myicon1 href="{{geteventdetails.website}}" clear primary>{{geteventdetails.website}}</a>
                 </ion-col>
             </ion-row>
+            <button fab fab-right fab-top (click)="additem(geteventdetails.eventid, geteventdetails.location)" [ngClass]="bookmarkListById.length < 1 ? 'fab-book nobook' : 'fab-book booked'">
+                <ion-icon name='bookmark'></ion-icon>
+            </button>
             <br>
             <h5>
                 Rubber Products Featured
@@ -59,7 +64,7 @@
                 <button myicon1 block (click)="registerform()">Book Business Matching Appointment</button>
             </div>
             <br>
-            <h5>
+            <h5 [hidden]="participantdata.length < 1">
                 Participating Malaysian Companies
             </h5>
             <ion-list class="listitems">
@@ -84,9 +89,11 @@
                 </button>
 -->
             </ion-list>
-            <ion-item [hidden]="participantdata !== null">
+<!--
+            <ion-item [hidden]="participantdata.length > 0">
                 <h3>NO PARTICIPATING COMPANIES</h3>
             </ion-item>
+-->
         </ion-card-content>
     </ion-card>
 </ion-content>
