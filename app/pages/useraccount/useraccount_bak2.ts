@@ -1,5 +1,5 @@
 import { Component, Type } from '@angular/core';
-import { NavController, AlertController, Platform, LoadingController, SqlStorage, Storage, Events, ViewController, ModalController } from 'ionic-angular';
+import { NavParams, NavController, AlertController, Platform, LoadingController, SqlStorage, Storage, Events, ViewController, ModalController } from 'ionic-angular';
 import { InAppBrowser } from 'ionic-native';
 import { HomePage } from '../home/home';
 import { Userdata } from '../../providers/userdata/userdata';
@@ -23,6 +23,7 @@ export class UseraccountPage {
     submitted = false;
     public userList: Array<Object>;
     facebookId: string;
+    userStatus: string;
 
     private storage: Storage;
 
@@ -32,6 +33,7 @@ export class UseraccountPage {
         private navCtrl: NavController,
         private alertCtrl: AlertController,
         private platform: Platform,
+        private navParams: NavParams,
         private loadingCtrl: LoadingController,
         public userData: Userdata,
         private events: Events,
@@ -41,8 +43,13 @@ export class UseraccountPage {
 
         this.storage = new Storage(SqlStorage);
         this.userList = [];
+        this.userStatus = this.navParams.get('status');
 
-        this.fbLogin();
+        if(this.userStatus === "false") {
+            this.fbLogin();
+        } else {
+            this.fbLogout();
+        }
     }
 
     fbLogin() {
@@ -112,5 +119,100 @@ export class UseraccountPage {
             });
         });
     }
+
+    fbLogout() {
+//        let modal = this.modalCtrl.create(UseraccountProfilePage);
+//        modal.present();
+    }
+
+//    userlogin() {
+//        let alert = this.alertCtrl.create({
+//          title: 'Login',
+//          subTitle: 'You are login now!',
+//          buttons: ['OK']
+//        });
+//        alert.present();
+//    }
+
+    userSignup(form) {
+        let alert = this.alertCtrl.create({
+          title: 'Successful Sign Up',
+          subTitle: 'Thank you for sign up to our application',
+          buttons: ['OK']
+        });
+        alert.present();
+    }
+
+}
+
+@Component({
+    templateUrl: 'build/pages/useraccount/useraccount-profile.html',
+})
+export class UseraccountProfilePage {
+    profile: {username?: string, email?: string, gender?: string} = {};
+//    username: string;
+//    email: string;
+//    gender: string;
+    imageurl: string;
+    public userList: any = [];
+
+    private storage: Storage;
+
+    constructor(
+        private navCtrl: NavController,
+        private navParams: NavParams,
+        private alertCtrl: AlertController,
+        public viewCtrl: ViewController
+    ) {
+
+        this.storage = new Storage(SqlStorage);
+        this.userList = [];
+        this.refresh();
+    }
+
+    refresh() {
+        this.storage.query("SELECT * FROM user").then((data) => {
+            if(data.res.rows.length > 0) {
+                this.userList = [];
+                for(let i = 0; i < data.res.rows.length; i++) {
+                    this.userList.push({
+                        "fbid": data.res.rows.item(i).fbid,
+                        "email": data.res.rows.item(i).email,
+                        "name": data.res.rows.item(i).name,
+                        "firstname": data.res.rows.item(i).firstname,
+                        "lastname": data.res.rows.item(i).lastname,
+                        "gender": data.res.rows.item(i).gender
+                    });
+                }
+                if(this.userList.length > 0) {
+                    this.profile.username = this.userList[0].name;
+                    this.profile.email = this.userList[0].email;
+                    this.profile.gender = this.userList[0].gender;
+                    this.imageurl = "https://graph.facebook.com/"+this.userList[0].fbid+"/picture?type=normal";
+                } else {
+                    console.log(this.userList);
+                }
+            }
+        }, (error) => {
+            console.log(error);
+        });
+    }
+
+    dismiss() {
+        this.viewCtrl.dismiss();
+    }
+
+//    register(form) {
+//        this.submitted = true;
+//
+//        if (form.valid) {
+//            let alert = this.alertCtrl.create({
+//              title: 'Successful registration',
+//              subTitle: 'Your request will be process',
+//              buttons: ['OK']
+//            });
+//            alert.present();
+//        }
+//    }
 
 }

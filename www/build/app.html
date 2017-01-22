@@ -1,18 +1,23 @@
-<ion-menu [content]="content" class="sidemenu">
-    <ion-toolbar>
-        <div padding-top text-center>
-            <button clear menuClose (click)="userPage(0)">
-                <img src="http://www.gravatar.com/avatar?d=mm&s=140">
+<ion-menu [content]="content" class="sidemenu" id="mymenu">
+    <ion-toolbar [hidden]="showLogin === false">
+        <div text-center>
+            <button clear menuClose>
+                <img src="{{imageurl}}"/>
+<!--                <img src="http://www.free-icons-download.net/images/user-icon-27998.png"/>-->
             </button>
-            <h6 tagname>Hi, Bob</h6>
-            <h6 tagname>email@yahoo.com</h6>
+            <h6 tagname>{{username}}</h6>
+            <h6 tagname>{{email}}</h6>
+<!--
+            <h6 tagname>dasdadasddsa adadsd </h6>
+            <h6 tagname>asdad a@ sada.com</h6>
+-->
         </div>
     </ion-toolbar>
 
     <ion-content>
         <ion-list *ngFor="let lsm of leftsidemenu; let i = index;">
             <ion-list-header *ngIf="i === 0">{{lsm.name}}</ion-list-header>
-            <button menuClose ion-item *ngFor="let sbm of lsm.submenu; let j = index;" (click)="openPage(sbm.title)" [ngClass]="{'button_active':activemenu[sbm.idmenu-1]}">
+            <button menuClose ion-item *ngFor="let sbm of lsm.submenu; let j = index;" (click)="openPage(sbm.title)" [ngClass]="{'button_active':activemenu[sbm.idmenu-1]}" [hidden]="hidemenu === sbm.component">
                 <ion-icon myicon1 item-left [name]="sbm.icon"></ion-icon>
                 <span sidecolor>{{sbm.title}}</span>
                 <ion-note item-right [hidden]="note === null">{{sbm.note}}</ion-note>

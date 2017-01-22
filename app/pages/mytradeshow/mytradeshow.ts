@@ -26,12 +26,8 @@ export class MytradeshowPage {
         this.urllink = this.navParams.get('urllink');
     }
 
-    onPageLoaded() {
-        this.refresh();
-    }
-
     onPageWillEnter() {
-        this.myeventlist = [];
+        this.refresh();
         this.presentLoadingData();
     }
 
@@ -45,6 +41,15 @@ export class MytradeshowPage {
                         "location": data.res.rows.item(i).location,
                     });
                 }
+                console.log(this.mybookmarkList);
+            } else {
+                this.mybookmarkList = [];
+                let alert = this.alertCtrl.create({
+                    title: "No Bookmark",
+                    subTitle: "You don't have any bookmark",
+                    buttons: ["OK"]
+                });
+                alert.present();
             }
         }, (error) => {
             console.log(error);
@@ -66,10 +71,13 @@ export class MytradeshowPage {
 //            console.log(this.bookmarklist);
 //            console.log(this.mybookmarkList);
 
+            this.myeventlist = [];
             for (var i in this.bookmarklist) {
                 for (var j in this.mybookmarkList) {
                     if(this.bookmarklist[i].idlist == this.mybookmarkList[j].eventid) {
                         this.myeventlist.push(this.bookmarklist[i]);
+//                        this.myeventlist[i] = this.bookmarklist[i];
+//                        console.log(this.myeventlist);
                     } else {
                         console.log("no result");
                     }
@@ -102,6 +110,16 @@ export class MytradeshowPage {
                 loader.dismiss();
             });
         }, 0);
+    }
+
+    doRefresh(refresher) {
+        console.log('Begin async operation', refresher);
+
+        setTimeout(() => {
+            console.log('Async operation has ended');
+            this.presentLoadingData();
+            refresher.complete();
+        }, 2000);
     }
 
 }

@@ -1,10 +1,9 @@
 import { Component, Type } from '@angular/core';
-import { NavController, AlertController, Platform, LoadingController, SqlStorage, Storage, Events, ViewController, ModalController } from 'ionic-angular';
+import { NavController, AlertController, Platform, LoadingController, SqlStorage, Storage } from 'ionic-angular';
 import { InAppBrowser } from 'ionic-native';
 import { HomePage } from '../home/home';
 import { Userdata } from '../../providers/userdata/userdata';
-import { MyApp } from '../../app';
-
+ 
 import {Http,Headers,RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
 /*
@@ -22,10 +21,8 @@ export class UseraccountPage {
     login: {username?: string, password?: string} = {};
     submitted = false;
     public userList: Array<Object>;
-    facebookId: string;
-
+     
     private storage: Storage;
-
     private rootPage: Type = HomePage;
 
     constructor(
@@ -34,15 +31,20 @@ export class UseraccountPage {
         private platform: Platform,
         private loadingCtrl: LoadingController,
         public userData: Userdata,
-        private events: Events,
-        public modalCtrl: ModalController,
         public http:Http
     ) {
-
         this.storage = new Storage(SqlStorage);
         this.userList = [];
-
         this.fbLogin();
+    }
+
+    userLogin(form) {
+        this.submitted = true;
+
+        if (form.valid) {
+            this.userData.login(this.login.username);
+            this.navCtrl.push(HomePage);
+        }
     }
 
     fbLogin() {
@@ -50,28 +52,11 @@ export class UseraccountPage {
             this.facebookLogin().then(success => {
 //                alert(success.access_token);
                 this.http.get('http://110.74.131.116:8181/mrepc-api/registrationDevices?idreg='+success.access_token).map(res => res.json()).subscribe(data => {
-//                        alert("Thank you for join with us");
-//                        alert("token="+success.access_token);
+                        //alert(data.status);
+                //console.log(data.status);
                 });
 
-                this.http.get('https://graph.facebook.com/me?fields=id,email,name,first_name,last_name,gender&access_token='+success.access_token).map(res => res.json()).subscribe(datafb => {
-                    alert(datafb.id+" "+datafb.name+" "+datafb.email+" "+datafb.first_name+" "+datafb.last_name+" "+datafb.gender+" "+datafb.hometown+" "+datafb.birthday);
-
-                    this.storage.query("INSERT INTO user (fbid, email, name, firstname, lastname, gender) VALUES (?, ?, ?, ?, ?, ?)", [datafb.id, datafb.email, datafb.name, datafb.firstname, datafb.lastname, datafb.gender]).then((data) => {
-                        this.userList.push({
-                            "fbid": datafb.id,
-                            "email": datafb.email,
-                            "name": datafb.name,
-                            "firstname": datafb.firstname,
-                            "lastname": datafb.lastname,
-                            "gender": datafb.gender
-                        });
-                        console.log("INSERTED: " + JSON.stringify(data));
-                        this.events.publish('user:signin');
-                    }, (error) => {
-                        console.log(error);
-                    });
-                });
+		//alert(JSON.stringify(success));
             }, (error) => {
                 alert(error);
             });
@@ -91,26 +76,56 @@ export class UseraccountPage {
                     var responseParameters = ((event.url).split("#")[1]).split("&");
                     var parsedResponse = {};
                     for (var i = 0; i < responseParameters.length; i++) {
-
-//                        alert(responseParameters[i]);
-
+			alert(responseParameters[i]);
+                        
+                    
+//                    this.storage.query("INSERT INTO user (username, password, image, email) VALUES (?, ?, ?, ?)", ["test", "test", "image", "email"]).then((data) => {
+//                        this.userList.push({
+//                            "username": "test",
+//                            "password": "test",
+//                            "image": "imageurl.jpg",
+//                            "email": "email@test.com"
+//                        });
+//                        console.log("INSERTED: " + JSON.stringify(data));
+//                    }, (error) => {
+//                        console.log(error);
+//                    });
+                        
                         parsedResponse[responseParameters[i].split("=")[0]] = responseParameters[i].split("=")[1];
+                        this.navCtrl.push(HomePage);
                     }
 
                     if (parsedResponse["access_token"] !== undefined && parsedResponse["access_token"] !== null) {
                         resolve(parsedResponse);
                     } else {
-//                        reject("Problem authenticating with Facebook");
-                        this.navCtrl.setRoot(HomePage);
+                        reject("Problem authenticating with Facebook");
                     }
                 }
             });
 
             browserRef.addEventListener("exit", function(event) {
-//                reject("The Facebook sign in flow was canceled");
-                this.navCtrl.setRoot(HomePage);
+                reject("The Facebook sign in flow was canceled");
+                this.navCtrl.push(HomePage);
             });
         });
+    }
+
+//    userlogin() {
+//        let alert = this.alertCtrl.create({
+//          title: 'Login',
+//          subTitle: 'You are login now!',
+//          buttons: ['OK']
+//        });
+//        alert.present();
+//    }
+
+    userSignup(form) {
+        let alert = this.alertCtrl.create({
+          title: 'Successful Sign Up',
+          subTitle: 'Thank you for sign up to our application',
+          buttons: ['OK']
+        });
+        alert.present();
     }
 
 }

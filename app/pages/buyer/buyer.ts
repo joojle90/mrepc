@@ -76,4 +76,14 @@ export class BuyerPage {
         }, 200);
     }
 
+    doRefresh(refresher) {
+        console.log('Begin async operation', refresher);
+
+        setTimeout(() => {
+            console.log('Async operation has ended');
+            this.presentLoadingData();
+            refresher.complete();
+        }, 2000);
+    }
+
 }

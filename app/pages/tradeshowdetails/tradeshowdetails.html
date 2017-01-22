@@ -51,7 +51,7 @@
                     <a myicon1 href="{{geteventdetails.website}}" clear primary>{{geteventdetails.website}}</a>
                 </ion-col>
             </ion-row>
-            <button fab fab-right fab-top (click)="additem(geteventdetails.eventid, geteventdetails.location)" [ngClass]="bookmarkListById.length < 1 ? 'fab-book nobook' : 'fab-book booked'">
+            <button fab fab-right fab-top (click)="additem(geteventdetails.eventid, geteventdetails.location)" [ngClass]="bookmarkListById.length < 1 ? 'fab-book nobook' : 'fab-book booked'" [hidden]="showLogin === false">
                 <ion-icon name='bookmark'></ion-icon>
             </button>
             <br>

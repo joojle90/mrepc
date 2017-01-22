@@ -72,6 +72,16 @@ export class SupplierPage {
         }, 0);
     }
 
+    doRefresh(refresher) {
+        console.log('Begin async operation', refresher);
+
+        setTimeout(() => {
+            console.log('Async operation has ended');
+            this.presentLoadingData();
+            refresher.complete();
+        }, 2000);
+    }
+
     getItems(ev: any) {
         // Reset items back to all of the items
         this.loadsupplierdata();

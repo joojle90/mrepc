@@ -5,17 +5,25 @@
         <button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
-<!--
         <ion-buttons end>
-            <button (click)="useraccountPage()">
-                <ion-icon ios="ios-person" md="md-person"></ion-icon>
+            <button (click)="useraccountPage(isLogin)">
+                <ion-icon ios="ios-exit" md="md-exit" *ngIf="isLogin"></ion-icon>
+                <ion-icon ios="ios-person" md="md-person" *ngIf="!isLogin"></ion-icon>
             </button>
         </ion-buttons>
--->
     </ion-navbar>
 </ion-header>
 
 <ion-content class="home">
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+            pullingIcon="arrow-dropdown"
+            pullingText="Pull to refresh"
+            refreshingSpinner="circles"
+            refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
 <!--    <ion-spinner name="bubbles"></ion-spinner>-->
     <ion-slides pager [options]="homeOptions">
         <ion-slide *ngFor="let ce of comingsoonevent; let i = index;">

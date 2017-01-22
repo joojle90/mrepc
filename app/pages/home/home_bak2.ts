@@ -1,5 +1,5 @@
 import {Component, ViewChild, ElementRef} from '@angular/core';
-import {NavParams, NavController, AlertController, Platform, LoadingController, Nav, SqlStorage, Storage, ViewController, ModalController} from 'ionic-angular';
+import {NavController, Platform, LoadingController, Nav, SqlStorage, Storage} from 'ionic-angular';
 import {Mrepcdata} from '../../providers/mrepcdata/mrepcdata';
 import {TradeshowdetailsPage} from '../../pages/tradeshowdetails/tradeshowdetails';
 import {MarketplacePage} from '../../pages/marketplace/marketplace';
@@ -35,7 +35,6 @@ export class HomePage {
         private platform: Platform,
         private navCtrl: NavController,
         private loadingCtrl: LoadingController,
-        public modalCtrl: ModalController,
         public mrepcdata: Mrepcdata
         ) {
 
@@ -146,14 +145,11 @@ export class HomePage {
     }
 
     useraccountPage(loginStatus) {
-        if(loginStatus) {
-            let modal = this.modalCtrl.create(UseraccountProfilePage);
-            modal.present();
-        } else {
-            this.navCtrl.push(UseraccountPage);
-        }
+        this.navCtrl.push(UseraccountPage, {
+            status: loginStatus
+        });
     }
-    
+
     presentLoadingData() {
         setTimeout(() => {
             let loader = this.loadingCtrl.create({ content: "Please wait..." });
@@ -170,77 +166,4 @@ export class HomePage {
         let newdate = thedate[2] +" "+ monthname[thedate[1]-1] +" "+ thedate[0];
         return newdate;
     }
-}
-
-
-@Component({
-    templateUrl: 'build/pages/home/useraccount-profile.html',
-})
-export class UseraccountProfilePage {
-    profile: {username?: string, email?: string, gender?: string} = {};
-//    username: string;
-//    email: string;
-//    gender: string;
-    imageurl: string;
-    public userList: any = [];
-
-    private storage: Storage;
-
-    constructor(
-        private navCtrl: NavController,
-        private navParams: NavParams,
-        private alertCtrl: AlertController,
-        public viewCtrl: ViewController
-    ) {
-
-        this.storage = new Storage(SqlStorage);
-        this.userList = [];
-        this.refresh();
-    }
-
-    refresh() {
-        this.storage.query("SELECT * FROM user").then((data) => {
-            if(data.res.rows.length > 0) {
-                this.userList = [];
-                for(let i = 0; i < data.res.rows.length; i++) {
-                    this.userList.push({
-                        "fbid": data.res.rows.item(i).fbid,
-                        "email": data.res.rows.item(i).email,
-                        "name": data.res.rows.item(i).name,
-                        "firstname": data.res.rows.item(i).firstname,
-                        "lastname": data.res.rows.item(i).lastname,
-                        "gender": data.res.rows.item(i).gender
-                    });
-                }
-                if(this.userList.length > 0) {
-                    this.profile.username = this.userList[0].name;
-                    this.profile.email = this.userList[0].email;
-                    this.profile.gender = this.userList[0].gender;
-                    this.imageurl = "https://graph.facebook.com/"+this.userList[0].fbid+"/picture?type=normal";
-                } else {
-                    console.log(this.userList);
-                }
-            }
-        }, (error) => {
-            console.log(error);
-        });
-    }
-
-    dismiss() {
-        this.viewCtrl.dismiss();
-    }
-
-//    register(form) {
-//        this.submitted = true;
-//
-//        if (form.valid) {
-//            let alert = this.alertCtrl.create({
-//              title: 'Successful registration',
-//              subTitle: 'Your request will be process',
-//              buttons: ['OK']
-//            });
-//            alert.present();
-//        }
-//    }
-
 }

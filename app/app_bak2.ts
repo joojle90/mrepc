@@ -60,27 +60,17 @@ export class MyApp {
         private loadingCtrl: LoadingController,
         public http: Http
     ) {
-
-//        this.urllink = "http://khaujakanjohor.org/mrepc-api";
-        this.urllink = "http://110.74.131.116:8181/mrepc-api";
-
-        this.storage = new Storage(SqlStorage);
-        this.refresh();
-        this.loadleftsidemenu();
-
-        this.events.subscribe('user:signin', () => {
-            let loader = this.loadingCtrl.create({ content: "Please wait..." });
-            loader.present();
-            setTimeout(() => {
-                this.hidemenu = "";
-                this.showLogin = true;
-                loader.dismiss();
-            }, 2000);
-            this.refresh();
-            this.nav.setRoot(this);
-        });
-
         this.platform.ready().then(() => {
+
+            this.events.subscribe('user:signin', () => {
+                let loader = this.loadingCtrl.create({ content: "Please wait..." });
+                loader.present();
+                setTimeout(() => {
+                    location.reload();
+                    loader.dismiss();
+                }, 2000);
+            });
+
             StatusBar.styleDefault();
             this.platform.registerBackButtonAction(() => {
                 let activeVC = this.nav.getActive();
@@ -121,10 +111,15 @@ export class MyApp {
                 }
             });
         });
-    }
 
-    onPageDidEnter() {
+//        this.urllink = "http://khaujakanjohor.org/mrepc-api";
+        this.urllink = "http://110.74.131.116:8181/mrepc-api";
 
+        this.storage = new Storage(SqlStorage);
+        this.refresh();
+        this.loadleftsidemenu();
+
+//        let env = this;
     }
 
     refresh() {

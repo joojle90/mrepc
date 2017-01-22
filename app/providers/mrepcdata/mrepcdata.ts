@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
   See https://angular.io/docs/ts/latest/guide/dependency-injection.html
   for more info on providers and Angular 2 DI.
 */
-let serverURL = 'http://110.74.131.115/mrepc-api/';
+let serverURL = 'http://110.74.131.115:8181/mrepc-api/';
 //let serverURL = 'http://khaujakanjohor.org/mrepc-api/';
 //let serverURL = '/mrepc-api/';
 let favorites = [];

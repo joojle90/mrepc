@@ -6,7 +6,7 @@
   "proxies": [
     {
       "path": "/mrepc-api/",
-      "proxyUrl": "http://khaujakanjohor.org/mrepc-api/"
+      "proxyUrl": "http://110.74.131.115:8181/mrepc-api/"
     }
   ]
 }

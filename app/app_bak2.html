@@ -2,15 +2,10 @@
     <ion-toolbar [hidden]="showLogin === false">
         <div text-center>
             <button clear menuClose>
-                <img src="{{imageurl}}"/>
-<!--                <img src="http://www.free-icons-download.net/images/user-icon-27998.png"/>-->
+                <img src="{{imageurl}}" onError="http://www.gravatar.com/avatar?d=mm&s=140"/>
             </button>
             <h6 tagname>{{username}}</h6>
             <h6 tagname>{{email}}</h6>
-<!--
-            <h6 tagname>dasdadasddsa adadsd </h6>
-            <h6 tagname>asdad a@ sada.com</h6>
--->
         </div>
     </ion-toolbar>
 

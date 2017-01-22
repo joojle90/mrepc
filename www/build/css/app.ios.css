@@ -9200,11 +9200,10 @@ body {
   height: 55vh; }
   .sidemenu .toolbar button {
     margin: 0;
-    height: 6.5em; }
+    height: 8.5em; }
 
 .sidemenu ion-toolbar img {
-  max-width: 90px;
-  border-radius: 50%; }
+  height: 100px; }
 
 .sidemenu ion-toolbar h6 {
   font-size: 1.8rem; }
@@ -9360,7 +9359,6 @@ scroll-content {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     display: -webkit-box;
-    text-transform: capitalize;
     overflow: hidden;
     text-overflow: ellipsis;
     line-height: 30px; }
@@ -9487,7 +9485,11 @@ body.ios .tradeshowdetails ion-card ion-card-content .button {
     padding: 2px; }
 
 .useraccount .item {
-  padding-left: 0; }
+  padding-left: 0;
+  background-color: inherit; }
+
+.useraccount .item-input ion-label {
+  color: #000; }
 
 .userprofile ion-item.item {
   font-size: 1.4rem; }
@@ -9530,7 +9532,7 @@ body.ios .tradeshowdetails ion-card ion-card-content .button {
     margin-left: 5px; }
 
 .buyer scroll-content {
-  margin: 12vh 0; }
+  margin: 10vh 0; }
 
 .buyer ion-list {
   margin: 0; }
@@ -9634,7 +9636,7 @@ body.ios .tradeshowdetails ion-card ion-card-content .button {
 
 .supplier-details ion-card h2 {
   font-size: 2.2rem;
-  text-transform: capitalize;
+  text-transform: uppercase;
   color: #1254a2;
   text-align: center; }
 

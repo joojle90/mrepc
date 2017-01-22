@@ -12,6 +12,16 @@
 
 
 <ion-content class="mytradeshow">
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+            pullingIcon="arrow-dropdown"
+            pullingText="Pull to refresh"
+            refreshingSpinner="circles"
+            refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
+
     <button clear *ngFor="let mye of myeventlist; let i = index" (click)="detailsPage(myeventlist[i])">
         <ion-card>
             <div>
