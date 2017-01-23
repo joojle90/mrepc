@@ -69,14 +69,21 @@ export class MyApp {
         this.loadleftsidemenu();
 
         this.events.subscribe('user:signin', () => {
+            this.userList = [];
+            this.refresh();
+
             let loader = this.loadingCtrl.create({ content: "Please wait..." });
             loader.present();
             setTimeout(() => {
                 this.hidemenu = "";
                 this.showLogin = true;
+//                this.username = this.userList[0].name;
+//                this.email = this.userList[0].email;
+//                this.imageurl = "https://graph.facebook.com/"+this.userList[0].fbid+"/picture?type=normal";
+//                alert(this.email);
+                location.reload();
                 loader.dismiss();
-            }, 2000);
-            this.refresh();
+            }, 3000);
             this.nav.setRoot(this);
         });
 

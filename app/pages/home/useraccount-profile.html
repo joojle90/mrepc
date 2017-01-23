@@ -12,9 +12,12 @@
 
 <ion-content padding class="useraccount-profile">
     <ion-list>
-        <button clear menuClose>
-            <img src="{{imageurl}}"/>
-        </button>
+        <div text-center>
+            <button clear menuClose class="imgbtn">
+                <img src="{{imageurl}}"/>
+<!--                <img src="http://www.free-icons-download.net/images/user-icon-27998.png"/>-->
+            </button>
+        </div>
         <ion-item>
             <ion-label fixed>Name</ion-label>
             <ion-label>{{profile.username}}</ion-label>
@@ -29,7 +32,7 @@
         </ion-item>
 
         <div>
-            <button myicon1 block (click)="logout()">Logout</button>
+            <button myicon1 block (click)="logout(profile.fbid)">Logout</button>
         </div>
     </ion-list>
 </ion-content>

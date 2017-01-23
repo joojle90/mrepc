@@ -46,6 +46,21 @@ export class UseraccountPage {
     }
 
     fbLogin() {
+//        this.storage.query("INSERT INTO user (fbid, email, name, firstname, lastname, gender) VALUES (?, ?, ?, ?, ?, ?)", ["12345", "apa@gmail.com", "mrepcname", "firstname", "lastname", "male"]).then((data) => {
+//            this.userList.push({
+//                "fbid": "12345",
+//                "email": "apa@gmail.com",
+//                "name": "mrepcname",
+//                "firstname": "firstname",
+//                "lastname": "lastname",
+//                "gender": "male"
+//            });
+//            console.log("INSERTED: " + JSON.stringify(data));
+//            this.events.publish('user:signin');
+//        }, (error) => {
+//            console.log(error);
+//        });
+
         this.platform.ready().then(() => {
             this.facebookLogin().then(success => {
 //                alert(success.access_token);
@@ -55,7 +70,8 @@ export class UseraccountPage {
                 });
 
                 this.http.get('https://graph.facebook.com/me?fields=id,email,name,first_name,last_name,gender&access_token='+success.access_token).map(res => res.json()).subscribe(datafb => {
-                    alert(datafb.id+" "+datafb.name+" "+datafb.email+" "+datafb.first_name+" "+datafb.last_name+" "+datafb.gender+" "+datafb.hometown+" "+datafb.birthday);
+//                    alert(datafb.id+" "+datafb.name+" "+datafb.email+" "+datafb.first_name+" "+datafb.last_name+" "+datafb.gender+" "+datafb.hometown+" "+datafb.birthday);
+                    alert("Thank you for join with us");
 
                     this.storage.query("INSERT INTO user (fbid, email, name, firstname, lastname, gender) VALUES (?, ?, ?, ?, ?, ?)", [datafb.id, datafb.email, datafb.name, datafb.firstname, datafb.lastname, datafb.gender]).then((data) => {
                         this.userList.push({

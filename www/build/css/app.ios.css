@@ -9203,6 +9203,7 @@ body {
     height: 8.5em; }
 
 .sidemenu ion-toolbar img {
+  border-radius: 5%;
   height: 100px; }
 
 .sidemenu ion-toolbar h6 {
@@ -9365,6 +9366,13 @@ scroll-content {
 
 .home .swiper-slide img {
   height: 25vh; }
+
+.useraccount-profile img {
+  height: 100px; }
+
+.useraccount-profile button.imgbtn {
+  border-radius: 20%;
+  height: 10rem; }
 
 .alltradeshows button {
   height: initial;

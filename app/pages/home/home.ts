@@ -177,7 +177,7 @@ export class HomePage {
     templateUrl: 'build/pages/home/useraccount-profile.html',
 })
 export class UseraccountProfilePage {
-    profile: {username?: string, email?: string, gender?: string} = {};
+    profile: {fbid?: string, username?: string, email?: string, gender?: string} = {};
 //    username: string;
 //    email: string;
 //    gender: string;
@@ -217,6 +217,7 @@ export class UseraccountProfilePage {
                     this.profile.email = this.userList[0].email;
                     this.profile.gender = this.userList[0].gender;
                     this.imageurl = "https://graph.facebook.com/"+this.userList[0].fbid+"/picture?type=normal";
+                    this.profile.fbid = this.userList[0].fbid;
                 } else {
                     console.log(this.userList);
                 }
@@ -230,17 +231,22 @@ export class UseraccountProfilePage {
         this.viewCtrl.dismiss();
     }
 
-//    register(form) {
-//        this.submitted = true;
-//
-//        if (form.valid) {
-//            let alert = this.alertCtrl.create({
-//              title: 'Successful registration',
-//              subTitle: 'Your request will be process',
-//              buttons: ['OK']
-//            });
-//            alert.present();
-//        }
-//    }
+    logout(fbid) {
+//        alert(fbid);
+        let confirm = this.alertCtrl.create({
+            title: 'Exit App',
+            message: 'Do you want to logout facebook?',
+            buttons: [{
+                text: 'Cancel'
+            },{
+                text: 'Yes',
+                handler: () => {
+                    this.storage.query("DELETE FROM user WHERE fbid ="+fbid);
+                    this.navCtrl.setRoot(HomePage);
+                }
+            }]
+        });
+        confirm.present();
+    }
 
 }
