@@ -21,7 +21,8 @@
     <button clear *ngFor="let tl of tradeshowslist; let i = index" (click)="detailsPage(tradeshowslist[i])">
         <ion-card class="allevent">
             <div>
-                <img src="{{urllink}}/img/event/{{tl.image}}" onError="this.src='img/misc/no-image_event.jpg'"/>
+<!--                <img src="{{urllink}}/img/event/{{tl.banner}}" onError="this.src='img/misc/no-image_event.jpg'"/>-->
+                <img src="{{urllink}}/{{tl.banner}}" onError="this.src='img/misc/no-image_event.jpg'"/>
             </div>
 <!--
             <ion-item>

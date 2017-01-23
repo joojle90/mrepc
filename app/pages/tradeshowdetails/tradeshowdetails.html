@@ -18,7 +18,8 @@
 <ion-content class="tradeshowdetails">
     <ion-card>
         <div>
-          <img src="{{urllink}}/img/event/{{geteventdetails.eventpic}}" onError="this.src='img/misc/no-image_event.jpg'">
+<!--          <img src="{{urllink}}/img/event/{{geteventdetails.eventpic}}" onError="this.src='img/misc/no-image_event.jpg'">-->
+          <img src="{{urllink}}/{{geteventdetails.eventpic}}" onError="this.src='img/misc/no-image_event.jpg'">
         </div>
         <h1 myicon1>
             {{geteventdetails.eventdetails.name}}

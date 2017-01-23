@@ -26,6 +26,7 @@ export class HomePage {
     imageurl: string;
     eventstart: string;
     urllink: string;
+    imagelink: string;
     userList: any = [];
     isLogin: Boolean;
 
@@ -45,8 +46,8 @@ export class HomePage {
             autoplayDisableOnInteraction: false,
             loop: true
         };
-//        this.urllink = "http://khaujakanjohor.org/mrepc-api";
-        this.urllink = "http://110.74.131.116:8181/mrepc-api";
+        this.urllink = "http://www.mrepc.com/intranet/mobile_apps/images/banner";
+        this.imagelink = "http://110.74.131.116:8181/mrepc-api";
         this.presentLoadingData();
     }
 
@@ -125,7 +126,7 @@ export class HomePage {
     }
 
     tradeshowspage(page) {
-        let picture = page.image;
+        let picture = page.banner;
         this.navCtrl.push(TradeshowdetailsPage, {
             eventid: page.idlist,
             eventpic: picture,
@@ -141,7 +142,7 @@ export class HomePage {
 
     openmenuPage(pageid) {
         this.navCtrl.push(menubutton[pageid], {
-            urllink: this.urllink
+            urllink: this.imagelink
         });
     }
 
