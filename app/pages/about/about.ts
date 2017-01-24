@@ -26,7 +26,9 @@ export class AboutPage {
             email: 'mpd@mrepc.com',
             contactperson: '-',
             status: 'Malaysia',
-            image: 'mrepc-hq.jpg'
+            image: 'mrepc-hq.jpg',
+            lat: 3.1390008,
+            lng: 101.6168144
         },{
             country: 'Guangzhou',
             address: 'Room 505, Block A, '+
@@ -38,7 +40,9 @@ export class AboutPage {
             email: 'guangzhou@mrepc.com',
             contactperson: 'Mr. Chang Kah Chun',
             status: 'China',
-            image: 'mrepc-guangzhou.jpg'
+            image: 'mrepc-guangzhou.jpg',
+            lat: 23.142806,
+            lng: 113.3214053
         },{
             country: 'Shanghai',
             address: 'Room 1808, No. 689, '+
@@ -50,7 +54,9 @@ export class AboutPage {
             email: 'shanghai@mrepc.com',
             contactperson: 'Ms. Lio Lan Sing',
             status: 'China',
-            image: 'mrepc-china.jpg'
+            image: 'mrepc-china.jpg',
+            lat: 31.2120755,
+            lng: 121.4272926
         },{
             country: 'Mumbai',
             address: '907, Tulsiani Chambers, '+
@@ -62,7 +68,9 @@ export class AboutPage {
             email: 'mumbai@mrepc.com',
             contactperson: 'Mr. Samir Shah',
             status: 'India',
-            image: 'mrepc-india.jpg'
+            image: 'mrepc-india.jpg',
+            lat: 18.9238204,
+            lng: 72.821505
         },{
             country: 'Washington DC',
             address: '3516 International Court, NW '+
@@ -73,7 +81,9 @@ export class AboutPage {
             email: 'esahsyip@mrepc.com',
             contactperson: 'Dr Esah Yip',
             status: 'United States of America',
-            image: 'mrepc-usa.jpg'
+            image: 'mrepc-usa.jpg',
+            lat: 38.9437494,
+            lng: -77.0713408
         }];
     }
 

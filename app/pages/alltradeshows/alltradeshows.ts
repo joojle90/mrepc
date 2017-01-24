@@ -24,7 +24,7 @@ export class AlltradeshowsPage {
         public alertCtrl: AlertController,
         public mrepcdata: Mrepcdata
     ) {
-        this.urllink = this.navParams.get('urllink');
+        this.urllink = this.navParams.get('imagelink');
         this.presentLoadingData();
         this.loadtradeshowsdata();
     }
@@ -51,7 +51,7 @@ export class AlltradeshowsPage {
     }
 
     detailsPage(page) {
-        let picture = page.image;
+        let picture = page.banner;
         this.navCtrl.push(TradeshowdetailsPage, {
             eventid: page.idlist,
             eventpic: picture,
@@ -99,6 +99,16 @@ export class AlltradeshowsPage {
         } else {
             this.loadTradeshow();
         }
+    }
+
+    doRefresh(refresher) {
+        console.log('Begin async operation', refresher);
+
+        setTimeout(() => {
+            console.log('Async operation has ended');
+            this.presentLoadingData();
+            refresher.complete();
+        }, 2000);
     }
 
     sortdatapopup() {

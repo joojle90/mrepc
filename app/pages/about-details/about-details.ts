@@ -1,6 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { NavController, NavParams, LoadingController, AlertController, ModalController, ViewController } from 'ionic-angular';
-import { EmailComposer } from 'ionic-native';
+import { Platform, NavController, NavParams, LoadingController, AlertController, ModalController, ViewController } from 'ionic-angular';
+import { EmailComposer, GoogleMap, GoogleMapsEvent, GoogleMapsLatLng } from 'ionic-native';
 
 @Component({
     templateUrl: 'build/pages/about-details/about-details.html'
@@ -18,16 +18,18 @@ export class AboutDetailsPage {
     ) {
         this.urllink = this.navParams.get('urllink');
         this.addressdet = this.navParams.data;
-        console.log(this.urllink);
+        console.log(this.addressdet);
     }
 
     mapshow() {
-        let alert = this.alertCtrl.create({
-          title: 'Coming Soon',
-          subTitle: 'We will update our Map',
-          buttons: ['OK']
-        });
-        alert.present();
+        let modal = this.modalCtrl.create(AboutMapPage);
+        modal.present();
+//        let alert = this.alertCtrl.create({
+//          title: 'Coming Soon',
+//          subTitle: 'We will update our Map',
+//          buttons: ['OK']
+//        });
+//        alert.present();
     }
 
     contactus() {
@@ -76,6 +78,77 @@ export class AboutcontactPage {
             });
             alert.present();
         }
+    }
+
+}
+
+@Component({
+    templateUrl: 'build/pages/about-details/about-map.html',
+})
+export class AboutMapPage {
+    map: GoogleMap;
+
+    constructor(
+        private platform: Platform,
+        private navCtrl: NavController,
+        private navParams: NavParams,
+        private alertCtrl: AlertController,
+        public viewCtrl: ViewController
+    ) {
+        this.platform.ready().then(() => {
+            this.loadMap();
+        });
+    }
+
+//    setupGoogleMap(){
+//        // somewhere in your component
+//        this.map = new GoogleMap('map');
+//
+//        let marker = new GoogleMapsMarker(this.map);
+//        marker.setTitle("Teste");
+//        let latLng = new GoogleMapsLatLng(-53.6339946,-76.6077185);
+//        marker.setPosition(latLng);
+//
+//        this.map.setCenter(latLng);
+//        this.map.setZoom(12);
+//
+//        this.map.on(GoogleMapsEvent.MAP_READY)
+//            .subscribe(() =>                                                         console.log("Map is ready!")
+//            );
+//    }
+
+    loadMap(){
+        let location = new GoogleMapsLatLng(-34.9290,138.6010);
+
+        this.map = new GoogleMap('map', {
+          'backgroundColor': 'white',
+          'controls': {
+            'compass': true,
+            'myLocationButton': true,
+            'indoorPicker': true,
+            'zoom': true
+          },
+          'gestures': {
+            'scroll': true,
+            'tilt': true,
+            'rotate': true,
+            'zoom': true
+          },
+          'camera': {
+            'latLng': location,
+            'tilt': 30,
+            'zoom': 15,
+            'bearing': 50
+          }
+        });
+
+        this.map.on(GoogleMapsEvent.MAP_READY).subscribe(() => {
+            console.log('Map is ready!');
+        });
+    }
+
+    dismiss() {
+        this.viewCtrl.dismiss();
     }
 
 }

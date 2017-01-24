@@ -5,12 +5,14 @@
         <button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
+<!--
         <ion-buttons end>
             <button (click)="useraccountPage(isLogin)">
                 <ion-icon ios="ios-exit" md="md-exit" *ngIf="isLogin"></ion-icon>
                 <ion-icon ios="ios-person" md="md-person" *ngIf="!isLogin"></ion-icon>
             </button>
         </ion-buttons>
+-->
     </ion-navbar>
 </ion-header>
 
@@ -30,7 +32,8 @@
             <button clear (click)="tradeshowspage(comingsoonevent[i])">
                 <ion-card class="eventcoming">
                     <div>
-                        <img src="{{urllink}}/img/event/{{ce.image}}" onError="this.src='img/misc/no-image_event.jpg'"/>
+<!--                        <img src="{{urllink}}/img/event/{{ce.image}}" onError="this.src='img/misc/no-image_event.jpg'"/>-->
+                        <img src="{{urllink}}/{{ce.banner}}" onError="this.src='img/misc/no-image_event.jpg'"/>
                     </div>
                     <ion-item>
                         <h3 light>{{ce.meseg}}</h3>
@@ -43,7 +46,7 @@
     </ion-slides>
     <button clear *ngFor="let mm of mastermenu; let i = index" (click)="openmenuPage(i)">
         <ion-card class="menubtn">
-            <img src="{{urllink}}/img/mastermenu/{{mm.image}}" onError="this.src='img/misc/no-image_event.jpg'"/>
+            <img src="{{imagelink}}/img/mastermenu/{{mm.image}}" onError="this.src='img/misc/no-image_event.jpg'"/>
             <p light class="card-title">{{mm.featuredmenu}}</p>
             <p subcolor class="card-subtitle">{{mm.tagline}}</p>
         </ion-card>

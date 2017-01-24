@@ -25,7 +25,7 @@
     <button clear *ngFor="let mye of myeventlist; let i = index" (click)="detailsPage(myeventlist[i])">
         <ion-card>
             <div>
-                <img src="{{urllink}}/img/event/{{mye.image}}" onError="this.src='img/misc/no-image_event.jpg'"/>
+                <img src="{{urllink}}/{{mye.banner}}" onError="this.src='img/misc/no-image_event.jpg'"/>
             </div>
         </ion-card>
     </button>

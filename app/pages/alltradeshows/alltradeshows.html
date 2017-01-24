@@ -18,10 +18,19 @@
 
 
 <ion-content class="alltradeshows">
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+            pullingIcon="arrow-dropdown"
+            pullingText="Pull to refresh"
+            refreshingSpinner="circles"
+            refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
     <button clear *ngFor="let tl of tradeshowslist; let i = index" (click)="detailsPage(tradeshowslist[i])">
         <ion-card class="allevent">
             <div>
-                <img src="{{urllink}}/img/event/{{tl.image}}" onError="this.src='img/misc/no-image_event.jpg'"/>
+<!--                <img src="{{urllink}}/img/event/{{tl.banner}}" onError="this.src='img/misc/no-image_event.jpg'"/>-->
+                <img src="{{urllink}}/{{tl.banner}}" onError="this.src='img/misc/no-image_event.jpg'"/>
             </div>
 <!--
             <ion-item>

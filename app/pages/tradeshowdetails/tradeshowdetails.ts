@@ -18,8 +18,8 @@ export class TradeshowdetailsPage {
     showBook: Boolean;
     participantdata: any = [];
     userList: any = [];
-//    showLogin: Boolean = true;
-    showLogin: Boolean = false;
+    showLogin: Boolean = true;
+//    showLogin: Boolean = false;
 
     private storage: Storage;
     public bookmarkList: Array<Object>;

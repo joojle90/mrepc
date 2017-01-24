@@ -23,7 +23,7 @@ export class MytradeshowPage {
         public mrepcdata: Mrepcdata
     ) {
         this.storage = new Storage(SqlStorage);
-        this.urllink = this.navParams.get('urllink');
+        this.urllink = this.navParams.get('imagelink');
     }
 
     onPageWillEnter() {
@@ -87,7 +87,7 @@ export class MytradeshowPage {
     }
 
     detailsPage(page) {
-        let picture = page.image;
+        let picture = page.banner;
         this.navCtrl.push(TradeshowdetailsPage, {
             eventid: page.idlist,
             eventpic: picture,

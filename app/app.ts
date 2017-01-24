@@ -35,12 +35,14 @@ export class MyApp {
     app: any;
     showLogin: Boolean = false;
 //    hidemenu: String = "";
-    hidemenu: string = "MyTradeshowPage";
+    hidemenu: string = "";
+//    hidemenu: string = "MyTradeshowPage";
     username: string;
     email: string;
     imageurl: string;
 
     urllink: string;
+    imagelink: string;
     activemenu: any = [true, false, false, false, false];
     userList: any = [];
 
@@ -61,7 +63,7 @@ export class MyApp {
         public http: Http
     ) {
 
-//        this.urllink = "http://khaujakanjohor.org/mrepc-api";
+        this.imagelink = "http://www.mrepc.com/intranet/mobile_apps/images/banner";
         this.urllink = "http://110.74.131.116:8181/mrepc-api";
 
         this.storage = new Storage(SqlStorage);
@@ -88,6 +90,35 @@ export class MyApp {
         });
 
         this.platform.ready().then(() => {
+
+            var push = Push.init({
+                android: {
+                    senderID: "583669195324"
+                },
+                ios: {
+                    alert: "true",
+                    badge: true,
+                    sound: 'false'
+                },
+                windows: {}
+            });
+            push.on('registration', (datas) => {
+                    this.http.get('http://110.74.131.116:8181/mrepc-api/registrationDevices?idreg='+datas.registrationId.toString()).map(res => res.json()).subscribe(data => {
+                   // alert(data.status);
+                    //console.log(data.status);
+                    });
+                    //alert(datas.registrationId.toString());
+            });
+
+            push.on('notification', (data) => {
+                    console.log(data);
+                    alert(data.message);
+            });
+            push.on('error', (e) => {
+                   alert(e.message);
+                   console.log(e.message);
+            });
+
             StatusBar.styleDefault();
             this.platform.registerBackButtonAction(() => {
                 let activeVC = this.nav.getActive();
@@ -154,6 +185,7 @@ export class MyApp {
                     this.username = this.userList[0].name;
                     this.email = this.userList[0].email;
                     this.imageurl = "https://graph.facebook.com/"+this.userList[0].fbid+"/picture?type=normal";
+//                    this.hidemenu = "";
                     this.hidemenu = "";
                 } else {
                     this.showLogin = false;
@@ -231,6 +263,7 @@ export class MyApp {
             }
         }
         this.nav.setRoot(component[pageid], {
+            imagelink: this.imagelink,
             urllink: this.urllink
         });
     }
