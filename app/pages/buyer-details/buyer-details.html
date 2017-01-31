@@ -10,10 +10,15 @@
 
 <ion-content class="buyer-details">
     <ion-list>
-        <button ion-item *ngFor="let byi of getbuyeritems; let i = index" (click)="buyerItems(byi.itemList.length, getbuyeritems[i])">
+        <button ion-item *ngFor="let byi of getbuyeritems; let i = index" (click)="buyerItems(byi.itemList.length, getbuyeritems[i])" [hidden]="byi.category === 'Others'">
             <h2>{{byi.category}}</h2>
 <!--            <ion-badge myicon1 item-right [hidden]="byi.itemList.length == 0">{{byi.itemList.length}}</ion-badge>-->
 <!--            <ion-note item-right [hidden]="byi.itemList.length != 0">No items</ion-note>-->
+        </button>
+    </ion-list>
+    <ion-list>
+        <button ion-item *ngFor="let byi of getbuyeritems; let i = index" (click)="buyerItems(byi.itemList.length, getbuyeritems[i])" [hidden]="byi.category !== 'Others'">
+            <h2>{{byi.category}}</h2>
         </button>
     </ion-list>
 </ion-content>

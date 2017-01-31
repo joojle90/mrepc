@@ -32,8 +32,8 @@ export class Mrepcdata {
 
         this.year = new Date().getFullYear();
 
-        this.startdate = '2016-01-01';
-        this.enddate = '2018-01-01';
+        this.startdate = this.year+'-01-01';
+        this.enddate = this.year+1+'-01-01';
     }
 
     load(apidata) {
