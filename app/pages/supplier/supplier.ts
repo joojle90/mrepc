@@ -38,6 +38,7 @@ export class SupplierPage {
                 return a.companyName.localeCompare(b.companyName);
             });
             this.supplierdata = this.supplierlist;
+//            console.log(this.supplierdata);
         })
     }
 

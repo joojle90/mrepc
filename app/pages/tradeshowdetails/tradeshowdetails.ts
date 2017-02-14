@@ -43,8 +43,11 @@ export class TradeshowdetailsPage {
 
         let oneDay = 24*60*60*1000;
         let diffDays = Math.round(Math.abs((new Date(this.eventstart).getTime() - new Date().getTime())/(oneDay)));
+        let nowdate = new Date();
+        let five_months = new Date(nowdate.getFullYear(),nowdate.getMonth()+6,nowdate.getDay());
+        console.log(five_months);
 
-        this.showBook = (new Date(this.eventend) > new Date()) && diffDays < 150 ? true : false;
+        this.showBook = (new Date(this.eventend) > new Date()) && (new Date(this.eventend)) < five_months ? true : false;
         console.log(this.showBook+" and "+diffDays+" days");
 
         if(this.eventstart.split(" ")[1] === this.eventend.split(" ")[1]) {
@@ -79,7 +82,8 @@ export class TradeshowdetailsPage {
             this.participantdata = data.sort((a,b) => {
                 return a.name.localeCompare(b.name);
             });
-//            console.log(this.participantdata);
+            this.participantdata = this.participantdata[0];
+            console.log(this.participantdata[0]);
         });
     }
 
@@ -204,7 +208,7 @@ export class TradeshowdetailsFormPage {
         if (form.valid) {
             let alert = this.alertCtrl.create({
               title: 'Successful registration',
-              subTitle: 'Your request will be process',
+              subTitle: 'Your request will be processed',
               buttons: ['OK']
             });
             alert.present();

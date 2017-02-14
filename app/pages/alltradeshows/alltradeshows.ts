@@ -31,12 +31,12 @@ export class AlltradeshowsPage {
 
     loadTradeshow() {
         return this.mrepcdata.geteventcriteria('6', '1,4').then(data => {
-            this.tradeshowslist = data.filter(newdata => {
-                let setdate = new Date (newdata.eventdetail.startdate);
-//                return setdate.getFullYear() == new Date().getFullYear();
-                return setdate > new Date();
-            });
-            this.tradeshowslist = this.tradeshowslist.sort((a,b) => {
+//            this.tradeshowslist = data.filter(newdata => {
+//                let setdate = new Date (newdata.eventdetail.startdate);
+////                return setdate.getFullYear() == new Date().getFullYear();
+//                return setdate > new Date();
+//            });
+            this.tradeshowslist = data.sort((a,b) => {
                 let datea = new Date (a.eventdetail.startdate);
                 let dateb = new Date (b.eventdetail.startdate);
                 return datea > dateb ? 1 : -1;
