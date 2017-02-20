@@ -121,6 +121,7 @@ export class Mrepcdata {
     getParticipantData(eventid) {
         this.apidata = 'event_participant?event_id='+eventid;
         return this.load(this.apidata).then(data => {
+//            console.log(data);
             return data;
         });
     }

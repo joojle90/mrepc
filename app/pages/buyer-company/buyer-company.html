@@ -7,6 +7,15 @@
 
 
 <ion-content class="buyer-company">
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+            pullingIcon="arrow-dropdown"
+            pullingText="Pull to refresh"
+            refreshingSpinner="circles"
+            refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
     <ion-list>
         <button ion-item *ngFor="let itl of itemlist; let i = index" (click)="contactSupplier(itemlist[i])">
             <h2>{{itl.name}}</h2>

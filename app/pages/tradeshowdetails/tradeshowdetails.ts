@@ -79,11 +79,11 @@ export class TradeshowdetailsPage {
 
     loadparticipantdata(eventid) {
         return this.mrepcdata.getParticipantData(eventid).then(data => {
-            this.participantdata = data.sort((a,b) => {
-                return a.name.localeCompare(b.name);
-            });
-            this.participantdata = this.participantdata[0];
-            console.log(this.participantdata[0]);
+//            this.participantdata = data.sort((a,b) => {
+//                return a.name.localeCompare(b.name);
+//            });
+//            this.participantdata = this.participantdata[0];
+            this.participantdata = data;
         });
     }
 

@@ -69,8 +69,8 @@
                 Participating Malaysian Companies
             </h5>
             <ion-list class="listitems">
-                <button ion-item *ngFor="let pd of participantdata; let i = index" (click)="gotosupplier(pd.mrepc_no)">
-                    <p>{{pd.company_name}}</p>
+                <button ion-item *ngFor="let pd of participantdata; let i = index" (click)="gotosupplier(pd[0].mrepc_no)">
+                    <p>{{pd[0].company_name}}</p>
                 </button>
 <!--
                 <button ion-item (click)="gotosupplier(00014)">

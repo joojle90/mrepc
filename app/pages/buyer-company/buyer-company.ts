@@ -38,7 +38,14 @@ export class BuyerCompanyPage {
     }
 
     contactSupplier(items) {
-//        console.log(items);
+        console.log(items);
+//        let loader = this.loadingCtrl.create({ content: "Please wait..."});
+//        loader.present().then(() => {
+//            this.navCtrl.push(BuyerSupplierPage, {
+//                companyData: items,
+//                loading: loader
+//            });
+//        });
         let modal = this.modalCtrl.create(BuyerRegisterPage, items);
         modal.present();
     }
@@ -59,6 +66,16 @@ export class BuyerCompanyPage {
             this.onPageLoaded();
         }
     }
+
+    doRefresh(refresher) {
+        console.log('Begin async operation', refresher);
+
+        setTimeout(() => {
+            console.log('Async operation has ended');
+            this.loadbuyercompany();
+            refresher.complete();
+        }, 2000);
+    }
 }
 
 @Component({
@@ -73,10 +90,37 @@ export class BuyerRegisterPage {
         private navCtrl: NavController,
         private navParams: NavParams,
         private alertCtrl: AlertController,
+        public modalCtrl: ModalController,
         public viewCtrl: ViewController
     ) {
         this.companyItems = this.navParams.data;
         console.log(this.companyItems);
+    }
+
+    dismiss() {
+        this.viewCtrl.dismiss();
+    }
+
+    registerforitem(items) {
+        console.log(items);
+        let modal = this.modalCtrl.create(BuyerFormPage);
+        modal.present();
+    }
+}
+
+@Component({
+    templateUrl: 'build/pages/buyer-company/buyer-form.html',
+})
+export class BuyerFormPage {
+    contact: {name?: string, company?: string, country?: string, email?: string, message?: string} = {};
+    submitted = false;
+
+    constructor(
+        private navCtrl: NavController,
+        private navParams: NavParams,
+        private alertCtrl: AlertController,
+        public viewCtrl: ViewController
+    ) {
     }
 
     dismiss() {
